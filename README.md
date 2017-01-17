@@ -3,10 +3,15 @@
 
 ## Informations sur le projet
 Groupe :  	LHUILLIER, SALLY, DULONG, DELBE, COUTROT, DUPARC, ROBERTO, CANAVAGGIO 
+
 Nom du projet :  	BTAD ? GPE ? GEPEV ? GEPLEV ?
+
 Type de document :  	Cahier des charges  
+
 Version :  	1.0 
+
 Référence :  	BTAD-CDC-0.0
+
 Statut du document :  	Livré
 
 
