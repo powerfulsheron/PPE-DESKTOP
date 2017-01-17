@@ -1,17 +1,6 @@
 # PPE-DESKTOP
 ## Belle-Table Company
 
-### How-To Github:
-
-**Create a new folder:** <br />
-repositoryname/newfoldername/filename.cs
-
-**Upload your files (in YOUR folder!):** <br />
-https://github.com/blog/2105-upload-files-to-your-repositories
-BELLE TABLE
-APPLICATION DESKTOP
-
-
 ## Informations sur le projet
 Groupe :  	LHUILLIER, SALLY, DULONG, DELBE, COUTROT, DUPARC, ROBERTO, CANAVAGGIO 
 Nom du projet :  	BTAD ? GPE ? GEPEV ? GEPLEV ?
@@ -110,6 +99,7 @@ DULONG RAPHAEL 	raphael.dulong@gmail.com Dév.
 DELBE SEBASTIEN  sebas9241@hotmail.fr Dév. 
 
 COUTROT SYLVAIN	sylvain.coutrot@hotmail.fr Dév.
+
 CANAVAGGIO LORENZO Lorenzo.canavaggio@laposte.net Dév.
 
 Historique	 des révisions du document
