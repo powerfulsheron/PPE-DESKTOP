@@ -2,13 +2,13 @@
 ## Belle-Table Company
 
 ## Informations sur le projet
-Groupe :  	LHUILLIER, SALLY, DULONG, DELBE, COUTROT, DUPARC, ROBERTO, CANAVAGGIO 
+Groupe :  	LHUILLIER, SAILLY, DULONG, DELBE, COUTROT, DUPARC, ROBERTO, CANAVAGGIO 
 
 Nom du projet :  	BTAD ? GPE ? GEPEV ? GEPLEV ?
 
 Type de document :  	Cahier des charges  
 
-Version :  	1.0 
+Version :  	1.1 
 
 Référence :  	BTAD-CDC-0.0
 
@@ -105,9 +105,13 @@ DELBE SEBASTIEN  sebas9241@hotmail.fr Dév.
 
 COUTROT SYLVAIN	sylvain.coutrot@hotmail.fr Dév.
 
-CANAVAGGIO LORENZO Lorenzo.canavaggio@laposte.net Dév.
+CANAVAGGIO LORENZO lorenzo.canavaggio@laposte.net Dév.
+
+SAILLY AXELLE saillyaxelle@hotmail.fr Dév.
 
 Historique	 des révisions du document
 Version	   	Date	   	Nom	   	Description	   
 0.0	   	16/01/2017	CANAVAGGIO	Initialisation   
-1.0	   	17/01/2017	DULONG	   	Mise en forme, déploiement sur github   
+1.0	   	17/01/2017	DULONG	   	Mise en forme, déploiement sur github
+
+1.1	   	17/01/2017	SAILLY	   	Corrections mineures
