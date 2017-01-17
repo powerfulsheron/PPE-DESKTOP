@@ -1,6 +1,7 @@
+using System;
 using MySql.Data.MySqlClient;
 
-class MonSql
+class DatabaseConnect
 {
     private MySqlConnection connection;
     private string server;
@@ -8,19 +9,29 @@ class MonSql
     private string uid;
     private string password;
 
-    //Constructeur
 
-    public MonSql()
+    public DatabaseConnect()
     {
         Initialize();
     }
 
-    public MonSql(string anyconnection)
+    public DatabaseConnect(string anyconnection)
     {
         connection = new MySqlConnection(anyconnection);
     }
 
-    //Initialisation des paramètres de connexion
+    public void SetConnection(string Aserver, string Anuid, string Apassword, string Adatabase)
+    {
+        server = Aserver;
+        uid = Anuid;
+        password = Apassword;
+        database = Adatabase;
+    }
+    
+    public string GetConnection()
+    {
+        return connectionString;
+    }
 
     private void Initialize()
 
@@ -92,8 +103,8 @@ class MonSql
 
         catch (Exception e)
         {
-            MessageBox.Show(e.Message);
             CloseConnection();
+            return e.Message;
         }
     }
 
@@ -118,8 +129,8 @@ class MonSql
 
         catch (Exception e)
         {
-            MessageBox.Show(e.Message);
             CloseConnection();
+            return e.Message;
         }
     }
 
@@ -143,8 +154,8 @@ class MonSql
 
         catch (Exception e)
         {
-            MessageBox.Show(e.Message);
             CloseConnection();
+            return e.Message;
         }
     }
 
@@ -167,11 +178,10 @@ class MonSql
 
         catch (Exception e)
         {
-            MessageBox.Show(e.Message);
             CloseConnection();
-            return null;
+            return e.Message;
         }
-        //Retourne une chaine resultat de la requête mais au final on renverra de quoi traiter le résultat de la requête, le type retourné ne sera donc pas une chaîne
+        
 
     }
 
@@ -194,9 +204,8 @@ class MonSql
 
         catch (Exception e)
         {
-            MessageBox.Show(e.Message);
             CloseConnection();
-            return null;
+            return e.Message;
         }
     }
 
