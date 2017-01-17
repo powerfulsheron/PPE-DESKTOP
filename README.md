@@ -113,4 +113,5 @@ Historique	 des révisions du document
 Version	   	Date	   	Nom	   	Description	   
 0.0	   	16/01/2017	CANAVAGGIO	Initialisation   
 1.0	   	17/01/2017	DULONG	   	Mise en forme, déploiement sur github
+
 1.1	   	17/01/2017	SAILLY	   	Corrections mineures
