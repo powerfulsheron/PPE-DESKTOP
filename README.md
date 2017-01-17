@@ -21,41 +21,19 @@ Référence :  	BTAD-CDC-0.0
 Statut du document :  	Livré
 
 
-##	Diffusion	
-Personne	   	Email	   	Rôle	   
-LHUILLIER JESSIE   	lhuillier14@gmail.com
-	Dév.	   
-DUPARC ALEXANDRE 	duparc.alexandre94@gmail.com
-	Dév.
- 
-ROBERTO BENEDICTE 	broberto@hotmail.fr
-	Dév. 
-DULONG RAPHAEL 	raphael.dulong@gmail.com
- 	Dév.
- 
-DELBE SEBASTIEN   	sebas9241@hotmail.fr
-Dév. 
-COUTROT SYLVAIN	sylvain.coutrot@hotmail.fr
-Dév.
-CANAVAGGIO LORENZO	Lorenzo.canavaggio@laposte.net	Dév.
-
-Historique	 des révisions du document
-Version	   	Date	   	Nom	   	Description	   
-0.0	   	16/01/2017	CANAVAGGIO	   	Initialisation   
-
-
-
-
-SOMMAIRE
-
-
+## SOMMAIRE
 
 #### 1. PRÉSENTATION GÉNÉRALE DU PROJET
 1.1.Pitch
+
 1.2 Brief
+
 1.2.1.Besoin et contexte
+
 1.2.2 Description de l’application
+
 1.2.3 Utilisateurs
+
 1.2.4 Fonctionnalités principales
 
 #### 2. LES EXIGENCES FONCTIONNELLES
@@ -171,3 +149,26 @@ SOMMAIRE
 5.3.1 Au niveau technique
 
 5.3.2 Au niveau ergonomique
+
+
+##	Diffusion	
+Personne	   	Email	   	Rôle	   
+LHUILLIER JESSIE   	lhuillier14@gmail.com
+	Dév.	   
+DUPARC ALEXANDRE 	duparc.alexandre94@gmail.com
+	Dév.
+ 
+ROBERTO BENEDICTE 	broberto@hotmail.fr
+	Dév. 
+DULONG RAPHAEL 	raphael.dulong@gmail.com
+ 	Dév.
+ 
+DELBE SEBASTIEN   	sebas9241@hotmail.fr
+Dév. 
+COUTROT SYLVAIN	sylvain.coutrot@hotmail.fr
+Dév.
+CANAVAGGIO LORENZO	Lorenzo.canavaggio@laposte.net	Dév.
+
+Historique	 des révisions du document
+Version	   	Date	   	Nom	   	Description	   
+0.0	   	16/01/2017	CANAVAGGIO	   	Initialisation   
