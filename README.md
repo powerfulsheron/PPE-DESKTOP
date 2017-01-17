@@ -105,7 +105,7 @@ DELBE SEBASTIEN  sebas9241@hotmail.fr Dév.
 
 COUTROT SYLVAIN	sylvain.coutrot@hotmail.fr Dév.
 
-CANAVAGGIO LORENZO Lorenzo.canavaggio@laposte.net Dév.
+CANAVAGGIO LORENZO lorenzo.canavaggio@laposte.net Dév.
 
 SAILLY AXELLE saillyaxelle@hotmail.fr Dév.
 
