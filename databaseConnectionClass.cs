@@ -1,23 +1,40 @@
 using System;
-using MySql.Data.MySqlClient;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
 
 class DatabaseConnect
 {
-    private MySqlConnection connection;
+    private SqlCommand myCommand;
+    private SqlDataReader myReader;
+    private SqlConnection connection;
     private string server;
     private string database;
     private string uid;
     private string password;
-
+    private string connectionString;
 
     public DatabaseConnect()
     {
         Initialize();
     }
 
-    public DatabaseConnect(string anyconnection)
+    private void Initialize()
     {
-        connection = new MySqlConnection(anyconnection);
+        server = "localhost";
+        database = "mabase";
+        uid = "username";
+        password = "mm";
+        connectionString = "Data Source=" + server + ";" + "Initial Catalog=" + database + ";" + "User id=" + uid + ";" + "Password=" + password + ";";
+        connection = new SqlConnection(connectionString);
+    }
+
+    public DatabaseConnect(string connectionString)
+    {
+        connection = new SqlConnection(connectionString);
     }
 
     public void SetConnection(string Aserver, string Anuid, string Apassword, string Adatabase)
@@ -27,30 +44,58 @@ class DatabaseConnect
         password = Apassword;
         database = Adatabase;
     }
-    
-    public string GetConnection()
+
+    public void SetConnection(string connectionString)
     {
-        return connectionString;
+        this.connectionString = connectionString;
     }
 
-    private void Initialize()
-
+    public string GetConnection()
     {
-        server = "localhost";
-        database = "mabase";
-        uid = "username";
-        password = "mm";
-        string connectionString;
+        return this.connectionString;
+    }
 
-        connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-        database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+    public string getServer()
+    {
+        return this.server;
+    }
 
-        connection = new MySqlConnection(connectionString);
+    public void setServer(string newServer)
+    {
+        this.server = newServer;
+    }
 
+    public string getDatabase()
+    {
+        return this.database;
+    }
+
+    public void setDatabase(string newDatabase)
+    {
+        this.database = newDatabase;
+    }
+
+    public string getUid()
+    {
+        return this.uid;
+    }
+
+    public void setUid(string newUid)
+    {
+        this.uid = newUid;
+    }
+
+    public string getPassword()
+    {
+        return this.password;
+    }
+
+    public void setPassword(string newPassword)
+    {
+        this.password = newPassword;
     }
 
     //open
-
     private bool OpenConnection()
     {
         try
@@ -61,12 +106,12 @@ class DatabaseConnect
 
         catch (Exception e)
         {
+            Console.WriteLine(e.Message);
             return false;
         }
     }
 
     //Close
-
     public bool CloseConnection()
     {
         try
@@ -77,26 +122,25 @@ class DatabaseConnect
 
         catch (Exception e)
         {
+            Console.WriteLine(e.Message);
             return false;
         }
     }
 
     //Insert
-
     public void Insert(string nom, string prenom, string email)
-
     {
         try
         {
             OpenConnection();
-            MySqlCommand DbCommand = new MySqlCommand("INSERT INTO utilisateur VALUES(@nom,@prenom,@email)", connection);
+            SqlCommand dbCommand = new SqlCommand("INSERT INTO utilisateur VALUES(@nom,@prenom,@email)", connection);
 
-            DbCommand.Parameters.AddWithValue("@nom", nom);
-            DbCommand.Parameters.AddWithValue("@prenom", prenom);
-            DbCommand.Parameters.AddWithValue("@email", email);
-            DbCommand.Prepare();
+            dbCommand.Parameters.AddWithValue("@nom", nom);
+            dbCommand.Parameters.AddWithValue("@prenom", prenom);
+            dbCommand.Parameters.AddWithValue("@email", email);
+            dbCommand.Prepare();
 
-            DbCommand.ExecuteNonQuery();
+            dbCommand.ExecuteNonQuery();
 
             CloseConnection();
         }
@@ -104,25 +148,39 @@ class DatabaseConnect
         catch (Exception e)
         {
             CloseConnection();
-            return e.Message;
+            Console.WriteLine(e.Message);
+        }
+    }
+
+    //Insert without preparated statement
+    public void Insert(string marequete)
+    {
+        try
+        {
+            myCommand = new SqlCommand(marequete, connection);
+            OpenConnection();
+            myCommand.ExecuteNonQuery();
+            CloseConnection();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
         }
     }
 
     //Update
-
     public void Update(string nomOld, string nomNew)
-
     {
         try
         {
             OpenConnection();
-            MySqlCommand DbCommand = new MySqlCommand("UPDATE utilisateur SET nom = '@nomNew' WHERE nom = @nomOld", connection);
+            SqlCommand dbCommand = new SqlCommand("UPDATE utilisateur SET nom = '@nomNew' WHERE nom = @nomOld", connection);
 
-            DbCommand.Parameters.AddWithValue("@nomNew", nomNew);
-            DbCommand.Parameters.AddWithValue("@nomOld", nomOld);
-            DbCommand.Prepare();
+            dbCommand.Parameters.AddWithValue("@nomNew", nomNew);
+            dbCommand.Parameters.AddWithValue("@nomOld", nomOld);
+            dbCommand.Prepare();
 
-            DbCommand.ExecuteNonQuery();
+            dbCommand.ExecuteNonQuery();
 
             CloseConnection();
         }
@@ -130,24 +188,39 @@ class DatabaseConnect
         catch (Exception e)
         {
             CloseConnection();
-            return e.Message;
+            Console.WriteLine(e.Message);
+        }
+    }
+
+    //Update without preparated statement
+    public void Update(string marequete)
+    {
+
+        try
+        {
+            myCommand = new SqlCommand(marequete, connection);
+            OpenConnection();
+            myCommand.ExecuteNonQuery();
+            CloseConnection();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
         }
     }
 
     //Delete
-
     public void Delete(string nom)
-
     {
         try
         {
             OpenConnection();
-            MySqlCommand DbCommand = new MySqlCommand("DELETE FROM utilisateur WHERE nom = @nom", connection);
+            SqlCommand dbCommand = new SqlCommand("DELETE FROM utilisateur WHERE nom = @nom", connection);
 
-            DbCommand.Parameters.AddWithValue("@nom", nom);
-            DbCommand.Prepare();
+            dbCommand.Parameters.AddWithValue("@nom", nom);
+            dbCommand.Prepare();
 
-            DbCommand.ExecuteNonQuery();
+            dbCommand.ExecuteNonQuery();
 
             CloseConnection();
         }
@@ -155,58 +228,111 @@ class DatabaseConnect
         catch (Exception e)
         {
             CloseConnection();
-            return e.Message;
+            Console.WriteLine(e.Message);
+        }
+    }
+
+    //Delete without preparated statement
+    public void Delete(string marequete)
+    {
+        try
+        {
+            myCommand = new SqlCommand(marequete, connection);
+            OpenConnection();
+            myCommand.ExecuteNonQuery();
+            CloseConnection();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
         }
     }
 
     //Select
-
-    public MySqlDataReader Select(string nom)
-
+    public SqlDataReader Select(string nom)
     {
         try
         {
             OpenConnection();
-            MySqlCommand DbCommand = new MySqlCommand("SELECT * FROM utilisateur WHERE nom=@nom", connection);
+            SqlCommand dbCommand = new SqlCommand("SELECT * FROM utilisateur WHERE nom=@nom", connection);
 
-            DbCommand.Parameters.AddWithValue("@nom", nom);
-            DbCommand.Prepare();
+            dbCommand.Parameters.AddWithValue("@nom", nom);
+            dbCommand.Prepare();
 
-            MySqlDataReader DbReader = DbCommand.ExecuteReader();
-            return DbReader;
+            SqlDataReader dbReader = dbCommand.ExecuteReader();
+            return dbReader;
         }
 
         catch (Exception e)
         {
             CloseConnection();
-            return e.Message;
+            Console.WriteLine(e.Message);
+            return null; // ok ?
         }
-        
+
 
     }
 
+    //Select without preparated statement
+    public DataTable Select(string marequete)
+    {
+        try
+        {
+            myCommand = new SqlCommand(marequete, connection);
+            OpenConnection();
+            SqlDataAdapter MyAdapter = new SqlDataAdapter();
+            MyAdapter.SelectCommand = myCommand;
+            DataTable dataTable = new DataTable();
+            MyAdapter.Fill(dataTable);
+            CloseConnection();
+            return dataTable; // on retourne une datatable qu'on pourra assigner à une Datagridview.source
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            return null;
+        }
+    }
+
     //Count
-
-    public MySqlDataReader Count(string param)
-
+    public SqlDataReader Count(string param)
     {
         try
         {
             OpenConnection();
-            MySqlCommand DbCommand = new MySqlCommand("SELECT COUNT() FROM utilisateur WHERE nom=@param", connection);
+            SqlCommand dbCommand = new SqlCommand("SELECT COUNT() FROM utilisateur WHERE nom=@param", connection);
 
-            DbCommand.Parameters.AddWithValue("@param", param);
-            DbCommand.Prepare();
+            dbCommand.Parameters.AddWithValue("@param", param);
+            dbCommand.Prepare();
 
-            MySqlDataReader DbReader = DbCommand.ExecuteReader();
-            return DbReader;
+            SqlDataReader dbReader = dbCommand.ExecuteReader();
+            return dbReader;
         }
 
         catch (Exception e)
         {
             CloseConnection();
-            return e.Message;
+            Console.WriteLine(e.Message);
+            return null; // return null ?
         }
+    }
+
+    //Count without preparated statement
+    public int Count(string marequete)
+    {
+
+        try
+        {
+            myCommand = new SqlCommand(marequete, connection);
+            OpenConnection();
+            return int.Parse(myCommand.ExecuteScalar().ToString());
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            return 0; // return 0 ?
+        }
+
     }
 
 }
