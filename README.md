@@ -86,17 +86,17 @@ Statut du document :  	Livré
 5.2. Livrables
 
 5.3 Recettage
-Cela consiste à effectuer une check list pour le point ergonomique et une pour le point technique afin de valider une version définitive et durable de l'application produite.
+-> Cela consiste à effectuer une check list pour le point ergonomique et une pour le point technique afin de valider une version définitive et durable de l'application produite.
  
 5.3.1 Au niveau technique
-Chek List :
+-> Check List :
  - l'application fonctionne t'elle ? Tout le cahier des charges est-il mis en place et fonctionnel ?
  - l'application est-elle adaptée à son environnement de déploiement, ici un PC sous windows ?
  - l'application est-elle fonctionnelle sur d'autres versions de windows que celle utilisée pour la développer ?
  - l'application comporte-elle une documentation technique ?
 
 5.3.2 Au niveau ergonomique
-Check List :
+-> Check List :
  - l'application est-elle facilement compréhensible pour une prise en mains rapide ?
  - l'application permet-elle un accès efficace aux données ?
  - l'application est-elle visuellement agréable ?
