@@ -8,7 +8,7 @@ Nom du projet :  	BTAD ? GPE ? GEPEV ? GEPLEV ?
 
 Type de document :  	Cahier des charges  
 
-Version :  	1.1 
+Version :  	2.0
 
 Référence :  	BTAD-CDC-0.0
 
@@ -86,11 +86,21 @@ Statut du document :  	Livré
 5.2. Livrables
 
 5.3 Recettage
+-> Cela consiste à effectuer une check list pour le point ergonomique et une pour le point technique afin de valider une version définitive et durable de l'application produite.
  
 5.3.1 Au niveau technique
+-> Check List :
+ - l'application fonctionne t'elle ? Tout le cahier des charges est-il mis en place et fonctionnel ?
+ - l'application est-elle adaptée à son environnement de déploiement, ici un PC sous windows ?
+ - l'application est-elle fonctionnelle sur d'autres versions de windows que celle utilisée pour la développer ?
+ - l'application comporte-elle une documentation technique ?
 
 5.3.2 Au niveau ergonomique
-
+-> Check List :
+ - l'application est-elle facilement compréhensible pour une prise en mains rapide ?
+ - l'application permet-elle un accès efficace aux données ?
+ - l'application est-elle visuellement agréable ?
+ - la fenêtre de l'application est-elle redimensionnable (le contenu y compris) ?
 
 ## Diffusion	   
 LHUILLIER JESSIE  lhuillier14@gmail.com  Dév.	   
@@ -110,8 +120,11 @@ CANAVAGGIO LORENZO lorenzo.canavaggio@laposte.net Dév.
 SAILLY AXELLE saillyaxelle@hotmail.fr Dév.
 
 Historique	 des révisions du document
-Version	   	Date	   	Nom	   	Description	   
-0.0	   	16/01/2017	CANAVAGGIO	Initialisation   
-1.0	   	17/01/2017	DULONG	   	Mise en forme, déploiement sur github
 
+Version	   	Date	   	Nom	   	Description	   
+0.0	   	16/01/2017	CANAVAGGIO	Initialisation
+
+1.0	   	17/01/2017	DULONG	   	Mise en forme, déploiement sur github
 1.1	   	17/01/2017	SAILLY	   	Corrections mineures
+
+2.0	   	18/01/2017	SAILLY	   	Remplissage de la partie "Recettage"
