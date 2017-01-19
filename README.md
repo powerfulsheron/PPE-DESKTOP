@@ -20,11 +20,26 @@ Statut du document :  	Livré
 
 1.1.Pitch
 
+Une application desktop permettant la gestion des rendez-vous et des plannings des commerciaux de l'entreprise BELLETABLE écrite en C# et connectée à une base de donnée SQL.
+
 1.2 Brief
 
 1.2.1.Besoin et contexte
 
+Les commerciaux de Belletable utilisent des solutions différentes d'agendas individuels pour leur rendez-vous avec les clients. Par soucis de sécurité, de centralisation des données et de performance, L'entreprise souhaite acquérir une application qui permettrait :
+- La création des rendez-vous en reespectant les contraintes de nombre et de distance et la visualisation de ceux-ci sous forme de planning 
+- L'envoi des notifications aux clients
+- L'assignation des clients aux différents commerciaux
+- La gestion des commerciaux et de leurs congés
+
+En outre, l'application devra être consultable sur des systèmes embarqués (mobiles, tablettes)
+
 1.2.2 Description de l’application
+
+L'utilisateur se verra attribué aupparavant un couple login/mdp pour la connection à l'application. 
+Le planning du commercial sera affiché à l'acceuil de l'application pour une information rapide sur les prochains rendez-vous. De là il aura accès à la création d'un rendez-vous, si son statut le permet, ainsi qu'a la visualisation des e-mails et/ou sms envoyés en son nom aux clients.
+Il pourra de plus modifer certaines informations concernant les clients dont il a charge, mais aussi indiquer ses jours d'indisponibilité ou de congés.
+Un administrateur aura la visualisation complete des plannings de chaque commercial ainsi que leur fonctionnalités et aura la possiblité de gérer l'assignation des commerciaux et de leur clients. Outils statistiques ?
 
 1.2.3 Utilisateurs
 
