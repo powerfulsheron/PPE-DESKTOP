@@ -93,7 +93,16 @@ Un administrateur aura la visualisation complete des plannings de chaque commerc
 
 4.1.3 Recette
 
+Phase de test permettant 
+
+Vérification des fonctionnalités, de l’algorithme, de l’interface
+utilisateurs (ergonomie)
+
 4.1.4 Déploiement
+
+Basculer de la réalisation à la production, avec des
+procédures de retour en arrière, les tests de validité de comportement de l’application
+avec l’identification des risques possibles.
 
 4.1.5 Exploitation // a assigner
 
@@ -103,6 +112,9 @@ Un administrateur aura la visualisation complete des plannings de chaque commerc
 5.1 Réception des résultats des prestations
                                                                                    
 5.2. Livrables
+
+Première version de l’application, réunion de suivi du
+projet, création du manuel utilisateur et le compte rendu des tests
 
 5.3 Recettage
 -> Cela consiste à effectuer une check list pour le point ergonomique et une pour le point technique afin de valider une version définitive et durable de l'application produite.
