@@ -74,6 +74,7 @@ Un administrateur aura la visualisation complete des plannings de chaque commerc
 ### 3. PRÉCONISATIONS GÉNÉRALES
  
 3.1 Charte graphique et navigation
+    
     L'application devra être 100% responsive pour tablettes et téléphonnes.
     
     L'application doit être intuitive et simple d'utilisattion
