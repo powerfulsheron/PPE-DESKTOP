@@ -53,17 +53,13 @@ Un administrateur aura la visualisation complete des plannings de chaque commerc
 2.2 Accès à l’application 
  
 2.3 Accueil
- L'interface doit avoir un écran de connexion permettant d'afficher deux parties différentes, une partie Admin (accéssible par mot de passe ) et une partie commerciale, propore à chaque utilisateur 
-2.4 Planning des commerciaux
- un calendrier devra être créé dans la base de donnée, (donc connexion dans l'application) avec possibilité d'ajouter, modifier ou suppirmier un rdv, dans la base de donnée via l'application , chaque rdv devra comprendre divers index, tels que le le lieu, l'heure, le contact, le type de Rdv (prospect , présentation, etc.) Si possible , créé une fiche PDF pour résumer le rdv
  
+2.4 Planning des commerciaux
+
 2.5 Gestion des clients
-Créer une table dans la base de donnée avec les différents infos du client, Nom prénom, contact, adresse, etc.
 
 2.6 Création d’un rendez-vous
-Fonction d'ajout , modification , suppression d'un RDV dans la table du planning, avec les infos du client
-Caque rdv devra comprendre divers index, tels que le le lieu, l'heure, le contact, le type de Rdv (prospect , présentation, etc.) Si possible , créé une fiche PDF pour résumer le rdv
-
+ 
 2.7 Visualisation des e-mails
     Chaque mail sera rédiger selon l'interlocuteur avec son nom, son prénom ou le nom de son organisation et la nature du rendez-vous.
     
@@ -78,12 +74,30 @@ Caque rdv devra comprendre divers index, tels que le le lieu, l'heure, le contac
 ### 3. PRÉCONISATIONS GÉNÉRALES
  
 3.1 Charte graphique et navigation
+    L'application devra être 100% responsive pour tablettes et téléphonnes.
+    L'application doit être intuitive et simple d'utilisattion
+    
  
 3.2 Développement
+    Le code devra être le plus claire et simple possible.
+    Minimiser le junk code.
+    Chaque développeur se vera attribuer une charge de développement précise.
  
 3.3 Matériels et compétences
+    Deux serveurs WEB un pouvant intégré MySQL l'autre SQLserver.
+    Une virtualisation des serveurs WEB peut avoir lieu pour mettre en place un environement de PREPROD et PROD.
+    PC de développement.
 
 3.4 Sécurité
+
+   Toute les requêtes devront être des requêtes préparées. 
+   Une obfuscation du code peut être abordée.
+   Chaque accès devra s'éffectuer par mot de passe hacher en SHA-256() OU MD5().
+   Chaque droit des utilisateurs doit être clairement délimité.
+   Les administrateurs ont une vue sur les actions éfféctuées sur les données.
+   Un pentest peut être éfféctué une fois l'application terminée.
+   Historique des connexions.
+   Fonction mot de passe brûlé après 6 tentativers infructueuses.
 
 3.5 Mises en ligne
  
