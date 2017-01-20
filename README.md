@@ -141,8 +141,13 @@ SAILLY AXELLE saillyaxelle@hotmail.fr Dév.
 Historique	 des révisions du document
   
 0.0.0	16/01/2017	CANAVAGGIO	Initialisation
+
 0.1.1	17/01/2017	DULONG	   	Mise en forme, déploiement sur github
+
 0.1.2	17/01/2017	SAILLY	   	Corrections mineures
+
 0.1.3 18/01/2017	SAILLY	   	Remplissage de la partie "Recettage"
+
 0.1.3 20/01/2017 ROBERTO    Remplissage de la partie "Visualisation des e-mails" et "Gestion des utilisateurs"
+
 0.1.4 19/01/2017 CANAVAGGIO Remplissage de ma partie.
