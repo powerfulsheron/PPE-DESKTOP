@@ -53,13 +53,17 @@ Un administrateur aura la visualisation complete des plannings de chaque commerc
 2.2 Accès à l’application 
  
 2.3 Accueil
- 
+ L'interface doit avoir un écran de connexion permettant d'afficher deux parties différentes, une partie Admin (accéssible par mot de passe ) et une partie commerciale, propore à chaque utilisateur 
 2.4 Planning des commerciaux
-
+ un calendrier devra être créé dans la base de donnée, (donc connexion dans l'application) avec possibilité d'ajouter, modifier ou suppirmier un rdv, dans la base de donnée via l'application , chaque rdv devra comprendre divers index, tels que le le lieu, l'heure, le contact, le type de Rdv (prospect , présentation, etc.) Si possible , créé une fiche PDF pour résumer le rdv
+ 
 2.5 Gestion des clients
+Créer une table dans la base de donnée avec les différents infos du client, Nom prénom, contact, adresse, etc.
 
 2.6 Création d’un rendez-vous
- 
+Fonction d'ajout , modification , suppression d'un RDV dans la table du planning, avec les infos du client
+Caque rdv devra comprendre divers index, tels que le le lieu, l'heure, le contact, le type de Rdv (prospect , présentation, etc.) Si possible , créé une fiche PDF pour résumer le rdv
+
 2.7 Visualisation des e-mails
     Chaque mail sera rédiger selon l'interlocuteur avec son nom, son prénom ou le nom de son organisation et la nature du rendez-vous.
     
@@ -94,8 +98,6 @@ Un administrateur aura la visualisation complete des plannings de chaque commerc
 4.1.3 Recette
 
 4.1.4 Déploiement
-
-4.1.5 Exploitation // a assigner
 
 
 ### 5. MODALITÉS
@@ -141,13 +143,8 @@ SAILLY AXELLE saillyaxelle@hotmail.fr Dév.
 Historique	 des révisions du document
   
 0.0.0	16/01/2017	CANAVAGGIO	Initialisation
-
 0.1.1	17/01/2017	DULONG	   	Mise en forme, déploiement sur github
-
 0.1.2	17/01/2017	SAILLY	   	Corrections mineures
-
 0.1.3 18/01/2017	SAILLY	   	Remplissage de la partie "Recettage"
-
 0.1.3 20/01/2017 ROBERTO    Remplissage de la partie "Visualisation des e-mails" et "Gestion des utilisateurs"
-
 0.1.4 19/01/2017 CANAVAGGIO Remplissage de ma partie.
