@@ -95,6 +95,8 @@ Un administrateur aura la visualisation complete des plannings de chaque commerc
 
 4.1.4 Déploiement
 
+4.1.5 Exploitation // a assigner
+
 
 ### 5. MODALITÉS
  
