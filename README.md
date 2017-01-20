@@ -80,6 +80,7 @@ Un administrateur aura la visualisation complete des plannings de chaque commerc
     
  
 3.2 Développement
+    
     Le code devra être le plus claire et simple possible.
     
     Minimiser le junk code.
@@ -87,6 +88,7 @@ Un administrateur aura la visualisation complete des plannings de chaque commerc
     Chaque développeur se vera attribuer une charge de développement précise.
  
 3.3 Matériels et compétences
+    
     Deux serveurs WEB un pouvant intégré MySQL l'autre SQLserver.
     
     Une virtualisation des serveurs WEB peut avoir lieu pour mettre en place un environement de PREPROD et PROD.
@@ -94,22 +96,21 @@ Un administrateur aura la visualisation complete des plannings de chaque commerc
     PC de développement.
 
 3.4 Sécurité
-
-   Toute les requêtes devront être des requêtes préparées. 
+    Toute les requêtes devront être des requêtes préparées. 
    
-   Une obfuscation du code peut être abordée.
+    Une obfuscation du code peut être abordée.
    
-   Chaque accès devra s'éffectuer par mot de passe hacher en SHA-256() OU MD5().
+    Chaque accès devra s'éffectuer par mot de passe hacher en SHA-256() OU MD5().
    
-   Chaque droit des utilisateurs doit être clairement délimité.
+    Chaque droit des utilisateurs doit être clairement délimité.
    
-   Les administrateurs ont une vue sur les actions éfféctuées sur les données.
+    Les administrateurs ont une vue sur les actions éfféctuées sur les données.
    
-   Un pentest peut être éfféctué une fois l'application terminée.
+    Un pentest peut être éfféctué une fois l'application terminée.
    
-   Historique des connexions.
+    Historique des connexions.
    
-   Fonction mot de passe brûlé après 6 tentativers infructueuses.
+    Fonction mot de passe brûlé après 6 tentativers infructueuses.
 
 3.5 Mises en ligne
  
