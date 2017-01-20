@@ -137,10 +137,8 @@ CANAVAGGIO LORENZO lorenzo.canavaggio@laposte.net Dév.
 SAILLY AXELLE saillyaxelle@hotmail.fr Dév.
 
 Historique	 des révisions du document
-
-Version	   	Date	   	Nom	   	Description	   
-0.0	   	16/01/2017	CANAVAGGIO	Initialisation
-
+  
+0.0.0	16/01/2017	CANAVAGGIO	Initialisation
 0.1.1	17/01/2017	DULONG	   	Mise en forme, déploiement sur github
 0.1.2	17/01/2017	SAILLY	   	Corrections mineures
 0.1.3 18/01/2017	SAILLY	   	Remplissage de la partie "Recettage"
