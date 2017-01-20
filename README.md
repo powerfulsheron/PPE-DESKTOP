@@ -61,9 +61,11 @@ Un administrateur aura la visualisation complete des plannings de chaque commerc
 2.6 Création d’un rendez-vous
  
 2.7 Visualisation des e-mails
-
+    Chaque mail sera rédiger selon l'interlocuteur avec son nom, son prénom ou le nom de son organisation et la nature du rendez-vous.
+    
 2.8 Gestion des utilisateurs
-
+    Pour la gestion des utilisateurs, on créera une classe "Utilisateur" avec tous les informations nécessaires qui nous permettra d'indentifier chaque utilisateur de l'application.
+    
 2.9 Statistiques
 
 2.10 Documentation accessible depuis l'application
@@ -122,7 +124,7 @@ LHUILLIER JESSIE  lhuillier14@gmail.com  Dév.
 
 DUPARC ALEXANDRE duparc.alexandre94@gmail.com Dév.
  
-ROBERTO BENEDICTE broberto@hotmail.fr Dév. 
+ROBERTO BENEDICTE benedicte.roberto@gmail.com Dév. 
 
 DULONG RAPHAEL 	raphael.dulong@gmail.com Dév.
  
@@ -143,3 +145,4 @@ Version	   	Date	   	Nom	   	Description
 1.1	   	17/01/2017	SAILLY	   	Corrections mineures
 
 2.0	   	18/01/2017	SAILLY	   	Remplissage de la partie "Recettage"
+2.1     20/01/2017 ROBERTO    Remplissage de la partie "Visualisation des e-mails" et "Gestion des utilisateurs"
