@@ -27,30 +27,87 @@ Une application desktop permettant la gestion des rendez-vous et des plannings d
 1.2.1.Besoin et contexte
 
 Les commerciaux de Belletable utilisent des solutions différentes d'agendas individuels pour leur rendez-vous avec les clients. Par soucis de sécurité, de centralisation des données et de performance, L'entreprise souhaite acquérir une application qui permettrait :
-- La création des rendez-vous en reespectant les contraintes de nombre et de distance et la visualisation de ceux-ci sous forme de planning 
-- L'envoi des notifications aux clients
-- L'assignation des clients aux différents commerciaux
-- La gestion des commerciaux et de leurs congés
+
+
+- La gestion des rendez-vous en respectant les contraintes indiquées par BelleTable (nombre et distance parcourue) et la visualisation de ceux-ci sous forme de planning. 
+- L'envoi automatique des notifications aux clients sous forme de mails et/ou SMS.
+- La gestion des portefeuilles de clients et leur assignations aux commerciaux.
+- La gestion des congés des commerciaux.
+- La consultation de statistiques liées à l'utilisation de l'application
+- La gestion des utilisateurs
 
 En outre, l'application devra être consultable sur des systèmes embarqués (mobiles, tablettes)
 
 1.2.2 Description de l’application
 
-L'utilisateur se verra attribué aupparavant un couple login/mdp pour la connection à l'application. 
-Le planning du commercial sera affiché à l'acceuil de l'application pour une information rapide sur les prochains rendez-vous. De là il aura accès à la création d'un rendez-vous, si son statut le permet, ainsi qu'a la visualisation des e-mails et/ou sms envoyés en son nom aux clients.
-Il pourra de plus modifer certaines informations concernant les clients dont il a charge, mais aussi indiquer ses jours d'indisponibilité ou de congés.
-Un administrateur aura la visualisation complete des plannings de chaque commercial ainsi que leur fonctionnalités et aura la possiblité de gérer l'assignation des commerciaux et de leur clients. Outils statistiques ?
+L'utilisateur se verra attribué aupparavant un couple login/mdp pour la connection à l'application.
+Selon les droits, le planning du commercial ou la liste des commerciaux ou la liste des utilisateurs et leurs types seront affichés à l'acceuil de l'application et des boutons situés en haut de page permettront l'accès aux fonctionnalités respectives des utilisateurs :
+
+
+- Création des rendez-vous avec les clients qui se trouvent dans les portefeuilles.
+- Consulation des plannings de rendez-vous et leur gestion (ajouter/modifier/supprimer)
+- Consultation et/ou impression en pdf d'un récapitulatif de rendez-vous avec les informations nécéssaires (accès, commentaire, etc)
+- Gestion des périodes d'indisponibilité des commerciaux.
+- Consultation des portefeuilles de clients.
+- Visualisation des e-mails envoyés aux clients aux noms des commerciaux.
+- Attribution des portefeuilles clients aux commerciaux et leur gestion (ajouter/modifier/supprimer).
+- Gestion de la liste des utilisateurs (ajouter/modifier/supprimer)
+- Consultation de l'historique des connexions à l'application ainsi que d'outils statistiques à définir.
+
 
 1.2.3 Utilisateurs
 
+Trois types d'utilisateurs pourront se connecter à l'application :
+
+
+- Les commerciaux qui pourront :
+
+
+- Créer des rendez-vous avec les clients qui se trouvent dans leurs portefeuilles respectifs.
+- Consulter leurs plannings de rendez-vous et assurer leur gestion (ajouter/modifier/supprimer)
+- Consulter et/ou imprimer en pdf un récapitulatif du rendez-vous avec les informations nécéssaires (accès, commentaire, etc)
+- Poser des périodes d'indisponibilité.
+- Consulter leurs portefeuilles de clients.
+- Visualiser les e-mails envoyés aux clients en leur noms.
+
+
+- Les gestionnaires qui auront les mêmes droits que les commerciaux mais qui pourront en plus :
+
+- Attribuer les portefeuilles clients aux commerciaux et assurer leur gestion (ajouter/modifier/supprimer).
+- Gérer les commerciaux (ajouter/modifier/supprimer)
+
+
+- Les administrateurs qui cumuleront les droits des commerciaux et des gestionnaires mais qui pourront aussi :
+
+- Gérer la liste des utilisateurs (ajouter/modifier/supprimer)
+- Consulter l'historique des connexions à l'application
+	
+
 1.2.4 Fonctionnalités principales
+
+- Se connecter à l'application grâce à un login et un mot de passe
+- Fonction mot de passe perdu 
+- Création des rendez-vous avec les clients qui se trouvent dans les portefeuilles.
+- Consulation des plannings de rendez-vous et leur gestion (ajouter/modifier/supprimer)
+- Consultation et/ou impression pdf d'un récapitulatif de rendez-vous avec les informations nécéssaires (accès, commentaire, etc)
+- Gestion des périodes d'indisponibilité des commerciaux.
+- Consultation des portefeuilles de clients.
+- Visualisation des e-mails envoyés aux clients aux noms des commerciaux.
+- Attribution des portefeuilles clients aux commerciaux et leur gestion (ajouter/modifier/supprimer).
+- Gestion de la liste des utilisateurs (ajouter/modifier/supprimer)
+- Consultation de l'historique des connexions à l'application ainsi que d'outils statistiques à définir.
 
   
 ### 2. LES EXIGENCES FONCTIONNELLES
  
 2.1 L’arborescence
  
-2.2 Accès à l’application 
+2.2 Accès à l’application
+
+- Première interface : login et password : L'utilisateur rentre ses identifiants qui sont comparés à la base et l'application l'authentifie selon son type et charge les fonctionnalités adéquates.
+- La saisie du mot de passe sera hachée.
+- Après 6 tentatives d'authentification érronés, l'administrateur sera informé et une redirection sur l'interface "mot de passe oublié" sera effectuée. 
+- Possibilité de récupérer un mot de passe perdu par un bouton "mot de passe oublié", qui chargera une interface ou l'utilisateur saisira son adresse e-mail pour changer de mot de passe.
  
 2.3 Accueil
  
