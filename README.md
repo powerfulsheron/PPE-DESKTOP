@@ -36,7 +36,7 @@ Les commerciaux de Belletable utilisent des solutions différentes d'agendas ind
 - La consultation de statistiques liées à l'utilisation de l'application
 - La gestion des utilisateurs
 
-En outre, l'application devra être consultable sur des systèmes embarqués (mobiles, tablettes)
+En outre, le planning d'un commercial devra être consultable sur des systèmes embarqués (mobiles, tablettes)
 
 1.2.2 Description de l’application
 
@@ -170,7 +170,6 @@ Trois types d'utilisateurs pourront se connecter à l'application :
    
     - Fonction mot de passe brûlé après 6 tentativers infructueuses.
 
-3.5 Mises en ligne
  
 ### 4. DÉROULEMENT DU PROJET
  
