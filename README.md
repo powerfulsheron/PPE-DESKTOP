@@ -182,7 +182,15 @@ Trois types d'utilisateurs pourront se connecter à l'application :
 
 4.1.3 Recette
 
+Phase de test permettant
+
+Vérification des fonctionnalités, de l’algorithme, de l’interface utilisateurs (ergonomie)
+
 4.1.4 Déploiement
+
+Basculer de la réalisation à la production, avec des procédures de retour en arrière, les tests de validité de comportement de l’application avec l’identification des risques possibles.
+
+4.1.5 Exploitation // a assigner --> Lorenzo
 
 
 ### 5. MODALITÉS
