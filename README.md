@@ -111,21 +111,61 @@ Trois types d'utilisateurs pourront se connecter à l'application :
  
 2.3 Accueil
  
-2.4 Planning des commerciaux
+L'acceuil sera différent selon le type d'utilisateur :
 
-2.5 Gestion des clients
 
-2.6 Création d’un rendez-vous
- 
-2.7 Visualisation des e-mails
-    Chaque mail sera rédiger selon l'interlocuteur avec son nom, son prénom ou le nom de son organisation et la nature du rendez-vous.
+- Les commerciaux auront la vue directe sur leur plannings et auront la possibilié via des boutons de poser leurs périodes d'indisponibilités, de consulter leurs portefeuilles clients, créer des rendez-vous et générer les fichiers pdf de leurs prochains rendez-vous.
+
+- Les gestionnaires auront accès à une double liste commerciaux/portefeuilles clients qui affichera le contenu du portefeuille client pour un commercial séléctionné. D'ici ils auront la possibilité d'effectuer les opérations de gestion nécéssaires sur les commerciaux, les clients et les portefeuilles. En cliquant sur un onglet "commercial", le gestionnaire pourra consulter la liste des commerciaux et en cliquant sur l'un d'eux effectuer des opérations en son nom.
+
+- Les administrateurs auront une vue sur la liste des utilisateurs et auront la possibilité d'effectuer des opérations d'ajout, de modification et de supression. De plus, une fenetre affichera la liste des logs à l'application avec l'utilisateur concerné, la date et l'heure. En cliquant sur un onglet "commercial", le gestionnaire pourra consulter la liste des commerciaux et en cliquant sur l'un d'eux effectuer des opérations en son nom. En cliquant sur un onglet "gestionnaire", il pourra consulter la vue gestionnaires et effectuer des opérations d'un gestionnaire.
+
+2.4 Commerciaux
+
+2.4.1 Planning des commerciaux
+
+L'application affichera le planning respectif des rendez-vous des commerciaux avec la possibilité de générer un fichier pdf de chaque rendez-vous comportant toutes les informations relatives à celui-ci ainsi qu'un plan d'accès.
+
+2.4.2 Periodes d'indisponibilité
+
+Le commercial disposera d'un calendrier ou il pourra signaler ses périodes d'indisponibilités.
+
+2.4.3 Portefeuille client
+
+Le commercial aura accès à la liste des clients de son portefeuille et il pourra consulter en un clic les informations de chacun de ces derniers.
+
+2.4.4 Affichage client
+
+Toutes les informations relatives au client seront affichées, ainsi que les derniers e-mails envoyés sous forme de liste.
+
+
+2.4.5 Affichage d'e-mail
+
+Simple affichage d'e-mail avec destinataire, objet et contenu du mail.
+
+2.4.6 Création de rendez-vous
+
+Formulaire de création de rendez vous avec chargement de la liste des clients du portefeuille du commercial qui comprendra le type du rendez-vous, la date du rendez-vous, l'heure de début, l'heure de fin ainsi qu'une option qui permettra de spécifier si besoin un lieu dérogatoire. 
+
+2.4.7 Génération PDF d'un rendez-vous
+
+Simple génération en pdf des informations d'un rendez-vous qui comprendra un plan d'accès.
+
+2.5 Gestionnaires
+
+Les gestionnaires auront accès à tous leurs outils sur l'accueil de l'application et pourront utiliser les outils des commerciaux en selectionnant l'un d'eux dans la liste de l'onglet "Commercial".
+  
+2.6 Administrateurs
+
+Les administrateurs auront accès à leurs outils de gestion des utilisateurs sur l'accueil de l'application et pourront utiliser les outils des commerciaux en selectionnant l'un d'eux dans la liste de l'onglet "Commercial" et ceux des gestionnaires en cliquant sur l'onglet "Gestionnaire".
     
-2.8 Gestion des utilisateurs
-    Pour la gestion des utilisateurs, on créera une classe "Utilisateur" avec tous les informations nécessaires qui nous permettra d'indentifier chaque utilisateur de l'application.
-    
-2.9 Statistiques
+2.6.1 Outils statistiques
+
+// TODO à définir
 
 2.10 Documentation accessible depuis l'application
+
+Un bouton "Aide" sera accessible sur chaque page de l'application dans le coin haut droite et délivrera une documentation pdf en fonction des droits des utilisateurs.
  
 
 ### 3. PRÉCONISATIONS GÉNÉRALES
