@@ -163,7 +163,7 @@ Les administrateurs auront accès à leurs outils de gestion des utilisateurs su
 
 // TODO à définir
 
-2.10 Documentation accessible depuis l'application
+2.7 Documentation accessible depuis l'application
 
 Un bouton "Aide" sera accessible sur chaque page de l'application dans le coin haut droite et délivrera une documentation pdf en fonction des droits des utilisateurs.
  
