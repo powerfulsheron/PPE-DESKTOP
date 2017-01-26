@@ -214,10 +214,33 @@ Un bouton "Aide" sera accessible sur chaque page de l'application dans le coin h
 ### 4. DÉROULEMENT DU PROJET
  
 4.1 Phases du projet
+
+	- rédaction du cahier des charges.
+	
+	- répartition et assignation des différentes tâches du projet.
+	
+	- tout participant au projet partent sur une même base.
+	
+	- rédaction et création de sa partie.
+	
+	- mise en commun et relecture de chaque partie.
+	
+	- assemblage des différentes parties.
+	
+	- tests du projet.
+	
+	- déploiment du projet.
+	
+	- proposition d'amélioration (facultatif).
+	
  
 4.1.1 Conception
 
+	Le projet démarrera après la rédaction du cahier des charges. L'étape suivante consiste à répartir les différentes tâches, qui compose le projet, avec chacun des participants , qui démarreront sur une même base. Suite à la conception (réalisation) de ces tâches, la réunification de celle-ci devra se faire après une relecture approfondie de tout les participants pour pouvoir avoir les parties qui correspondent au cahier des charges. Ensuite, la phase d'assemblage des parties, préalablement approuvées par les participants, devra se faire avec une différentiation entre participants suivant son envie (création de l'appli propre au participant). La dernière étape est le déploiement du projet sur le serveur ainsi que le bon fonctionnement de celui-ci. Chaque participant devra avoir fait les tests necessaires pour que l'application soit opérationnelle.  Une étape facultative est de trouver des amélioration possibles.
+
 4.1.2 Réalisation
+
+	(mdr je sais pas quoi mettre)
 
 4.1.3 Recette
 
