@@ -172,67 +172,49 @@ Un bouton "Aide" sera accessible sur chaque page de l'application dans le coin h
  
 3.1 Charte graphique et navigation
     
-    - L'application devra être 100% responsive pour tablettes et téléphonnes.
-    
-    - L'application doit être intuitive et simple d'utilisattion
+- L'application devra être 100% responsive pour tablettes et téléphonnes.
+- L'application doit être intuitive et simple d'utilisattion
+- Il y aura un panel commercial et administrateur.
     
  
 3.2 Développement
     
-    - Le code devra être le plus claire et simple possible.
-    
-    - Minimiser le junk code.
-    
-    - Chaque développeur se vera attribuer une charge de développement précise.
- 
+- Le code devra être le plus claire et simple possible
+- Minimiser le junk code et minimiser l'utilisation de library externes.
+- C'est un développement un colaboration: chaque développeur se vera attribuer une charge de développement précise
+- L'application sera codée en C# de manière OpenSource sur le repository GitHub.
+
+
 3.3 Matériels et compétences
     
-    - Un Windows Server 2012 comportant MySQl et SQLserver.
-    
-    - Une virtualisation des serveurs WEB peut avoir lieu pour mettre en place un environement de PREPROD et PROD (apache virtualisation).
-    
-    - PC pouvant faire fonctionner visualStudio.
+- Un serveur avec l'OS Windows Server 2012 comportant MySQl et SQLserver ouvert à internet.
+- Un PC de développement pouvant faire fonctionner visualStudio.
 
 3.4 Sécurité
-    - Toute les requêtes devront être des requêtes préparées. 
-   
-    - Une obfuscation du code peut être abordée.
-   
-    - Chaque accès devra s'éffectuer par mot de passe hacher en SHA-256() OU MD5().
-   
-    - Chaque droit des utilisateurs doit être clairement délimité.
-   
-    - Les administrateurs ont une vue sur les actions éfféctuées sur les données.
-   
-    - Un pentest peut être éfféctué une fois l'application terminée.
-   
-    - Historique des connexions.
-   
-    - Fonction mot de passe brûlé après 6 tentativers infructueuses.
+- Toute les requêtes devront être des requêtes préparées. 
+- Une obfuscation du code peut être abordée.
+- Chaque accès devra s'éffectuer par mot de passe hacher en SHA-256() OU MD5() avec sallage.
+- Chaque droit des utilisateurs doit être clairement délimité.
+- Les administrateurs ont une vue sur les actions éfféctuées sur les données.
+- Un pentest peut être éfféctué une fois l'application terminée.
+- Historique des connexions.
+- Fonction mot de passe brûlé après 6 tentativers infructueuses.
 
  
 ### 4. DÉROULEMENT DU PROJET
  
 4.1 Phases du projet
 
-	- rédaction du cahier des charges.
-	
-	- répartition et assignation des différentes tâches du projet.
-	
-	- tout participant au projet partent sur une même base.
-	
-	- rédaction et création de sa partie.
-	
-	- mise en commun et relecture de chaque partie.
-	
-	- assemblage des différentes parties.
-	
-	- tests du projet.
-	
-	- déploiment du projet.
-	
-	- proposition d'amélioration (facultatif).
-	
+- rédaction du cahier des charges.
+- répartition et assignation des différentes tâches du projet.
+- tout participant au projet partent sur une même base.
+- rédaction et création de sa partie.
+- mise en commun et relecture de chaque partie.
+- assemblage des différentes parties.
+- tests du projet.
+- déploiment du projet.
+- proposition d'amélioration (facultatif).
+
  
 4.1.1 Conception
 
