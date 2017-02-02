@@ -61,7 +61,7 @@ public class RDV
     {
         return heureDebut;
     }
-    public DateTime SetheureFin()
+    public DateTime GetheureFin()
     {
         return heureFin;
     }
