@@ -90,47 +90,47 @@ namespace PPE_Belle_Table_Classes_métier
         {
             return nomUtilisateur;
         }
-        public string SetadresseUtilisateur()
+        public string GetadresseUtilisateur()
         {
             return adresseUtilisateur;
         }
-        public string SetpUtilisateur()
+        public string GetpUtilisateur()
         {
             return cpUtilisateur;
         }
-        public string SetvilleUtilisateur()
+        public string GetvilleUtilisateur()
         {
             return villeUtilisateur;
         }
-        public string SetTelUtilisateur()
+        public string GetTelUtilisateur()
         {
             return telUtilisateur;
         }
-        public string SetmailUtilisateur()
+        public string GetmailUtilisateur()
         {
             return mailUtilisateur;
         }
-        public string SetprenomUtilisateur()
+        public string GetprenomUtilisateur()
         {
             return prenomUtilisateur;
         }
-        public string SetoginUtilisateur()
+        public string GetoginUtilisateur()
         {
             return loginUtilisateur;
         }
-        public string SetpasswordUtilisateur()
+        public string GetpasswordUtilisateur()
         {
             return passwordUtilisateur;
         }
-        public string SetdateDernierLogin()
+        public string GetdateDernierLogin()
         {
             return dateDernierLogin;
         }
-        public int SetnbTentatives()
+        public int GetnbTentatives()
         {
             return nbTentatives;
         }
-        public int SetDistanceParcourueSemaine()
+        public int GetDistanceParcourueSemaine()
         {
             return distanceParcourueSemaine;
         }
