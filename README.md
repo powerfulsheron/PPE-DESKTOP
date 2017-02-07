@@ -172,12 +172,14 @@ Un bouton "Aide" sera accessible sur chaque page de l'application dans le coin h
  
 
 3.1 Charte graphique et navigation
+
 •	L'application devra être responsive pour tablettes et téléphones.
 •	L'application doit être intuitive et simple d'utilisation.
 •	L’accès aux informations et aux outils doit être rapide.
 
 
 3.2 Développement
+
 •	Il a été choisi de développer en C# sous VisualStudio et d’utiliser une base de donnée SQLserver ou MySQL d’après les compétences des développeurs du projet.
 •	Le C# est un langage de programmation commercialisé par Microsoft utilisé pour développer des applications Web et de bureau. Tous les développeurs possèdent des licences VisualStudio, l’environnement de de développement C#.
 •	MySQL  est un système de gestion de bases de données relationnelles (SGBDR). Il est distribué sous une double licence GPL et propriétaire. Il fait partie des logiciels de gestion de base de données les plus utilisés au monde.
@@ -189,6 +191,7 @@ Le développement est collaboratif : Le projet est partagé sur l’outil GitHub
 
 
 3.3 Matériels et compétences
+
 •	Connaissances en C#, Visual Studio Windows Forms et langage SQL.
 •	Environnement Windows ou Mac récent (Vista min.)
 •	Un serveur avec l'OS Windows Server 2012 comportant MySQl et SQLserver ouvert à internet.
@@ -196,6 +199,7 @@ Le développement est collaboratif : Le projet est partagé sur l’outil GitHub
 
 
 3.4 Sécurité
+
 •	Toutes les requêtes devront être préparées pour éviter les injections SQL.
 •	Une offuscation du code peut être abordée.
 •	Chaque accès devra s'effectuer par mot de passe haché en SHA-256 OU MD5 avec salage.
