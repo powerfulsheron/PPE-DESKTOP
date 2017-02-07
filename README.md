@@ -170,11 +170,13 @@ Un bouton "Aide" sera accessible sur chaque page de l'application dans le coin h
 
 ### 3. PRÉCONISATIONS GÉNÉRALES
  
-3. PRÉCONISATIONS GÉNÉRALES
+
 3.1 Charte graphique et navigation
 •	L'application devra être responsive pour tablettes et téléphones.
 •	L'application doit être intuitive et simple d'utilisation.
 •	L’accès aux informations et aux outils doit être rapide.
+
+
 3.2 Développement
 •	Il a été choisi de développer en C# sous VisualStudio et d’utiliser une base de donnée SQLserver ou MySQL d’après les compétences des développeurs du projet.
 •	Le C# est un langage de programmation commercialisé par Microsoft utilisé pour développer des applications Web et de bureau. Tous les développeurs possèdent des licences VisualStudio, l’environnement de de développement C#.
@@ -184,11 +186,15 @@ Un bouton "Aide" sera accessible sur chaque page de l'application dans le coin h
 Le code devra être le plus claire et simple possible.
 Développer en suivant les bonnes pratiques et minimiser l'utilisation de Library externes sera minimisé et les bonnes pratiques seront une priorité.
 Le développement est collaboratif : Le projet est partagé sur l’outil GitHub, ainsi chaque développeur peut fournir du travail et le remonter sur un dossier commun à tous.
+
+
 3.3 Matériels et compétences
 •	Connaissances en C#, Visual Studio Windows Forms et langage SQL.
 •	Environnement Windows ou Mac récent (Vista min.)
 •	Un serveur avec l'OS Windows Server 2012 comportant MySQl et SQLserver ouvert à internet.
 •	Visual Studio (min. 2010)
+
+
 3.4 Sécurité
 •	Toutes les requêtes devront être préparées pour éviter les injections SQL.
 •	Une offuscation du code peut être abordée.
@@ -198,7 +204,11 @@ Le développement est collaboratif : Le projet est partagé sur l’outil GitHub
 •	Un Pentest peut être effectué une fois l'application terminée.
 •	Historique des connexions.
 •	Fonction mot de passe brûlé après 6 tentatives infructueuses.
-4. DÉROULEMENT DU PROJET
+
+
+### 4. DÉROULEMENT DU PROJET
+
+
 4.1 Phases du projet
 Le projet démarrera après la rédaction du cahier des charges.
 L'étape suivante consiste à répartir les différentes tâches, qui composent le projet, avec chacun des participants, qui démarreront sur une même base. 
@@ -208,32 +218,51 @@ Chaque participant devra alors effectuer les tests et les éventuelles correctio
 La dernière étape est le déploiement du projet sur un serveur ainsi qu’un test final de production. 
 L’étape additionnelle facultative sera d’ajouter des améliorations à l’application.
 
+
 4.1.1 Conception
 •	Rédaction du cahier des charges.
 •	Création du Modèle conceptuel de données
 •	Création du Schéma UML
 •	Répartition et assignation des différentes tâches du projet.
+
+
 4.1.2 Réalisation
 •	Tous les développeurs partent sur une même base.
 •	Développement de l’interface et des fonctionnalités.
 •	Assemblage des différentes parties.
 
+
+
 4.1.3 Recette
 Phase de test permettant
 Vérification des fonctionnalités, de l’algorithme, de l’interface utilisateurs (ergonomie)
+
+
 4.1.4 Déploiement
 Basculer de la réalisation à la production, avec des procédures de retour en arrière, des tests de validité de comportement de l’application et l’identification des risques possibles.
-5. MODALITÉS
+
+
+### 5. MODALITÉS
+
+
 5.1 Réception des résultats des prestations
+
+
 5.2. Livrables
+
+
 5.3 Recettage 
  Cela consiste à effectuer une check List pour le point ergonomique et une pour le point technique afin de valider une version définitive et durable de l'application produite.
+ 
+ 
 5.3.1 Au niveau technique 
 Check List :
 •	L’application fonctionne-t-elle ? Tout le cahier des charges est-il mis en place et fonctionnel ?
 •	L’application est-elle adaptée à son environnement de déploiement, ici un PC sous Windows ?
 •	L’application est-elle fonctionnelle sur d'autres versions de Windows que celle utilisée pour la développer ?
 •	L’application comporte-elle une documentation technique ?
+
+
 5.3.2 Au niveau ergonomique 
 Check List :
 •	L’application est-elle facilement compréhensible pour une prise en mains rapide ?
@@ -241,7 +270,8 @@ Check List :
 •	L’application est-elle visuellement agréable ?
 •	La fenêtre de l'application est-elle redimensionnable (le contenu y compris) ?
 
-## Diffusion	   
+## Diffusion	
+
 LHUILLIER JESSIE  lhuillier14@gmail.com  Dév.	   
 
 DUPARC ALEXANDRE duparc.alexandre94@gmail.com Dév.
