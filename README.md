@@ -210,6 +210,7 @@ Le développement est collaboratif : Le projet est partagé sur l’outil GitHub
 
 
 4.1 Phases du projet
+
 Le projet démarrera après la rédaction du cahier des charges.
 L'étape suivante consiste à répartir les différentes tâches, qui composent le projet, avec chacun des participants, qui démarreront sur une même base. 
 Suite à la conception (réalisation) de ces tâches, chaque développeur validera le travail effectué par tous les membres du groupe de travail. 
@@ -220,6 +221,7 @@ L’étape additionnelle facultative sera d’ajouter des améliorations à l’
 
 
 4.1.1 Conception
+
 •	Rédaction du cahier des charges.
 •	Création du Modèle conceptuel de données
 •	Création du Schéma UML
@@ -227,6 +229,7 @@ L’étape additionnelle facultative sera d’ajouter des améliorations à l’
 
 
 4.1.2 Réalisation
+
 •	Tous les développeurs partent sur une même base.
 •	Développement de l’interface et des fonctionnalités.
 •	Assemblage des différentes parties.
@@ -234,11 +237,13 @@ L’étape additionnelle facultative sera d’ajouter des améliorations à l’
 
 
 4.1.3 Recette
+
 Phase de test permettant
 Vérification des fonctionnalités, de l’algorithme, de l’interface utilisateurs (ergonomie)
 
 
 4.1.4 Déploiement
+
 Basculer de la réalisation à la production, avec des procédures de retour en arrière, des tests de validité de comportement de l’application et l’identification des risques possibles.
 
 
@@ -252,10 +257,12 @@ Basculer de la réalisation à la production, avec des procédures de retour en 
 
 
 5.3 Recettage 
+
  Cela consiste à effectuer une check List pour le point ergonomique et une pour le point technique afin de valider une version définitive et durable de l'application produite.
  
  
 5.3.1 Au niveau technique 
+
 Check List :
 •	L’application fonctionne-t-elle ? Tout le cahier des charges est-il mis en place et fonctionnel ?
 •	L’application est-elle adaptée à son environnement de déploiement, ici un PC sous Windows ?
@@ -264,6 +271,7 @@ Check List :
 
 
 5.3.2 Au niveau ergonomique 
+
 Check List :
 •	L’application est-elle facilement compréhensible pour une prise en mains rapide ?
 •	L’application permet-elle un accès efficace aux données ?
