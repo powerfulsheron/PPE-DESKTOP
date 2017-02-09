@@ -16,13 +16,13 @@ namespace PPE_Belle_Table_Classes_métier
 
         }
         //Setter
-        public void SetecodeTypeUtilisateur(int unCodeTypeUtilisateur)
+        public void SetLecodeTypeUtilisateur(int unCodeTypeUtilisateur)
         {
             codeTypeUtilisateur = unCodeTypeUtilisateur;
         }
 
 
-        public void SetecodeTypeUtilisateur(string unLibelleTypeUtilisateur)
+        public void SetlibelleTypeUtilisateur(string unLibelleTypeUtilisateur)
         {
             libelleTypeUtilisateur = unLibelleTypeUtilisateur;
         }
