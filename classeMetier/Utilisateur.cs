@@ -18,9 +18,15 @@ namespace PPE_Belle_Table_Classes_métier
         private String prenomUtilisateur;
         private String loginUtilisateur;
         private String passwordUtilisateur;
-        private DateTime dateDernierLogin;
+        private DateTime dateDernierLogin;    
         private Integer nbTentatives;
         private Float distanceParcourueSemaine;
+        
+        private List<Conge> lesConges;
+        private PorteFeuille lePortefeuille;
+        private List<Mail> lesMails;
+        private Planning lePlanning;
+        private TypeUtilisateur leTypeUtilisateur;
 
         public Utilisateur()
         {
