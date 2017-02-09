@@ -22,11 +22,11 @@ namespace PPE_Belle_Table_Classes_métier
         private Integer nbTentatives;
         private Float distanceParcourueSemaine;
         
-        private List<Conge> lesConges;
-        private PorteFeuille lePortefeuille;
-        private List<Mail> lesMails;
-        private Planning lePlanning;
-        private TypeUtilisateur leTypeUtilisateur;
+        private List<Conge> conges;
+        private PorteFeuille portefeuille;
+        private List<Mail> mails;
+        private Planning planning;
+        private TypeUtilisateur typeUtilisateur;
 
         public Utilisateur()
         {
@@ -162,6 +162,46 @@ namespace PPE_Belle_Table_Classes_métier
         {
             this.distanceParcourueSemaine = uneDistanceParcourueSemaine;
         }
-            
+        
+        public List<Conge> GetConges()
+        {
+            return this.conges;
+        }
+        
+        public void SetConges(List<Conge> uneListeConges)
+        {
+            this.conges=uneListeConges;
+        }
+                       
+        public List<Mail> GetMails()
+        {
+            return this.mails;
+        }
+        
+        public void SetMails(List<Mail> uneListeMails)
+        {
+            this.mails=uneListeMails;
+        }
+        
+        public Planning GetPlanning()
+        {
+            return this.planning;
+        }
+        
+        public void SetPlanning(Planning unPlanning)
+        {
+            this.planning=unPlanning;
+        }
+        
+        public TypeUtilisateur GetTypeUtilisateur()
+        {
+            return this.typeUtilisateur;
+        }
+        
+        public void SetTypeUtilisateur(TypeUtilisateur unTypeUtilisateur)
+        {
+            this.typeUtilisateur=unTypeUtilisateur;
+        }
+        
     }
 }
