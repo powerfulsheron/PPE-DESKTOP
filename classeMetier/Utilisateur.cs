@@ -92,7 +92,7 @@ namespace PPE_Belle_Table_Classes_métier
             return this.telUtilisateur;
         }
         
-        public void SetTelUtilisateur(String UnTelUtilisateur)
+        public void SetTelUtilisateur(String unTelUtilisateur)
         {
             this.telUtilisateur = unTelUtilisateur;
         }
