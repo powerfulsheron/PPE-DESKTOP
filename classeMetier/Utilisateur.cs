@@ -72,7 +72,7 @@ namespace PPE_Belle_Table_Classes_métier
             return this.cpUtilisateur;
         }
         
-        public void (String unCpUtilisateur)
+        public void SetCpUtilisateur(String unCpUtilisateur)
         {
             this.cpUtilisateur = unCpUtilisateur;
         }
