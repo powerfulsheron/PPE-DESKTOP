@@ -85,4 +85,16 @@ public class RDV
     {
         return codeEntreeDerogatoire;
     }
+    public void GetListPlanning()
+    {
+    	//appelle la collection de la classe planning
+    }
+    public void GetListInterlocuteur()
+    {
+    	//appelle la collection de la classe interlocuteur
+    }
+    public void GetListTypeRDV()
+    {
+    	//appelle la collection de la classe typeRDV
+    }
 }
