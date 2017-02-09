@@ -76,4 +76,8 @@ public class Particulier
     {
         return distanceSiege;
     }
+    public bool particulierTorF()
+    {
+	    //renvoie true ou false quand nouvel interlocuteur est différent de vide
+    }
 }
