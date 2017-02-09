@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace PPE_Belle_Table_Classes_métier
 {
-    class Conges
+    class Conge
     {
         private int numConge;
         private DateTime dateDebutConge;
         private DateTime dateFinConge;
 
-        public Conges()
+        public Conge()
         {
 
         }
