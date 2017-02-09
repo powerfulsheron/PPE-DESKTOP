@@ -172,16 +172,6 @@ namespace PPE_Belle_Table_Classes_métier
         {
             this.conges=uneListeConges;
         }
-                       
-        public List<Mail> GetMails()
-        {
-            return this.mails;
-        }
-        
-        public void SetMails(List<Mail> uneListeMails)
-        {
-            this.mails=uneListeMails;
-        }
         
         public Planning GetPlanning()
         {
@@ -192,7 +182,17 @@ namespace PPE_Belle_Table_Classes_métier
         {
             this.planning=unPlanning;
         }
+                       
+        public List<Mail> GetMails()
+        {
+            return this.mails;
+        }
         
+        public void SetMails(List<Mail> uneListeMails)
+        {
+            this.mails=uneListeMails;
+        }
+                        
         public TypeUtilisateur GetTypeUtilisateur()
         {
             return this.typeUtilisateur;
