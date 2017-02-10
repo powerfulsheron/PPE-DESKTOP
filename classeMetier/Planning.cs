@@ -14,17 +14,16 @@ namespace PPE_Belle_Table_Classes_métier
         {
 
         }
-
-        //Setter
-        public void SetidPlanningg(int unIdPlanning)
-        {
-            idPlanning = unIdPlanning;
-        }
-
-        public int GetidPlanning()
+        
+         public int GetidPlanning()
         {
             return idPlanning;
         }
 
+        public void SetidPlanningg(int unIdPlanning)
+        {
+            idPlanning = unIdPlanning;
+        }
+      
     }
 }
