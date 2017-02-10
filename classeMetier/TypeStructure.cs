@@ -5,6 +5,8 @@ public class TypeStructure
     private int codeTypeStructure;
 
     private string libelleTypeStructure;
+	
+	private List<Structure> lesStructure;
 
 	public TypeStructure()
 	{
@@ -20,6 +22,11 @@ public class TypeStructure
     {
         libelleTypeStructure = unlibelleTypeStructure;
     }
+	
+	public void SetTypeStructureStructure(int idStructure)
+	{
+		lesStructures.Add(idStructure);	
+	}
 
     /**  getter **/
     public int GetcodeTypeStructure()
