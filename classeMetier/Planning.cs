@@ -8,19 +8,19 @@ namespace PPE_Belle_Table_Classes_métier
 {
     class Planning
     {
-        private int idPlanning;
+        private Integer idPlanning;
 
         Planning()
         {
 
         }
         
-         public int GetidPlanning()
+         public Integer GetidPlanning()
         {
             return idPlanning;
         }
 
-        public void SetidPlanningg(int unIdPlanning)
+        public void SetidPlanningg(Integer unIdPlanning)
         {
             idPlanning = unIdPlanning;
         }
