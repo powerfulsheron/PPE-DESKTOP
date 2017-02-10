@@ -7,6 +7,7 @@ public class Interlocuteur
     private string prenomInterlocuteur;
     private string telInterlocuteur;
     private string mailInterlocuteur;
+	private Structure LaStructure;
 
     public Interlocuteur()
 	{
