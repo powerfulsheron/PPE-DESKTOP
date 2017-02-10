@@ -12,6 +12,9 @@ public class RDV
     private string adresseDerogatoire;
     private string villeDerogatoire;
     private string infoDerogatoire;
+    private string planning;
+    private string interlocuteur;
+    private string typeRDV;
 
     public RDV()
 	{
@@ -85,16 +88,16 @@ public class RDV
     {
         return codeEntreeDerogatoire;
     }
-    public void GetListPlanning()
-    {
-    	//appelle la collection de la classe planning
-    }
-    public void GetListInterlocuteur()
-    {
-    	//appelle la collection de la classe interlocuteur
-    }
-    public void GetListTypeRDV()
-    {
-    	//appelle la collection de la classe typeRDV
-    }
+	public string SetInterlocuteur(unInterlocuteur)
+	{
+		interlocuteur = unInterlocuteur;
+	}
+	public string SetPlanning(unPlanning)
+	{
+		planning = unPlanning;
+	}
+	public string SetTypeRDV(unTypeRDV)
+	{
+		typeRDV = unTypeRDV;
+	}
 }
