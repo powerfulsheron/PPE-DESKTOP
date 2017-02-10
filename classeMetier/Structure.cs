@@ -16,6 +16,8 @@ public class Structure
     private string villeStructure;
     private string planAcces;
     private string infoSupplementaire;
+	private TypeStructure leType;
+	private List<Interlocuteur> lesInterlocuteur;
 
     public Structure()
 	{
@@ -63,6 +65,11 @@ public class Structure
     {
         distanceSiege = unedistanceSiege;
     }
+	
+	public void SetStructureInterlocuteur(string unInterlocuteur)
+	{
+		lesInterlocuteurs.Add(unInterlocuteur);	
+	}
 
     /**  getter  **/
 
