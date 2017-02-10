@@ -17,12 +17,12 @@ namespace PPE_Belle_Table_Classes_métier
         
          public Integer GetidPlanning()
         {
-            return idPlanning;
+            return this.idPlanning;
         }
 
         public void SetidPlanningg(Integer unIdPlanning)
         {
-            idPlanning = unIdPlanning;
+            this.idPlanning = unIdPlanning;
         }
       
     }
