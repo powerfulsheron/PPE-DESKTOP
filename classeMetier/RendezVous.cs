@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 public class RendezVous
 {
@@ -131,4 +132,28 @@ public class RendezVous
 	{
 		this.typeRdv = unTypeRDV;
 	}
+
+
+    // importer la classe connexion et planning
+
+    public List<List<String>> ChargerLesRendezVousPlanning(Connexion maConnexion, Planning planning) 
+    {
+    List<String> unRendezVous = new List<String>();
+    List<List<String>> lesRendezVous = new List<List<String>>();
+
+    DataTable dt = maConnexion.Select("SELECT * FROM RENDEZVOUS WHERE idPlanning="+planning.getId());
+
+
+    foreach (DataRow row in dt.Rows)
+    {
+        unRendezVous.Add(row.ToString());
+        lesRendezVous.Add(unRendezVous);
+        unRendezVous = new List<String>();
+    }
+
+    return lesRendezVous;
+    }
+
+
+    
 }
