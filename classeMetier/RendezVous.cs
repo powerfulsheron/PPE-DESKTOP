@@ -1,103 +1,134 @@
 ﻿using System;
 
-public class RDV
+public class RendezVous
 {
-    private int idRDV;
+    private int idRdv;
     private int codeEntreeDerogatoire;
     
-    private DateTime dateRDV;
+    private DateTime dateRdv;
     private DateTime heureDebut;
     private DateTime heureFin;
 
     private string adresseDerogatoire;
     private string villeDerogatoire;
     private string infoDerogatoire;
-    private string planning;
-    private string interlocuteur;
-    private string typeRDV;
+    // importer les classes planning, interloctueur et type rdv
+    private Planning planning;
+    private Interlocuteur interlocuteur;
+    private TypeRdv typeRdv;
 
-    public RDV()
+    public RendezVous()
 	{
 
 	}
 
-    /**setter**/
-    public void SetdateRDV(DateTime unedateRDV)
+    public DateTime GetdateRdv()
     {
-        dateRDV = unedateRDV;
-    }
-    public void SetheureDebut(DateTime uneheureDebut)
-    {
-        heureDebut = uneheureDebut;
-    }
-    public void SetheureFin(DateTime uneheureFin)
-    {
-        heureFin = uneheureFin;
-    }
-    public void SetadresseDerogatoire(string uneadresseDerogatoire)
-    {
-        adresseDerogatoire = uneadresseDerogatoire;
-    }
-    public void SetvilleDerogatoire(string unevilleDerogatoire)
-    {
-        villeDerogatoire = unevilleDerogatoire;
-    }
-    public void SetinfoDerogatoire(string uneinfoDerogatoire)
-    {
-        infoDerogatoire = uneinfoDerogatoire;
-    }
-    public void SetidRDV ( int uneidRDV)
-    {
-        idRDV = uneidRDV;
-    }
-    public void SetcodeEntreeDerogatoire(int uncodeEntreeDerogatoire)
-    {
-        codeEntreeDerogatoire = uncodeEntreeDerogatoire;
+        return this.dateRdv;
     }
 
-    /**getter**/
-    public DateTime GetdateRDV()
+    public void SetdateRdv(DateTime uneDateRdv)
     {
-        return dateRDV;
+        this.dateRdv = uneDateRdv;
     }
-    public DateTime GetheureDebut()
+
+    public DateTime GetHeureDebut()
     {
-        return heureDebut;
+        return this.heureDebut;
     }
-    public DateTime GetheureFin()
+
+    public void SetHeureDebut(DateTime uneHeureDebut)
     {
-        return heureFin;
+        this.heureDebut = uneHeureDebut;
     }
-    public string GetadresseDerogatoire()
+
+    public DateTime GetHeureFin()
     {
-        return adresseDerogatoire;
+        return this.heureFin;
     }
-    public string GetvilleDerogatoire()
+
+    public void SetHeureFin(DateTime uneHeureFin)
+    {
+        this.heureFin = uneHeureFin;
+    }
+
+    public string GetAdresseDerogatoire()
+    {
+        return this.adresseDerogatoire;
+    }
+
+    public void SetAdresseDerogatoire(string uneAdresseDerogatoire)
+    {
+        this.adresseDerogatoire = uneAdresseDerogatoire;
+    }
+
+    public string GetVilleDerogatoire()
     {
         return villeDerogatoire;
     }
-    public string GetinfoDerogatoire()
+
+    public void SetVilleDerogatoire(string uneVilleDerogatoire)
     {
-        return infoDerogatoire;
+        this.villeDerogatoire = uneVilleDerogatoire;
     }
-    public int GetidRDV()
+
+    public string GetInfoDerogatoire()
     {
-        return idRDV;
+        return this.infoDerogatoire;
     }
-    public int GetcodeEntreeDerogatoire()
+
+    public void SetInfoDerogatoire(string uneInfoDerogatoire)
     {
-        return codeEntreeDerogatoire;
+        this.infoDerogatoire = uneInfoDerogatoire;
     }
-	public string SetInterlocuteur(unInterlocuteur)
+
+    public int GetIdRdv()
+    {
+        return this.idRdv;
+    }
+
+    public void SetIdRdv ( int unIdRdv)
+    {
+        this.idRdv = unIdRdv;
+    }
+
+    public int GetCodeEntreeDerogatoire()
+    {
+        return this.codeEntreeDerogatoire;
+    }
+
+    public void SetCodeEntreeDerogatoire(int unCodeEntreeDerogatoire)
+    {
+        this.codeEntreeDerogatoire = unCodeEntreeDerogatoire;
+    }
+   
+    public Interlocuteur GetInterlocuteur()
+    {   
+        return this.interlocuteur;  
+    }
+
+	public void SetInterlocuteur(Interlocuteur unInterlocuteur)
 	{
-		interlocuteur = unInterlocuteur;
+		this.interlocuteur = unInterlocuteur;
 	}
-	public string SetPlanning(unPlanning)
+
+    public Planning GetPlanning()
+    {
+        return this.planning;
+    }
+
+	public void SetPlanning(Planning unPlanning)
 	{
-		planning = unPlanning;
+		this.planning = unPlanning;
 	}
-	public string SetTypeRDV(unTypeRDV)
+
+    public TypePlanning GetTypePlanning()
+    {
+        return this.typeRdv;
+    }
+
+	public void SetTypeRDV(TypeRdv unTypeRDV)
 	{
-		typeRDV = unTypeRDV;
+		this.typeRdv = unTypeRDV;
 	}
 }
