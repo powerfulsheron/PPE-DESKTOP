@@ -16,6 +16,7 @@ class DatabaseConnect
     private string uid;
     private string password;
     private string connectionString;
+    private Utilisateur utilisateur;
 
     public DatabaseConnect()
     {
@@ -271,6 +272,8 @@ class DatabaseConnect
         }
 
 
+
+
     }
 
     //Select without preparated statement
@@ -335,4 +338,39 @@ class DatabaseConnect
 
     }
 
+    // Manque l'import de la classe utilisateur.
+
+    public Utilisateur GetUtilisateur()
+    {
+        return this.utilisateur;
+    }
+
+    public void SetUtilisateur(Utilisateur unUtilisateur)
+    {
+        this.utilisateur = unUtilisateur;
+    }
+
+    public void UpdatePassword(Utilisateur utilisateur, String newPassword)
+    {
+
+        try
+        {
+            OpenConnection();
+            SqlCommand dbCommand = new SqlCommand("UPDATE utilisateur SET passwordUtilisateur = '@passwordUtilisateur' WHERE numUtilisateur = @numUtilisateur", connection);
+
+            dbCommand.Parameters.AddWithValue("@passwordUtilisateur", newPassword);
+            dbCommand.Parameters.AddWithValue("@nomOld", utilisateur.GetNumUtilsateur());
+            dbCommand.Prepare();
+
+            dbCommand.ExecuteNonQuery();
+
+            CloseConnection();
+        }
+
+        catch (Exception e)
+        {
+            CloseConnection();
+            Console.WriteLine(e.Message);
+        }   
+    }
 }
