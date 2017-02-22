@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-// Manque import classe utilisateur
 
 class DatabaseConnect
 {
@@ -17,7 +16,6 @@ class DatabaseConnect
     private string uid;
     private string password;
     private string connectionString;
-    private Utilisateur utilisateur;
 
     public DatabaseConnect()
     {
@@ -339,28 +337,16 @@ class DatabaseConnect
 
     }
 
-    // Manque l'import de la classe utilisateur.
-
-    public Utilisateur GetUtilisateur()
-    {
-        return this.utilisateur;
-    }
-
-    public void SetUtilisateur(Utilisateur unUtilisateur)
-    {
-        this.utilisateur = unUtilisateur;
-    }
-
-    public void UpdatePassword(Utilisateur utilisateur, String newPassword)
+    public void UpdatePassword(String numUtilisateur, String newPassword)
     {
 
         try
         {
             OpenConnection();
             SqlCommand dbCommand = new SqlCommand("UPDATE utilisateur SET passwordUtilisateur = '@passwordUtilisateur' WHERE numUtilisateur = @numUtilisateur", connection);
-
+            
             dbCommand.Parameters.AddWithValue("@passwordUtilisateur", newPassword);
-            dbCommand.Parameters.AddWithValue("@nomOld", utilisateur.GetNumUtilsateur());
+            dbCommand.Parameters.AddWithValue("@nomOld", numUtilisateur);
             dbCommand.Prepare();
 
             dbCommand.ExecuteNonQuery();
