@@ -143,7 +143,19 @@ public class RendezVous
 
     DataTable dt = maConnexion.Select("SELECT * FROM RENDEZVOUS WHERE idPlanning="+planning.getId());
     }
-
+    
+    public void AjouterUnRendezVous(this)
+    {
+	mysql.Command("INSERT INTO RDV (date_rdv, heure_debut, heure_fin, adresseDerogatoire, villeDerogatoire,  codeEntreeDerogatoire, infoDerogatoire, id_interlocuteur, id_type_rdv, idPlanning) VALUES (this.dateRdv, 
+	 this.heureDebut; this.heureFin, this.adresseDerogatoire, this.villeDerogatoire, this.codeEntreeDerogatoire, this.infoDerogatoire, this.id_interlocuteur, this.id_type_rdv, this.idPlanning)");
+    }
+	
+    public void SupprimerUnRendezVous(int unid_rdv)
+    {
+	mysql.Command("DELETE FROM RDV WHERE id_rdv=@unid_rdv");
+    }
+	
+	
     foreach (DataRow row in dt.Rows)
     {
         unRendezVous.Add(row.ToString());
