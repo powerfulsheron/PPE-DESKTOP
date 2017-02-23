@@ -54,5 +54,8 @@ namespace PPE_Belle_Table_Classes_métier
         {
             DataTable dt = maConnexion.Select("SELECT * FROM MAIL WHERE id_salarie="+utilisateur.getId());
         }
-    }
+        public void AjouterUnMail(){
+        mysql.Command("INSERT INTO MAIL (contenuMail, objetMail, id_interlocuteur) VALUES (this.cotenuMail, this.objetMail, this.id_interlocuteur)");
+        }
+        }
 }
