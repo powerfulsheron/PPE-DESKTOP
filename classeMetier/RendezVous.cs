@@ -162,7 +162,7 @@ public class RendezVous
     public void AjouterUnRendezVous(this)
     {
 	mysql.Command("INSERT INTO RDV (date_rdv, heure_debut, heure_fin, adresseDerogatoire, villeDerogatoire,  codeEntreeDerogatoire, infoDerogatoire, id_interlocuteur, id_type_rdv, idPlanning) VALUES (this.dateRdv, 
-	 this.heureDebut; this.heureFin, this.adresseDerogatoire, this.villeDerogatoire, this.codeEntreeDerogatoire, this.infoDerogatoire, this.id_interlocuteur, this.id_type_rdv, this.idPlanning)");
+	 this.heureDebut, this.heureFin, this.adresseDerogatoire, this.villeDerogatoire, this.codeEntreeDerogatoire, this.infoDerogatoire, this.id_interlocuteur, this.id_type_rdv, this.idPlanning)");
     }
 	
     public void SupprimerUnRendezVous(int unid_rdv)
