@@ -142,7 +142,22 @@ public class RendezVous
     List<List<String> lesRendezVous = new List<List<String>>();
 
     DataTable dt = maConnexion.Select("SELECT * FROM RENDEZVOUS WHERE idPlanning="+planning.getId());
+	    
+    foreach (DataRow row in dt.Rows)
+    {
+        unRendezVous.Add(row.ToString());
+        lesRendezVous.Add(unRendezVous);
+        unRendezVous = new List<String>();
     }
+
+    return lesRendezVous;
+    }
+	
+    public List<List<String>> ChargerLesRendezVousCommercial(Connexion maConnexion, Commercial commercial) 
+    {
+    return ChargerLesRendezVousPlanning( maConnexion, commercial.getPlanning());
+    }
+    
     
     public void AjouterUnRendezVous(this)
     {
@@ -155,17 +170,5 @@ public class RendezVous
 	mysql.Command("DELETE FROM RDV WHERE id_rdv=@unid_rdv");
     }
 	
-	
-    foreach (DataRow row in dt.Rows)
-    {
-        unRendezVous.Add(row.ToString());
-        lesRendezVous.Add(unRendezVous);
-        unRendezVous = new List<String>();
-    }
-
-    return lesRendezVous;
-    }
-
-
     
 }
