@@ -139,10 +139,10 @@ public class RendezVous
     public List<List<String>> ChargerLesRendezVousPlanning(Connexion maConnexion, Planning planning) 
     {
     List<String> unRendezVous = new List<String>();
-    List<List<String>> lesRendezVous = new List<List<String>>();
+    List<List<String> lesRendezVous = new List<List<String>>();
 
     DataTable dt = maConnexion.Select("SELECT * FROM RENDEZVOUS WHERE idPlanning="+planning.getId());
-
+    }
 
     foreach (DataRow row in dt.Rows)
     {
