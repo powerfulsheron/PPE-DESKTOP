@@ -48,5 +48,9 @@ namespace PPE_Belle_Table_Classes_métier
         {
             return dateFinConge;
         }
+        public void AjouterUnConge()
+        {
+        mysql.Command("INSERT INTO CONGES (dateDebutConge, dateFinConge) VALUES (this.dateDebutConge, this.dateFinConge)");
+        }
     }
 }
