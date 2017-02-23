@@ -49,5 +49,10 @@ namespace PPE_Belle_Table_Classes_métier
         {
             return objetMail;
         }
+        
+        public List<List<String>> ChargerLesMails(Connexion maConnexion, int id_salarie) 
+        {
+            DataTable dt = maConnexion.Select("SELECT * FROM MAIL WHERE id_salarie="+utilisateur.getId());
+        }
     }
 }
