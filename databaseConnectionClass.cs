@@ -44,6 +44,23 @@ class DatabaseConnect
         password = Apassword;
         database = Adatabase;
     }
+    public void ConnectionLandP(string anuid, string apassword)
+    {
+        try
+        {
+            
+            password = Apassword;
+            uid = anuid;
+            connectionString = "Data Source=" + server + ";" + "Initial Catalog=" + database + ";" + "User id=" + uid + ";" + "Password=" + password + ";";
+            connection = new SqlConnection(connectionString);
+            OpenConnection();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+        
+    }
 
     public void SetConnection(string connectionString)
     {
