@@ -38,5 +38,12 @@ namespace PPE_Belle_Table_Classes_métier
         {
             return libellePortefeuille;
         }
+        
+        public DataTable chargerLesClients(int idPortefeuille)
+        {
+            DataTable Lesclients = DatabaseConnect.Select("SELECT * FROM interlocuteur WHERE idPortefeuille=@idPortefeuille");
+
+            return Lesclients;
+        }
     }
 }
