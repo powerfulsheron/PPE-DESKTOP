@@ -207,5 +207,12 @@ namespace PPE_Belle_Table_Classes_métier
             DataTable dt = maConnexion.Select("SELECT * FROM MAIL WHERE id_utilisateur=",id_utilisateur);
             //ouéouéoué on sait plus a quoi ça sert
         }
+        
+        public DataTable chargerLePorteFeuille(int idUtilsateur)
+        {
+            DataTable LePortefeuille = DatabaseConnect.Select("SELECT * FROM portefeuille WHERE numUtilisateur=",idUtilsateur);
+
+            return LePortefeuille;
+        }
     }
 }
