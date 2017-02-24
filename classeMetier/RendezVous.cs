@@ -170,5 +170,12 @@ public class RendezVous
 	mysql.Command("DELETE FROM RDV WHERE id_rdv=@unid_rdv");
     }
 	
+	public DataTable chargerUnRendezVous(int idRdv)
+	{
+	    DataTable LeRDV = DatabaseConnect.Select("SELECT * FROM RDV WHERE id_rdv=@idRdv");
+
+	    return LeRDV;
+	}
+	
     
 }
