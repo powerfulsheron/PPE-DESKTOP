@@ -378,3 +378,27 @@ class DatabaseConnect
         }   
     }
 }
+
+class program jesse  
+    {   
+        static void main (string[] args)
+        {
+        AjouterUser(Jean, Michel, mail);
+        AjouterStructure(Nokia, email, téléphone);
+        } 
+    
+
+
+
+         public void AjouterUser(Nom, prénom, email)
+        {
+        DatabaseConnect(connectionString);
+        insert (Nom, prénom, email);
+        }
+
+        public void AjouterStructure(Nom,email, téléphone)
+        {
+        DatabaseConnect(connectionString);
+        insert(Nom,email, téléphone);
+        }
+    }
