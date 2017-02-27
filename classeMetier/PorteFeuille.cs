@@ -1,10 +1,12 @@
-﻿using System;
+﻿using BelleTable.DatabaseConnectClass;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PPE_Belle_Table_Classes_métier
+namespace BelleTable.PorteFeuilleClass
 {
     class PorteFeuille
     {
@@ -41,7 +43,7 @@ namespace PPE_Belle_Table_Classes_métier
         
         public DataTable chargerLesClients(int idPortefeuille)
         {
-            DataTable Lesclients = DatabaseConnect.Select("SELECT * FROM interlocuteur WHERE idPortefeuille=@idPortefeuille");
+            //DataTable Lesclients = DatabaseConnect.Select("SELECT * FROM interlocuteur WHERE idPortefeuille=@idPortefeuille");
 
             return Lesclients;
         }

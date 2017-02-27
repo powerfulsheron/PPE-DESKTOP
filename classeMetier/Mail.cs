@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BelleTable.DatabaseConnectClass;
+using System.Data;
 
-namespace BelleTable.Mail
+namespace BelleTable.MailClass
 {
     class Mail
     {
@@ -50,12 +52,15 @@ namespace BelleTable.Mail
             return objetMail;
         }
         
-        public List<List<String>> ChargerLesMails(Connexion maConnexion, int id_salarie) 
+    /*    public List<List<String>> ChargerLesMails( maConnexion, int id_salarie) 
         {
             DataTable dt = maConnexion.Select("SELECT * FROM MAIL WHERE id_salarie="+utilisateur.getId());
         }
-        public void AjouterUnMail(){
-        mysql.Command("INSERT INTO MAIL (contenuMail, objetMail, id_interlocuteur) VALUES (this.cotenuMail, this.objetMail, this.id_interlocuteur)");
+
+        public void AjouterUnMail()
+        {
+            mysql.Command("INSERT INTO MAIL (contenuMail, objetMail, id_interlocuteur) VALUES (this.cotenuMail, this.objetMail, this.id_interlocuteur)");
         }
+        */
         }
 }

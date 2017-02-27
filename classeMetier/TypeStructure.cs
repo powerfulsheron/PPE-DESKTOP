@@ -1,40 +1,41 @@
 ﻿using System;
+using System.Collections.Generic;
 
-public class TypeStructure
+namespace BelleTable.TypeStructureClass
 {
-    private int codeTypeStructure;
 
-    private string libelleTypeStructure;
-	
-	private List<Structure> lesStructure;
-
-	public TypeStructure()
-	{
-
-	}
-
-    /**  setter **/
-    public void SetcodeTypeStructure(int uncodeTypeStructure)
+    public class TypeStructure
     {
-        codeTypeStructure = uncodeTypeStructure;
-    }
-    public void SetlibelleTypeStructure(string unlibelleTypeStructure)
-    {
-        libelleTypeStructure = unlibelleTypeStructure;
-    }
-	
-	public void SetTypeStructureStructure(int idStructure)
-	{
-		lesStructures.Add(idStructure);	
-	}
+        private int codeTypeStructure;
 
-    /**  getter **/
-    public int GetcodeTypeStructure()
-    {
-        return codeTypeStructure;
-    }
-    public string GetlibelleTypeStructure()
-    {
-        return libelleTypeStructure;
+        private string libelleTypeStructure;
+
+        private List<Structure> lesStructure;
+
+        public TypeStructure()
+        {
+
+        }
+
+        /**  setter **/
+        public void SetcodeTypeStructure(int uncodeTypeStructure)
+        {
+            codeTypeStructure = uncodeTypeStructure;
+        }
+        public void SetlibelleTypeStructure(string unlibelleTypeStructure)
+        {
+            libelleTypeStructure = unlibelleTypeStructure;
+        }
+
+
+        /**  getter **/
+        public int GetcodeTypeStructure()
+        {
+            return codeTypeStructure;
+        }
+        public string GetlibelleTypeStructure()
+        {
+            return libelleTypeStructure;
+        }
     }
 }
