@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using BelleTable.TypeStructureClass;
+using BelleTable.InterlocuteurClass;
 public class Structure
 {
     private int numStructure;
@@ -17,7 +18,7 @@ public class Structure
     private string planAcces;
     private string infoSupplementaire;
 	private TypeStructure leType;
-	private List<Interlocuteur> lesInterlocuteur;
+	private List<Interlocuteur> lesInterlocuteurs;
 
     public Structure()
 	{
@@ -66,9 +67,10 @@ public class Structure
         distanceSiege = unedistanceSiege;
     }
 	
-	public void SetStructureInterlocuteur(string unInterlocuteur)
+    //La méthode ci-dessous est très bizarre...
+	public void SetStructureInterlocuteur(Interlocuteur unInterlocuteur)
 	{
-		lesInterlocuteurs.Add(unInterlocuteur);	
+        lesInterlocuteurs.Add(unInterlocuteur);	
 	}
 
     /**  getter  **/
