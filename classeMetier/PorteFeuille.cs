@@ -12,7 +12,7 @@ namespace BelleTable.PorteFeuilleClass
     {
         private int idPortefeuille;
         private string libellePortefeuille;
-
+        private DatabaseConnect maDatabase;
         public PorteFeuille()
         {
 
@@ -43,8 +43,7 @@ namespace BelleTable.PorteFeuilleClass
         
         public DataTable chargerLesClients(int idPortefeuille)
         {
-            //DataTable Lesclients = DatabaseConnect.Select("SELECT * FROM interlocuteur WHERE idPortefeuille=@idPortefeuille");
-
+            DataTable Lesclients = maDatabase.Select("SELECT * FROM interlocuteur WHERE idPortefeuille=@idPortefeuille");
             return Lesclients;
         }
     }

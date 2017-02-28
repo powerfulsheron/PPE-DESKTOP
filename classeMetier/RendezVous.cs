@@ -5,6 +5,7 @@ using BelleTable.InterlocuteurClass;
 using BelleTable.DatabaseConnectClass;
 using BelleTable.PlanningClass;
 using BelleTable.TypeRDVClass;
+using BelleTable.UtilisateurClass;
 
 namespace BelleTable.RendezVousClass
 {
@@ -24,6 +25,7 @@ namespace BelleTable.RendezVousClass
         private Planning planning;
         private Interlocuteur interlocuteur;
         private TypeRDV typeRdv;
+        private DatabaseConnect maDatabase;
 
         public RendezVous()
         {
@@ -120,69 +122,57 @@ namespace BelleTable.RendezVousClass
             interlocuteur = unInterlocuteur;
         }
 
-        public Planning GetPlanning()
+
+
+        public void SetTypeRDV(TypeRDV unTypeRDV)
         {
-            return planning;
+            typeRdv = unTypeRDV;
         }
 
-        public void SetPlanning(Planning unPlanning)
+
+        /*
+
+        public List<String> ChargerLesRendezVousPlanning(Planning planning) 
         {
-            planning = unPlanning;
+        List<String> unRendezVous = new List<String>();
+        List<String> lesRendezVous = new List<String>();
+
+        DataTable dt = maDatabase.Select("SELECT * FROM RENDEZVOUS WHERE idPlanning="+planning.GetidPlanning());
+
+        foreach (DataRow row in dt.Rows)
+        {
+            unRendezVous.Add(row.ToString());
+            lesRendezVous.Add(unRendezVous.ToString());
+            unRendezVous = new List<String>();
         }
 
-           public TypePlanning GetTypePlanning()
-           {
-               return typeRdv;
-           }
+        return lesRendezVous;
+        }
+        */
 
-           public void SetTypeRDV(TypeRDV unTypeRDV)
-           {
-               typeRdv = unTypeRDV;
-           }
+        /*
+        public List<List<String>> ChargerLesRendezVousCommercial(Utilisateur unCommercial) 
+        {
+            return ChargerLesRendezVousPlanning(unCommercial.getPlanning());
+        }
+        */
 
+        public void AjouterUnRendezVous(RendezVous unRdv)
+        {
+            maDatabase.Insert("INSERT INTO RDV (date_rdv, heure_debut, heure_fin, adresseDerogatoire, villeDerogatoire,  codeEntreeDerogatoire, infoDerogatoire, id_interlocuteur, id_type_rdv, idPlanning) VALUES (this.dateRdv," +
+            "@heureDebut, @heureFin, @adresseDerogatoire, @villeDerogatoire, @codeEntreeDerogatoire, @infoDerogatoire, @id_interlocuteur, @id_type_rdv, @idPlanning)");
+        }
 
-           // importer la classe connexion et planning
+        public void SupprimerUnRendezVous(int unid_rdv)
+        {
+        maDatabase.Delete("DELETE FROM RDV WHERE id_rdv=@unid_rdv");
+        }
 
-           public List<List<String>> ChargerLesRendezVousPlanning(maConnexion, Planning planning) 
-           {
-           List<String> unRendezVous = new List<String>();
-           List<String> lesRendezVous = new List<String>();
-
-            DataTable dt = maConnexion.Select("SELECT * FROM RENDEZVOUS WHERE idPlanning="+planning.getId());
-
-           foreach (DataRow row in dt.Rows)
-           {
-               unRendezVous.Add(row.ToString());
-               lesRendezVous.Add(unRendezVous);
-               unRendezVous = new List<String>();
-           }
-
-           return lesRendezVous;
-           }
-
-           public List<List<String>> ChargerLesRendezVousCommercial(Connexion maConnexion, Commercial commercial) 
-           {
-           return ChargerLesRendezVousPlanning( maConnexion, commercial.getPlanning());
-           }
-
-
-           public void AjouterUnRendezVous(RendezVous unRdv)
-           {
-           //mysql.Command("INSERT INTO RDV (date_rdv, heure_debut, heure_fin, adresseDerogatoire, villeDerogatoire,  codeEntreeDerogatoire, infoDerogatoire, id_interlocuteur, id_type_rdv, idPlanning) VALUES (this.dateRdv, 
-           // this.heureDebut, this.heureFin, this.adresseDerogatoire, this.villeDerogatoire, this.codeEntreeDerogatoire, this.infoDerogatoire, this.id_interlocuteur, this.id_type_rdv, this.idPlanning)");
-           }
-
-           public void SupprimerUnRendezVous(int unid_rdv)
-           {
-           //mysql.Command("DELETE FROM RDV WHERE id_rdv=@unid_rdv");
-           }
-
-           public DataTable chargerUnRendezVous(int idRdv)
-           {
-              // DataTable LeRDV = DatabaseConnect.Select("SELECT * FROM RDV WHERE id_rdv=@idRdv");
-
-               return LeRDV;
-           }
+        public DataTable chargerUnRendezVous(int idRdv)
+        {
+            DataTable LeRDV = maDatabase.Select("SELECT * FROM RDV WHERE id_rdv=@idRdv");
+            return LeRDV;
+        }
        
 
     }
