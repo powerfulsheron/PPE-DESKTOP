@@ -4,23 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PPE_Belle_Table_Classes_métier
+namespace BelleTable.PlanningClass
 {
     class Planning
     {
-        private Integer idPlanning;
+        private int idPlanning;
 
         Planning()
         {
 
         }
         
-         public Integer GetidPlanning()
+         public int GetidPlanning()
         {
             return this.idPlanning;
         }
 
-        public void SetidPlanningg(Integer unIdPlanning)
+        public void SetidPlanningg(int unIdPlanning)
         {
             this.idPlanning = unIdPlanning;
         }

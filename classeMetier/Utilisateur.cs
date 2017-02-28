@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BelleTable.CongesClass;
+using BelleTable.MailClass;
+using BelleTable.PorteFeuilleClass;
+using BelleTable.PlanningClass;
+using BelleTable.TypeUtilisateurClass;
 
-namespace PPE_Belle_Table_Classes_métier
+namespace BelleTable.UtilisateurClass
 {
     class Utilisateur
     {
-        private Integer numUtilsateur;
+        private int numUtilsateur;
         private String nomUtilisateur;
         private String adresseUtilisateur;
         private String cpUtilisateur;
@@ -19,10 +24,10 @@ namespace PPE_Belle_Table_Classes_métier
         private String loginUtilisateur;
         private String passwordUtilisateur;
         private DateTime dateDernierLogin;    
-        private Integer nbTentatives;
-        private Float distanceParcourueSemaine;
+        private int nbTentatives;
+        private float distanceParcourueSemaine;
         
-        private List<Conge> conges;
+        private List<Conges> conges;
         private PorteFeuille portefeuille;
         private List<Mail> mails;
         private Planning planning;
@@ -33,12 +38,12 @@ namespace PPE_Belle_Table_Classes_métier
 
         }
 
-        public Integer GetNumUtilsateur()
+        public int GetNumUtilsateur()
         {
            return this.numUtilsateur;
         }
                       
-        public void SetNumUtilsateur(Integer unNumUtilsateur)
+        public void SetNumUtilsateur(int unNumUtilsateur)
         {
             this.numUtilsateur = unNumUtilsateur;
         }
@@ -90,7 +95,7 @@ namespace PPE_Belle_Table_Classes_métier
         
         public void SetVilleUtilisateur(String uneVilleUtilisateur)
         {
-            this.villeUtilisateur = UnevilleUtilisateur;
+            this.villeUtilisateur = uneVilleUtilisateur;
         }
         
         public String GetTelUtilisateur()
@@ -120,7 +125,7 @@ namespace PPE_Belle_Table_Classes_métier
         
         public void SetLoginUtilisateur(String unLoginUtilisateur)
         {
-            this.loginUtilisateur = unloginUtilisateur;
+            this.loginUtilisateur = unLoginUtilisateur;
         }
         
         public String GetPasswordUtilisateur()
@@ -143,32 +148,32 @@ namespace PPE_Belle_Table_Classes_métier
             this.dateDernierLogin = uneDateDernierLogin;
         }
         
-        public Integer GetNbTentatives()
+        public int GetNbTentatives()
         {
             return this.nbTentatives;
         }
         
-        public void SetNbTentatives(Integer unNbTentatives)
+        public void SetNbTentatives(int unNbTentatives)
         {
             this.nbTentatives = unNbTentatives;
         }
         
-        public Float GetDistanceParcourueSemaine()
+        public float GetDistanceParcourueSemaine()
         {
             return this.distanceParcourueSemaine;
         }
         
-        public void SetDistanceParcourueSemaine(Float uneDistanceParcourueSemaine)
+        public void SetDistanceParcourueSemaine(float uneDistanceParcourueSemaine)
         {
             this.distanceParcourueSemaine = uneDistanceParcourueSemaine;
         }
         
-        public List<Conge> GetConges()
+        public List<Conges> GetConges()
         {
             return this.conges;
         }
         
-        public void SetConges(List<Conge> uneListeConges)
+        public void SetConges(List<Conges> uneListeConges)
         {
             this.conges=uneListeConges;
         }
@@ -202,7 +207,7 @@ namespace PPE_Belle_Table_Classes_métier
         {
             this.typeUtilisateur=unTypeUtilisateur;
         }
-        public void ChargerUtilisateur(Connexion maConnexion, int id_utilisateur) 
+      /*  public void ChargerUtilisateur(Connexion maConnexion, int id_utilisateur) 
         {
             DataTable dt = maConnexion.Select("SELECT * FROM MAIL WHERE id_utilisateur=",id_utilisateur);
             //ouéouéoué on sait plus a quoi ça sert
@@ -214,5 +219,6 @@ namespace PPE_Belle_Table_Classes_métier
 
             return LePortefeuille;
         }
+        */
     }
 }
