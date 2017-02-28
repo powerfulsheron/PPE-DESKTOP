@@ -8,6 +8,8 @@ using BelleTable.MailClass;
 using BelleTable.PorteFeuilleClass;
 using BelleTable.PlanningClass;
 using BelleTable.TypeUtilisateurClass;
+using System.Data;
+using BelleTable.DatabaseConnectClass;
 
 namespace BelleTable.UtilisateurClass
 {
@@ -26,11 +28,12 @@ namespace BelleTable.UtilisateurClass
         private DateTime dateDernierLogin;    
         private int nbTentatives;
         private float distanceParcourueSemaine;
-        
+
+        private DatabaseConnect maDatabase;
         private List<Conges> conges;
         private PorteFeuille portefeuille;
         private List<Mail> mails;
-        private Planning planning;
+        public Planning planning;
         private TypeUtilisateur typeUtilisateur;
 
         public Utilisateur()
@@ -40,185 +43,185 @@ namespace BelleTable.UtilisateurClass
 
         public int GetNumUtilsateur()
         {
-           return this.numUtilsateur;
+           return numUtilsateur;
         }
                       
         public void SetNumUtilsateur(int unNumUtilsateur)
         {
-            this.numUtilsateur = unNumUtilsateur;
+            numUtilsateur = unNumUtilsateur;
         }
         
         public String GetNomUtilisateur()
         {
-            return this.nomUtilisateur;
+            return nomUtilisateur;
         }
         
         public void SetNomUtilisateur(String unNomUtilisateur)
         {
-            this.nomUtilisateur = unNomUtilisateur;
+            nomUtilisateur = unNomUtilisateur;
         }
         
         public String GetPrenomUtilisateur()
         {
-            return this.prenomUtilisateur;
+            return prenomUtilisateur;
         }
         
         public void SetPrenomUtilisateur(String unPrenomUtilisateur)
         {
-            this.prenomUtilisateur = unPrenomUtilisateur;
+            prenomUtilisateur = unPrenomUtilisateur;
         }
         
         public String GetAdresseUtilisateur()
         {
-            return this.adresseUtilisateur;
+            return adresseUtilisateur;
         }
         
         public void SetAdresseUtilisateur(String uneAdresseUtilisateur)
         {
-            this.adresseUtilisateur = uneAdresseUtilisateur;
+            adresseUtilisateur = uneAdresseUtilisateur;
         }
         
         public String GetCpUtilisateur()
         {
-            return this.cpUtilisateur;
+            return cpUtilisateur;
         }
         
         public void SetCpUtilisateur(String unCpUtilisateur)
         {
-            this.cpUtilisateur = unCpUtilisateur;
+            cpUtilisateur = unCpUtilisateur;
         }
         
         public String GetVilleUtilisateur()
         {
-            return this.villeUtilisateur;
+            return villeUtilisateur;
         }
         
         public void SetVilleUtilisateur(String uneVilleUtilisateur)
         {
-            this.villeUtilisateur = uneVilleUtilisateur;
+            villeUtilisateur = uneVilleUtilisateur;
         }
         
         public String GetTelUtilisateur()
         {
-            return this.telUtilisateur;
+            return telUtilisateur;
         }
         
         public void SetTelUtilisateur(String unTelUtilisateur)
         {
-            this.telUtilisateur = unTelUtilisateur;
+            telUtilisateur = unTelUtilisateur;
         }
                 
         public String GetMailUtilisateur()
         {
-            return this.mailUtilisateur;
+            return mailUtilisateur;
         }
         
         public void SetMailUtilisateur(String unMailUtilisateur)
         {
-            this.mailUtilisateur = unMailUtilisateur;
+            mailUtilisateur = unMailUtilisateur;
         }
                
         public String GetLoginUtilisateur()
         {
-            return this.loginUtilisateur;
+            return loginUtilisateur;
         }
         
         public void SetLoginUtilisateur(String unLoginUtilisateur)
         {
-            this.loginUtilisateur = unLoginUtilisateur;
+            loginUtilisateur = unLoginUtilisateur;
         }
         
         public String GetPasswordUtilisateur()
         {
-            return this.passwordUtilisateur;
+            return passwordUtilisateur;
         }
         
         public void SetPasswordUtilisateur(String unPasswordUtilisateur)
         {
-            this.passwordUtilisateur = unPasswordUtilisateur;
+            passwordUtilisateur = unPasswordUtilisateur;
         }
         
         public DateTime GetDateDernierLogin()
         {
-            return this.dateDernierLogin;
+            return dateDernierLogin;
         }
         
         public void SetdateDernierLogin(DateTime uneDateDernierLogin)
         {
-            this.dateDernierLogin = uneDateDernierLogin;
+            dateDernierLogin = uneDateDernierLogin;
         }
         
         public int GetNbTentatives()
         {
-            return this.nbTentatives;
+            return nbTentatives;
         }
         
         public void SetNbTentatives(int unNbTentatives)
         {
-            this.nbTentatives = unNbTentatives;
+            nbTentatives = unNbTentatives;
         }
         
         public float GetDistanceParcourueSemaine()
         {
-            return this.distanceParcourueSemaine;
+            return distanceParcourueSemaine;
         }
         
         public void SetDistanceParcourueSemaine(float uneDistanceParcourueSemaine)
         {
-            this.distanceParcourueSemaine = uneDistanceParcourueSemaine;
+            distanceParcourueSemaine = uneDistanceParcourueSemaine;
         }
         
         public List<Conges> GetConges()
         {
-            return this.conges;
+            return conges;
         }
         
         public void SetConges(List<Conges> uneListeConges)
         {
-            this.conges=uneListeConges;
+            conges=uneListeConges;
         }
         
         public Planning GetPlanning()
         {
-            return this.planning;
+            return planning;
         }
         
         public void SetPlanning(Planning unPlanning)
         {
-            this.planning=unPlanning;
+            planning=unPlanning;
         }
                        
         public List<Mail> GetMails()
         {
-            return this.mails;
+            return mails;
         }
         
         public void SetMails(List<Mail> uneListeMails)
         {
-            this.mails=uneListeMails;
+            mails=uneListeMails;
         }
                         
         public TypeUtilisateur GetTypeUtilisateur()
         {
-            return this.typeUtilisateur;
+            return typeUtilisateur;
         }
         
         public void SetTypeUtilisateur(TypeUtilisateur unTypeUtilisateur)
         {
-            this.typeUtilisateur=unTypeUtilisateur;
+            typeUtilisateur=unTypeUtilisateur;
         }
-      /*  public void ChargerUtilisateur(Connexion maConnexion, int id_utilisateur) 
+        public DataTable ChargerUtilisateur(int id_utilisateur) 
         {
-            DataTable dt = maConnexion.Select("SELECT * FROM MAIL WHERE id_utilisateur=",id_utilisateur);
-            //ouéouéoué on sait plus a quoi ça sert
+            DataTable dt = maDatabase.Select("SELECT * FROM MAIL WHERE id_utilisateur=@" + id_utilisateur);
+            return dt;
         }
         
         public DataTable chargerLePorteFeuille(int idUtilsateur)
         {
-            DataTable LePortefeuille = DatabaseConnect.Select("SELECT * FROM portefeuille WHERE numUtilisateur=",idUtilsateur);
+            DataTable LePortefeuille = maDatabase.Select("SELECT * FROM portefeuille WHERE numUtilisateur=@" + idUtilsateur);
 
             return LePortefeuille;
         }
-        */
+        
     }
 }

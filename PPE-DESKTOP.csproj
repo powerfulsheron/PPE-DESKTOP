@@ -4,9 +4,9 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProjectGuid>{0F0A4D24-4D19-4453-8C05-8CE27833D3E0}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Library</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
-    <AssemblyName>WindowsApplication</AssemblyName>
+    <AssemblyName>ClassLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -33,6 +33,9 @@
   <PropertyGroup>
     <RootNamespace>PPE_DESKTOP</RootNamespace>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -45,6 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Cahier des charges - Belle table - V1.2 - FINAL.docx" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="..\..\..\Desktop\ClassDiagram2.cd">
+      <Link>ClassDiagram2.cd</Link>
+    </None>
     <None Include="classeMetier\README.md" />
     <None Include="diagrammePPE.xls" />
     <None Include="Maquette.zip" />

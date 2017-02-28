@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BelleTable.DatabaseConnectClass;
+using BelleTable.UtilisateurClass;
 using System.Data;
 
 namespace BelleTable.MailClass
@@ -13,6 +14,8 @@ namespace BelleTable.MailClass
         private int numMail;
         private string contenuMail;
         private string objetMail;
+        private DatabaseConnect maDatabase;
+        private Utilisateur unUtilisateur;
 
         public Mail()
         {
@@ -52,15 +55,16 @@ namespace BelleTable.MailClass
             return objetMail;
         }
         
-    /*    public List<List<String>> ChargerLesMails( maConnexion, int id_salarie) 
+         public DataTable ChargerLesMails(int id_salarie) 
         {
-            DataTable dt = maConnexion.Select("SELECT * FROM MAIL WHERE id_salarie="+utilisateur.getId());
+            DataTable dt = maDatabase.Select("SELECT * FROM MAIL WHERE id_salarie=@"+unUtilisateur.GetNumUtilsateur());
+            return dt;
         }
 
         public void AjouterUnMail()
         {
-            mysql.Command("INSERT INTO MAIL (contenuMail, objetMail, id_interlocuteur) VALUES (this.cotenuMail, this.objetMail, this.id_interlocuteur)");
+            maDatabase.Insert("INSERT INTO MAIL (contenuMail, objetMail, id_interlocuteur) VALUES (this.cotenuMail, this.objetMail, this.id_interlocuteur)");
         }
-        */
+        
         }
 }

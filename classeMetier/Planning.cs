@@ -12,7 +12,7 @@ namespace BelleTable.PlanningClass
 
         Planning()
         {
-
+            
         }
         
          public int GetidPlanning()
