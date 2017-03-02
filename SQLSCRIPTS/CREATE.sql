@@ -18,7 +18,7 @@ CREATE TABLE UTILISATEUR(
         mailUtilisateur          Varchar (25) NOT NULL ,
         distanceParcourueSemaine Int ,
         loginUtilisateur         Varchar (30) ,
-        passwordUtilisateur      Varchar (25) ,
+        passwordUtilisateur      Varchar (50) ,
         dateDernierLogin         Datetime ,
         nbTentatives             Int ,
         codeTypeUtilisateur      Int NOT NULL ,
