@@ -34,7 +34,7 @@ CREATE TABLE UTILISATEUR(
 
 CREATE TABLE TYPERDV(
         id_type_rdv Int NOT NULL ,
-        type_rdv    Varchar (25) NOT NULL ,
+        type_rdv    Varchar (40) NOT NULL ,
         PRIMARY KEY (id_type_rdv )
 )ENGINE=InnoDB;
 
