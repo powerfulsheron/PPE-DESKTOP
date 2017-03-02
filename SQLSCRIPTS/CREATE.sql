@@ -51,7 +51,7 @@ CREATE TABLE STRUCTURE(
         ville_structure      Varchar (25) NOT NULL ,
         distance_siege       Float NOT NULL ,
         plan_accees          Varchar (25) NOT NULL ,
-        infos_supplementaire Varchar (25) NOT NULL ,
+        infos_supplementaire Varchar (100) NOT NULL ,
         codeTypeStructure    Int NOT NULL ,
         PRIMARY KEY (num_structure )
 )ENGINE=InnoDB;
