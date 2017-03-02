@@ -193,10 +193,10 @@ CREATE TABLE APPARTENIR(
 
 
 #------------------------------------------------------------
-# Table: POSER
+# Table: CONGE_UTILISATEUR
 #------------------------------------------------------------
 
-CREATE TABLE POSER(
+CREATE TABLE CONGE_UTILISATEUR(
         numUtilisateur Int NOT NULL ,
         numConge       Int NOT NULL ,
         PRIMARY KEY (numUtilisateur ,numConge )
