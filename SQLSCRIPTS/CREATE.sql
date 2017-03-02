@@ -182,10 +182,10 @@ CREATE TABLE PORTEFEUILLE(
 
 
 #------------------------------------------------------------
-# Table: APPARTENIR
+# Table: INTERLOCUTEUR_STRUCTURE
 #------------------------------------------------------------
 
-CREATE TABLE APPARTENIR(
+CREATE TABLE INTERLOCUTEUR_STRUCTURE(
         id_interlocuteur Int NOT NULL ,
         num_structure    Int NOT NULL ,
         PRIMARY KEY (id_interlocuteur ,num_structure )
