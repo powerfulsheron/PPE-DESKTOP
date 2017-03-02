@@ -74,10 +74,10 @@ CREATE TABLE INTERLOCUTEUR(
 
 
 #------------------------------------------------------------
-# Table: PARTICULIER
+# Table: INDIVIDU
 #------------------------------------------------------------
 
-CREATE TABLE PARTICULIER(
+CREATE TABLE INDIVIDU(
         num_individu         int (11) Auto_increment  NOT NULL ,
         adresse_individu     Varchar (25) NOT NULL ,
         cp_individu          Varchar (25) NOT NULL ,
