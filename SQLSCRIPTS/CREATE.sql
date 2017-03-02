@@ -9,8 +9,8 @@
 
 CREATE TABLE UTILISATEUR(
         numUtilisateur           int (11) Auto_increment  NOT NULL ,
-        prenomUtilisateur        Varchar (25) NOT NULL ,
         nomUtilisateur           Varchar (25) NOT NULL ,
+        prenomUtilisateur        Varchar (25) NOT NULL ,
         adresseUtilisateur       Varchar (25) NOT NULL ,
         cpUtilisateur            Varchar (25) NOT NULL ,
         villeUtilisateur         Varchar (25) NOT NULL ,
