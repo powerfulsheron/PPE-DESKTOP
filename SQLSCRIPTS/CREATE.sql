@@ -9,6 +9,7 @@
 
 CREATE TABLE UTILISATEUR(
         numUtilisateur           int (11) Auto_increment  NOT NULL ,
+        prenomUtilisateur        Varchar (25) NOT NULL ,
         nomUtilisateur           Varchar (25) NOT NULL ,
         adresseUtilisateur       Varchar (25) NOT NULL ,
         cpUtilisateur            Varchar (25) NOT NULL ,
@@ -16,7 +17,6 @@ CREATE TABLE UTILISATEUR(
         telUtilisateur           Varchar (25) NOT NULL ,
         mailUtilisateur          Varchar (25) NOT NULL ,
         distanceParcourueSemaine Int ,
-        prenomUtilisateur        Varchar (25) NOT NULL ,
         loginUtilisateur         Varchar (30) ,
         passwordUtilisateur      Varchar (25) ,
         dateDernierLogin         Datetime ,
