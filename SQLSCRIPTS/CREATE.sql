@@ -15,7 +15,7 @@ CREATE TABLE UTILISATEUR(
         cpUtilisateur            Varchar (25) NOT NULL ,
         villeUtilisateur         Varchar (25) NOT NULL ,
         telUtilisateur           Varchar (25) NOT NULL ,
-        mailUtilisateur          Varchar (25) NOT NULL ,
+        mailUtilisateur          Varchar (40) NOT NULL ,
         distanceParcourueSemaine Int ,
         loginUtilisateur         Varchar (30) ,
         passwordUtilisateur      Varchar (50) ,
@@ -66,7 +66,7 @@ CREATE TABLE INTERLOCUTEUR(
         nom_interlocuteur    Varchar (25) NOT NULL ,
         prenom_interlocuteur Varchar (25) NOT NULL ,
         tel_interlocuteur    Varchar (25) NOT NULL ,
-        mail_interlocuteur   Varchar (25) NOT NULL ,
+        mail_interlocuteur   Varchar (40) NOT NULL ,
         num_individu         Int NOT NULL ,
         idPortefeuille       Int ,
         PRIMARY KEY (id_interlocuteur )
@@ -84,7 +84,7 @@ CREATE TABLE INDIVIDU(
         ville_individu       Varchar (25) NOT NULL ,
         distance_siege       Float NOT NULL ,
         plan_accees          Varchar (25) NOT NULL ,
-        infos_supplementaire Varchar (25) NOT NULL ,
+        infos_supplementaire Varchar (100) NOT NULL ,
         id_interlocuteur     Int NOT NULL ,
         PRIMARY KEY (num_individu )
 )ENGINE=InnoDB;
@@ -97,8 +97,8 @@ CREATE TABLE INDIVIDU(
 CREATE TABLE RDV(
         id_rdv                int (11) Auto_increment  NOT NULL ,
         date_rdv              Date NOT NULL ,
-        heure_debut           Date NOT NULL ,
-        heure_fin             Date NOT NULL ,
+        heure_debut           Time NOT NULL ,
+        heure_fin             Time NOT NULL ,
         adresseDerogatoire    Varchar (50) ,
         villeDerogatoire      Varchar (30) ,
         codeEntreeDerogatoire Int ,
@@ -116,8 +116,8 @@ CREATE TABLE RDV(
 
 CREATE TABLE CONGES(
         numConge       Int NOT NULL ,
-        dateDebutConge Datetime ,
-        dateFinConge   Datetime ,
+        dateDebutConge Date ,
+        dateFinConge   Date ,
         PRIMARY KEY (numConge )
 )ENGINE=InnoDB;
 
@@ -193,10 +193,10 @@ CREATE TABLE INTERLOCUTEUR_STRUCTURE(
 
 
 #------------------------------------------------------------
-# Table: CONGE_UTILISATEUR
+# Table: CONGES_UTILISATEUR
 #------------------------------------------------------------
 
-CREATE TABLE CONGE_UTILISATEUR(
+CREATE TABLE CONGES_UTILISATEUR(
         numUtilisateur Int NOT NULL ,
         numConge       Int NOT NULL ,
         PRIMARY KEY (numUtilisateur ,numConge )
@@ -229,7 +229,7 @@ ALTER TABLE PLANNING ADD CONSTRAINT FK_PLANNING_numUtilisateur FOREIGN KEY (numU
 ALTER TABLE PORTEFEUILLE ADD CONSTRAINT FK_PORTEFEUILLE_numUtilisateur FOREIGN KEY (numUtilisateur) REFERENCES UTILISATEUR(numUtilisateur);
 ALTER TABLE INTERLOCUTEUR_STRUCTURE ADD CONSTRAINT FK_INTERLOCUTEUR_STRUCTURE_id_interlocuteur FOREIGN KEY (id_interlocuteur) REFERENCES INTERLOCUTEUR(id_interlocuteur);
 ALTER TABLE INTERLOCUTEUR_STRUCTURE ADD CONSTRAINT FK_INTERLOCUTEUR_STRUCTURE_num_structure FOREIGN KEY (num_structure) REFERENCES STRUCTURE(num_structure);
-ALTER TABLE CONGE_UTILISATEUR ADD CONSTRAINT FK_CONGE_UTILISATEUR_numUtilisateur FOREIGN KEY (numUtilisateur) REFERENCES UTILISATEUR(numUtilisateur);
-ALTER TABLE CONGE_UTILISATEUR ADD CONSTRAINT FK_CONGE_UTILISATEUR_numConge FOREIGN KEY (numConge) REFERENCES CONGES(numConge);
+ALTER TABLE CONGES_UTILISATEUR ADD CONSTRAINT FK_CONGES_UTILISATEUR_numUtilisateur FOREIGN KEY (numUtilisateur) REFERENCES UTILISATEUR(numUtilisateur);
+ALTER TABLE CONGES_UTILISATEUR ADD CONSTRAINT FK_CONGES_UTILISATEUR_numConge FOREIGN KEY (numConge) REFERENCES CONGES(numConge);
 ALTER TABLE SUIVRE ADD CONSTRAINT FK_SUIVRE_id_rdv FOREIGN KEY (id_rdv) REFERENCES RDV(id_rdv);
 ALTER TABLE SUIVRE ADD CONSTRAINT FK_SUIVRE_id_rdv_RDV FOREIGN KEY (id_rdv_RDV) REFERENCES RDV(id_rdv);
