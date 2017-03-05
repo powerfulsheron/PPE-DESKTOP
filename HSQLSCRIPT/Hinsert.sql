@@ -62,8 +62,8 @@ insert into STRUCTURE (num_structure, denomination_sociale, adresse_structure , 
 insert into STRUCTURE (num_structure, denomination_sociale, adresse_structure ,  cp_structure , ville_structure, distance_siege, plan_accees, infos_supplementaire, codeTypeStructure, version) values 
 (4,'structure 4', '97194 Fairfield Hill', '75000', 'Fengshan', 4, '685 Michigan Lane', 'Networked coherent contingency', 4 , 0);
 insert into STRUCTURE (num_structure, denomination_sociale, adresse_structure ,  cp_structure , ville_structure, distance_siege, plan_accees, infos_supplementaire, codeTypeStructure, version) values 
-(5,'structure 5', '9366 Orin Lane', '75000', 'Baipenzhu', 5, '16066 Holmberg Pass', 'Public-key content-based knowledge base', 5, 0) , 0;
-insert into STRUCTURE (num_structure, denomination_sociale, adresse_structure ,  cp_structure , ville_structure, distance_siege, plan_accees, infos_supplementaire, codeTypeStructure) values 
+(5,'structure 5', '9366 Orin Lane', '75000', 'Baipenzhu', 5, '16066 Holmberg Pass', 'Public-key content-based knowledge base', 5, 0);
+insert into STRUCTURE (num_structure, denomination_sociale, adresse_structure ,  cp_structure , ville_structure, distance_siege, plan_accees, infos_supplementaire, codeTypeStructure, version) values 
 (6,'structure 6', '400 Kingsford Pass', '75000', 'Goubétto', 6, '3 Monument Parkway', 'Future-proofed impactful projection', 1, 0);
 insert into STRUCTURE (num_structure, denomination_sociale, adresse_structure ,  cp_structure , ville_structure, distance_siege, plan_accees, infos_supplementaire, codeTypeStructure, version) values 
 (7,'structure 7', '393 Steensland Point', '2110', 'Red Hill', 7, '089 Farmco Parkway', 'Multi-lateral 4th generation data-warehouse', 2, 0);
@@ -144,16 +144,16 @@ SELECT * FROM CONGES;
 #------------------------------------------------------------
 # Table: CONGES_UTILISATEUR
 #------------------------------------------------------------
-insert into CONGES_UTILISATEUR (numUtilisateur, numConge, version) values 
-(1, 1, 0);
-insert into CONGES_UTILISATEUR (numUtilisateur, numConge, version) values 
-(1, 2, 0);
-insert into CONGES_UTILISATEUR (numUtilisateur, numConge, version) values 
-(1, 3, 0);
-insert into CONGES_UTILISATEUR (numUtilisateur, numConge, version) values 
-(1, 4, 0);
-insert into CONGES_UTILISATEUR (numUtilisateur, numConge, version) values 
-(1, 5, 0);
+insert into CONGES_UTILISATEUR (idCongeUtilisateur, numUtilisateur, numConge, version) values 
+(1, 1, 1, 0);
+insert into CONGES_UTILISATEUR (idCongeUtilisateur, numUtilisateur, numConge, version) values 
+(2, 1, 2, 0);
+insert into CONGES_UTILISATEUR (idCongeUtilisateur, numUtilisateur, numConge, version) values 
+(3, 1, 3, 0);
+insert into CONGES_UTILISATEUR (idCongeUtilisateur, numUtilisateur, numConge, version) values 
+(4, 1, 4, 0);
+insert into CONGES_UTILISATEUR (idCongeUtilisateur, numUtilisateur, numConge, version) values 
+(5, 1, 5, 0);
 
 SELECT * FROM CONGES_UTILISATEUR;
 
@@ -184,16 +184,16 @@ SELECT * FROM MAIL;
 #------------------------------------------------------------
 # Table: PLANNING
 #------------------------------------------------------------
-insert into PLANNING (idPlanning  , numUtilisateur, version) values 
-(1, 1, 0);
-insert into PLANNING (idPlanning  , numUtilisateur, version) values 
-(2, 2, 0);
-insert into PLANNING (idPlanning  , numUtilisateur, version) values 
-(3, 3, 0);
-insert into PLANNING (idPlanning  , numUtilisateur, version) values 
-(4, 4, 0);
-insert into PLANNING (idPlanning  , numUtilisateur, version) values 
-(5, 5, 0);
+insert into PLANNING (idPlanning  , numUtilisateur,libellePlanning, version) values 
+(1, 1,'secteur 1', 0);
+insert into PLANNING (idPlanning  , numUtilisateur,libellePlanning, version) values 
+(2, 2,'secteur 2', 0);
+insert into PLANNING (idPlanning  , numUtilisateur,libellePlanning, version) values 
+(3, 3,'secteur 3', 0);
+insert into PLANNING (idPlanning  , numUtilisateur,libellePlanning, version) values 
+(4, 4,'secteur 4', 0);
+insert into PLANNING (idPlanning  , numUtilisateur,libellePlanning, version) values 
+(5, 5,'secteur 5', 0);
 
 SELECT * FROM PLANNING;
 
@@ -201,15 +201,15 @@ SELECT * FROM PLANNING;
 # Table: PORTEFEUILLE
 #------------------------------------------------------------
 insert into PORTEFEUILLE (idPortefeuille  , libellePortefeuille, numUtilisateur, version) values 
-(1, 'unportefeuille', 1, 0);
+(1, 'unportefeuille 1', 1, 0);
 insert into PORTEFEUILLE (idPortefeuille  , libellePortefeuille, numUtilisateur, version) values 
-(2, 'unportefeuille', 2, 0);
+(2, 'unportefeuille 2', 2, 0);
 insert into PORTEFEUILLE (idPortefeuille  , libellePortefeuille, numUtilisateur, version) values 
-(3, 'unportefeuille', 3, 0);
+(3, 'unportefeuille 3', 3, 0);
 insert into PORTEFEUILLE (idPortefeuille  , libellePortefeuille, numUtilisateur, version) values 
-(4, 'unportefeuille', 4, 0);
+(4, 'unportefeuille 4', 4, 0);
 insert into PORTEFEUILLE (idPortefeuille  , libellePortefeuille, numUtilisateur, version) values 
-(5, 'unportefeuille', 5, 0);
+(5, 'unportefeuille 5', 5, 0);
 
 SELECT * FROM PORTEFEUILLE;
 
@@ -217,7 +217,7 @@ SELECT * FROM PORTEFEUILLE;
 # Table: INTERLOCUTEUR_STRUCTURE
 #------------------------------------------------------------
 insert into INTERLOCUTEUR_STRUCTURE (id_interlocuteur , num_structure, version) values 
-(1, 1, 0);, version
+(1, 1, 0);
 insert into INTERLOCUTEUR_STRUCTURE (id_interlocuteur , num_structure, version) values 
 (2, 2, 0);
 insert into INTERLOCUTEUR_STRUCTURE (id_interlocuteur , num_structure, version) values 
@@ -238,5 +238,5 @@ insert into SUIVRE (id_rdv  , id_rdv_RDV, version) values
 (5, 4, 0);
 
 SELECT * FROM SUIVRE;
-, 0
+
 SET foreign_key_checks = 1;
