@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+namespace="PamNHibernateDemos" assembly="TestHibernate2">
+  <class name="TypeRdv" table="typerdv">
+    <id name="idTypeRdv" column="id_type_rdv" unsaved-value="0">
+      <generator class="native" />
+    </id>
+    <property name="typeRdv" column="type_rdv"/>
+  </class>
+</hibernate-mapping>

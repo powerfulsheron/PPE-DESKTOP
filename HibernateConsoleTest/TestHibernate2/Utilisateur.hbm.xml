@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+namespace="PamNHibernateDemos" assembly="TestHibernate2">
+  <class name="Utilisateur" table="utilisateur">
+    <id name="numUtilsateur" column="numUtilisateur" unsaved-value="0">
+      <generator class="native" />
+    </id>
+    <property name="nomUtilisateur" column="nomUtilisateur"/>
+    <property name="adresseUtilisateur" column="adresseUtilisateur"/>
+    <property name="cpUtilisateur" column="cpUtilisateur"/>
+    <property name="villeUtilisateur" column="villeUtilisateur"/>
+    <property name="telUtilisateur" column="telUtilisateur"/>
+    <property name="mailUtilisateur" column="mailUtilisateur"/>
+    <property name="prenomUtilisateur" column="prenomUtilisateur"/>
+    <property name="loginUtilisateur" column="loginUtilisateur"/>
+    <property name="passwordUtilisateur" column="passwordUtilisateur"/>
+    <property name="dateDernierLogin" column="dateDernierLogin"/>
+    <property name="nbTentatives" column="nbTentatives"/>
+    <property name="distanceParcourueSemaine" column="distanceParcourueSemaine"/>
+    <many-to-one name="typeUtilisateur" column="codeTypeUtilisateur" cascade="all" lazy="false"/>
+    <one-to-one name="planning" constrained="true" foreign-key="none" class="Planning" />
+    <one-to-one name="porteFeuille" constrained="true" foreign-key="none" class="PorteFeuille" />
+  </class>
+</hibernate-mapping>
