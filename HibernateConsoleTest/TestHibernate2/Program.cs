@@ -50,15 +50,15 @@ namespace PamNHibernateDemos
         using (ITransaction transaction = session.BeginTransaction()) 
         { 
           // on récupère la liste des employés 
-            IList<CongesUtilisateur> utilisateurs = session.CreateQuery(@"select e from Conge e").List<CongesUtilisateur>(); 
+            IList<Utilisateur> utilisateurs = session.CreateQuery(@"select e from Utilisateur e").List<Utilisateur>(); 
           // on l'affiche 
           Console.WriteLine("--------------- liste des employés");
-          foreach (CongesUtilisateur e in utilisateurs) 
+          foreach (Utilisateur e in utilisateurs) 
           { 
             Console.WriteLine(e); 
           } 
           // commit transaction 
-          transaction.Commit(); 
+          transaction.Commit();        
         } 
       } 
     } 

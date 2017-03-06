@@ -9,7 +9,7 @@ namespace="PamNHibernateDemos" assembly="TestHibernate2">
     <property name="cpStructure" column="cp_structure"/>
     <property name="denominationSociale" column="denomination_sociale"/>
     <property name="adresseStructure" column="adresse_structure"/>
-    <property name="villeStructure" column="bille_structure"/>
+    <property name="villeStructure" column="ville_structure"/>
     <property name="planAcces" column="plan_acces"/>
     <property name="infoSupplementaire" column="info_supplementaire"/>
     <many-to-one name="typeStructure" column="codeTypeStructure " cascade="all" lazy="false"/>

@@ -6,6 +6,6 @@ namespace="PamNHibernateDemos" assembly="TestHibernate2">
       <generator class="native" />
     </id>
     <property name="libellePlanning" column="libellePlanning"/>
-    <one-to-one name="utilisateur" constrained="true" foreign-key="none" class="Utilisateur" />
+   <!--  <one-to-one name="utilisateur" constrained="true" foreign-key="none" class="Utilisateur" />--> 
   </class>
 </hibernate-mapping>
