@@ -53,25 +53,25 @@ SELECT * FROM TYPE_STRUCTURE;
 #------------------------------------------------------------
 # Table: STRUCTURE
 #------------------------------------------------------------
-insert into STRUCTURE (num_structure, denomination_sociale, adresse_structure ,  cp_structure , ville_structure, distance_siege, plan_accees, infos_supplementaire, codeTypeStructure, version) values 
+insert into STRUCTURE (num_structure, denomination_sociale, adresse_structure ,  cp_structure , ville_structure, distance_siege, plan_acces, info_supplementaire, codeTypeStructure, version) values 
 (1,'structure 1', '97701 Nova Circle', '46900-000', 'Seabra', 1, '3 Prairieview Terrace', 'Ergonomic multimedia encoding', 1 , 0);
-insert into STRUCTURE (num_structure, denomination_sociale, adresse_structure ,  cp_structure , ville_structure, distance_siege, plan_accees, infos_supplementaire, codeTypeStructure, version) values 
+insert into STRUCTURE (num_structure, denomination_sociale, adresse_structure ,  cp_structure , ville_structure, distance_siege, plan_acces, info_supplementaire, codeTypeStructure, version) values 
 (2,'structure 2', '0850 Kenwood Hill', '13140-000', 'Paulínia', 2, '266 Dawn Alley', 'Synchronised needs-based superstructure', 2 , 0);
-insert into STRUCTURE (num_structure, denomination_sociale, adresse_structure ,  cp_structure , ville_structure, distance_siege, plan_accees, infos_supplementaire, codeTypeStructure, version) values 
+insert into STRUCTURE (num_structure, denomination_sociale, adresse_structure ,  cp_structure , ville_structure, distance_siege, plan_acces, info_supplementaire, codeTypeStructure, version) values 
 (3,'structure 3', '14272 Elka Plaza', '75000', 'Jiaoxie', 3, '04 Vernon Alley', 'Configurable multi-state concept', 3 , 0);
-insert into STRUCTURE (num_structure, denomination_sociale, adresse_structure ,  cp_structure , ville_structure, distance_siege, plan_accees, infos_supplementaire, codeTypeStructure, version) values 
+insert into STRUCTURE (num_structure, denomination_sociale, adresse_structure ,  cp_structure , ville_structure, distance_siege, plan_acces, info_supplementaire, codeTypeStructure, version) values 
 (4,'structure 4', '97194 Fairfield Hill', '75000', 'Fengshan', 4, '685 Michigan Lane', 'Networked coherent contingency', 4 , 0);
-insert into STRUCTURE (num_structure, denomination_sociale, adresse_structure ,  cp_structure , ville_structure, distance_siege, plan_accees, infos_supplementaire, codeTypeStructure, version) values 
+insert into STRUCTURE (num_structure, denomination_sociale, adresse_structure ,  cp_structure , ville_structure, distance_siege, plan_acces, info_supplementaire, codeTypeStructure, version) values 
 (5,'structure 5', '9366 Orin Lane', '75000', 'Baipenzhu', 5, '16066 Holmberg Pass', 'Public-key content-based knowledge base', 5, 0);
-insert into STRUCTURE (num_structure, denomination_sociale, adresse_structure ,  cp_structure , ville_structure, distance_siege, plan_accees, infos_supplementaire, codeTypeStructure, version) values 
+insert into STRUCTURE (num_structure, denomination_sociale, adresse_structure ,  cp_structure , ville_structure, distance_siege, plan_acces, info_supplementaire, codeTypeStructure, version) values 
 (6,'structure 6', '400 Kingsford Pass', '75000', 'Goubétto', 6, '3 Monument Parkway', 'Future-proofed impactful projection', 1, 0);
-insert into STRUCTURE (num_structure, denomination_sociale, adresse_structure ,  cp_structure , ville_structure, distance_siege, plan_accees, infos_supplementaire, codeTypeStructure, version) values 
+insert into STRUCTURE (num_structure, denomination_sociale, adresse_structure ,  cp_structure , ville_structure, distance_siege, plan_acces, info_supplementaire, codeTypeStructure, version) values 
 (7,'structure 7', '393 Steensland Point', '2110', 'Red Hill', 7, '089 Farmco Parkway', 'Multi-lateral 4th generation data-warehouse', 2, 0);
-insert into STRUCTURE (num_structure, denomination_sociale, adresse_structure ,  cp_structure , ville_structure, distance_siege, plan_accees, infos_supplementaire, codeTypeStructure, version) values 
+insert into STRUCTURE (num_structure, denomination_sociale, adresse_structure ,  cp_structure , ville_structure, distance_siege, plan_acces, info_supplementaire, codeTypeStructure, version) values 
 (8,'structure 8', '6 Monica Road', '2508', 'Nanyo', 8, '04092 Kinsman Way', 'Function-based national local area network', 3, 0);
-insert into STRUCTURE (num_structure, denomination_sociale, adresse_structure ,  cp_structure , ville_structure, distance_siege, plan_accees, infos_supplementaire, codeTypeStructure, version) values 
+insert into STRUCTURE (num_structure, denomination_sociale, adresse_structure ,  cp_structure , ville_structure, distance_siege, plan_acces, info_supplementaire, codeTypeStructure, version) values 
 (9,'structure 9', '4513 Fairfield Junction', '75000', 'Parungjawa', 9, '030 Pleasure Trail', 'Visionary asynchronous forecast', 4, 0);
-insert into STRUCTURE (num_structure, denomination_sociale, adresse_structure ,  cp_structure , ville_structure, distance_siege, plan_accees, infos_supplementaire, codeTypeStructure, version) values 
+insert into STRUCTURE (num_structure, denomination_sociale, adresse_structure ,  cp_structure , ville_structure, distance_siege, plan_acces, info_supplementaire, codeTypeStructure, version) values 
 (10,'structure 10', '0076 Blaine Drive', '75000', 'Nanning', 10, '51 Manufacturers Drive', 'Automated asynchronous matrix', 5, 0);
 
 SELECT * FROM STRUCTURE;
@@ -95,15 +95,15 @@ SELECT * FROM INTERLOCUTEUR;
 #------------------------------------------------------------
 # Table: INDIVIDU
 #------------------------------------------------------------
-insert into INDIVIDU (num_individu, adresse_individu,cp_individu, ville_individu, distance_siege, plan_accees , infos_supplementaire, id_interlocuteur, version) values 
+insert into INDIVIDU (num_individu, adresse_individu,cp_individu, ville_individu, distance_siege, plan_acces , infos_supplementaire, id_interlocuteur, version) values 
 (1, '77257 Larry Alley','75000', 'Masaki-chō', 55, '2930 Bobwhite Hill', 'Progressive dedicated application', 1, 0);
-insert into INDIVIDU (num_individu, adresse_individu,cp_individu, ville_individu, distance_siege, plan_accees , infos_supplementaire, id_interlocuteur, version) values 
+insert into INDIVIDU (num_individu, adresse_individu,cp_individu, ville_individu, distance_siege, plan_acces , infos_supplementaire, id_interlocuteur, version) values 
 (2, '582 Lyons Street','75000', 'Srostki', 21, '2117 Jenifer Point', 'Optimized hybrid interface', 2, 0);
-insert into INDIVIDU (num_individu, adresse_individu,cp_individu,ville_individu, distance_siege, plan_accees , infos_supplementaire, id_interlocuteur, version) values 
+insert into INDIVIDU (num_individu, adresse_individu,cp_individu,ville_individu, distance_siege, plan_acces , infos_supplementaire, id_interlocuteur, version) values 
 (3, '8897 Ridgeway Point','75000', 'Seres', 78, '2323 Superior Terrace', 'Universal bifurcated function', 3, 0);
-insert into INDIVIDU (num_individu, adresse_individu,cp_individu,ville_individu, distance_siege, plan_accees , infos_supplementaire, id_interlocuteur, version) values 
+insert into INDIVIDU (num_individu, adresse_individu,cp_individu,ville_individu, distance_siege, plan_acces , infos_supplementaire, id_interlocuteur, version) values 
 (4, '4 Clove Terrace','75000', 'Lescar', 47, '7 Stone Corner Center', 'Expanded responsive task-force', 4, 0);
-insert into INDIVIDU (num_individu, adresse_individu,cp_individu,ville_individu, distance_siege, plan_accees , infos_supplementaire, id_interlocuteur, version) values 
+insert into INDIVIDU (num_individu, adresse_individu,cp_individu,ville_individu, distance_siege, plan_acces , infos_supplementaire, id_interlocuteur, version) values 
 (5, '0 Pleasure Plaza','75000', 'Jinzhou', 27, '63872 David Junction', 'Devolved system-worthy application', 5, 0);
 
 
@@ -113,15 +113,15 @@ SELECT * FROM INDIVIDU;
 # Table: RDV
 #------------------------------------------------------------
 insert into RDV (id_rdv, date_rdv,heure_debut, heure_fin, adresseDerogatoire , villeDerogatoire , codeEntreeDerogatoire , infoDerogatoire, id_interlocuteur, id_type_rdv , idPlanning, version) values 
-(1, '20160601','08:30', '22:19', '73 Hoard Circle', 'San Sebastian', 94, null, 1, 1, 1, 0);
+(1, '20160601','2011-10-24 10:00', '2011-10-24 10:00', '73 Hoard Circle', 'San Sebastian', 94, null, 1, 1, 1, 0);
 insert into RDV (id_rdv, date_rdv,heure_debut, heure_fin, adresseDerogatoire , villeDerogatoire , codeEntreeDerogatoire , infoDerogatoire, id_interlocuteur, id_type_rdv , idPlanning, version) values 
-(2, '20160304','08:30', '7:48', '14 Sullivan Street', 'Sertânia', 81, null, 2, 2, 2, 0);
+(2, '20160304','2011-10-24 10:00', '2011-10-24 10:00', '14 Sullivan Street', 'Sertânia', 81, null, 2, 2, 2, 0);
 insert into RDV (id_rdv, date_rdv,heure_debut, heure_fin, adresseDerogatoire , villeDerogatoire , codeEntreeDerogatoire , infoDerogatoire, id_interlocuteur, id_type_rdv , idPlanning, version) values 
-(3, '20160326','08:30', '6:54', '3 Doe Crossing Pass', 'Podebłocie', 5, null, 3, 3, 3, 0);
+(3, '20160326','2011-10-24 10:00', '2011-10-24 10:00', '3 Doe Crossing Pass', 'Podebłocie', 5, null, 3, 3, 3, 0);
 insert into RDV (id_rdv, date_rdv,heure_debut, heure_fin, adresseDerogatoire , villeDerogatoire , codeEntreeDerogatoire , infoDerogatoire, id_interlocuteur, id_type_rdv , idPlanning, version) values 
-(4, '20160610','08:30', '1:51', '78528 Orin Street', 'Alcoy', 99, null, 4, 4, 4, 0);
+(4, '20160610','2011-10-24 10:00', '2011-10-24 10:00', '78528 Orin Street', 'Alcoy', 99, null, 4, 4, 4, 0);
 insert into RDV (id_rdv, date_rdv,heure_debut, heure_fin, adresseDerogatoire , villeDerogatoire , codeEntreeDerogatoire , infoDerogatoire, id_interlocuteur, id_type_rdv , idPlanning, version) values 
-(5, '20160510','08:30', '22:33', '023 Butternut Court', 'Banī Suwayf', 56, null, 5, 5, 5, 0);
+(5, '20160510','2011-10-24 10:00', '2011-10-24 10:00', '023 Butternut Court', 'Banī Suwayf', 56, null, 5, 5, 5, 0);
 
 SELECT * FROM RDV;
 
@@ -216,12 +216,12 @@ SELECT * FROM PORTEFEUILLE;
 #------------------------------------------------------------
 # Table: INTERLOCUTEUR_STRUCTURE
 #------------------------------------------------------------
-insert into INTERLOCUTEUR_STRUCTURE (id_interlocuteur , num_structure, version) values 
-(1, 1, 0);
-insert into INTERLOCUTEUR_STRUCTURE (id_interlocuteur , num_structure, version) values 
-(2, 2, 0);
-insert into INTERLOCUTEUR_STRUCTURE (id_interlocuteur , num_structure, version) values 
-(3, 3, 0);
+insert into INTERLOCUTEUR_STRUCTURE (idInterlocuteurStructure, id_interlocuteur , num_structure, version) values 
+(1, 1, 1, 0);
+insert into INTERLOCUTEUR_STRUCTURE (idInterlocuteurStructure, id_interlocuteur , num_structure, version) values 
+(2, 2, 2, 0);
+insert into INTERLOCUTEUR_STRUCTURE (idInterlocuteurStructure, id_interlocuteur , num_structure, version) values 
+(3, 3, 3, 0);
 
 SELECT * FROM INTERLOCUTEUR_STRUCTURE;
 
