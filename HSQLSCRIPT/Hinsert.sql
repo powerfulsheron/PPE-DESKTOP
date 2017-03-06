@@ -144,15 +144,15 @@ SELECT * FROM CONGES;
 #------------------------------------------------------------
 # Table: CONGES_UTILISATEUR
 #------------------------------------------------------------
-insert into CONGES_UTILISATEUR (idCongeUtilisateur, numUtilisateur, numConge, version) values 
+insert into CONGES_UTILISATEUR (idCongesUtilisateur, numUtilisateur, numConge, version) values 
 (1, 1, 1, 0);
-insert into CONGES_UTILISATEUR (idCongeUtilisateur, numUtilisateur, numConge, version) values 
+insert into CONGES_UTILISATEUR (idCongesUtilisateur, numUtilisateur, numConge, version) values 
 (2, 1, 2, 0);
-insert into CONGES_UTILISATEUR (idCongeUtilisateur, numUtilisateur, numConge, version) values 
+insert into CONGES_UTILISATEUR (idCongesUtilisateur, numUtilisateur, numConge, version) values 
 (3, 1, 3, 0);
-insert into CONGES_UTILISATEUR (idCongeUtilisateur, numUtilisateur, numConge, version) values 
+insert into CONGES_UTILISATEUR (idCongesUtilisateur, numUtilisateur, numConge, version) values 
 (4, 1, 4, 0);
-insert into CONGES_UTILISATEUR (idCongeUtilisateur, numUtilisateur, numConge, version) values 
+insert into CONGES_UTILISATEUR (idCongesUtilisateur, numUtilisateur, numConge, version) values 
 (5, 1, 5, 0);
 
 SELECT * FROM CONGES_UTILISATEUR;
