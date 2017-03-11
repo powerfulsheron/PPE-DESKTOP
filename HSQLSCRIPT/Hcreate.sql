@@ -28,7 +28,7 @@ CREATE TABLE UTILISATEUR(
         nbTentatives             Int ,
         codeTypeUtilisateur      Int NOT NULL ,
         idPlanning               int ,
-        idPortefeuille           Int ,
+        idPorteFeuille           Int ,
         version Int,
         PRIMARY KEY (numUtilisateur )
 )ENGINE=InnoDB;
@@ -38,11 +38,11 @@ CREATE TABLE UTILISATEUR(
 # Table: TYPERDV
 #------------------------------------------------------------
 
-CREATE TABLE TYPERDV(
-        id_type_rdv int (11) Auto_increment NOT NULL ,
-        type_rdv    Varchar (40) NOT NULL ,
+CREATE TABLE TYPE_RDV(
+        idTypeRdv int (11) Auto_increment NOT NULL ,
+        libelleTypeRdv    Varchar (40) NOT NULL ,
         version Int,
-        PRIMARY KEY (id_type_rdv )
+        PRIMARY KEY (idTypeRdv )
 )ENGINE=InnoDB;
 
 
@@ -51,17 +51,17 @@ CREATE TABLE TYPERDV(
 #------------------------------------------------------------
 
 CREATE TABLE STRUCTURE(
-        num_structure        int (11) Auto_increment  NOT NULL ,
-        denomination_sociale Varchar (25) NOT NULL ,
-        adresse_structure    Varchar (25) NOT NULL ,
-        cp_structure         Varchar (25) NOT NULL ,
-        ville_structure      Varchar (25) NOT NULL ,
-        distance_siege       Float NOT NULL ,
-        plan_acces          Varchar (25) NOT NULL ,
-        info_supplementaire Varchar (100) NOT NULL ,
+        numStructure        int (11) Auto_increment  NOT NULL ,
+        denominationSociale Varchar (25) NOT NULL ,
+        adresseStructure    Varchar (25) NOT NULL ,
+        cpStructure         Varchar (25) NOT NULL ,
+        villeStructure      Varchar (25) NOT NULL ,
+        distanceSiege       Float NOT NULL ,
+        planAcces          Varchar (25) NOT NULL ,
+        infoSupplementaire Varchar (100) NOT NULL ,
         codeTypeStructure    Int NOT NULL ,
         version Int,
-        PRIMARY KEY (num_structure )
+        PRIMARY KEY (numStructure )
 )ENGINE=InnoDB;
 
 
@@ -70,15 +70,16 @@ CREATE TABLE STRUCTURE(
 #------------------------------------------------------------
 
 CREATE TABLE INTERLOCUTEUR(
-        id_interlocuteur     int (11) Auto_increment  NOT NULL ,
-        nom_interlocuteur    Varchar (25) NOT NULL ,
-        prenom_interlocuteur Varchar (25) NOT NULL ,
-        tel_interlocuteur    Varchar (25) NOT NULL ,
-        mail_interlocuteur   Varchar (40) NOT NULL ,
-        num_individu         Int ,
-        idPortefeuille       Int ,
+        idInterlocuteur     int (11) Auto_increment  NOT NULL ,
+        nomInterlocuteur    Varchar (25) NOT NULL ,
+        prenomInterlocuteur Varchar (25) NOT NULL ,
+        telInterlocuteur    Varchar (25) NOT NULL ,
+        mailInterlocuteur   Varchar (40) NOT NULL ,
+        numIndividu         Int ,
+        idPorteFeuille      Int ,
+        numStructure        Int ,
         version Int,
-        PRIMARY KEY (id_interlocuteur )
+        PRIMARY KEY (idInterlocuteur )
 )ENGINE=InnoDB;
 
 
@@ -87,16 +88,16 @@ CREATE TABLE INTERLOCUTEUR(
 #------------------------------------------------------------
 
 CREATE TABLE INDIVIDU(
-        num_individu         int (11) Auto_increment  NOT NULL ,
-        adresse_individu     Varchar (25) NOT NULL ,
-        cp_individu          Varchar (25) NOT NULL ,
-        ville_individu       Varchar (25) NOT NULL ,
-        distance_siege       Float NOT NULL ,
-        plan_acces          Varchar (25) NOT NULL ,
-        infos_supplementaire Varchar (100) NOT NULL ,
-        id_interlocuteur     Int NOT NULL ,
+        numIndividu         int (11) Auto_increment  NOT NULL ,
+        adresseIndividu     Varchar (25) NOT NULL ,
+        cpIndividu          Varchar (25) NOT NULL ,
+        villeIndividu       Varchar (25) NOT NULL ,
+        distanceSiege       Float NOT NULL ,
+        planAcces          	Varchar (25) NOT NULL ,
+        infosSupplementaire Varchar (100) NOT NULL ,
+        idInterlocuteur     Int NOT NULL ,
         version Int,
-        PRIMARY KEY (num_individu )
+        PRIMARY KEY (numIndividu)
 )ENGINE=InnoDB;
 
 
@@ -105,19 +106,19 @@ CREATE TABLE INDIVIDU(
 #------------------------------------------------------------
 
 CREATE TABLE RDV(
-        id_rdv                int (11) Auto_increment  NOT NULL ,
-        date_rdv              Date NOT NULL ,
-        heure_debut           Date NOT NULL ,
-        heure_fin             Date NOT NULL ,
+        idRdv                int (11) Auto_increment  NOT NULL ,
+        dateRdv              Date NOT NULL ,
+        heureDebut           Date NOT NULL ,
+        heureFin             Date NOT NULL ,
         adresseDerogatoire    Varchar (50) ,
         villeDerogatoire      Varchar (30) ,
         codeEntreeDerogatoire Int ,
         infoDerogatoire       Varchar (500) ,
-        id_interlocuteur      Int NOT NULL ,
-        id_type_rdv           Int NOT NULL ,
-        idPlanning            int NOT NULL ,
+        idInterlocuteur      Int NOT NULL ,
+        idTypeRdv            Int NOT NULL ,
+        idPlanning           Int NOT NULL ,
         version Int,
-        PRIMARY KEY (id_rdv )
+        PRIMARY KEY (idRdv )
 )ENGINE=InnoDB;
 
 
@@ -155,7 +156,7 @@ CREATE TABLE MAIL(
         contenuMail      Varchar (10000) ,
         objetMail        Varchar (50) ,
         numUtilisateur   Int NOT NULL ,
-        id_interlocuteur Int NOT NULL ,
+        idInterlocuteur Int NOT NULL ,
         version Int,
         PRIMARY KEY (numMail )
 )ENGINE=InnoDB;
@@ -167,7 +168,7 @@ CREATE TABLE MAIL(
 
 CREATE TABLE PLANNING(
         idPlanning     int (11) Auto_increment NOT NULL ,
-        numUtilisateur Int NOT NULL ,
+        numUtilisateur Int ,
         libellePlanning varchar(50),
         version Int,
         PRIMARY KEY (idPlanning)
@@ -191,24 +192,11 @@ CREATE TABLE TYPE_STRUCTURE(
 #------------------------------------------------------------
 
 CREATE TABLE PORTEFEUILLE(
-        idPortefeuille      int (11) Auto_increment NOT NULL ,
-        libellePortefeuille Varchar (30) ,
-        numUtilisateur      Int NOT NULL ,
+        idPorteFeuille      int (11) Auto_increment NOT NULL ,
+        libellePorteFeuille Varchar (30) ,
+        numUtilisateur      Int ,
         version Int,
-        PRIMARY KEY (idPortefeuille )
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
-# Table: INTERLOCUTEUR_STRUCTURE
-#------------------------------------------------------------
-
-CREATE TABLE INTERLOCUTEUR_STRUCTURE(
-        idInterlocuteurStructure int (11) Auto_increment NOT NULL ,
-        id_interlocuteur int (11) NOT NULL ,
-        num_structure    Int NOT NULL ,
-        version Int,
-        PRIMARY KEY (idInterlocuteurStructure)
+        PRIMARY KEY (idPorteFeuille )
 )ENGINE=InnoDB;
 
 
@@ -230,32 +218,38 @@ CREATE TABLE CONGES_UTILISATEUR(
 #------------------------------------------------------------
 
 CREATE TABLE SUIVRE(
-        id_rdv     int (11) Auto_increment NOT NULL ,
-        id_rdv_RDV Int NOT NULL ,
+		idSuivre int(11) Auto_increment NOT NULL,
+        idRdv    int (11) NOT NULL ,
+        idRdvPrecedent Int NOT NULL ,
         version Int,
-        PRIMARY KEY (id_rdv ,id_rdv_RDV )
+        PRIMARY KEY (idSuivre)
 )ENGINE=InnoDB;
 
 ALTER TABLE CONGES_UTILISATEUR ADD CONSTRAINT FK_CONGES_UTILISATEUR_numUtilisateur FOREIGN KEY (numUtilisateur) REFERENCES UTILISATEUR(numUtilisateur);
 ALTER TABLE CONGES_UTILISATEUR ADD CONSTRAINT FK_CONGES_UTILISATEUR_numConge FOREIGN KEY (numConge) REFERENCES CONGES(numConge);
 
-ALTER TABLE INTERLOCUTEUR_STRUCTURE ADD CONSTRAINT FK_INTERLOCUTEUR_STRUCTURE_id_interlocuteur FOREIGN KEY (id_interlocuteur) REFERENCES INTERLOCUTEUR(id_interlocuteur);
-ALTER TABLE INTERLOCUTEUR_STRUCTURE ADD CONSTRAINT FK_INTERLOCUTEUR_STRUCTURE_num_structure FOREIGN KEY (num_structure) REFERENCES STRUCTURE(num_structure);
-
 ALTER TABLE UTILISATEUR ADD CONSTRAINT FK_UTILISATEUR_codeTypeUtilisateur FOREIGN KEY (codeTypeUtilisateur) REFERENCES TYPE_UTILISATEUR(codeTypeUtilisateur);
 ALTER TABLE UTILISATEUR ADD CONSTRAINT FK_UTILISATEUR_idPlanning FOREIGN KEY (idPlanning) REFERENCES PLANNING(idPlanning);
-ALTER TABLE UTILISATEUR ADD CONSTRAINT FK_UTILISATEUR_idPortefeuille FOREIGN KEY (idPortefeuille) REFERENCES PORTEFEUILLE(idPortefeuille);
+ALTER TABLE UTILISATEUR ADD CONSTRAINT FK_UTILISATEUR_idPorteFeuille FOREIGN KEY (idPorteFeuille) REFERENCES PORTEFEUILLE(idPorteFeuille);
+
 ALTER TABLE STRUCTURE ADD CONSTRAINT FK_STRUCTURE_codeTypeStructure FOREIGN KEY (codeTypeStructure) REFERENCES TYPE_STRUCTURE(codeTypeStructure);
-ALTER TABLE INTERLOCUTEUR ADD CONSTRAINT FK_INTERLOCUTEUR_num_individu FOREIGN KEY (num_individu) REFERENCES INDIVIDU(num_individu);
-ALTER TABLE INTERLOCUTEUR ADD CONSTRAINT FK_INTERLOCUTEUR_idPortefeuille FOREIGN KEY (idPortefeuille) REFERENCES PORTEFEUILLE(idPortefeuille);
-ALTER TABLE INDIVIDU ADD CONSTRAINT FK_INDIVIDU_id_interlocuteur FOREIGN KEY (id_interlocuteur) REFERENCES INTERLOCUTEUR(id_interlocuteur);
-ALTER TABLE RDV ADD CONSTRAINT FK_RDV_id_interlocuteur FOREIGN KEY (id_interlocuteur) REFERENCES INTERLOCUTEUR(id_interlocuteur);
-ALTER TABLE RDV ADD CONSTRAINT FK_RDV_id_type_rdv FOREIGN KEY (id_type_rdv) REFERENCES TYPERDV(id_type_rdv);
+
+ALTER TABLE INTERLOCUTEUR ADD CONSTRAINT FK_INTERLOCUTEUR_numIndividu FOREIGN KEY (numIndividu) REFERENCES INDIVIDU(numIndividu);
+ALTER TABLE INTERLOCUTEUR ADD CONSTRAINT FK_INTERLOCUTEUR_idPorteFeuille FOREIGN KEY (idPorteFeuille) REFERENCES PORTEFEUILLE(idPorteFeuille);
+ALTER TABLE INTERLOCUTEUR ADD CONSTRAINT FK_INTERLOCUTEUR_numStructure FOREIGN KEY (numStructure) REFERENCES STRUCTURE(numStructure);
+
+ALTER TABLE INDIVIDU ADD CONSTRAINT FK_INDIVIDU_idInterlocuteur FOREIGN KEY (idInterlocuteur) REFERENCES INTERLOCUTEUR(idInterlocuteur);
+
+ALTER TABLE RDV ADD CONSTRAINT FK_RDV_idInterlocuteur FOREIGN KEY (idInterlocuteur) REFERENCES INTERLOCUTEUR(idInterlocuteur);
+ALTER TABLE RDV ADD CONSTRAINT FK_RDV_idTypeRdv FOREIGN KEY (idTypeRdv) REFERENCES TYPE_RDV(idTypeRdv);
 ALTER TABLE RDV ADD CONSTRAINT FK_RDV_idPlanning FOREIGN KEY (idPlanning) REFERENCES PLANNING(idPlanning);
+
 ALTER TABLE MAIL ADD CONSTRAINT FK_MAIL_numUtilisateur FOREIGN KEY (numUtilisateur) REFERENCES UTILISATEUR(numUtilisateur);
-ALTER TABLE MAIL ADD CONSTRAINT FK_MAIL_id_interlocuteur FOREIGN KEY (id_interlocuteur) REFERENCES INTERLOCUTEUR(id_interlocuteur);
+ALTER TABLE MAIL ADD CONSTRAINT FK_MAIL_idInterlocuteur FOREIGN KEY (idInterlocuteur) REFERENCES INTERLOCUTEUR(idInterlocuteur);
+
 ALTER TABLE PLANNING ADD CONSTRAINT FK_PLANNING_numUtilisateur FOREIGN KEY (numUtilisateur) REFERENCES UTILISATEUR(numUtilisateur);
+
 ALTER TABLE PORTEFEUILLE ADD CONSTRAINT FK_PORTEFEUILLE_numUtilisateur FOREIGN KEY (numUtilisateur) REFERENCES UTILISATEUR(numUtilisateur);
 
-ALTER TABLE SUIVRE ADD CONSTRAINT FK_SUIVRE_id_rdv FOREIGN KEY (id_rdv) REFERENCES RDV(id_rdv);
-ALTER TABLE SUIVRE ADD CONSTRAINT FK_SUIVRE_id_rdv_RDV FOREIGN KEY (id_rdv_RDV) REFERENCES RDV(id_rdv);
+ALTER TABLE SUIVRE ADD CONSTRAINT FK_SUIVRE_idRdv FOREIGN KEY (idRdv) REFERENCES RDV(idRdv);
+ALTER TABLE SUIVRE ADD CONSTRAINT FK_SUIVRE_idRdvPrecedent FOREIGN KEY (idRdvPrecedent) REFERENCES RDV(idRdv);
