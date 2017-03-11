@@ -1,0 +1,6 @@
+C:\Users\Raph\Documents\Visual Studio 2015\Projects\PPE-DESKTOP-master\obj\x86\Debug\PPE-DESKTOP.csprojResolveAssemblyReference.cache
+C:\Users\u483804\Source\Repos\PPE-DESKTOP\obj\x86\Debug\PPE-DESKTOP.csprojResolveAssemblyReference.cache
+C:\Users\u483804\Source\Repos\PPE-DESKTOP\bin\Debug\WindowsApplication.dll
+C:\Users\u483804\Source\Repos\PPE-DESKTOP\bin\Debug\WindowsApplication.pdb
+C:\Users\u483804\Source\Repos\PPE-DESKTOP\obj\x86\Debug\WindowsApplication.dll
+C:\Users\u483804\Source\Repos\PPE-DESKTOP\obj\x86\Debug\WindowsApplication.pdb
