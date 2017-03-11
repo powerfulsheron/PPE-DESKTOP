@@ -112,16 +112,16 @@ SELECT * FROM INDIVIDU;
 #------------------------------------------------------------
 # Table: RDV
 #------------------------------------------------------------
-insert into RDV (idRdv, dateRdv, heureDebut, heureFin, adresseDerogatoire , villeDerogatoire , codeEntreeDerogatoire , infoDerogatoire, idInterlocuteur, idTypeRdv , idPlanning, version) values 
-(1, '20160601','2011-10-24 10:00', '2011-10-24 10:00', '73 Hoard Circle', 'San Sebastian', 94, null, 1, 1, 1, 0);
-insert into RDV (idRdv, dateRdv, heureDebut, heureFin, adresseDerogatoire , villeDerogatoire , codeEntreeDerogatoire , infoDerogatoire, idInterlocuteur, idTypeRdv , idPlanning, version) values 
-(2, '20160304','2011-10-24 10:00', '2011-10-24 10:00', '14 Sullivan Street', 'Sertânia', 81, null, 2, 2, 2, 0);
-insert into RDV (idRdv, dateRdv, heureDebut, heureFin, adresseDerogatoire , villeDerogatoire , codeEntreeDerogatoire , infoDerogatoire, idInterlocuteur, idTypeRdv , idPlanning, version) values 
-(3, '20160326','2011-10-24 10:00', '2011-10-24 10:00', '3 Doe Crossing Pass', 'Podebłocie', 5, null, 3, 3, 3, 0);
-insert into RDV (idRdv, dateRdv, heureDebut, heureFin, adresseDerogatoire , villeDerogatoire , codeEntreeDerogatoire , infoDerogatoire, idInterlocuteur, idTypeRdv , idPlanning, version) values 
-(4, '20160610','2011-10-24 10:00', '2011-10-24 10:00', '78528 Orin Street', 'Alcoy', 99, null, 4, 4, 4, 0);
-insert into RDV (idRdv, dateRdv, heureDebut, heureFin, adresseDerogatoire , villeDerogatoire , codeEntreeDerogatoire , infoDerogatoire, idInterlocuteur, idTypeRdv , idPlanning, version) values 
-(5, '20160510','2011-10-24 10:00', '2011-10-24 10:00', '023 Butternut Court', 'Banī Suwayf', 56, null, 5, 5, 5, 0);
+insert into RDV (idRdv, dateRdv, heureDebut, heureFin, adresseDerogatoire , villeDerogatoire , codeEntreeDerogatoire , infoDerogatoire, idInterlocuteur, idTypeRdv , idPlanning,idRdvPrecedent, version) values 
+(1, '20160601','2011-10-24 10:00', '2011-10-24 10:00', '73 Hoard Circle', 'San Sebastian', 94, null, 1, 1, 1, null, 0);
+insert into RDV (idRdv, dateRdv, heureDebut, heureFin, adresseDerogatoire , villeDerogatoire , codeEntreeDerogatoire , infoDerogatoire, idInterlocuteur, idTypeRdv , idPlanning,idRdvPrecedent, version) values 
+(2, '20160304','2011-10-24 10:00', '2011-10-24 10:00', '14 Sullivan Street', 'Sertânia', 81, null, 2, 2, 2,null, 0);
+insert into RDV (idRdv, dateRdv, heureDebut, heureFin, adresseDerogatoire , villeDerogatoire , codeEntreeDerogatoire , infoDerogatoire, idInterlocuteur, idTypeRdv , idPlanning,idRdvPrecedent, version) values 
+(3, '20160326','2011-10-24 10:00', '2011-10-24 10:00', '3 Doe Crossing Pass', 'Podebłocie', 5, null, 3, 3, 3,null, 0);
+insert into RDV (idRdv, dateRdv, heureDebut, heureFin, adresseDerogatoire , villeDerogatoire , codeEntreeDerogatoire , infoDerogatoire, idInterlocuteur, idTypeRdv , idPlanning,idRdvPrecedent, version) values 
+(4, '20160610','2011-10-24 10:00', '2011-10-24 10:00', '78528 Orin Street', 'Alcoy', 99, null, 4, 4, 4,null, 0);
+insert into RDV (idRdv, dateRdv, heureDebut, heureFin, adresseDerogatoire , villeDerogatoire , codeEntreeDerogatoire , infoDerogatoire, idInterlocuteur, idTypeRdv , idPlanning,idRdvPrecedent, version) values 
+(5, '20160510','2011-10-24 10:00', '2011-10-24 10:00', '023 Butternut Court', 'Banī Suwayf', 56, null, 5, 5, 5,null, 0);
 
 SELECT * FROM RDV;
 
@@ -213,19 +213,5 @@ insert into PORTEFEUILLE (idPorteFeuille  , libellePorteFeuille, numUtilisateur,
 
 SELECT * FROM PORTEFEUILLE;
 
-
-#------------------------------------------------------------
-# Table: SUIVRE
-#------------------------------------------------------------
-insert into SUIVRE (idRdv  , idRdvPrecedent, version) values 
-(2, 1, 0);
-insert into SUIVRE (idRdv  , idRdvPrecedent, version) values 
-(3, 2, 0);
-insert into SUIVRE (idRdv  , idRdvPrecedent, version) values 
-(4, 3, 0);
-insert into SUIVRE (idRdv  , idRdvPrecedent, version) values 
-(5, 4, 0);
-
-SELECT * FROM SUIVRE;
 
 SET foreign_key_checks = 1;

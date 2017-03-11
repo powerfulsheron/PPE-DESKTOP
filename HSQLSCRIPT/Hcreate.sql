@@ -117,6 +117,7 @@ CREATE TABLE RDV(
         idInterlocuteur      Int NOT NULL ,
         idTypeRdv            Int NOT NULL ,
         idPlanning           Int NOT NULL ,
+        idRdvPrecedent 		 Int,
         version Int,
         PRIMARY KEY (idRdv )
 )ENGINE=InnoDB;
@@ -213,18 +214,6 @@ CREATE TABLE CONGES_UTILISATEUR(
 )ENGINE=InnoDB;
 
 
-#------------------------------------------------------------
-# Table: SUIVRE
-#------------------------------------------------------------
-
-CREATE TABLE SUIVRE(
-		idSuivre int(11) Auto_increment NOT NULL,
-        idRdv    int (11) NOT NULL ,
-        idRdvPrecedent Int NOT NULL ,
-        version Int,
-        PRIMARY KEY (idSuivre)
-)ENGINE=InnoDB;
-
 ALTER TABLE CONGES_UTILISATEUR ADD CONSTRAINT FK_CONGES_UTILISATEUR_numUtilisateur FOREIGN KEY (numUtilisateur) REFERENCES UTILISATEUR(numUtilisateur);
 ALTER TABLE CONGES_UTILISATEUR ADD CONSTRAINT FK_CONGES_UTILISATEUR_numConge FOREIGN KEY (numConge) REFERENCES CONGES(numConge);
 
@@ -251,5 +240,4 @@ ALTER TABLE PLANNING ADD CONSTRAINT FK_PLANNING_numUtilisateur FOREIGN KEY (numU
 
 ALTER TABLE PORTEFEUILLE ADD CONSTRAINT FK_PORTEFEUILLE_numUtilisateur FOREIGN KEY (numUtilisateur) REFERENCES UTILISATEUR(numUtilisateur);
 
-ALTER TABLE SUIVRE ADD CONSTRAINT FK_SUIVRE_idRdv FOREIGN KEY (idRdv) REFERENCES RDV(idRdv);
-ALTER TABLE SUIVRE ADD CONSTRAINT FK_SUIVRE_idRdvPrecedent FOREIGN KEY (idRdvPrecedent) REFERENCES RDV(idRdv);
+ALTER TABLE RDV ADD CONSTRAINT FK_RDV_idRdvPrecedent FOREIGN KEY (idRdvPrecedent) REFERENCES RDV(idRdv);
