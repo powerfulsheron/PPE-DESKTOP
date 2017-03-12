@@ -1,3 +1,59 @@
+#A FAIRE : 
+
+
+UTILISATEUR :
+
+- Mot de passe oublié : Saisie du login, insert d'un nouveau MDP en base et envoi du mdp par mail à l'utilisateur.
+- Ajout d'un nouveau rendez-vous en base avec un formulaire.
+- Modifier un rendez-vous
+- Planning jquerry widget en iFrame 
+- Ajout d'une période de congé 
+- Planning ou liste des congés
+- Affichage du portefeuille client d'un utilisateur
+- Ajouter un client
+- Modifier un client
+- Supprimer un client (attention à la base, normalement j'ai configuré nhibernate pour que les deletes soient automatiques, à tester)
+- Affichage de la liste des mails envoyés par l'utilisateur
+- Consulter un mal envoyé par l'utilisateur
+- Ecrire un nouveau mail
+- Changement de mot de passe
+
+GESTIONNAIRE :
+
+- Affichage de la liste des commerciaux
+- Ajout d'un nouveau Commercial (générations login/mdp automatiques + envoi mail)
+- Modification d'un commercial
+- Supression d'un commercial (attention à la base, normalement j'ai configuré nhibernate pour que les deletes soient automatiques, à tester)
+- Voir la liste des rdv d'un commercial
+- Voir la liste des mails d'un commercial
+- Prendre un rendez vous au nom d'un commercial
+- Modifier un rendez vous au nom d'un commercial
+- ecrire/consulter un mail au nom d'un commercial
+- Créer Portefeuille
+- Modifier Poertfeuille
+- Supprimer Portefeuille (attention à la base, normalement j'ai configuré nhibernate pour que les deletes soient automatiques, à tester)
+- Assigner un portefeuille à un commercial
+
+ADMINISTRATEUR :
+
+- Ajouter un utilisateur (commercial ou gestionnaire)
+- Modifier un utilisateur (commercial ou gestionnaire)
+- Supprimer un utilisateur (commercial ou gestionnaire) (attention à la base, normalement j'ai configuré nhibernate pour que les deletes soient automatiques, à tester)
+- Liste des logs de connection 
+
+
+#FAIT :
+
+- LOGIN (raph + lorenzo)
+
+
+
+
+
+
+
+
+
 # PPE-DESKTOP
 ## Belle-Table Company
 
