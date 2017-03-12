@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+namespace="PamNHibernateDemos" assembly="TestHibernate2">
+  <class name="PorteFeuille" table="portefeuille">
+    <id name="idPortefeuille" column="idPortefeuille" unsaved-value="0">
+      <generator class="native" />
+    </id>
+    <property name="libellePortefeuille" column="libellePortefeuille"/>
+    <bag name="lesInterlocuteurs">
+      <key column="idInterlocuteur" />
+      <one-to-many class="Interlocuteur"/>
+    </bag>
+    <one-to-one name="utilisateur" constrained="true" foreign-key="none" class="Utilisateur" />
+  </class>
+</hibernate-mapping>
