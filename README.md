@@ -3,9 +3,7 @@
 
 UTILISATEUR :
 
-- Mot de passe oublié : Saisie du login, insert d'un nouveau MDP en base et envoi du mdp par mail à l'utilisateur.
-- Ajout d'un nouveau rendez-vous en base avec un formulaire.
-- Modifier un rendez-vous
+- Modifier un rendez-vous (En cours seb)
 - Planning jquerry widget en iFrame 
 - Ajout d'une période de congé 
 - Planning ou liste des congés
@@ -16,7 +14,6 @@ UTILISATEUR :
 - Affichage de la liste des mails envoyés par l'utilisateur
 - Consulter un mal envoyé par l'utilisateur
 - Ecrire un nouveau mail
-- Changement de mot de passe
 
 GESTIONNAIRE :
 
@@ -45,9 +42,9 @@ ADMINISTRATEUR :
 #FAIT :
 
 - LOGIN (raph + lorenzo)
-
-
-
+- Mot de passe oublié : Saisie du login, insert d'un nouveau MDP en base et envoi du mdp par mail à l'utilisateur.(lorenzo)
+- Changement de mot de passe (raph)
+- Ajout d'un nouveau rendez-vous en base avec un formulaire. (raph)
 
 
 
