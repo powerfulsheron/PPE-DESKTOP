@@ -4,8 +4,8 @@
 UTILISATEUR :
 
 - Modifier un rendez-vous (En cours seb)
-- Planning jquerry widget en iFrame 
-- Ajout d'une période de congé 
+- Planning jquerry widget en iFrame(Vallade)
+- Ajout d'une période de congé (En cours lorenzo)
 - Planning ou liste des congés
 - Affichage du portefeuille client d'un utilisateur
 - Ajouter un client
