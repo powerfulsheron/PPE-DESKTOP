@@ -3,7 +3,6 @@
 
 UTILISATEUR :
 
-- Modifier un rendez-vous (En cours seb)
 - Planning jquerry widget en iFrame(Vallade)
 - Ajout d'une période de congé (En cours lorenzo)
 - Planning ou liste des congés
