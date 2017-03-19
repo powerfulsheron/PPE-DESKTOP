@@ -1,4 +1,6 @@
-﻿using System;
+using NHibernate;
+using NHibernate.Cfg;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,7 @@ namespace Maquette_Belle_Table_Final
 {
     public partial class InterGes : Form
     {
+        private static ISessionFactory sessionFactory = null;
         public Utilisateur utilisateur { get; set; }
         public InterGes()
         {
@@ -85,8 +88,40 @@ namespace Maquette_Belle_Table_Final
 
         private void buttonValCDMDP_Click(object sender, EventArgs e)
         {
-            //Bouton Changer de mot de passe
+            
+            if (textBoxNewMDP.Text == textBoxNewMdp2.Text)
+            {
+                if (ChangerMotDePasse(utilisateur, textBoxOldPswd.Text, textBoxNewMDP.Text) == true) MessageBox.Show("Votre mot de passe a été changé.", "Action réussie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                else MessageBox.Show("Mauvais mot de passe.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else MessageBox.Show("Les nouveaux de passe ne correspondent pas.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
+
+        bool ChangerMotDePasse(Utilisateur unUtilisateur, string ancienMotDePasse, string nouveauMotDePasse)
+        {
+            sessionFactory = new Configuration().Configure().BuildSessionFactory();
+            ISession session = sessionFactory.OpenSession();
+            
+            using (ITransaction transaction = session.BeginTransaction())
+            {
+
+                Utilisateur e = session.Get<Utilisateur>(unUtilisateur.numUtilsateur);
+                InterLogin pourMD5 = new InterLogin();
+                if (e.passwordUtilisateur == pourMD5.MD5Hash(ancienMotDePasse))
+                {
+                    e.passwordUtilisateur = pourMD5.MD5Hash(nouveauMotDePasse);
+                    utilisateur.passwordUtilisateur = pourMD5.MD5Hash(nouveauMotDePasse);
+                    session.SaveOrUpdate(e);
+                    transaction.Commit();
+                    session.Close();
+                    sessionFactory.Close();
+                    return true;
+                }
+                else return false;
+            }
+        }
+
+
     }
 }
