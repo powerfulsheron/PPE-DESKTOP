@@ -7,7 +7,6 @@ UTILISATEUR :
 - Ajout d'une période de congé (En cours lorenzo)
 - Planning ou liste des congés
 - Affichage du portefeuille client d'un utilisateur
-- Ajouter un client (en cours seb)
 - Modifier un client 
 - Supprimer un client (attention à la base, normalement j'ai configuré nhibernate pour que les deletes soient automatiques, à tester)
 - Affichage de la liste des mails envoyés par l'utilisateur
@@ -45,6 +44,7 @@ ADMINISTRATEUR :
 - Changement de mot de passe (raph)
 - Ajout d'un nouveau rendez-vous en base avec un formulaire. (raph)
 - Modifier un RDV (seb)
+- Ajouter un client (seb)
 
 
 
