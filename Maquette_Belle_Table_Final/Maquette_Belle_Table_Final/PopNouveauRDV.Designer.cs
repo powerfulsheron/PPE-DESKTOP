@@ -97,7 +97,7 @@
             this.label1.ForeColor = System.Drawing.Color.Gold;
             this.label1.Location = new System.Drawing.Point(646, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(22, 22);
+            this.label1.Size = new System.Drawing.Size(16, 16);
             this.label1.TabIndex = 3;
             this.label1.Text = "X";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -110,7 +110,7 @@
             this.labelFermeture.ForeColor = System.Drawing.Color.Gold;
             this.labelFermeture.Location = new System.Drawing.Point(1286, 0);
             this.labelFermeture.Name = "labelFermeture";
-            this.labelFermeture.Size = new System.Drawing.Size(22, 22);
+            this.labelFermeture.Size = new System.Drawing.Size(16, 16);
             this.labelFermeture.TabIndex = 2;
             this.labelFermeture.Text = "X";
             // 
@@ -121,7 +121,7 @@
             this.labelBT.ForeColor = System.Drawing.Color.Gold;
             this.labelBT.Location = new System.Drawing.Point(36, 0);
             this.labelBT.Name = "labelBT";
-            this.labelBT.Size = new System.Drawing.Size(65, 22);
+            this.labelBT.Size = new System.Drawing.Size(45, 16);
             this.labelBT.TabIndex = 1;
             this.labelBT.Text = "GEPEV";
             this.labelBT.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -167,7 +167,7 @@
             // 
             this.textBoxClient.Location = new System.Drawing.Point(77, 104);
             this.textBoxClient.Name = "textBoxClient";
-            this.textBoxClient.Size = new System.Drawing.Size(200, 27);
+            this.textBoxClient.Size = new System.Drawing.Size(200, 21);
             this.textBoxClient.TabIndex = 12;
             // 
             // groupBoxAP
@@ -201,7 +201,7 @@
             this.labelIC.AutoSize = true;
             this.labelIC.Location = new System.Drawing.Point(12, 179);
             this.labelIC.Name = "labelIC";
-            this.labelIC.Size = new System.Drawing.Size(194, 21);
+            this.labelIC.Size = new System.Drawing.Size(134, 16);
             this.labelIC.TabIndex = 14;
             this.labelIC.Text = "Infos complémentaires :";
             // 
@@ -209,21 +209,21 @@
             // 
             this.textBoxVille.Location = new System.Drawing.Point(76, 142);
             this.textBoxVille.Name = "textBoxVille";
-            this.textBoxVille.Size = new System.Drawing.Size(310, 27);
+            this.textBoxVille.Size = new System.Drawing.Size(310, 21);
             this.textBoxVille.TabIndex = 13;
             // 
             // textBoxCp
             // 
             this.textBoxCp.Location = new System.Drawing.Point(126, 96);
             this.textBoxCp.Name = "textBoxCp";
-            this.textBoxCp.Size = new System.Drawing.Size(153, 27);
+            this.textBoxCp.Size = new System.Drawing.Size(153, 21);
             this.textBoxCp.TabIndex = 12;
             // 
             // textBoxRue
             // 
             this.textBoxRue.Location = new System.Drawing.Point(76, 39);
             this.textBoxRue.Name = "textBoxRue";
-            this.textBoxRue.Size = new System.Drawing.Size(548, 27);
+            this.textBoxRue.Size = new System.Drawing.Size(548, 21);
             this.textBoxRue.TabIndex = 11;
             // 
             // labelRue
@@ -231,7 +231,7 @@
             this.labelRue.AutoSize = true;
             this.labelRue.Location = new System.Drawing.Point(12, 42);
             this.labelRue.Name = "labelRue";
-            this.labelRue.Size = new System.Drawing.Size(48, 21);
+            this.labelRue.Size = new System.Drawing.Size(35, 16);
             this.labelRue.TabIndex = 5;
             this.labelRue.Text = "Rue :";
             // 
@@ -240,7 +240,7 @@
             this.labelCP.AutoSize = true;
             this.labelCP.Location = new System.Drawing.Point(12, 99);
             this.labelCP.Name = "labelCP";
-            this.labelCP.Size = new System.Drawing.Size(114, 21);
+            this.labelCP.Size = new System.Drawing.Size(81, 16);
             this.labelCP.TabIndex = 4;
             this.labelCP.Text = "Code postal :";
             // 
@@ -249,7 +249,7 @@
             this.labelVille.AutoSize = true;
             this.labelVille.Location = new System.Drawing.Point(12, 145);
             this.labelVille.Name = "labelVille";
-            this.labelVille.Size = new System.Drawing.Size(48, 21);
+            this.labelVille.Size = new System.Drawing.Size(34, 16);
             this.labelVille.TabIndex = 3;
             this.labelVille.Text = "Ville :";
             // 
@@ -259,7 +259,7 @@
             this.labelTRDV.BackColor = System.Drawing.Color.Transparent;
             this.labelTRDV.Location = new System.Drawing.Point(37, 200);
             this.labelTRDV.Name = "labelTRDV";
-            this.labelTRDV.Size = new System.Drawing.Size(183, 21);
+            this.labelTRDV.Size = new System.Drawing.Size(132, 16);
             this.labelTRDV.TabIndex = 8;
             this.labelTRDV.Text = "Type de Rendez-vous :";
             // 
@@ -269,7 +269,7 @@
             this.labelHF.BackColor = System.Drawing.Color.Transparent;
             this.labelHF.Location = new System.Drawing.Point(357, 144);
             this.labelHF.Name = "labelHF";
-            this.labelHF.Size = new System.Drawing.Size(89, 21);
+            this.labelHF.Size = new System.Drawing.Size(63, 16);
             this.labelHF.TabIndex = 7;
             this.labelHF.Text = "Heure Fin :";
             // 
@@ -279,7 +279,7 @@
             this.labelHD.BackColor = System.Drawing.Color.Transparent;
             this.labelHD.Location = new System.Drawing.Point(357, 107);
             this.labelHD.Name = "labelHD";
-            this.labelHD.Size = new System.Drawing.Size(117, 21);
+            this.labelHD.Size = new System.Drawing.Size(83, 16);
             this.labelHD.TabIndex = 6;
             this.labelHD.Text = "Heure début :";
             // 
@@ -289,7 +289,7 @@
             this.labelClient.BackColor = System.Drawing.Color.Transparent;
             this.labelClient.Location = new System.Drawing.Point(12, 107);
             this.labelClient.Name = "labelClient";
-            this.labelClient.Size = new System.Drawing.Size(64, 21);
+            this.labelClient.Size = new System.Drawing.Size(45, 16);
             this.labelClient.TabIndex = 2;
             this.labelClient.Text = "Client :";
             // 
@@ -299,7 +299,7 @@
             this.labelDate.BackColor = System.Drawing.Color.Transparent;
             this.labelDate.Location = new System.Drawing.Point(12, 62);
             this.labelDate.Name = "labelDate";
-            this.labelDate.Size = new System.Drawing.Size(58, 21);
+            this.labelDate.Size = new System.Drawing.Size(41, 16);
             this.labelDate.TabIndex = 0;
             this.labelDate.Text = "Date :";
             // 
@@ -309,7 +309,7 @@
             this.dateTimePickerNRDV.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerNRDV.Location = new System.Drawing.Point(77, 57);
             this.dateTimePickerNRDV.Name = "dateTimePickerNRDV";
-            this.dateTimePickerNRDV.Size = new System.Drawing.Size(200, 27);
+            this.dateTimePickerNRDV.Size = new System.Drawing.Size(200, 21);
             this.dateTimePickerNRDV.TabIndex = 16;
             this.dateTimePickerNRDV.Value = new System.DateTime(2017, 3, 9, 0, 0, 0, 0);
             // 
@@ -319,7 +319,7 @@
             this.dateTimePickerHD.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dateTimePickerHD.Location = new System.Drawing.Point(480, 102);
             this.dateTimePickerHD.Name = "dateTimePickerHD";
-            this.dateTimePickerHD.Size = new System.Drawing.Size(161, 27);
+            this.dateTimePickerHD.Size = new System.Drawing.Size(161, 21);
             this.dateTimePickerHD.TabIndex = 17;
             this.dateTimePickerHD.Value = new System.DateTime(2017, 3, 9, 0, 0, 0, 0);
             // 
@@ -329,7 +329,7 @@
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dateTimePicker1.Location = new System.Drawing.Point(480, 144);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(161, 27);
+            this.dateTimePicker1.Size = new System.Drawing.Size(161, 21);
             this.dateTimePicker1.TabIndex = 18;
             this.dateTimePicker1.Value = new System.DateTime(2017, 3, 9, 0, 0, 0, 0);
             // 
@@ -342,7 +342,7 @@
             "Administrateur"});
             this.comboBoxClient.Location = new System.Drawing.Point(78, 150);
             this.comboBoxClient.Name = "comboBoxClient";
-            this.comboBoxClient.Size = new System.Drawing.Size(199, 29);
+            this.comboBoxClient.Size = new System.Drawing.Size(199, 24);
             this.comboBoxClient.TabIndex = 19;
             // 
             // comboBoxLRDV
@@ -354,7 +354,7 @@
             "Administrateur"});
             this.comboBoxLRDV.Location = new System.Drawing.Point(476, 224);
             this.comboBoxLRDV.Name = "comboBoxLRDV";
-            this.comboBoxLRDV.Size = new System.Drawing.Size(179, 29);
+            this.comboBoxLRDV.Size = new System.Drawing.Size(179, 24);
             this.comboBoxLRDV.TabIndex = 20;
             // 
             // comboBoxTRDV
@@ -366,7 +366,7 @@
             "Administrateur"});
             this.comboBoxTRDV.Location = new System.Drawing.Point(77, 224);
             this.comboBoxTRDV.Name = "comboBoxTRDV";
-            this.comboBoxTRDV.Size = new System.Drawing.Size(201, 29);
+            this.comboBoxTRDV.Size = new System.Drawing.Size(201, 24);
             this.comboBoxTRDV.TabIndex = 21;
             // 
             // labelLRDV
@@ -375,7 +375,7 @@
             this.labelLRDV.BackColor = System.Drawing.Color.Transparent;
             this.labelLRDV.Location = new System.Drawing.Point(357, 200);
             this.labelLRDV.Name = "labelLRDV";
-            this.labelLRDV.Size = new System.Drawing.Size(176, 21);
+            this.labelLRDV.Size = new System.Drawing.Size(127, 16);
             this.labelLRDV.TabIndex = 22;
             this.labelLRDV.Text = "Lieu de Rendez-vous :";
             // 
@@ -390,6 +390,7 @@
             this.buttonVal.TabIndex = 23;
             this.buttonVal.Text = "Valider";
             this.buttonVal.UseVisualStyleBackColor = false;
+            this.buttonVal.Click += new System.EventHandler(this.buttonVal_Click_1);
             // 
             // buttonAnul
             // 
@@ -405,7 +406,7 @@
             // 
             // PopNouveauRDV
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Maquette_Belle_Table_Final.Properties.Resources.fond;
             this.ClientSize = new System.Drawing.Size(667, 613);
@@ -434,6 +435,7 @@
             this.Name = "PopNouveauRDV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PopNouveauRDV";
+            this.Load += new System.EventHandler(this.PopNouveauRDV_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelTitre.ResumeLayout(false);
             this.panelTitre.PerformLayout();

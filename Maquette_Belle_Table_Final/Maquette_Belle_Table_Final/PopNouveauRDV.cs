@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Maquette_Belle_Table_Final;
+using NHibernate;
+using NHibernate.Cfg;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +15,8 @@ namespace Maquette_Belle_Table
 {
     public partial class PopNouveauRDV : Form
     {
+        private static ISessionFactory sessionFactory = null;
+
         public PopNouveauRDV()
         {
             InitializeComponent();
@@ -32,5 +37,37 @@ namespace Maquette_Belle_Table
             buttonVal.DialogResult = DialogResult.OK;
         }
 
-     }
+        private void buttonVal_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PopNouveauRDV_Load(object sender, EventArgs e)
+        {
+            comboBoxTRDV.DataSource = GetLesTypesRdv();
+        }
+
+        public virtual IList<TypeRdv> GetLesTypesRdv()
+        {
+            sessionFactory = new Configuration().Configure().BuildSessionFactory();
+            using (ISession session = sessionFactory.OpenSession())
+            {
+                // début transaction 
+                using (ITransaction transaction = session.BeginTransaction())
+                {
+
+                    // on récupère la liste des typerdv 
+                    IList<TypeRdv> typerdv = session.CreateQuery(@"select e from typerdv e order by e.id_type_rdv asc").List<TypeRdv>();
+
+                    foreach (TypeRdv e in typerdv)
+                    {
+                        Console.WriteLine(e);
+                    }
+                    return typerdv;
+
+                }
+            }
+
+        }
+    }
 }
