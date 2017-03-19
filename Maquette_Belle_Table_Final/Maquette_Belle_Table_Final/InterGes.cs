@@ -89,7 +89,7 @@ namespace Maquette_Belle_Table_Final
         private void buttonValCDMDP_Click(object sender, EventArgs e)
         {
             
-            if (textBoxNewMDP.Text == textBoxNewMdp2.Text)
+            if (textBoxNewMDP.Text == textBoxNewMDP2.Text)
             {
                 if (ChangerMotDePasse(utilisateur, textBoxOldPswd.Text, textBoxNewMDP.Text) == true) MessageBox.Show("Votre mot de passe a été changé.", "Action réussie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 else MessageBox.Show("Mauvais mot de passe.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -122,6 +122,9 @@ namespace Maquette_Belle_Table_Final
             }
         }
 
+        private void textBoxLog_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }
