@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
+  <class name="Individu" table="individu">
+    <id name="numIndividu" column="numIndividu" unsaved-value="0">
+      <generator class="native" />
+    </id>
+    <property name="distanceSiege" column="distanceSiege"/>
+    <property name="adresseIndividu" column="adresseIndividu"/>
+    <property name="cpIndividu" column="cpIndividu"/>
+    <property name="villeIndividu" column="villeIndividu"/>
+    <property name="planAcces" column="planAcces"/>
+    <property name="infosSupplementaire" column="infosSupplementaire"/>
+  </class>
+</hibernate-mapping>

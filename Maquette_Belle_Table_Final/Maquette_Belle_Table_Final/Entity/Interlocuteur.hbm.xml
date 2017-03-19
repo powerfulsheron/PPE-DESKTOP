@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
+  <class name="Interlocuteur" table="interlocuteur">
+    <id name="idInterlocuteur" column="idInterlocuteur" unsaved-value="0">
+      <generator class="native" />
+    </id>
+
+    <property name="nomInterlocuteur" column="nomInterlocuteur"/>
+    <property name="prenomInterlocuteur" column="prenomInterlocuteur"/>
+    <property name="telInterlocuteur" column="telInterlocuteur"/>
+    <property name="mailInterlocuteur" column="mailInterlocuteur"/>
+    <one-to-one name="individu" constrained="true" foreign-key="none" class="Individu" />
+    <one-to-one name="structure" constrained="true" foreign-key="none" class="Structure" />
+    <one-to-one name="portefeuille" constrained="true" foreign-key="none" class="PorteFeuille" />
+    
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{165DA459-B492-4006-ACE7-8E1C3784432B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Maquette_Belle_Table_Final</RootNamespace>
+    <AssemblyName>Maquette_Belle_Table_Final</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\..\..\Desktop\PPE-DESKTOP-master\BelleTableOK\TestHibernate2\bin\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\..\..\Desktop\PPE-DESKTOP-master\BelleTableOK\TestHibernate2\bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\..\..\..\Desktop\PPE-DESKTOP-master\BelleTableOK\TestHibernate2\bin\Debug\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entity\Conge.cs" />
+    <Compile Include="Entity\CongesUtilisateur.cs" />
+    <Compile Include="Entity\Individu.cs" />
+    <Compile Include="Entity\Interlocuteur.cs" />
+    <Compile Include="Entity\Mail.cs" />
+    <Compile Include="Entity\Planning.cs" />
+    <Compile Include="Entity\PorteFeuille.cs" />
+    <Compile Include="Entity\RendezVous.cs" />
+    <Compile Include="Entity\Structure.cs" />
+    <Compile Include="Entity\TypeRdv.cs" />
+    <Compile Include="Entity\TypeStructure.cs" />
+    <Compile Include="Entity\TypeUtilisateur.cs" />
+    <Compile Include="Entity\Utilisateur.cs" />
+    <Compile Include="InterGes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterGes.Designer.cs">
+      <DependentUpon>InterGes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterUti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterUti.Designer.cs">
+      <DependentUpon>InterUti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterLogin.Designer.cs">
+      <DependentUpon>InterLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterAd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterAd.Designer.cs">
+      <DependentUpon>InterAd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopNouveauRDV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopNouveauRDV.Designer.cs">
+      <DependentUpon>PopNouveauRDV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup AddModUser.cs">
+      <SubType>Form</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Popup AddModUser.Designer.cs">
+      <DependentUpon>Popup AddModUser.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Popup_AssoCom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup_AssoCom.Designer.cs">
+      <DependentUpon>Popup_AssoCom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup_Mail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup_Mail.Designer.cs">
+      <DependentUpon>Popup_Mail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup_NewC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup_NewC.Designer.cs">
+      <DependentUpon>Popup_NewC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup_NewClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup_NewClient.Designer.cs">
+      <DependentUpon>Popup_NewClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup_NewCom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup_NewCom.Designer.cs">
+      <DependentUpon>Popup_NewCom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup_NewInter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup_NewInter.Designer.cs">
+      <DependentUpon>Popup_NewInter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup_NewPF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup_NewPF.Designer.cs">
+      <DependentUpon>Popup_NewPF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup_VoirMails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup_VoirMails.Designer.cs">
+      <DependentUpon>Popup_VoirMails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup_VoirRDV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup_VoirRDV.Designer.cs">
+      <DependentUpon>Popup_VoirRDV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="InterGes.resx">
+      <DependentUpon>InterGes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterUti.resx">
+      <DependentUpon>InterUti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterLogin.resx">
+      <DependentUpon>InterLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterAd.resx">
+      <DependentUpon>InterAd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopNouveauRDV.resx">
+      <DependentUpon>PopNouveauRDV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup AddModUser.resx">
+      <DependentUpon>Popup AddModUser.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup_AssoCom.resx">
+      <DependentUpon>Popup_AssoCom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup_Mail.resx">
+      <DependentUpon>Popup_Mail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup_NewC.resx">
+      <DependentUpon>Popup_NewC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup_NewClient.resx">
+      <DependentUpon>Popup_NewClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup_NewCom.resx">
+      <DependentUpon>Popup_NewCom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup_NewInter.resx">
+      <DependentUpon>Popup_NewInter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup_NewPF.resx">
+      <DependentUpon>Popup_NewPF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup_VoirMails.resx">
+      <DependentUpon>Popup_VoirMails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup_VoirRDV.resx">
+      <DependentUpon>Popup_VoirRDV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fond.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo BT2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo BT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Entity\Conge.hbm.xml" />
+    <EmbeddedResource Include="Entity\CongesUtilisateur.hbm.xml" />
+    <EmbeddedResource Include="Entity\Individu.hbm.xml" />
+    <EmbeddedResource Include="Entity\Interlocuteur.hbm.xml" />
+    <EmbeddedResource Include="Entity\Mail.hbm.xml" />
+    <EmbeddedResource Include="Entity\Planning.hbm.xml" />
+    <EmbeddedResource Include="Entity\PorteFeuille.hbm.xml" />
+    <EmbeddedResource Include="Entity\RendezVous.hbm.xml" />
+    <EmbeddedResource Include="Entity\Structure.hbm.xml" />
+    <EmbeddedResource Include="Entity\TypeRdv.hbm.xml" />
+    <EmbeddedResource Include="Entity\TypeStructure.hbm.xml" />
+    <EmbeddedResource Include="Entity\TypeUtilisateur.hbm.xml" />
+    <EmbeddedResource Include="Entity\Utilisateur.hbm.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

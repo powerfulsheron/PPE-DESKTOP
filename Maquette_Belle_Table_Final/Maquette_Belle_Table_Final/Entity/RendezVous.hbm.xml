@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
+  <class name="RendezVous" table="rdv">
+    <id name="idRdv" column="idRdv" unsaved-value="0">
+      <generator class="native" />
+    </id>
+    <property name="codeEntreeDerogatoire" column="codeEntreeDerogatoire"/>
+    <property name="dateRdv" column="dateRdv"/>
+    <property name="heureDebut" column="heureDebut"/>
+    <property name="heureFin" column="heureFin"/>
+    <property name="adresseDerogatoire" column="adresseDerogatoire"/>
+    <property name="villeDerogatoire" column="villeDerogatoire"/>
+    <property name="infoDerogatoire" column="infoDerogatoire"/>
+    <many-to-one name="interlocuteur" column="idInterlocuteur" cascade="all" lazy="false"/>
+    <many-to-one name="typeRdv" column="idTypeRdv" cascade="all" lazy="false"/>
+    <one-to-one name="planning" constrained="true" foreign-key="none" class="Planning" />
+  
+  </class>
+</hibernate-mapping>
