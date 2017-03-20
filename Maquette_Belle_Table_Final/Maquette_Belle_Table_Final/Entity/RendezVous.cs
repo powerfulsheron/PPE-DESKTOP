@@ -1,4 +1,8 @@
-﻿using System;
+﻿using NHibernate;
+using NHibernate.Cfg;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace Maquette_Belle_Table_Final
 {
@@ -17,6 +21,7 @@ namespace Maquette_Belle_Table_Final
         public virtual TypeRdv typeRdv { get; set; }
         public virtual Planning planning { get; set; }
 
+        private static ISessionFactory sessionFactory = null;
         public RendezVous()
         {
            
@@ -27,7 +32,6 @@ namespace Maquette_Belle_Table_Final
         {
             return string.Format("[{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}]", codeEntreeDerogatoire, dateRdv, heureDebut, heureFin, adresseDerogatoire, villeDerogatoire, infoDerogatoire, interlocuteur, typeRdv);
         }
-
 
     }
 }    
