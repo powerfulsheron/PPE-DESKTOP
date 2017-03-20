@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Maquette_Belle_Table;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,7 +29,9 @@ namespace Maquette_Belle_Table_Final
         private void buttonNRDV_Click(object sender, EventArgs e)
         {
             //Partie code destiné à ajouter un nouveau RDV
-            new Maquette_Belle_Table.PopNouveauRDV().Show();
+            PopNouveauRDV popNouveauRDV = new PopNouveauRDV();
+            popNouveauRDV.utilisateur = utilisateur;
+            popNouveauRDV.Show();
         }
 
         //---------------------> * Fin Rubrique Planning * <---------------------

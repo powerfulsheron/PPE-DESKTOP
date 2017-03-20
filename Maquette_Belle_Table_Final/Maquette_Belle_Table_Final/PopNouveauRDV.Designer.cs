@@ -37,8 +37,9 @@
             this.panelBorderRight = new System.Windows.Forms.Panel();
             this.panelBordeLeft = new System.Windows.Forms.Panel();
             this.panelBorderBottom = new System.Windows.Forms.Panel();
-            this.textBoxClient = new System.Windows.Forms.TextBox();
             this.groupBoxAP = new System.Windows.Forms.GroupBox();
+            this.labelCodeEntree = new System.Windows.Forms.Label();
+            this.textBoxCodeEntree = new System.Windows.Forms.TextBox();
             this.textBoxIC = new System.Windows.Forms.TextBox();
             this.labelIC = new System.Windows.Forms.Label();
             this.textBoxVille = new System.Windows.Forms.TextBox();
@@ -54,13 +55,13 @@
             this.labelDate = new System.Windows.Forms.Label();
             this.dateTimePickerNRDV = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerHD = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBoxClient = new System.Windows.Forms.ComboBox();
+            this.dateTimePickerHF = new System.Windows.Forms.DateTimePicker();
             this.comboBoxLRDV = new System.Windows.Forms.ComboBox();
             this.comboBoxTRDV = new System.Windows.Forms.ComboBox();
             this.labelLRDV = new System.Windows.Forms.Label();
             this.buttonVal = new System.Windows.Forms.Button();
             this.buttonAnul = new System.Windows.Forms.Button();
+            this.comboBoxListeClient = new System.Windows.Forms.ComboBox();
             this.panelMenu.SuspendLayout();
             this.panelTitre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBT)).BeginInit();
@@ -163,16 +164,11 @@
             this.panelBorderBottom.Size = new System.Drawing.Size(667, 1);
             this.panelBorderBottom.TabIndex = 12;
             // 
-            // textBoxClient
-            // 
-            this.textBoxClient.Location = new System.Drawing.Point(77, 104);
-            this.textBoxClient.Name = "textBoxClient";
-            this.textBoxClient.Size = new System.Drawing.Size(200, 21);
-            this.textBoxClient.TabIndex = 12;
-            // 
             // groupBoxAP
             // 
             this.groupBoxAP.BackColor = System.Drawing.Color.Transparent;
+            this.groupBoxAP.Controls.Add(this.labelCodeEntree);
+            this.groupBoxAP.Controls.Add(this.textBoxCodeEntree);
             this.groupBoxAP.Controls.Add(this.textBoxIC);
             this.groupBoxAP.Controls.Add(this.labelIC);
             this.groupBoxAP.Controls.Add(this.textBoxVille);
@@ -188,6 +184,24 @@
             this.groupBoxAP.TabStop = false;
             this.groupBoxAP.Text = "Adresse personnelle";
             // 
+            // labelCodeEntree
+            // 
+            this.labelCodeEntree.AutoSize = true;
+            this.labelCodeEntree.Location = new System.Drawing.Point(346, 99);
+            this.labelCodeEntree.Name = "labelCodeEntree";
+            this.labelCodeEntree.Size = new System.Drawing.Size(93, 16);
+            this.labelCodeEntree.TabIndex = 17;
+            this.labelCodeEntree.Text = "Code d\'entrée :";
+            this.labelCodeEntree.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // textBoxCodeEntree
+            // 
+            this.textBoxCodeEntree.Location = new System.Drawing.Point(451, 94);
+            this.textBoxCodeEntree.Name = "textBoxCodeEntree";
+            this.textBoxCodeEntree.Size = new System.Drawing.Size(119, 21);
+            this.textBoxCodeEntree.TabIndex = 16;
+            this.textBoxCodeEntree.Text = "12345";
+            // 
             // textBoxIC
             // 
             this.textBoxIC.Location = new System.Drawing.Point(16, 203);
@@ -195,6 +209,7 @@
             this.textBoxIC.Name = "textBoxIC";
             this.textBoxIC.Size = new System.Drawing.Size(579, 93);
             this.textBoxIC.TabIndex = 15;
+            this.textBoxIC.Text = "des infos lol.";
             // 
             // labelIC
             // 
@@ -211,6 +226,7 @@
             this.textBoxVille.Name = "textBoxVille";
             this.textBoxVille.Size = new System.Drawing.Size(310, 21);
             this.textBoxVille.TabIndex = 13;
+            this.textBoxVille.Text = "Paris";
             // 
             // textBoxCp
             // 
@@ -218,6 +234,7 @@
             this.textBoxCp.Name = "textBoxCp";
             this.textBoxCp.Size = new System.Drawing.Size(153, 21);
             this.textBoxCp.TabIndex = 12;
+            this.textBoxCp.Text = "76014";
             // 
             // textBoxRue
             // 
@@ -225,6 +242,7 @@
             this.textBoxRue.Name = "textBoxRue";
             this.textBoxRue.Size = new System.Drawing.Size(548, 21);
             this.textBoxRue.TabIndex = 11;
+            this.textBoxRue.Text = "test";
             // 
             // labelRue
             // 
@@ -287,7 +305,7 @@
             // 
             this.labelClient.AutoSize = true;
             this.labelClient.BackColor = System.Drawing.Color.Transparent;
-            this.labelClient.Location = new System.Drawing.Point(12, 107);
+            this.labelClient.Location = new System.Drawing.Point(12, 148);
             this.labelClient.Name = "labelClient";
             this.labelClient.Size = new System.Drawing.Size(45, 16);
             this.labelClient.TabIndex = 2;
@@ -297,7 +315,7 @@
             // 
             this.labelDate.AutoSize = true;
             this.labelDate.BackColor = System.Drawing.Color.Transparent;
-            this.labelDate.Location = new System.Drawing.Point(12, 62);
+            this.labelDate.Location = new System.Drawing.Point(12, 102);
             this.labelDate.Name = "labelDate";
             this.labelDate.Size = new System.Drawing.Size(41, 16);
             this.labelDate.TabIndex = 0;
@@ -307,7 +325,7 @@
             // 
             this.dateTimePickerNRDV.CustomFormat = "dd-mm-yyyy";
             this.dateTimePickerNRDV.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerNRDV.Location = new System.Drawing.Point(77, 57);
+            this.dateTimePickerNRDV.Location = new System.Drawing.Point(77, 102);
             this.dateTimePickerNRDV.Name = "dateTimePickerNRDV";
             this.dateTimePickerNRDV.Size = new System.Drawing.Size(200, 21);
             this.dateTimePickerNRDV.TabIndex = 16;
@@ -323,27 +341,15 @@
             this.dateTimePickerHD.TabIndex = 17;
             this.dateTimePickerHD.Value = new System.DateTime(2017, 3, 9, 0, 0, 0, 0);
             // 
-            // dateTimePicker1
+            // dateTimePickerHF
             // 
-            this.dateTimePicker1.CustomFormat = "dd-mm-yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(480, 144);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(161, 21);
-            this.dateTimePicker1.TabIndex = 18;
-            this.dateTimePicker1.Value = new System.DateTime(2017, 3, 9, 0, 0, 0, 0);
-            // 
-            // comboBoxClient
-            // 
-            this.comboBoxClient.FormattingEnabled = true;
-            this.comboBoxClient.Items.AddRange(new object[] {
-            "Commercial",
-            "Gestionnaire",
-            "Administrateur"});
-            this.comboBoxClient.Location = new System.Drawing.Point(78, 150);
-            this.comboBoxClient.Name = "comboBoxClient";
-            this.comboBoxClient.Size = new System.Drawing.Size(199, 24);
-            this.comboBoxClient.TabIndex = 19;
+            this.dateTimePickerHF.CustomFormat = "dd-mm-yyyy";
+            this.dateTimePickerHF.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePickerHF.Location = new System.Drawing.Point(480, 144);
+            this.dateTimePickerHF.Name = "dateTimePickerHF";
+            this.dateTimePickerHF.Size = new System.Drawing.Size(161, 21);
+            this.dateTimePickerHF.TabIndex = 18;
+            this.dateTimePickerHF.Value = new System.DateTime(2017, 3, 9, 0, 0, 0, 0);
             // 
             // comboBoxLRDV
             // 
@@ -360,14 +366,11 @@
             // comboBoxTRDV
             // 
             this.comboBoxTRDV.FormattingEnabled = true;
-            this.comboBoxTRDV.Items.AddRange(new object[] {
-            "Commercial",
-            "Gestionnaire",
-            "Administrateur"});
             this.comboBoxTRDV.Location = new System.Drawing.Point(77, 224);
             this.comboBoxTRDV.Name = "comboBoxTRDV";
             this.comboBoxTRDV.Size = new System.Drawing.Size(201, 24);
             this.comboBoxTRDV.TabIndex = 21;
+            this.comboBoxTRDV.SelectedIndexChanged += new System.EventHandler(this.comboBoxTRDV_SelectedIndexChanged);
             // 
             // labelLRDV
             // 
@@ -404,22 +407,29 @@
             this.buttonAnul.Text = "Annuler";
             this.buttonAnul.UseVisualStyleBackColor = false;
             // 
+            // comboBoxListeClient
+            // 
+            this.comboBoxListeClient.FormattingEnabled = true;
+            this.comboBoxListeClient.Location = new System.Drawing.Point(76, 141);
+            this.comboBoxListeClient.Name = "comboBoxListeClient";
+            this.comboBoxListeClient.Size = new System.Drawing.Size(201, 24);
+            this.comboBoxListeClient.TabIndex = 25;
+            // 
             // PopNouveauRDV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Maquette_Belle_Table_Final.Properties.Resources.fond;
             this.ClientSize = new System.Drawing.Size(667, 613);
+            this.Controls.Add(this.comboBoxListeClient);
             this.Controls.Add(this.buttonAnul);
             this.Controls.Add(this.buttonVal);
             this.Controls.Add(this.labelLRDV);
             this.Controls.Add(this.comboBoxTRDV);
             this.Controls.Add(this.comboBoxLRDV);
-            this.Controls.Add(this.comboBoxClient);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateTimePickerHF);
             this.Controls.Add(this.dateTimePickerHD);
             this.Controls.Add(this.dateTimePickerNRDV);
-            this.Controls.Add(this.textBoxClient);
             this.Controls.Add(this.labelTRDV);
             this.Controls.Add(this.labelHF);
             this.Controls.Add(this.labelHD);
@@ -458,7 +468,6 @@
         private System.Windows.Forms.Panel panelBorderRight;
         private System.Windows.Forms.Panel panelBordeLeft;
         private System.Windows.Forms.Panel panelBorderBottom;
-        private System.Windows.Forms.TextBox textBoxClient;
         private System.Windows.Forms.GroupBox groupBoxAP;
         private System.Windows.Forms.Label labelIC;
         private System.Windows.Forms.TextBox textBoxVille;
@@ -475,12 +484,14 @@
         private System.Windows.Forms.TextBox textBoxIC;
         private System.Windows.Forms.DateTimePicker dateTimePickerNRDV;
         private System.Windows.Forms.DateTimePicker dateTimePickerHD;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBoxClient;
+        private System.Windows.Forms.DateTimePicker dateTimePickerHF;
         private System.Windows.Forms.ComboBox comboBoxLRDV;
         private System.Windows.Forms.ComboBox comboBoxTRDV;
         private System.Windows.Forms.Label labelLRDV;
         private System.Windows.Forms.Button buttonVal;
         private System.Windows.Forms.Button buttonAnul;
+        private System.Windows.Forms.ComboBox comboBoxListeClient;
+        private System.Windows.Forms.Label labelCodeEntree;
+        private System.Windows.Forms.TextBox textBoxCodeEntree;
     }
 }

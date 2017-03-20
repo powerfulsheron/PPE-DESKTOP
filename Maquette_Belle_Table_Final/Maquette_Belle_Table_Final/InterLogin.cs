@@ -63,7 +63,6 @@ namespace Maquette_Belle_Table_Final
 
                 else if (utilisateur.typeUtilisateur.codeTypeUtilisateur == 3)
                 {
-                    new InterUti().Show();
                     InterUti interUti = new InterUti();
                     interUti.utilisateur = utilisateur;
                     interUti.Show();
@@ -111,7 +110,7 @@ namespace Maquette_Belle_Table_Final
             new InterUti().Show();
         }
 
-        public static string MD5Hash(string input)
+        public string MD5Hash(string input)
         {
             StringBuilder hash = new StringBuilder();
             MD5CryptoServiceProvider md5provider = new MD5CryptoServiceProvider();

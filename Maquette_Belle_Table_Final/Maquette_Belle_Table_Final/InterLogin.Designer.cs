@@ -108,7 +108,7 @@
             this.labelFermeture.ForeColor = System.Drawing.Color.MidnightBlue;
             this.labelFermeture.Location = new System.Drawing.Point(359, 5);
             this.labelFermeture.Name = "labelFermeture";
-            this.labelFermeture.Size = new System.Drawing.Size(18, 18);
+            this.labelFermeture.Size = new System.Drawing.Size(15, 15);
             this.labelFermeture.TabIndex = 16;
             this.labelFermeture.Text = "X";
             this.labelFermeture.Click += new System.EventHandler(this.labelFermeture_Click);
@@ -131,7 +131,7 @@
             this.linkLabelMDP.Font = new System.Drawing.Font("Century Gothic", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelMDP.Location = new System.Drawing.Point(122, 263);
             this.linkLabelMDP.Name = "linkLabelMDP";
-            this.linkLabelMDP.Size = new System.Drawing.Size(138, 17);
+            this.linkLabelMDP.Size = new System.Drawing.Size(121, 15);
             this.linkLabelMDP.TabIndex = 20;
             this.linkLabelMDP.TabStop = true;
             this.linkLabelMDP.Text = "Mot de passe oublié ?";
@@ -142,9 +142,9 @@
             this.textBoxId.HideSelection = false;
             this.textBoxId.Location = new System.Drawing.Point(97, 167);
             this.textBoxId.Name = "textBoxId";
-            this.textBoxId.Size = new System.Drawing.Size(188, 24);
+            this.textBoxId.Size = new System.Drawing.Size(188, 21);
             this.textBoxId.TabIndex = 21;
-            this.textBoxId.Text = "Identifiant";
+            this.textBoxId.Text = "jrobinson";
             this.textBoxId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxMDP
@@ -153,9 +153,9 @@
             this.textBoxMDP.Location = new System.Drawing.Point(97, 214);
             this.textBoxMDP.Name = "textBoxMDP";
             this.textBoxMDP.PasswordChar = '*';
-            this.textBoxMDP.Size = new System.Drawing.Size(188, 24);
+            this.textBoxMDP.Size = new System.Drawing.Size(188, 21);
             this.textBoxMDP.TabIndex = 22;
-            this.textBoxMDP.Text = "Mot de passe";
+            this.textBoxMDP.Text = "12345";
             this.textBoxMDP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panelMDPO
@@ -207,7 +207,7 @@
             this.labelMDPEm.ForeColor = System.Drawing.Color.MidnightBlue;
             this.labelMDPEm.Location = new System.Drawing.Point(18, 124);
             this.labelMDPEm.Name = "labelMDPEm";
-            this.labelMDPEm.Size = new System.Drawing.Size(50, 19);
+            this.labelMDPEm.Size = new System.Drawing.Size(39, 16);
             this.labelMDPEm.TabIndex = 6;
             this.labelMDPEm.Text = "Email ";
             // 
@@ -217,7 +217,7 @@
             this.labelMDPNom.ForeColor = System.Drawing.Color.MidnightBlue;
             this.labelMDPNom.Location = new System.Drawing.Point(18, 71);
             this.labelMDPNom.Name = "labelMDPNom";
-            this.labelMDPNom.Size = new System.Drawing.Size(79, 19);
+            this.labelMDPNom.Size = new System.Drawing.Size(63, 16);
             this.labelMDPNom.TabIndex = 4;
             this.labelMDPNom.Text = "Identifiant";
             // 
@@ -225,14 +225,14 @@
             // 
             this.textBoxMDPEm.Location = new System.Drawing.Point(97, 118);
             this.textBoxMDPEm.Name = "textBoxMDPEm";
-            this.textBoxMDPEm.Size = new System.Drawing.Size(188, 24);
+            this.textBoxMDPEm.Size = new System.Drawing.Size(188, 21);
             this.textBoxMDPEm.TabIndex = 3;
             // 
             // textBoxMDPNom
             // 
             this.textBoxMDPNom.Location = new System.Drawing.Point(97, 65);
             this.textBoxMDPNom.Name = "textBoxMDPNom";
-            this.textBoxMDPNom.Size = new System.Drawing.Size(188, 24);
+            this.textBoxMDPNom.Size = new System.Drawing.Size(188, 21);
             this.textBoxMDPNom.TabIndex = 1;
             // 
             // labelMDPO
@@ -243,7 +243,7 @@
             this.labelMDPO.ForeColor = System.Drawing.Color.MidnightBlue;
             this.labelMDPO.Location = new System.Drawing.Point(112, 14);
             this.labelMDPO.Name = "labelMDPO";
-            this.labelMDPO.Size = new System.Drawing.Size(158, 20);
+            this.labelMDPO.Size = new System.Drawing.Size(128, 17);
             this.labelMDPO.TabIndex = 0;
             this.labelMDPO.Text = "Mot de passe oublié";
             this.labelMDPO.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -289,7 +289,7 @@
             // 
             // InterLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Maquette_Belle_Table_Final.Properties.Resources.fond;
             this.ClientSize = new System.Drawing.Size(382, 449);
