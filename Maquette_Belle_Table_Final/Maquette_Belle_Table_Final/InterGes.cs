@@ -98,7 +98,7 @@ namespace Maquette_Belle_Table_Final
 
         }
 
-        bool ChangerMotDePasse(Utilisateur unUtilisateur, string ancienMotDePasse, string nouveauMotDePasse)
+        public bool ChangerMotDePasse(Utilisateur unUtilisateur, string ancienMotDePasse, string nouveauMotDePasse)
         {
             sessionFactory = new Configuration().Configure().BuildSessionFactory();
             ISession session = sessionFactory.OpenSession();
@@ -111,7 +111,7 @@ namespace Maquette_Belle_Table_Final
                 if (e.passwordUtilisateur == pourMD5.MD5Hash(ancienMotDePasse))
                 {
                     e.passwordUtilisateur = pourMD5.MD5Hash(nouveauMotDePasse);
-                    utilisateur.passwordUtilisateur = pourMD5.MD5Hash(nouveauMotDePasse);
+                    unUtilisateur.passwordUtilisateur = pourMD5.MD5Hash(nouveauMotDePasse);
                     session.SaveOrUpdate(e);
                     transaction.Commit();
                     session.Close();

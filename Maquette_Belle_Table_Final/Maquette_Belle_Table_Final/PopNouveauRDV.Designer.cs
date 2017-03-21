@@ -56,9 +56,9 @@
             this.dateTimePickerNRDV = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerHD = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerHF = new System.Windows.Forms.DateTimePicker();
-            this.comboBoxLRDV = new System.Windows.Forms.ComboBox();
+            this.comboBoxRDVprecedent = new System.Windows.Forms.ComboBox();
             this.comboBoxTRDV = new System.Windows.Forms.ComboBox();
-            this.labelLRDV = new System.Windows.Forms.Label();
+            this.labelAncienRDV = new System.Windows.Forms.Label();
             this.buttonVal = new System.Windows.Forms.Button();
             this.buttonAnul = new System.Windows.Forms.Button();
             this.comboBoxListeClient = new System.Windows.Forms.ComboBox();
@@ -351,17 +351,13 @@
             this.dateTimePickerHF.TabIndex = 18;
             this.dateTimePickerHF.Value = new System.DateTime(2017, 3, 9, 0, 0, 0, 0);
             // 
-            // comboBoxLRDV
+            // comboBoxRDVprecedent
             // 
-            this.comboBoxLRDV.FormattingEnabled = true;
-            this.comboBoxLRDV.Items.AddRange(new object[] {
-            "Commercial",
-            "Gestionnaire",
-            "Administrateur"});
-            this.comboBoxLRDV.Location = new System.Drawing.Point(476, 224);
-            this.comboBoxLRDV.Name = "comboBoxLRDV";
-            this.comboBoxLRDV.Size = new System.Drawing.Size(179, 24);
-            this.comboBoxLRDV.TabIndex = 20;
+            this.comboBoxRDVprecedent.FormattingEnabled = true;
+            this.comboBoxRDVprecedent.Location = new System.Drawing.Point(476, 224);
+            this.comboBoxRDVprecedent.Name = "comboBoxRDVprecedent";
+            this.comboBoxRDVprecedent.Size = new System.Drawing.Size(179, 24);
+            this.comboBoxRDVprecedent.TabIndex = 20;
             // 
             // comboBoxTRDV
             // 
@@ -372,15 +368,15 @@
             this.comboBoxTRDV.TabIndex = 21;
             this.comboBoxTRDV.SelectedIndexChanged += new System.EventHandler(this.comboBoxTRDV_SelectedIndexChanged);
             // 
-            // labelLRDV
+            // labelAncienRDV
             // 
-            this.labelLRDV.AutoSize = true;
-            this.labelLRDV.BackColor = System.Drawing.Color.Transparent;
-            this.labelLRDV.Location = new System.Drawing.Point(357, 200);
-            this.labelLRDV.Name = "labelLRDV";
-            this.labelLRDV.Size = new System.Drawing.Size(127, 16);
-            this.labelLRDV.TabIndex = 22;
-            this.labelLRDV.Text = "Lieu de Rendez-vous :";
+            this.labelAncienRDV.AutoSize = true;
+            this.labelAncienRDV.BackColor = System.Drawing.Color.Transparent;
+            this.labelAncienRDV.Location = new System.Drawing.Point(318, 224);
+            this.labelAncienRDV.Name = "labelAncienRDV";
+            this.labelAncienRDV.Size = new System.Drawing.Size(146, 16);
+            this.labelAncienRDV.TabIndex = 22;
+            this.labelAncienRDV.Text = "Rendez-vous précédent :";
             // 
             // buttonVal
             // 
@@ -419,14 +415,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Maquette_Belle_Table_Final.Properties.Resources.fond;
             this.ClientSize = new System.Drawing.Size(667, 613);
             this.Controls.Add(this.comboBoxListeClient);
             this.Controls.Add(this.buttonAnul);
             this.Controls.Add(this.buttonVal);
-            this.Controls.Add(this.labelLRDV);
+            this.Controls.Add(this.labelAncienRDV);
             this.Controls.Add(this.comboBoxTRDV);
-            this.Controls.Add(this.comboBoxLRDV);
+            this.Controls.Add(this.comboBoxRDVprecedent);
             this.Controls.Add(this.dateTimePickerHF);
             this.Controls.Add(this.dateTimePickerHD);
             this.Controls.Add(this.dateTimePickerNRDV);
@@ -485,9 +480,9 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerNRDV;
         private System.Windows.Forms.DateTimePicker dateTimePickerHD;
         private System.Windows.Forms.DateTimePicker dateTimePickerHF;
-        private System.Windows.Forms.ComboBox comboBoxLRDV;
+        private System.Windows.Forms.ComboBox comboBoxRDVprecedent;
         private System.Windows.Forms.ComboBox comboBoxTRDV;
-        private System.Windows.Forms.Label labelLRDV;
+        private System.Windows.Forms.Label labelAncienRDV;
         private System.Windows.Forms.Button buttonVal;
         private System.Windows.Forms.Button buttonAnul;
         private System.Windows.Forms.ComboBox comboBoxListeClient;

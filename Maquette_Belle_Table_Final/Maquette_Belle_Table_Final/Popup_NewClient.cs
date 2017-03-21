@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Maquette_Belle_Table_Final;
+using NHibernate;
+using NHibernate.Cfg;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +15,7 @@ namespace Maquette_Belle_Table
 {
     public partial class Popup_NewClient : Form
     {
+        private static ISessionFactory sessionFactory = null;
         public Popup_NewClient()
         {
             InitializeComponent();
@@ -24,14 +28,16 @@ namespace Maquette_Belle_Table
 
         private void radioButtonOui_CheckedChanged(object sender, EventArgs e)
         {
-
+            groupBoxParticulier.Enabled = true;
+            groupBoxAS.Enabled = false;
         }
 
         private void radioButtonNon_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButtonNon.Checked)
             {
-                //Popup_NewClient.ActiveForm.SizeGripStyle();
+                groupBoxAS.Enabled = true;
+                groupBoxParticulier.Enabled = false;
 
             }
         }
@@ -224,6 +230,40 @@ namespace Maquette_Belle_Table
         private void groupBoxQParticulier_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void Popup_NewClient_Load(object sender, EventArgs e)
+        {
+            TypeStructure lesTypeStructure = new TypeStructure();
+            comboBoxTS.DataSource = lesTypeStructure.GetLesTypesStructure();
+            groupBoxAS.Enabled = false;
+            
+        }
+
+        static Boolean AjouterClient(Interlocuteur unInterlocuteur, string unnomclient, string unprenomclient, string untelclient,
+            string unmailclient, Individu unindividu, Structure unestructure, PorteFeuille unPortefeuille)
+        {
+            sessionFactory = new Configuration().Configure().BuildSessionFactory();
+            ISession session = sessionFactory.OpenSession();
+
+            using (ITransaction transaction = session.BeginTransaction())
+
+            {
+                Interlocuteur I = new Interlocuteur();
+
+                if (unInterlocuteur == null) { return false; }
+                if (unnomclient.Length == 0) { return false; } else { I.nomInterlocuteur = unnomclient; }
+                if (unprenomclient.Length == 0) { return false; } else { I.prenomInterlocuteur = unprenomclient; }
+                if (untelclient.Length == 0) { return false; } else { I.telInterlocuteur = untelclient; }
+                if (unmailclient.Length == 0) { return false; } else { I.mailInterlocuteur = unmailclient; }
+                if (unindividu == null) { return false; }
+                if (unestructure == null) { return false; }
+
+                session.Save(I);
+                transaction.Commit();
+                return true;
+
+            }
         }
     }
 }

@@ -94,11 +94,13 @@ namespace Maquette_Belle_Table_Final
 
         private void buttonValCDMDP_Click(object sender, EventArgs e)
         {
-            buttonValCDMDP.DialogResult = DialogResult.OK;
-            if (buttonValCDMDP.DialogResult == DialogResult.OK)
+            InterGes pourChangerMDP = new InterGes();
+            if (textBoxNewMDP.Text == textBoxNewMDP2.Text)
             {
-                MessageBox.Show("Votre nouveau mot de passe a été valider.");
+                if (pourChangerMDP.ChangerMotDePasse(utilisateur, textBoxOldPswd.Text, textBoxNewMDP.Text) == true) MessageBox.Show("Votre mot de passe a été changé.", "Action réussie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                else MessageBox.Show("Mauvais mot de passe.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else MessageBox.Show("Les nouveaux de passe ne correspondent pas.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         //---------------------> * Fin Rubrique Changer de mot de passe * <---------------------

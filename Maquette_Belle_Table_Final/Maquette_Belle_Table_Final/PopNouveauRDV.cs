@@ -42,20 +42,17 @@ namespace Maquette_Belle_Table
             sessionFactory = new Configuration().Configure().BuildSessionFactory();
 
             ISession session = sessionFactory.OpenSession();
-            MessageBox.Show(utilisateur.planning.idPlanning.ToString());
 
-            if (AjouterRendezVous(Int32.Parse(textBoxCodeEntree.Text), (Interlocuteur)comboBoxListeClient.SelectedItem, dateTimePickerNRDV.Value.Date, dateTimePickerHD.Value,
-                dateTimePickerHF.Value, textBoxRue.Text + " " + textBoxCp.Text, textBoxIC.Text,
-                (TypeRdv)comboBoxTRDV.SelectedItem, utilisateur.planning) == true)
-                MessageBox.Show("Rendez-vous ajouté");
-            else MessageBox.Show("Erreur");
+            MessageBox.Show(AjouterRendezVous(Int32.Parse(textBoxCodeEntree.Text), (Interlocuteur)comboBoxListeClient.SelectedItem, dateTimePickerNRDV.Value.Date, dateTimePickerHD.Value,
+                dateTimePickerHF.Value, textBoxRue.Text + " " + textBoxCp.Text, textBoxIC.Text, textBoxVille.Text,
+                (TypeRdv)comboBoxTRDV.SelectedItem, utilisateur.planning));
         }
 
         private void PopNouveauRDV_Load(object sender, EventArgs e)
         {
             TypeRdv lesTypesRdv = new TypeRdv();
             comboBoxTRDV.DataSource = lesTypesRdv.GetLesTypesRdv();
-            
+
             IList<Interlocuteur> mesInterlocteur = utilisateur.porteFeuille.lesInterlocuteurs;
             
             //pour qu'il n y ai pas trop de données dans la combobox
@@ -72,10 +69,9 @@ namespace Maquette_Belle_Table
 
         }
 
-        static bool AjouterRendezVous(int unCodeEntreeDerogatoire, Interlocuteur unInterlocuteur, DateTime uneDateRdv, DateTime uneHeureDebut,
-            DateTime uneHeureFin, string uneAdresseDerogatoire, string uneInfoDerogatoire, TypeRdv unTypeRdv, Planning unPlanning)
+        static string AjouterRendezVous(int unCodeEntreeDerogatoire, Interlocuteur unInterlocuteur, DateTime uneDateRdv, DateTime uneHeureDebut,
+            DateTime uneHeureFin, string uneAdresseDerogatoire, string uneInfoDerogatoire, string uneVilleDerogatoire, TypeRdv unTypeRdv, Planning unPlanning)
         {
-
 
             ISession session = sessionFactory.OpenSession();
             using (ITransaction transaction = session.BeginTransaction())
@@ -83,25 +79,25 @@ namespace Maquette_Belle_Table
             {
                 RendezVous unRendezVous = new RendezVous();
 
-                if (unInterlocuteur == null) return false;
+                if (unInterlocuteur == null) return "Merci de séléctionner un client.";
                 else unRendezVous.interlocuteur = unInterlocuteur;
 
-                if (unTypeRdv == null) return false;
+                if (unTypeRdv == null) return "Merci de séléctionner un type de rendez-vous.";
                 else unRendezVous.typeRdv = unTypeRdv;
 
-                if (unPlanning == null) return false;
-                else unRendezVous.planning = unPlanning;
+                if (uneDateRdv == null) return "Merci de séléctionner une date.";
+                else unRendezVous.dateRdv = uneDateRdv;
 
-                if (uneDateRdv == null) return false;
+                unRendezVous.planning = unPlanning;
                 if (uneHeureDebut != null) unRendezVous.heureDebut = uneHeureDebut;
                 if (uneHeureDebut != null) unRendezVous.heureFin = uneHeureFin;
                 if (unCodeEntreeDerogatoire != 0) unRendezVous.codeEntreeDerogatoire = unCodeEntreeDerogatoire;
                 if (uneAdresseDerogatoire != null) unRendezVous.adresseDerogatoire = uneAdresseDerogatoire;
                 if (uneInfoDerogatoire != null) unRendezVous.adresseDerogatoire = uneAdresseDerogatoire;
+                if (uneVilleDerogatoire != null) unRendezVous.villeDerogatoire = uneVilleDerogatoire;
                 session.Save(unRendezVous);
                 transaction.Commit();
-                MessageBox.Show(unPlanning.idPlanning.ToString());
-                return true;
+                return "Rendez-vous ajouté.";
             }
         }
 
