@@ -14,7 +14,7 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
     <property name="infoDerogatoire" column="infoDerogatoire"/>
     <many-to-one name="interlocuteur" column="idInterlocuteur" cascade="all" lazy="false"/>
     <many-to-one name="typeRdv" column="idTypeRdv" cascade="all" lazy="false"/>
-    <one-to-one name="planning" constrained="true" foreign-key="none" class="Planning" />
+    <many-to-one name="planning" column="idPlanning" class="Planning" />
   
   </class>
 </hibernate-mapping>
