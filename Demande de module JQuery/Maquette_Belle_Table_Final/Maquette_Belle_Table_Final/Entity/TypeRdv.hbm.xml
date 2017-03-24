@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
+  <class name="TypeRdv" table="type_rdv">
+    <id name="idTypeRdv" column="idTypeRdv" unsaved-value="0">
+      <generator class="native" />
+    </id>
+    <property name="libelleTypeRdv" column="libelleTypeRdv"/>
+  </class>
+</hibernate-mapping>
