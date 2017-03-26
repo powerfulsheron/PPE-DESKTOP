@@ -106,7 +106,7 @@ namespace Maquette_Belle_Table_Final
             using (ITransaction transaction = session.BeginTransaction())
             {
 
-                Utilisateur e = session.Get<Utilisateur>(unUtilisateur.numUtilsateur);
+                Utilisateur e = session.Get<Utilisateur>(unUtilisateur.numUtilisateur);
                 InterLogin pourMD5 = new InterLogin();
                 if (e.passwordUtilisateur == pourMD5.MD5Hash(ancienMotDePasse))
                 {

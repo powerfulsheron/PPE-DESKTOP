@@ -2,7 +2,7 @@
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
 namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
   <class name="Utilisateur" table="utilisateur">
-    <id name="numUtilsateur" column="numUtilisateur" unsaved-value="0">
+    <id name="numUtilisateur" column="numUtilisateur" unsaved-value="0">
       <generator class="native" />
     </id>
     <property name="nomUtilisateur" column="nomUtilisateur"/>
@@ -31,14 +31,10 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
       </many-to-many>
     </set>
 
-    <set name="lesMails" table="mail" lazy="true">
-      <key>
-        <column name="numUtilisateur" not-null="true"/>
-      </key>
-      <many-to-many class="Interlocuteur">
-        <column name="idInterlocuteur" not-null="true"/>
-      </many-to-many>
-    </set> 
+    <bag name="lesMails">
+      <key column="numMail" />
+      <one-to-many class="Mail"/>
+    </bag>
     
  </class>
 </hibernate-mapping>

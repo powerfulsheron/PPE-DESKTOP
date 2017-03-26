@@ -38,11 +38,6 @@ namespace Maquette_Belle_Table_Final
             // ouverture session  
             ISession session = sessionFactory.OpenSession();
             Utilisateur utilisateur = session.Query<Utilisateur>().SingleOrDefault(w => w.loginUtilisateur == textBoxId.Text);
-            Console.WriteLine(utilisateur);
-            Console.WriteLine("les conges : "+utilisateur.lesConges);
-            Console.WriteLine("Les mails"+utilisateur.lesMails);
-            Console.WriteLine("Le planning : "+utilisateur.planning.lesRendezVous);
-            Console.WriteLine(utilisateur.porteFeuille.lesInterlocuteurs);
 
             if (utilisateur == null)
             {

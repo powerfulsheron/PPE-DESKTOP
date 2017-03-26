@@ -6,7 +6,7 @@ namespace Maquette_Belle_Table_Final
 {
     public class Utilisateur
     {
-        public virtual int numUtilsateur { get; set; }
+        public virtual int numUtilisateur { get; set; }
         public virtual String nomUtilisateur { get; set; }
         public virtual String prenomUtilisateur { get; set; }
         public virtual String adresseUtilisateur { get; set; }
@@ -24,7 +24,7 @@ namespace Maquette_Belle_Table_Final
         public virtual Planning planning { get; set; }
         public virtual PorteFeuille porteFeuille { get; set; }
         public virtual ISet<Conge> lesConges { get; set; }
-        public virtual ISet<Interlocuteur> lesMails { get; set; }
+        public virtual IList<Mail> lesMails { get; set; }
 
         public Utilisateur()
         {
