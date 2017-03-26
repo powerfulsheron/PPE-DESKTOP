@@ -7,8 +7,8 @@ namespace Maquette_Belle_Table_Final
     public class CongesUtilisateur
     {
         public virtual int idCongesUtilisateur { get; set; }
-        public virtual IList<Utilisateur> lesUtilisateurs { get; set; }
-        public virtual IList<Conge> lesConges { get; set; }
+        public virtual Utilisateur utilisateur { get; set; }
+        public virtual Conge conge { get; set; }
 
         // constructeurs 
         public CongesUtilisateur()
@@ -17,7 +17,7 @@ namespace Maquette_Belle_Table_Final
         // ToString 
         public override string ToString()
         {
-            return string.Format("[{0}|{1}]", lesUtilisateurs, lesConges);
+            return string.Format("[{0}]", conge);
         }
 
     }

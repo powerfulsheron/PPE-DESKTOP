@@ -20,8 +20,8 @@ namespace Maquette_Belle_Table_Final
         public virtual Interlocuteur interlocuteur { get; set; }
         public virtual TypeRdv typeRdv { get; set; }
         public virtual Planning planning { get; set; }
+        public virtual RendezVous rendezVousPrecedent { get; set; }
 
-        private static ISessionFactory sessionFactory = null;
         public RendezVous()
         {
            
@@ -30,7 +30,7 @@ namespace Maquette_Belle_Table_Final
         // ToString 
         public override string ToString()
         {
-            return string.Format("[{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}]", codeEntreeDerogatoire, dateRdv, heureDebut, heureFin, adresseDerogatoire, villeDerogatoire, infoDerogatoire, interlocuteur, typeRdv);
+            return string.Format("[{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}]", codeEntreeDerogatoire, dateRdv, heureDebut, heureFin, adresseDerogatoire, villeDerogatoire, infoDerogatoire, interlocuteur, typeRdv, planning, rendezVousPrecedent);
         }
 
     }

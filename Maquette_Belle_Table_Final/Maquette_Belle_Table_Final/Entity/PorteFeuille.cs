@@ -20,7 +20,7 @@ namespace Maquette_Belle_Table_Final
         // ToString 
         public override string ToString()
         {
-            return string.Format("[{0}|{1}]", libellePortefeuille, lesInterlocuteurs);
+            return string.Format("[{0}]", libellePortefeuille);
         }
     }
 }

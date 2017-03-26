@@ -19,6 +19,26 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
     <property name="distanceParcourueSemaine" column="distanceParcourueSemaine"/>
     <many-to-one name="typeUtilisateur" column="codeTypeUtilisateur" cascade="all" lazy="false"/>
     <one-to-one name="planning" constrained="true" foreign-key="none" class="Planning" />
-    <one-to-one name="porteFeuille" constrained="true" foreign-key="none" class="PorteFeuille" /> 
+    <one-to-one name="porteFeuille" constrained="true" foreign-key="none" class="PorteFeuille" />
+
+
+    <set name="lesConges" table="conges_utilisateur" lazy="true">
+      <key>
+        <column name="numUtilisateur" not-null="true"/>
+      </key>
+      <many-to-many class="Conge">
+        <column name="numConge" not-null="true"/>
+      </many-to-many>
+    </set>
+
+    <set name="lesMails" table="mail" lazy="true">
+      <key>
+        <column name="numUtilisateur" not-null="true"/>
+      </key>
+      <many-to-many class="Interlocuteur">
+        <column name="idInterlocuteur" not-null="true"/>
+      </many-to-many>
+    </set> 
+    
  </class>
 </hibernate-mapping>

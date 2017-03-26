@@ -6,8 +6,8 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
       <generator class="native" />
     </id>
     <property name="contenuMail" column="contenuMail"/>
-    <property name="objetMail" column="objetMail"/>
-    <many-to-one name="utilisateur" column="numUtilisateur" cascade="all" lazy="false"/>
-    <many-to-one name="interlocuteur" column="idInterlocuteur" cascade="all" lazy="false"/>
+    <property name="objetMail" column="objetMail"/>  
+    <many-to-one name="utilisateur" column="numUtilisateur" />
+    <many-to-one name="interlocuteur"  column="idInterlocuteur" />
   </class>
 </hibernate-mapping>

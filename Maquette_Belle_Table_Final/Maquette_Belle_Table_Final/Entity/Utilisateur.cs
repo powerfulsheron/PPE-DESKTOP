@@ -23,6 +23,8 @@ namespace Maquette_Belle_Table_Final
         public virtual TypeUtilisateur typeUtilisateur { get; set; }
         public virtual Planning planning { get; set; }
         public virtual PorteFeuille porteFeuille { get; set; }
+        public virtual ISet<Conge> lesConges { get; set; }
+        public virtual ISet<Interlocuteur> lesMails { get; set; }
 
         public Utilisateur()
         {

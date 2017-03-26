@@ -5,13 +5,7 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
     <id name="idCongesUtilisateur" column="idCongesUtilisateur" unsaved-value="0">
       <generator class="native" />
     </id>
-    <bag name="lesUtilisateurs">
-      <key column="numUtilsateur" />
-      <one-to-many class="Utilisateur"/>
-    </bag>
-    <bag name="lesConges">
-      <key column="numConge" />
-      <one-to-many class="Conge"/>
-    </bag>
+    <many-to-one name="conge" column="numConge" />
+    <many-to-one name="utilisateur"  column="numUtilisateur" />
   </class>
 </hibernate-mapping>

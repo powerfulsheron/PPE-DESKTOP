@@ -1,4 +1,6 @@
-﻿namespace Maquette_Belle_Table_Final
+﻿
+using System;
+namespace Maquette_Belle_Table_Final
 {
     public class Mail
     {

@@ -117,7 +117,7 @@ CREATE TABLE RDV(
         idInterlocuteur      Int NOT NULL ,
         idTypeRdv            Int NOT NULL ,
         idPlanning           Int NOT NULL ,
-        idRdvPrecedent 		 Int,
+        idRdvPrecedent       Int,
         version Int,
         PRIMARY KEY (idRdv )
 )ENGINE=InnoDB;

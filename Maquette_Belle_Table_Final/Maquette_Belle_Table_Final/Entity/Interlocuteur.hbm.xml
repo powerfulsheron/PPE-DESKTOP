@@ -13,6 +13,20 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
     <one-to-one name="individu" constrained="true" foreign-key="none" class="Individu" />
     <one-to-one name="structure" constrained="true" foreign-key="none" class="Structure" />
     <one-to-one name="portefeuille" constrained="true" foreign-key="none" class="PorteFeuille" />
+
+    <set name="lesMails" table="mail" lazy="true">
+      <key>
+        <column name="idInterlocuteur" not-null="true"/>
+      </key>
+      <many-to-many class="Utilisateur">
+        <column name="numUtilisateur" not-null="true"/>
+      </many-to-many>
+    </set>
+
+    <bag name="lesRendezVous">
+      <key column="idRdv" />
+      <one-to-many class="RendezVous"/>
+    </bag>
     
   </class>
 </hibernate-mapping>

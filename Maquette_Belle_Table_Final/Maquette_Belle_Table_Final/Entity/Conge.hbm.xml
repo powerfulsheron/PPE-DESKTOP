@@ -7,5 +7,15 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
     </id>
     <property name="dateDebutConge" column="dateDebutConge"/>
     <property name="dateFinConge" column="dateFinConge"/>
+    
+    <set name="lesUtilisateurs" table="conges_utilisateur" lazy="true">
+      <key>
+        <column name="idConge" not-null="true"/>
+      </key>
+      <many-to-many class="Utilisateur">
+        <column name="numUtilisateur" not-null="true"/>
+      </many-to-many>
+    </set>
+    
   </class>
 </hibernate-mapping>
