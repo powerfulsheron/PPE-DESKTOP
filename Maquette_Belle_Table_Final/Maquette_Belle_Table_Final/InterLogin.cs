@@ -17,7 +17,7 @@ namespace Maquette_Belle_Table_Final
 {
     public partial class InterLogin : Form
     {
-        private static ISessionFactory sessionFactory = null;
+        private static ISessionFactory sessionFactory = new Configuration().Configure().BuildSessionFactory();
         public InterLogin()
         {
             InitializeComponent();
@@ -35,7 +35,6 @@ namespace Maquette_Belle_Table_Final
 
         private void buttonConnexion_Click(object sender, EventArgs e)
         {
-            sessionFactory = new Configuration().Configure().BuildSessionFactory();
             // ouverture session  
             ISession session = sessionFactory.OpenSession();
             using (ITransaction transaction = session.BeginTransaction())
@@ -128,11 +127,53 @@ namespace Maquette_Belle_Table_Final
 
         private void buttonVal_Click(object sender, EventArgs e)
         {
-            buttonVal.DialogResult = DialogResult.OK;
-            if (buttonVal.DialogResult == DialogResult.OK)
+            try
             {
-                MessageBox.Show("Votre nouveau mot de passe a été envoyer.");
+                using (ISession session = sessionFactory.OpenSession())
+                {
+                    // début transaction 
+                    using (ITransaction transaction = session.BeginTransaction())
+                    {
+                        // on cherche si l'employé existe dans la base, si trouvé on le charge dans un objet utilisateur.
+                        Utilisateur utilisateur = session.Query<Utilisateur>().SingleOrDefault(w => w.loginUtilisateur == textBoxMDPNom.Text);
+
+                        // on crée une phrase random
+                        Random random = new Random();
+                        const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+                        string laString = new string(Enumerable.Repeat(chars, 10).Select(s => s[random.Next(s.Length)]).ToArray());
+
+                        // on converti la phrase random en md5
+                        var bytes = new UTF8Encoding().GetBytes(laString);
+                        var hashBytes = System.Security.Cryptography.MD5.Create().ComputeHash(bytes);
+                        string newPassword = Convert.ToBase64String(hashBytes);
+
+                        // on update le nouveau password
+                        utilisateur.passwordUtilisateur = newPassword;
+                        session.Save(utilisateur);
+
+                        // on envoie le mail
+
+                        MailMessage mail = new MailMessage();
+                        mail.Subject = "Votre nouveau mot de passe";
+                        mail.Body = "Votre nouveau mot de passe est : " + laString;
+                        mail.From = new MailAddress("bot@belletable.com");
+                        mail.To.Add(utilisateur.mailUtilisateur);
+
+                        SmtpClient client = new SmtpClient();
+                        client.Host = "localhost";
+                        client.Send(mail);
+                  
+                        // validation de la transaction 
+                        transaction.Commit();
+                        // message succès
+                        MessageBox.Show("Votre nouveau mot de passe a été envoyé à votre adresse : "+utilisateur.mailUtilisateur);
+                    }
+                }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }           
         }
 
         private void buttonT1_Click(object sender, EventArgs e)
@@ -161,6 +202,16 @@ namespace Maquette_Belle_Table_Final
                 hash.Append(bytes[i].ToString("x2"));
             }
             return hash.ToString();
+        }
+
+        private void textBoxMDPNom_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelMDPNom_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

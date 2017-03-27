@@ -41,9 +41,7 @@
             this.panelMDPO = new System.Windows.Forms.Panel();
             this.buttonVal = new System.Windows.Forms.Button();
             this.buttonAnnu = new System.Windows.Forms.Button();
-            this.labelMDPEm = new System.Windows.Forms.Label();
             this.labelMDPNom = new System.Windows.Forms.Label();
-            this.textBoxMDPEm = new System.Windows.Forms.TextBox();
             this.textBoxMDPNom = new System.Windows.Forms.TextBox();
             this.labelMDPO = new System.Windows.Forms.Label();
             this.buttonT1 = new System.Windows.Forms.Button();
@@ -163,9 +161,7 @@
             this.panelMDPO.BackColor = System.Drawing.Color.Transparent;
             this.panelMDPO.Controls.Add(this.buttonVal);
             this.panelMDPO.Controls.Add(this.buttonAnnu);
-            this.panelMDPO.Controls.Add(this.labelMDPEm);
             this.panelMDPO.Controls.Add(this.labelMDPNom);
-            this.panelMDPO.Controls.Add(this.textBoxMDPEm);
             this.panelMDPO.Controls.Add(this.textBoxMDPNom);
             this.panelMDPO.Controls.Add(this.labelMDPO);
             this.panelMDPO.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -180,7 +176,7 @@
             this.buttonVal.BackColor = System.Drawing.Color.Gold;
             this.buttonVal.Font = new System.Drawing.Font("Century Gothic", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonVal.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.buttonVal.Location = new System.Drawing.Point(254, 186);
+            this.buttonVal.Location = new System.Drawing.Point(271, 270);
             this.buttonVal.Name = "buttonVal";
             this.buttonVal.Size = new System.Drawing.Size(98, 33);
             this.buttonVal.TabIndex = 8;
@@ -193,7 +189,7 @@
             this.buttonAnnu.BackColor = System.Drawing.Color.Gold;
             this.buttonAnnu.Font = new System.Drawing.Font("Century Gothic", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAnnu.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.buttonAnnu.Location = new System.Drawing.Point(22, 186);
+            this.buttonAnnu.Location = new System.Drawing.Point(18, 270);
             this.buttonAnnu.Name = "buttonAnnu";
             this.buttonAnnu.Size = new System.Drawing.Size(98, 33);
             this.buttonAnnu.TabIndex = 7;
@@ -201,39 +197,24 @@
             this.buttonAnnu.UseVisualStyleBackColor = false;
             this.buttonAnnu.Click += new System.EventHandler(this.buttonAnnu_Click);
             // 
-            // labelMDPEm
-            // 
-            this.labelMDPEm.AutoSize = true;
-            this.labelMDPEm.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.labelMDPEm.Location = new System.Drawing.Point(18, 124);
-            this.labelMDPEm.Name = "labelMDPEm";
-            this.labelMDPEm.Size = new System.Drawing.Size(50, 19);
-            this.labelMDPEm.TabIndex = 6;
-            this.labelMDPEm.Text = "Email ";
-            // 
             // labelMDPNom
             // 
             this.labelMDPNom.AutoSize = true;
             this.labelMDPNom.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.labelMDPNom.Location = new System.Drawing.Point(18, 71);
+            this.labelMDPNom.Location = new System.Drawing.Point(14, 112);
             this.labelMDPNom.Name = "labelMDPNom";
-            this.labelMDPNom.Size = new System.Drawing.Size(79, 19);
+            this.labelMDPNom.Size = new System.Drawing.Size(91, 19);
             this.labelMDPNom.TabIndex = 4;
-            this.labelMDPNom.Text = "Identifiant";
-            // 
-            // textBoxMDPEm
-            // 
-            this.textBoxMDPEm.Location = new System.Drawing.Point(97, 118);
-            this.textBoxMDPEm.Name = "textBoxMDPEm";
-            this.textBoxMDPEm.Size = new System.Drawing.Size(188, 24);
-            this.textBoxMDPEm.TabIndex = 3;
+            this.labelMDPNom.Text = "Identifiant : ";
+            this.labelMDPNom.Click += new System.EventHandler(this.labelMDPNom_Click);
             // 
             // textBoxMDPNom
             // 
-            this.textBoxMDPNom.Location = new System.Drawing.Point(97, 65);
+            this.textBoxMDPNom.Location = new System.Drawing.Point(115, 109);
             this.textBoxMDPNom.Name = "textBoxMDPNom";
             this.textBoxMDPNom.Size = new System.Drawing.Size(188, 24);
             this.textBoxMDPNom.TabIndex = 1;
+            this.textBoxMDPNom.TextChanged += new System.EventHandler(this.textBoxMDPNom_TextChanged);
             // 
             // labelMDPO
             // 
@@ -335,9 +316,7 @@
         private System.Windows.Forms.Panel panelMDPO;
         private System.Windows.Forms.Button buttonVal;
         private System.Windows.Forms.Button buttonAnnu;
-        private System.Windows.Forms.Label labelMDPEm;
         private System.Windows.Forms.Label labelMDPNom;
-        private System.Windows.Forms.TextBox textBoxMDPEm;
         private System.Windows.Forms.TextBox textBoxMDPNom;
         private System.Windows.Forms.Label labelMDPO;
         private System.Windows.Forms.Button buttonT1;
