@@ -11,6 +11,7 @@ using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Linq;
 using System.Security.Cryptography;
+using System.Net.Mail;
 
 namespace Maquette_Belle_Table_Final
 {
@@ -37,46 +38,85 @@ namespace Maquette_Belle_Table_Final
             sessionFactory = new Configuration().Configure().BuildSessionFactory();
             // ouverture session  
             ISession session = sessionFactory.OpenSession();
-            Utilisateur utilisateur = session.Query<Utilisateur>().SingleOrDefault(w => w.loginUtilisateur == textBoxId.Text);
+            using (ITransaction transaction = session.BeginTransaction())
+            {
+                Utilisateur utilisateur = session.Query<Utilisateur>().SingleOrDefault(w => w.loginUtilisateur == textBoxId.Text);
 
-            if (utilisateur == null)
-            {
-                MessageBox.Show("Utilisateur introuvable", "Erreur");
-            }
-            else if(MD5Hash(textBoxMDP.Text)==utilisateur.passwordUtilisateur)
-            {
-                if(utilisateur.typeUtilisateur.codeTypeUtilisateur == 1)
+                if (utilisateur == null)
                 {
-                    new InterAd().Show();
-                    InterAd interAd = new InterAd();
-                    interAd.utilisateur = utilisateur;
-                    interAd.Show();
+                    MessageBox.Show("Utilisateur introuvable", "Erreur");
+                }
+                else if (MD5Hash(textBoxMDP.Text) == utilisateur.passwordUtilisateur && utilisateur.nbTentatives<6)
+                {
+                    if (utilisateur.typeUtilisateur.codeTypeUtilisateur == 1)
+                    {
+                        new InterAd().Show();
+                        InterAd interAd = new InterAd();
+                        interAd.utilisateur = utilisateur;
+                        interAd.Show();
+                        utilisateur.nbTentatives = 0;
+                        session.Update(utilisateur);
+                        transaction.Commit();
+                    }
+
+                    else if (utilisateur.typeUtilisateur.codeTypeUtilisateur == 2)
+                    {
+                        new InterGes().Show();
+                        InterGes interGes = new InterGes();
+                        interGes.utilisateur = utilisateur;
+                        interGes.Show();
+                        utilisateur.nbTentatives = 0;
+                        session.Update(utilisateur);
+                        transaction.Commit();
+                    }
+
+                    else if (utilisateur.typeUtilisateur.codeTypeUtilisateur == 3)
+                    {
+                        InterUti interUti = new InterUti();
+                        interUti.utilisateur = utilisateur;
+                        interUti.Show();
+                        utilisateur.nbTentatives = 0;
+                        session.Update(utilisateur);
+                        transaction.Commit();
+                    }
+
+                }
+                else if (utilisateur.nbTentatives < 6)// erreur de mdp et tentatives <6
+                {
+                    MessageBox.Show("Il semble que le mot de passe ne soit pas correct", "Erreur");
+                    // on gère le nombre de tentatives >6
+                    utilisateur.nbTentatives = utilisateur.nbTentatives + 1;
+                    if (utilisateur.nbTentatives >= 6)
+                    {
+                        try
+                        {
+                            MailMessage mail = new MailMessage();
+                            mail.Subject = "[GEPEV] Tentatives de connection excessives";
+                            mail.Body = "l'utilisateur : " + utilisateur.nomUtilisateur + " " + utilisateur.prenomUtilisateur + " à fait 6 échecs de connections à l'application GEPEV.";
+                            mail.From = new MailAddress("bot@belletable.com");
+                            mail.To.Add("admin@belletable.com");
+
+                            SmtpClient client = new SmtpClient();
+                            client.Host = "localhost";
+                            client.Send(mail);
+
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                        }
+                        panelMDPO.Visible = true;
+                    }
+
+                    session.Update(utilisateur);
+                    transaction.Commit();
+                }
+                else
+                {
+                    panelMDPO.Visible = true;
                 }
 
-                else if (utilisateur.typeUtilisateur.codeTypeUtilisateur == 2)
-                {
-                    new InterGes().Show();
-                    InterGes interGes = new InterGes();
-                    interGes.utilisateur = utilisateur;
-                    interGes.Show();
-                }
-
-                else if (utilisateur.typeUtilisateur.codeTypeUtilisateur == 3)
-                {
-                    InterUti interUti = new InterUti();
-                    interUti.utilisateur = utilisateur;
-                    interUti.Show();
-                }
-
             }
-            else
-            {
-                // reste à ajouter les 5 tentatives
-                MessageBox.Show("Il semble que le mot de passe ne soit pas correct", "Erreur");
-
-            }
-
-            
 
         }
 
