@@ -11,7 +11,7 @@ UTILISATEUR :
 - Supprimer un client (attention à la base, normalement j'ai configuré nhibernate pour que les deletes soient automatiques, à tester)
 - Affichage de la liste des mails envoyés par l'utilisateur
 - Consulter un mal envoyé par l'utilisateur
-- Ecrire un nouveau mail
+- Envoi automatique de mail après évenement (rdv ou +)
 
 GESTIONNAIRE :
 
@@ -57,7 +57,7 @@ ADMINISTRATEUR :
 ## Informations sur le projet
 Groupe :  	LHUILLIER, SAILLY, DULONG, DELBE, COUTROT, DUPARC, ROBERTO, CANAVAGGIO 
 
-Nom du projet :  	 GEPEV 
+Nom du projet :  	 GEPEV ( GESTION DES PLANNINGS ET DES EVENEMENTS )
 
 Type de document :  	Cahier des charges  
 
