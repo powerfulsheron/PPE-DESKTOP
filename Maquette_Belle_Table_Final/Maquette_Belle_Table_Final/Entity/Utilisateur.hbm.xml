@@ -31,10 +31,10 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
       </many-to-many>
     </set>
 
-    <bag name="lesMails">
+    <set name="lesMails">
       <key column="numMail" />
       <one-to-many class="Mail"/>
-    </bag>
+    </set>
     
  </class>
 </hibernate-mapping>

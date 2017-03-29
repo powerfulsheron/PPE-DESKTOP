@@ -8,7 +8,7 @@ namespace Maquette_Belle_Table_Final
         public virtual int idPlanning { get; set; }
         public virtual string libellePlanning { get; set; }
         public virtual Utilisateur utilisateur { get; set; }
-        public virtual IList<RendezVous> lesRendezVous { get; set; }
+        public virtual ISet<RendezVous> lesRendezVous { get; set; }
 
         public Planning()
         {

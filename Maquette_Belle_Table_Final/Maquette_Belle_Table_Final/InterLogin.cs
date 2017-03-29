@@ -40,6 +40,8 @@ namespace Maquette_Belle_Table_Final
             using (ITransaction transaction = session.BeginTransaction())
             {
                 Utilisateur utilisateur = session.Query<Utilisateur>().SingleOrDefault(w => w.loginUtilisateur == textBoxId.Text);
+                foreach (Mail mail in utilisateur.lesMails)
+                Console.WriteLine("le mail ="+mail);
 
                 if (utilisateur == null)
                 {

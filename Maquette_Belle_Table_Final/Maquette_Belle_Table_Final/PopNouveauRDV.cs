@@ -53,7 +53,7 @@ namespace Maquette_Belle_Table
             TypeRdv lesTypesRdv = new TypeRdv();
             comboBoxTRDV.DataSource = lesTypesRdv.GetLesTypesRdv();
 
-            IList<Interlocuteur> mesInterlocteur = utilisateur.porteFeuille.lesInterlocuteurs;
+            ISet<Interlocuteur> mesInterlocteur = utilisateur.porteFeuille.lesInterlocuteurs;
             
             //pour qu'il n y ai pas trop de données dans la combobox
             foreach(Interlocuteur interlocuteur in mesInterlocteur)

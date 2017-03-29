@@ -9,7 +9,7 @@ namespace Maquette_Belle_Table_Final
     {
         public virtual int idPortefeuille { get; set; }
         public virtual string libellePortefeuille { get; set; }
-        public virtual IList<Interlocuteur> lesInterlocuteurs { get; set; }
+        public virtual ISet<Interlocuteur> lesInterlocuteurs { get; set; }
         public virtual Utilisateur utilisateur { get; set; }
         
         public PorteFeuille()

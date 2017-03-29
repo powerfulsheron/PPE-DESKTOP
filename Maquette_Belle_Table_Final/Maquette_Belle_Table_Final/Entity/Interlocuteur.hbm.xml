@@ -14,15 +14,15 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
     <one-to-one name="structure" constrained="true" foreign-key="none" class="Structure" />
     <one-to-one name="portefeuille" constrained="true" foreign-key="none" class="PorteFeuille" />
 
-    <bag name="lesRendezVous">
+    <set name="lesRendezVous">
       <key column="idRdv" />
       <one-to-many class="RendezVous"/>
-    </bag>
+    </set>
 
-    <bag name="lesMails">
+    <set name="lesMails">
       <key column="numMail" />
       <one-to-many class="Mail"/>
-    </bag>
+    </set>
     
   </class>
 </hibernate-mapping>

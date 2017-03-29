@@ -13,8 +13,8 @@ namespace Maquette_Belle_Table_Final
         public virtual Individu individu { get; set; } 
         public virtual Structure structure { get; set; }
         public virtual PorteFeuille portefeuille { get; set; }
-        public virtual IList<Mail> lesMails { get; set; }
-        public virtual IList<RendezVous> lesRendezVous { get; set; }
+        public virtual ISet<Mail> lesMails { get; set; }
+        public virtual ISet<RendezVous> lesRendezVous { get; set; }
 
         public Interlocuteur()
         {

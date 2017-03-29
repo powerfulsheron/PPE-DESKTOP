@@ -6,10 +6,12 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
       <generator class="native" />
     </id>
     <property name="libellePlanning" column="libellePlanning"/>
-    <bag name="lesRendezVous">
+    
+    <set name="lesRendezVous">
       <key column="idRdv" />
       <one-to-many class="RendezVous"/>
-    </bag>
+    </set>
+    
     <one-to-one name="utilisateur" constrained="true" foreign-key="none" class="Utilisateur" />
     
   </class>
