@@ -45,8 +45,6 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPagePlanC = new System.Windows.Forms.TabPage();
             this.panelPlanningC = new System.Windows.Forms.Panel();
-            this.groupBoxPJSPC = new System.Windows.Forms.GroupBox();
-            this.listViewPJSPC = new System.Windows.Forms.ListView();
             this.buttonNPC = new System.Windows.Forms.Button();
             this.monthCalendarPlanC = new System.Windows.Forms.MonthCalendar();
             this.tabPagePF = new System.Windows.Forms.TabPage();
@@ -78,7 +76,6 @@
             this.tabControl2.SuspendLayout();
             this.tabPagePlanC.SuspendLayout();
             this.panelPlanningC.SuspendLayout();
-            this.groupBoxPJSPC.SuspendLayout();
             this.tabPagePF.SuspendLayout();
             this.panelPortefeuille.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPortefeuille)).BeginInit();
@@ -114,6 +111,7 @@
             this.panelTitre.Name = "panelTitre";
             this.panelTitre.Size = new System.Drawing.Size(994, 31);
             this.panelTitre.TabIndex = 2;
+            this.panelTitre.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTitre_Paint);
             // 
             // labelFermeture
             // 
@@ -123,7 +121,7 @@
             this.labelFermeture.ForeColor = System.Drawing.Color.Gold;
             this.labelFermeture.Location = new System.Drawing.Point(975, 6);
             this.labelFermeture.Name = "labelFermeture";
-            this.labelFermeture.Size = new System.Drawing.Size(15, 15);
+            this.labelFermeture.Size = new System.Drawing.Size(18, 18);
             this.labelFermeture.TabIndex = 17;
             this.labelFermeture.Text = "X";
             this.labelFermeture.Click += new System.EventHandler(this.labelFermeture_Click);
@@ -135,7 +133,7 @@
             this.labelBT.ForeColor = System.Drawing.Color.Gold;
             this.labelBT.Location = new System.Drawing.Point(36, 0);
             this.labelBT.Name = "labelBT";
-            this.labelBT.Size = new System.Drawing.Size(45, 16);
+            this.labelBT.Size = new System.Drawing.Size(56, 18);
             this.labelBT.TabIndex = 1;
             this.labelBT.Text = "GEPEV";
             this.labelBT.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -180,10 +178,10 @@
             // tabPagePlan
             // 
             this.tabPagePlan.Controls.Add(this.panelPlanning);
-            this.tabPagePlan.Location = new System.Drawing.Point(4, 28);
+            this.tabPagePlan.Location = new System.Drawing.Point(4, 29);
             this.tabPagePlan.Name = "tabPagePlan";
             this.tabPagePlan.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePlan.Size = new System.Drawing.Size(990, 467);
+            this.tabPagePlan.Size = new System.Drawing.Size(990, 466);
             this.tabPagePlan.TabIndex = 0;
             this.tabPagePlan.Text = "Planning";
             this.tabPagePlan.UseVisualStyleBackColor = true;
@@ -197,7 +195,7 @@
             this.panelPlanning.Location = new System.Drawing.Point(3, 3);
             this.panelPlanning.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelPlanning.Name = "panelPlanning";
-            this.panelPlanning.Size = new System.Drawing.Size(984, 461);
+            this.panelPlanning.Size = new System.Drawing.Size(984, 460);
             this.panelPlanning.TabIndex = 13;
             // 
             // groupBoxPJS
@@ -260,10 +258,10 @@
             // tabPagePlanC
             // 
             this.tabPagePlanC.Controls.Add(this.panelPlanningC);
-            this.tabPagePlanC.Location = new System.Drawing.Point(4, 28);
+            this.tabPagePlanC.Location = new System.Drawing.Point(4, 29);
             this.tabPagePlanC.Name = "tabPagePlanC";
             this.tabPagePlanC.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePlanC.Size = new System.Drawing.Size(990, 467);
+            this.tabPagePlanC.Size = new System.Drawing.Size(990, 466);
             this.tabPagePlanC.TabIndex = 1;
             this.tabPagePlanC.Text = "Plannification Congés";
             this.tabPagePlanC.UseVisualStyleBackColor = true;
@@ -271,39 +269,21 @@
             // panelPlanningC
             // 
             this.panelPlanningC.BackgroundImage = global::Maquette_Belle_Table_Final.Properties.Resources.fond;
-            this.panelPlanningC.Controls.Add(this.groupBoxPJSPC);
             this.panelPlanningC.Controls.Add(this.buttonNPC);
             this.panelPlanningC.Controls.Add(this.monthCalendarPlanC);
             this.panelPlanningC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelPlanningC.Font = new System.Drawing.Font("Consolas", 8F);
+            this.panelPlanningC.ForeColor = System.Drawing.SystemColors.Desktop;
             this.panelPlanningC.Location = new System.Drawing.Point(3, 3);
             this.panelPlanningC.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelPlanningC.Name = "panelPlanningC";
-            this.panelPlanningC.Size = new System.Drawing.Size(984, 461);
+            this.panelPlanningC.Size = new System.Drawing.Size(984, 460);
             this.panelPlanningC.TabIndex = 13;
-            // 
-            // groupBoxPJSPC
-            // 
-            this.groupBoxPJSPC.BackColor = System.Drawing.Color.Transparent;
-            this.groupBoxPJSPC.Controls.Add(this.listViewPJSPC);
-            this.groupBoxPJSPC.Location = new System.Drawing.Point(641, 93);
-            this.groupBoxPJSPC.Name = "groupBoxPJSPC";
-            this.groupBoxPJSPC.Size = new System.Drawing.Size(272, 343);
-            this.groupBoxPJSPC.TabIndex = 2;
-            this.groupBoxPJSPC.TabStop = false;
-            this.groupBoxPJSPC.Text = "Planning du Jour sélectionné";
-            // 
-            // listViewPJSPC
-            // 
-            this.listViewPJSPC.Location = new System.Drawing.Point(20, 43);
-            this.listViewPJSPC.Name = "listViewPJSPC";
-            this.listViewPJSPC.Size = new System.Drawing.Size(234, 282);
-            this.listViewPJSPC.TabIndex = 0;
-            this.listViewPJSPC.UseCompatibleStateImageBehavior = false;
             // 
             // buttonNPC
             // 
             this.buttonNPC.BackColor = System.Drawing.Color.Gold;
-            this.buttonNPC.Location = new System.Drawing.Point(641, 26);
+            this.buttonNPC.Location = new System.Drawing.Point(356, 6);
             this.buttonNPC.Name = "buttonNPC";
             this.buttonNPC.Size = new System.Drawing.Size(272, 32);
             this.buttonNPC.TabIndex = 1;
@@ -313,22 +293,26 @@
             // 
             // monthCalendarPlanC
             // 
-            this.monthCalendarPlanC.Location = new System.Drawing.Point(51, 93);
+            this.monthCalendarPlanC.CalendarDimensions = new System.Drawing.Size(3, 2);
+            this.monthCalendarPlanC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.monthCalendarPlanC.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monthCalendarPlanC.Location = new System.Drawing.Point(96, 42);
             this.monthCalendarPlanC.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.monthCalendarPlanC.MaximumSize = new System.Drawing.Size(943, 552);
             this.monthCalendarPlanC.MinimumSize = new System.Drawing.Size(313, 252);
             this.monthCalendarPlanC.Name = "monthCalendarPlanC";
-            this.monthCalendarPlanC.ShowToday = false;
-            this.monthCalendarPlanC.ShowTodayCircle = false;
+            this.monthCalendarPlanC.ScrollChange = 6;
             this.monthCalendarPlanC.TabIndex = 0;
+            this.monthCalendarPlanC.TitleBackColor = System.Drawing.Color.Lime;
+            this.monthCalendarPlanC.TrailingForeColor = System.Drawing.SystemColors.MenuHighlight;
             // 
             // tabPagePF
             // 
             this.tabPagePF.Controls.Add(this.panelPortefeuille);
-            this.tabPagePF.Location = new System.Drawing.Point(4, 28);
+            this.tabPagePF.Location = new System.Drawing.Point(4, 29);
             this.tabPagePF.Name = "tabPagePF";
             this.tabPagePF.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePF.Size = new System.Drawing.Size(990, 467);
+            this.tabPagePF.Size = new System.Drawing.Size(990, 466);
             this.tabPagePF.TabIndex = 2;
             this.tabPagePF.Text = "Portefeuille";
             this.tabPagePF.UseVisualStyleBackColor = true;
@@ -343,7 +327,7 @@
             this.panelPortefeuille.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPortefeuille.Location = new System.Drawing.Point(3, 3);
             this.panelPortefeuille.Name = "panelPortefeuille";
-            this.panelPortefeuille.Size = new System.Drawing.Size(984, 461);
+            this.panelPortefeuille.Size = new System.Drawing.Size(984, 460);
             this.panelPortefeuille.TabIndex = 4;
             // 
             // dataGridViewPortefeuille
@@ -392,10 +376,10 @@
             // tabPageMails
             // 
             this.tabPageMails.Controls.Add(this.panelMail);
-            this.tabPageMails.Location = new System.Drawing.Point(4, 28);
+            this.tabPageMails.Location = new System.Drawing.Point(4, 29);
             this.tabPageMails.Name = "tabPageMails";
             this.tabPageMails.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageMails.Size = new System.Drawing.Size(990, 467);
+            this.tabPageMails.Size = new System.Drawing.Size(990, 466);
             this.tabPageMails.TabIndex = 3;
             this.tabPageMails.Text = "Mails";
             this.tabPageMails.UseVisualStyleBackColor = true;
@@ -409,7 +393,7 @@
             this.panelMail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMail.Location = new System.Drawing.Point(3, 3);
             this.panelMail.Name = "panelMail";
-            this.panelMail.Size = new System.Drawing.Size(984, 461);
+            this.panelMail.Size = new System.Drawing.Size(984, 460);
             this.panelMail.TabIndex = 6;
             // 
             // buttonOuvrirEmail
@@ -447,10 +431,10 @@
             // tabPageCDMDP
             // 
             this.tabPageCDMDP.Controls.Add(this.panelChangerMDP);
-            this.tabPageCDMDP.Location = new System.Drawing.Point(4, 28);
+            this.tabPageCDMDP.Location = new System.Drawing.Point(4, 29);
             this.tabPageCDMDP.Name = "tabPageCDMDP";
             this.tabPageCDMDP.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCDMDP.Size = new System.Drawing.Size(990, 467);
+            this.tabPageCDMDP.Size = new System.Drawing.Size(990, 466);
             this.tabPageCDMDP.TabIndex = 4;
             this.tabPageCDMDP.Text = "Changer de mot de passe";
             this.tabPageCDMDP.UseVisualStyleBackColor = true;
@@ -470,7 +454,7 @@
             this.panelChangerMDP.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelChangerMDP.Location = new System.Drawing.Point(3, 3);
             this.panelChangerMDP.Name = "panelChangerMDP";
-            this.panelChangerMDP.Size = new System.Drawing.Size(984, 461);
+            this.panelChangerMDP.Size = new System.Drawing.Size(984, 460);
             this.panelChangerMDP.TabIndex = 9;
             // 
             // labeltextBoxNewMDP
@@ -480,7 +464,7 @@
             this.labeltextBoxNewMDP.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labeltextBoxNewMDP.Location = new System.Drawing.Point(278, 139);
             this.labeltextBoxNewMDP.Name = "labeltextBoxNewMDP";
-            this.labeltextBoxNewMDP.Size = new System.Drawing.Size(142, 16);
+            this.labeltextBoxNewMDP.Size = new System.Drawing.Size(178, 19);
             this.labeltextBoxNewMDP.TabIndex = 20;
             this.labeltextBoxNewMDP.Text = "Nouveau mot de passe :";
             // 
@@ -488,7 +472,7 @@
             // 
             this.textBoxNewMDP.Location = new System.Drawing.Point(440, 139);
             this.textBoxNewMDP.Name = "textBoxNewMDP";
-            this.textBoxNewMDP.Size = new System.Drawing.Size(216, 21);
+            this.textBoxNewMDP.Size = new System.Drawing.Size(216, 24);
             this.textBoxNewMDP.TabIndex = 19;
             // 
             // buttonValCDMDP
@@ -508,7 +492,7 @@
             // 
             this.textBoxNewMDP2.Location = new System.Drawing.Point(440, 176);
             this.textBoxNewMDP2.Name = "textBoxNewMDP2";
-            this.textBoxNewMDP2.Size = new System.Drawing.Size(216, 21);
+            this.textBoxNewMDP2.Size = new System.Drawing.Size(216, 24);
             this.textBoxNewMDP2.TabIndex = 3;
             // 
             // labeltextBoxNewMDP2
@@ -518,7 +502,7 @@
             this.labeltextBoxNewMDP2.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labeltextBoxNewMDP2.Location = new System.Drawing.Point(278, 176);
             this.labeltextBoxNewMDP2.Name = "labeltextBoxNewMDP2";
-            this.labeltextBoxNewMDP2.Size = new System.Drawing.Size(142, 16);
+            this.labeltextBoxNewMDP2.Size = new System.Drawing.Size(178, 19);
             this.labeltextBoxNewMDP2.TabIndex = 1;
             this.labeltextBoxNewMDP2.Text = "Nouveau mot de passe :";
             // 
@@ -529,7 +513,7 @@
             this.labelOldPswd.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelOldPswd.Location = new System.Drawing.Point(290, 97);
             this.labelOldPswd.Name = "labelOldPswd";
-            this.labelOldPswd.Size = new System.Drawing.Size(130, 16);
+            this.labelOldPswd.Size = new System.Drawing.Size(166, 19);
             this.labelOldPswd.TabIndex = 0;
             this.labelOldPswd.Text = "Ancien mot de passe : ";
             // 
@@ -537,12 +521,12 @@
             // 
             this.textBoxOldPswd.Location = new System.Drawing.Point(440, 94);
             this.textBoxOldPswd.Name = "textBoxOldPswd";
-            this.textBoxOldPswd.Size = new System.Drawing.Size(216, 21);
+            this.textBoxOldPswd.Size = new System.Drawing.Size(216, 24);
             this.textBoxOldPswd.TabIndex = 2;
             // 
             // InterUti
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Maquette_Belle_Table_Final.Properties.Resources.fond;
             this.ClientSize = new System.Drawing.Size(1000, 537);
@@ -566,7 +550,6 @@
             this.tabControl2.ResumeLayout(false);
             this.tabPagePlanC.ResumeLayout(false);
             this.panelPlanningC.ResumeLayout(false);
-            this.groupBoxPJSPC.ResumeLayout(false);
             this.tabPagePF.ResumeLayout(false);
             this.panelPortefeuille.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPortefeuille)).EndInit();
@@ -599,8 +582,6 @@
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPagePlanC;
         private System.Windows.Forms.Panel panelPlanningC;
-        private System.Windows.Forms.GroupBox groupBoxPJSPC;
-        private System.Windows.Forms.ListView listViewPJSPC;
         private System.Windows.Forms.Button buttonNPC;
         private System.Windows.Forms.MonthCalendar monthCalendarPlanC;
         private System.Windows.Forms.TabPage tabPagePF;

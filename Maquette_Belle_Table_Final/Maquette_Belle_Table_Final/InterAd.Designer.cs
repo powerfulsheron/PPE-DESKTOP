@@ -48,13 +48,13 @@
             this.dataGridViewHC = new System.Windows.Forms.DataGridView();
             this.tabPageCMDP = new System.Windows.Forms.TabPage();
             this.panelChangerMDP = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxNewMDP = new System.Windows.Forms.TextBox();
             this.buttonValCDMDP = new System.Windows.Forms.Button();
             this.textBoxNewMDP2 = new System.Windows.Forms.TextBox();
             this.labelNoMDP = new System.Windows.Forms.Label();
             this.labelOldPswd = new System.Windows.Forms.Label();
             this.textBoxOldPswd = new System.Windows.Forms.TextBox();
-            this.textBoxNewMDP = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutEntete.SuspendLayout();
             this.panelTitre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBT)).BeginInit();
@@ -103,7 +103,7 @@
             this.labelFermeture.ForeColor = System.Drawing.Color.Gold;
             this.labelFermeture.Location = new System.Drawing.Point(966, 2);
             this.labelFermeture.Name = "labelFermeture";
-            this.labelFermeture.Size = new System.Drawing.Size(15, 15);
+            this.labelFermeture.Size = new System.Drawing.Size(18, 18);
             this.labelFermeture.TabIndex = 17;
             this.labelFermeture.Text = "X";
             this.labelFermeture.Click += new System.EventHandler(this.labelFermeture_Click);
@@ -115,7 +115,7 @@
             this.labelBT.ForeColor = System.Drawing.Color.Gold;
             this.labelBT.Location = new System.Drawing.Point(36, 0);
             this.labelBT.Name = "labelBT";
-            this.labelBT.Size = new System.Drawing.Size(45, 16);
+            this.labelBT.Size = new System.Drawing.Size(56, 18);
             this.labelBT.TabIndex = 1;
             this.labelBT.Text = "GEPEV";
             this.labelBT.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -175,10 +175,10 @@
             // 
             this.tabPageUti.BackgroundImage = global::Maquette_Belle_Table_Final.Properties.Resources.fond;
             this.tabPageUti.Controls.Add(this.panelUtilisateur);
-            this.tabPageUti.Location = new System.Drawing.Point(4, 28);
+            this.tabPageUti.Location = new System.Drawing.Point(4, 29);
             this.tabPageUti.Name = "tabPageUti";
             this.tabPageUti.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageUti.Size = new System.Drawing.Size(990, 467);
+            this.tabPageUti.Size = new System.Drawing.Size(990, 466);
             this.tabPageUti.TabIndex = 0;
             this.tabPageUti.Text = "Utilisateurs";
             this.tabPageUti.UseVisualStyleBackColor = true;
@@ -193,7 +193,7 @@
             this.panelUtilisateur.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelUtilisateur.Location = new System.Drawing.Point(3, 3);
             this.panelUtilisateur.Name = "panelUtilisateur";
-            this.panelUtilisateur.Size = new System.Drawing.Size(984, 461);
+            this.panelUtilisateur.Size = new System.Drawing.Size(984, 460);
             this.panelUtilisateur.TabIndex = 3;
             // 
             // dataGridViewUti
@@ -243,10 +243,10 @@
             // 
             this.tabPageHC.BackgroundImage = global::Maquette_Belle_Table_Final.Properties.Resources.fond;
             this.tabPageHC.Controls.Add(this.panelHistoriqueC);
-            this.tabPageHC.Location = new System.Drawing.Point(4, 28);
+            this.tabPageHC.Location = new System.Drawing.Point(4, 29);
             this.tabPageHC.Name = "tabPageHC";
             this.tabPageHC.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageHC.Size = new System.Drawing.Size(990, 467);
+            this.tabPageHC.Size = new System.Drawing.Size(990, 466);
             this.tabPageHC.TabIndex = 1;
             this.tabPageHC.Text = "Historique des connexions";
             this.tabPageHC.UseVisualStyleBackColor = true;
@@ -258,7 +258,7 @@
             this.panelHistoriqueC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelHistoriqueC.Location = new System.Drawing.Point(3, 3);
             this.panelHistoriqueC.Name = "panelHistoriqueC";
-            this.panelHistoriqueC.Size = new System.Drawing.Size(984, 461);
+            this.panelHistoriqueC.Size = new System.Drawing.Size(984, 460);
             this.panelHistoriqueC.TabIndex = 5;
             // 
             // dataGridViewHC
@@ -274,10 +274,10 @@
             // tabPageCMDP
             // 
             this.tabPageCMDP.Controls.Add(this.panelChangerMDP);
-            this.tabPageCMDP.Location = new System.Drawing.Point(4, 28);
+            this.tabPageCMDP.Location = new System.Drawing.Point(4, 29);
             this.tabPageCMDP.Name = "tabPageCMDP";
             this.tabPageCMDP.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCMDP.Size = new System.Drawing.Size(990, 467);
+            this.tabPageCMDP.Size = new System.Drawing.Size(990, 466);
             this.tabPageCMDP.TabIndex = 2;
             this.tabPageCMDP.Text = "Changer de mot de passe";
             this.tabPageCMDP.UseVisualStyleBackColor = true;
@@ -297,8 +297,26 @@
             this.panelChangerMDP.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelChangerMDP.Location = new System.Drawing.Point(3, 3);
             this.panelChangerMDP.Name = "panelChangerMDP";
-            this.panelChangerMDP.Size = new System.Drawing.Size(984, 461);
+            this.panelChangerMDP.Size = new System.Drawing.Size(984, 460);
             this.panelChangerMDP.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(256, 132);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(178, 19);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Nouveau mot de passe :";
+            // 
+            // textBoxNewMDP
+            // 
+            this.textBoxNewMDP.Location = new System.Drawing.Point(440, 129);
+            this.textBoxNewMDP.Name = "textBoxNewMDP";
+            this.textBoxNewMDP.Size = new System.Drawing.Size(216, 24);
+            this.textBoxNewMDP.TabIndex = 20;
             // 
             // buttonValCDMDP
             // 
@@ -317,7 +335,7 @@
             // 
             this.textBoxNewMDP2.Location = new System.Drawing.Point(440, 166);
             this.textBoxNewMDP2.Name = "textBoxNewMDP2";
-            this.textBoxNewMDP2.Size = new System.Drawing.Size(216, 21);
+            this.textBoxNewMDP2.Size = new System.Drawing.Size(216, 24);
             this.textBoxNewMDP2.TabIndex = 3;
             // 
             // labelNoMDP
@@ -325,9 +343,9 @@
             this.labelNoMDP.AutoSize = true;
             this.labelNoMDP.BackColor = System.Drawing.Color.Transparent;
             this.labelNoMDP.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNoMDP.Location = new System.Drawing.Point(278, 171);
+            this.labelNoMDP.Location = new System.Drawing.Point(256, 171);
             this.labelNoMDP.Name = "labelNoMDP";
-            this.labelNoMDP.Size = new System.Drawing.Size(142, 16);
+            this.labelNoMDP.Size = new System.Drawing.Size(178, 19);
             this.labelNoMDP.TabIndex = 1;
             this.labelNoMDP.Text = "Nouveau mot de passe :";
             // 
@@ -336,9 +354,9 @@
             this.labelOldPswd.AutoSize = true;
             this.labelOldPswd.BackColor = System.Drawing.Color.Transparent;
             this.labelOldPswd.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOldPswd.Location = new System.Drawing.Point(290, 97);
+            this.labelOldPswd.Location = new System.Drawing.Point(256, 99);
             this.labelOldPswd.Name = "labelOldPswd";
-            this.labelOldPswd.Size = new System.Drawing.Size(130, 16);
+            this.labelOldPswd.Size = new System.Drawing.Size(166, 19);
             this.labelOldPswd.TabIndex = 0;
             this.labelOldPswd.Text = "Ancien mot de passe : ";
             // 
@@ -346,30 +364,12 @@
             // 
             this.textBoxOldPswd.Location = new System.Drawing.Point(440, 94);
             this.textBoxOldPswd.Name = "textBoxOldPswd";
-            this.textBoxOldPswd.Size = new System.Drawing.Size(216, 21);
+            this.textBoxOldPswd.Size = new System.Drawing.Size(216, 24);
             this.textBoxOldPswd.TabIndex = 2;
-            // 
-            // textBoxNewMDP
-            // 
-            this.textBoxNewMDP.Location = new System.Drawing.Point(440, 129);
-            this.textBoxNewMDP.Name = "textBoxNewMDP";
-            this.textBoxNewMDP.Size = new System.Drawing.Size(216, 21);
-            this.textBoxNewMDP.TabIndex = 20;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(278, 134);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 16);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Nouveau mot de passe :";
             // 
             // InterAd
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Maquette_Belle_Table_Final.Properties.Resources.fond;
             this.ClientSize = new System.Drawing.Size(1000, 537);

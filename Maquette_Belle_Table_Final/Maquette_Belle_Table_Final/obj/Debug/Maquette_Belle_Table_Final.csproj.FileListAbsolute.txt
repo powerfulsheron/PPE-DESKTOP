@@ -82,7 +82,6 @@ C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle
 C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table.Popup_AddModUser.resources
 C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.Popup_AssoCom.resources
 C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table.Popup_Mail.resources
-C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table.Popup_NewC.resources
 C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table.Popup_NewClient.resources
 C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.Popup_NewCom.resources
 C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.Popup_NewInter.resources
@@ -91,3 +90,4 @@ C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle
 C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.Popup_VoirRDV.resources
 C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.Properties.Resources.resources
 C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.csproj.GenerateResource.Cache
+C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.Popup_NewC.resources

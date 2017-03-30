@@ -40,8 +40,7 @@ namespace Maquette_Belle_Table_Final
             using (ITransaction transaction = session.BeginTransaction())
             {
                 Utilisateur utilisateur = session.Query<Utilisateur>().SingleOrDefault(w => w.loginUtilisateur == textBoxId.Text);
-                foreach (Mail mail in utilisateur.lesMails)
-                Console.WriteLine("le mail ="+mail);
+                Console.WriteLine(utilisateur.lesConges);
 
                 if (utilisateur == null)
                 {
@@ -51,34 +50,35 @@ namespace Maquette_Belle_Table_Final
                 {
                     if (utilisateur.typeUtilisateur.codeTypeUtilisateur == 1)
                     {
-                        new InterAd().Show();
-                        InterAd interAd = new InterAd();
-                        interAd.utilisateur = utilisateur;
-                        interAd.Show();
+             
                         utilisateur.nbTentatives = 0;
                         session.Update(utilisateur);
                         transaction.Commit();
+                        InterAd interAd = new InterAd();
+                        interAd.utilisateur = utilisateur;
+                        interAd.Show();
                     }
 
                     else if (utilisateur.typeUtilisateur.codeTypeUtilisateur == 2)
                     {
-                        new InterGes().Show();
-                        InterGes interGes = new InterGes();
-                        interGes.utilisateur = utilisateur;
-                        interGes.Show();
+                 
                         utilisateur.nbTentatives = 0;
                         session.Update(utilisateur);
                         transaction.Commit();
+                        InterGes interGes = new InterGes();
+                        interGes.utilisateur = utilisateur;
+                        interGes.Show();
                     }
 
                     else if (utilisateur.typeUtilisateur.codeTypeUtilisateur == 3)
                     {
-                        InterUti interUti = new InterUti();
-                        interUti.utilisateur = utilisateur;
-                        interUti.Show();
                         utilisateur.nbTentatives = 0;
                         session.Update(utilisateur);
                         transaction.Commit();
+                        InterUti interUti = new InterUti();
+                        interUti.utilisateur = utilisateur;
+                        interUti.Show();
+  
                     }
 
                 }
