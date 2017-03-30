@@ -4,8 +4,6 @@
 UTILISATEUR :
 
 - Planning jquerry widget en iFrame(Vallade)
-- Ajout d'une période de congé (En cours lorenzo)
-- Planning ou liste des congés
 - Affichage du portefeuille client d'un utilisateur
 - Modifier un client 
 - Supprimer un client (attention à la base, normalement j'ai configuré nhibernate pour que les deletes soient automatiques, à tester)
@@ -45,6 +43,8 @@ ADMINISTRATEUR :
 - Ajout d'un nouveau rendez-vous en base avec un formulaire. (raph)
 - Modifier un RDV (seb)
 - Ajouter un client (seb)
+- Ajout d'une période de congé (Lorenzo)
+- Planning ou liste des congés (Lorenzo)
 
 
 
