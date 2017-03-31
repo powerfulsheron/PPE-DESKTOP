@@ -40,25 +40,33 @@ namespace Maquette_Belle_Table_Final
             nouveauConge.dateDebutConge = dateTimePickerDD.Value;
             nouveauConge.dateFinConge = dateTimePickerDF.Value;
               ISession session = sessionFactory.OpenSession();
+
               using (ITransaction transaction = session.BeginTransaction())
               {
                   session.Save(nouveauConge);
                   transaction.Commit();
+                  session.Close();
               }
+
             CongesUtilisateur nouveauCongeUtilisateur = new CongesUtilisateur();
             nouveauCongeUtilisateur.conge=nouveauConge;
             nouveauCongeUtilisateur.utilisateur=utilisateur;
-               using (ITransaction transaction = session.BeginTransaction())
+            ISession session2 = sessionFactory.OpenSession();
+
+               using (ITransaction transaction = session2.BeginTransaction())
               {
-                  session.Save(nouveauCongeUtilisateur);
+                  session2.Save(nouveauCongeUtilisateur);
                   transaction.Commit();
-                  
+                  session2.Close();              
               }
-               using (ITransaction transaction = session.BeginTransaction())
+
+               ISession session3 = sessionFactory.OpenSession();
+               using (ITransaction transaction = session3.BeginTransaction())
                {
-                   session.Update(utilisateur);
+                   session3.Update(utilisateur);
                    transaction.Commit();
                }
+
             interUti.chargerCalendar();
             Popup_NewC.ActiveForm.Close();
             

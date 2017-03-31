@@ -10,7 +10,7 @@ namespace Maquette_Belle_Table_Final
         public virtual DateTime dateDebutConge { get; set; }
         public virtual DateTime dateFinConge { get; set; }
         public virtual ISet<Utilisateur> lesUtilisateurs  { get; set; }
-
+ 
         // constructeurs 
         public Conge()
         {

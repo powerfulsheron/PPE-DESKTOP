@@ -23,6 +23,8 @@ namespace Maquette_Belle_Table_Final
         private void InterUti_Load(object sender, System.EventArgs e)
         {
             chargerCalendar();
+            dataGridViewPortefeuille.DataSource = utilisateur.porteFeuille.lesInterlocuteurs;
+
         }
 
         private void labelFermeture_Click(object sender, EventArgs e)
@@ -73,7 +75,7 @@ namespace Maquette_Belle_Table_Final
 
         private void dataGridViewPortefeuille_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //Partie code destiné au Database sur la rubrique Portefeuille
+            dataGridViewPortefeuille.DataSource = utilisateur.porteFeuille.lesInterlocuteurs;
         }
 
         //---------------------> * Fin Rubrique Portefeuille * <---------------------
@@ -149,6 +151,16 @@ namespace Maquette_Belle_Table_Final
                 sourceDate[i] = lesDates[i];
             }
             monthCalendarPlanC.BoldedDates = sourceDate;
+        }
+
+        private void panelPortefeuille_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void dataGridViewPortefeuille_Enter(object sender, EventArgs e)
+        {
+            dataGridViewPortefeuille.DataSource = utilisateur.porteFeuille.lesInterlocuteurs.ToList<Interlocuteur>();
         }
     }
 }

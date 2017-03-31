@@ -40,7 +40,7 @@ namespace Maquette_Belle_Table_Final
             using (ITransaction transaction = session.BeginTransaction())
             {
                 Utilisateur utilisateur = session.Query<Utilisateur>().SingleOrDefault(w => w.loginUtilisateur == textBoxId.Text);
-                Console.WriteLine(utilisateur.lesConges);
+                //Console.WriteLine(utilisateur.lesConges);
 
                 if (utilisateur == null)
                 {
@@ -54,6 +54,7 @@ namespace Maquette_Belle_Table_Final
                         utilisateur.nbTentatives = 0;
                         session.Update(utilisateur);
                         transaction.Commit();
+                        session.Close();
                         InterAd interAd = new InterAd();
                         interAd.utilisateur = utilisateur;
                         interAd.Show();
@@ -212,6 +213,11 @@ namespace Maquette_Belle_Table_Final
         }
 
         private void labelMDPNom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxId_TextChanged(object sender, EventArgs e)
         {
 
         }
