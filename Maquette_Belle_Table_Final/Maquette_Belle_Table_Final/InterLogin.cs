@@ -41,7 +41,6 @@ namespace Maquette_Belle_Table_Final
             {
                 Utilisateur utilisateur = session.Query<Utilisateur>().SingleOrDefault(w => w.loginUtilisateur == textBoxId.Text);
  
-
                 if (utilisateur == null)
                 {
                     MessageBox.Show("Utilisateur introuvable", "Erreur");
