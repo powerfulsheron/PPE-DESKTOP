@@ -55,6 +55,7 @@ namespace Maquette_Belle_Table_Final
                         transaction.Commit();
                         InterAd interAd = new InterAd();
                         interAd.utilisateur = utilisateur;
+                        session.Close();
                         interAd.Show();
                     }
 
@@ -66,6 +67,7 @@ namespace Maquette_Belle_Table_Final
                         transaction.Commit();
                         InterGes interGes = new InterGes();
                         interGes.utilisateur = utilisateur;
+                        session.Close();
                         interGes.Show();
                     }
 
@@ -76,10 +78,12 @@ namespace Maquette_Belle_Table_Final
                         transaction.Commit();
                         InterUti interUti = new InterUti();
                         interUti.utilisateur = utilisateur;
+                        session.Close();
                         interUti.Show();
+                      
   
                     }
-                    session.Close();
+  
                 }
                 else if (utilisateur.nbTentatives < 6)// erreur de mdp et tentatives <6
                 {

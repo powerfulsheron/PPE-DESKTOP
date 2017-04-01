@@ -8,12 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NHibernate;
+using NHibernate.Cfg;
+using NHibernate.Linq;
 
 namespace Maquette_Belle_Table_Final
 {
     public partial class InterUti : Form
     {
         public Utilisateur utilisateur { get; set; }
+        private static ISessionFactory sessionFactory = new Configuration().Configure().BuildSessionFactory();
 
         public InterUti()
         {
@@ -131,26 +135,36 @@ namespace Maquette_Belle_Table_Final
         {
 
             List<DateTime> lesDates = new List<DateTime>();
-            Console.WriteLine("utilisateur" + utilisateur);
-            foreach (Conge conge in utilisateur.lesConges)
+            ISession session = sessionFactory.OpenSession();
+            using (ITransaction transaction = session.BeginTransaction())
             {
+                session.Refresh(utilisateur);
+                transaction.Commit();
+            
 
-                for (DateTime date = conge.dateDebutConge; date <= conge.dateFinConge; date = date.AddDays(1))
+
+                foreach (Conge conge in utilisateur.lesConges)
                 {
-                    lesDates.Add(date);
+
+                    for (DateTime date = conge.dateDebutConge; date <= conge.dateFinConge; date = date.AddDays(1))
+                    {
+                        lesDates.Add(date);
+                    }
+
                 }
+                foreach (DateTime date in lesDates)
+                {
+                    Console.WriteLine(date);
+                }
+                DateTime[] sourceDate = new DateTime[lesDates.Count()];
+                for (int i = 0; i < lesDates.Count(); i++)
+                {
+                    sourceDate[i] = lesDates[i];
+                }
+                monthCalendarPlanC.BoldedDates = sourceDate;
+                session.Close();
 
             }
-            foreach (DateTime date in lesDates) 
-            {
-                Console.WriteLine(date);
-            }
-            DateTime[] sourceDate = new DateTime[lesDates.Count()];
-            for (int i = 0; i < lesDates.Count(); i++)
-            {
-                sourceDate[i] = lesDates[i];
-            }
-            monthCalendarPlanC.BoldedDates = sourceDate;
         }
 
         private void panelPortefeuille_Paint(object sender, PaintEventArgs e)

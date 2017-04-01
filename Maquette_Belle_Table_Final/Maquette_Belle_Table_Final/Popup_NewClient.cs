@@ -261,6 +261,7 @@ namespace Maquette_Belle_Table
 
                 session.Save(I);
                 transaction.Commit();
+                session.Close();
                 return true;
 
             }

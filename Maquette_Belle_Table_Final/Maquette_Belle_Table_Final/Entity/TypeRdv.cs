@@ -34,8 +34,11 @@ namespace Maquette_Belle_Table_Final
 
                     // on récupère la liste des typerdv 
                     IList<TypeRdv> typerdv = session.CreateQuery(@"select e from TypeRdv e ").List<TypeRdv>();
+                    session.Close();
                     return typerdv;
+                    
                 }
+         
             }
 
         }
