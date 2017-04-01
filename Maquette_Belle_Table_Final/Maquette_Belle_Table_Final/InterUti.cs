@@ -23,7 +23,7 @@ namespace Maquette_Belle_Table_Final
         private void InterUti_Load(object sender, System.EventArgs e)
         {
             chargerCalendar();
-            dataGridViewPortefeuille.DataSource = utilisateur.porteFeuille.lesInterlocuteurs;
+            //dataGridViewPortefeuille.DataSource = utilisateur.porteFeuille.lesInterlocuteurs;
 
         }
 

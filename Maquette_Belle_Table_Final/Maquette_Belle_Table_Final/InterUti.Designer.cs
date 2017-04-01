@@ -67,7 +67,6 @@
             this.labeltextBoxNewMDP2 = new System.Windows.Forms.Label();
             this.labelOldPswd = new System.Windows.Forms.Label();
             this.textBoxOldPswd = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tableLayoutEntete.SuspendLayout();
             this.panelTitre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBT)).BeginInit();
@@ -85,7 +84,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMail)).BeginInit();
             this.tabPageCDMDP.SuspendLayout();
             this.panelChangerMDP.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutEntete
@@ -322,7 +320,6 @@
             // panelPortefeuille
             // 
             this.panelPortefeuille.BackgroundImage = global::Maquette_Belle_Table_Final.Properties.Resources.fond;
-            this.panelPortefeuille.Controls.Add(this.dataGridView1);
             this.panelPortefeuille.Controls.Add(this.dataGridViewPortefeuille);
             this.panelPortefeuille.Controls.Add(this.buttonEnvoiMail);
             this.panelPortefeuille.Controls.Add(this.buttonModCli);
@@ -340,7 +337,7 @@
             this.dataGridViewPortefeuille.Location = new System.Drawing.Point(35, 90);
             this.dataGridViewPortefeuille.Name = "dataGridViewPortefeuille";
             this.dataGridViewPortefeuille.RowTemplate.Height = 28;
-            this.dataGridViewPortefeuille.Size = new System.Drawing.Size(327, 340);
+            this.dataGridViewPortefeuille.Size = new System.Drawing.Size(913, 340);
             this.dataGridViewPortefeuille.TabIndex = 4;
             this.dataGridViewPortefeuille.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPortefeuille_CellContentClick);
             this.dataGridViewPortefeuille.Enter += new System.EventHandler(this.dataGridViewPortefeuille_Enter);
@@ -529,15 +526,6 @@
             this.textBoxOldPswd.Size = new System.Drawing.Size(216, 24);
             this.textBoxOldPswd.TabIndex = 2;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(597, 90);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(327, 340);
-            this.dataGridView1.TabIndex = 5;
-            // 
             // InterUti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -573,7 +561,6 @@
             this.tabPageCDMDP.ResumeLayout(false);
             this.panelChangerMDP.ResumeLayout(false);
             this.panelChangerMDP.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -619,6 +606,5 @@
         private System.Windows.Forms.Button buttonValCDMDP;
         private System.Windows.Forms.Label labeltextBoxNewMDP;
         private System.Windows.Forms.TextBox textBoxNewMDP;
-        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

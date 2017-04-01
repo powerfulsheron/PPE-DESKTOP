@@ -51,20 +51,25 @@ namespace Maquette_Belle_Table_Final
             CongesUtilisateur nouveauCongeUtilisateur = new CongesUtilisateur();
             nouveauCongeUtilisateur.conge=nouveauConge;
             nouveauCongeUtilisateur.utilisateur=utilisateur;
-            ISession session2 = sessionFactory.OpenSession();
 
-               using (ITransaction transaction = session2.BeginTransaction())
+
+            session = sessionFactory.OpenSession();
+               using (ITransaction transaction = session.BeginTransaction())
               {
-                  session2.Save(nouveauCongeUtilisateur);
+                  session.Save(nouveauCongeUtilisateur);
                   transaction.Commit();
-                  session2.Close();              
+                  session.Close();              
               }
-
-               ISession session3 = sessionFactory.OpenSession();
-               using (ITransaction transaction = session3.BeginTransaction())
+               session = sessionFactory.OpenSession();
+               using (ITransaction transaction = session.BeginTransaction())
                {
-                   session3.Update(utilisateur);
-                   transaction.Commit();
+                  
+                       
+                       session.Update(utilisateur);
+                       transaction.Commit();
+                       session.Close();  
+                   
+     
                }
 
             interUti.chargerCalendar();

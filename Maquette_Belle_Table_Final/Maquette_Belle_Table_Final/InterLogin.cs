@@ -40,7 +40,7 @@ namespace Maquette_Belle_Table_Final
             using (ITransaction transaction = session.BeginTransaction())
             {
                 Utilisateur utilisateur = session.Query<Utilisateur>().SingleOrDefault(w => w.loginUtilisateur == textBoxId.Text);
-                //Console.WriteLine(utilisateur.lesConges);
+ 
 
                 if (utilisateur == null)
                 {
@@ -54,7 +54,6 @@ namespace Maquette_Belle_Table_Final
                         utilisateur.nbTentatives = 0;
                         session.Update(utilisateur);
                         transaction.Commit();
-                        session.Close();
                         InterAd interAd = new InterAd();
                         interAd.utilisateur = utilisateur;
                         interAd.Show();
@@ -81,7 +80,7 @@ namespace Maquette_Belle_Table_Final
                         interUti.Show();
   
                     }
-
+                    session.Close();
                 }
                 else if (utilisateur.nbTentatives < 6)// erreur de mdp et tentatives <6
                 {
@@ -112,6 +111,7 @@ namespace Maquette_Belle_Table_Final
 
                     session.Update(utilisateur);
                     transaction.Commit();
+                    session.Close();
                 }
                 else
                 {
@@ -154,6 +154,11 @@ namespace Maquette_Belle_Table_Final
                         utilisateur.passwordUtilisateur = newPassword;
                         session.Save(utilisateur);
 
+                        // validation de la transaction 
+                        transaction.Commit();
+                        session.Close();
+                      
+
                         // on envoie le mail
 
                         MailMessage mail = new MailMessage();
@@ -166,8 +171,7 @@ namespace Maquette_Belle_Table_Final
                         client.Host = "localhost";
                         client.Send(mail);
                   
-                        // validation de la transaction 
-                        transaction.Commit();
+            
                         // message succès
                         MessageBox.Show("Votre nouveau mot de passe a été envoyé à votre adresse : "+utilisateur.mailUtilisateur);
                     }
