@@ -18,10 +18,10 @@ namespace Maquette_Belle_Table_Final
     {
         private static ISessionFactory sessionFactory = new Configuration().Configure().BuildSessionFactory();
         ISession session = sessionFactory.OpenSession();
+    
         public Utilisateur utilisateur { get; set; }
         
-    
-
+   
         public InterUti()
         {
             InitializeComponent();
@@ -30,7 +30,8 @@ namespace Maquette_Belle_Table_Final
         private void InterUti_Load(object sender, System.EventArgs e)
         {
             chargerCalendar();
-            //dataGridViewPortefeuille.DataSource = utilisateur.porteFeuille.lesInterlocuteurs.ToList<Interlocuteur>();                   
+            dataGridViewPortefeuille.DataSource = utilisateur.porteFeuille.lesInterlocuteurs.ToList<Interlocuteur>();
+            
         }
 
         private void labelFermeture_Click(object sender, EventArgs e)
@@ -116,8 +117,7 @@ namespace Maquette_Belle_Table_Final
         {
 
             List<DateTime> lesDates = new List<DateTime>();
-           
-            
+            ISession session = sessionFactory.OpenSession();
             using (ITransaction transaction = session.BeginTransaction())
             {
                 session.Refresh(utilisateur);
@@ -148,6 +148,7 @@ namespace Maquette_Belle_Table_Final
                 session.Dispose();
 
             }
-        }  
+        }
+    
     }
 }
