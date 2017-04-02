@@ -27,6 +27,7 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
       <key>
         <column name="numUtilisateur" not-null="true"/>
       </key>
+      
       <many-to-many class="Conge">
         <column name="numConge" not-null="true"/>
       </many-to-many>

@@ -57,14 +57,14 @@
             this.panelBorderRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelBorderRight.Location = new System.Drawing.Point(381, 0);
             this.panelBorderRight.Name = "panelBorderRight";
-            this.panelBorderRight.Size = new System.Drawing.Size(1, 130);
+            this.panelBorderRight.Size = new System.Drawing.Size(1, 449);
             this.panelBorderRight.TabIndex = 11;
             // 
             // panelBorderBottom
             // 
             this.panelBorderBottom.BackColor = System.Drawing.Color.MidnightBlue;
             this.panelBorderBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBorderBottom.Location = new System.Drawing.Point(0, 129);
+            this.panelBorderBottom.Location = new System.Drawing.Point(0, 448);
             this.panelBorderBottom.Name = "panelBorderBottom";
             this.panelBorderBottom.Size = new System.Drawing.Size(381, 1);
             this.panelBorderBottom.TabIndex = 12;
@@ -75,7 +75,7 @@
             this.panelBordeLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelBordeLeft.Location = new System.Drawing.Point(0, 0);
             this.panelBordeLeft.Name = "panelBordeLeft";
-            this.panelBordeLeft.Size = new System.Drawing.Size(1, 129);
+            this.panelBordeLeft.Size = new System.Drawing.Size(1, 448);
             this.panelBordeLeft.TabIndex = 13;
             // 
             // panelBorderTop
@@ -166,9 +166,9 @@
             this.panelMDPO.Controls.Add(this.textBoxMDPNom);
             this.panelMDPO.Controls.Add(this.labelMDPO);
             this.panelMDPO.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelMDPO.Location = new System.Drawing.Point(0, 130);
+            this.panelMDPO.Location = new System.Drawing.Point(1, 129);
             this.panelMDPO.Name = "panelMDPO";
-            this.panelMDPO.Size = new System.Drawing.Size(382, 319);
+            this.panelMDPO.Size = new System.Drawing.Size(380, 319);
             this.panelMDPO.TabIndex = 24;
             this.panelMDPO.Visible = false;
             // 
@@ -223,7 +223,7 @@
             this.labelMDPO.AutoSize = true;
             this.labelMDPO.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMDPO.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.labelMDPO.Location = new System.Drawing.Point(112, 14);
+            this.labelMDPO.Location = new System.Drawing.Point(111, 14);
             this.labelMDPO.Name = "labelMDPO";
             this.labelMDPO.Size = new System.Drawing.Size(158, 20);
             this.labelMDPO.TabIndex = 0;
@@ -275,6 +275,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Maquette_Belle_Table_Final.Properties.Resources.fond;
             this.ClientSize = new System.Drawing.Size(382, 449);
+            this.Controls.Add(this.panelMDPO);
             this.Controls.Add(this.buttonT3);
             this.Controls.Add(this.buttonT2);
             this.Controls.Add(this.buttonT1);
@@ -288,7 +289,6 @@
             this.Controls.Add(this.panelBordeLeft);
             this.Controls.Add(this.panelBorderBottom);
             this.Controls.Add(this.panelBorderRight);
-            this.Controls.Add(this.panelMDPO);
             this.Font = new System.Drawing.Font("Century Gothic", 8F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InterLogin";

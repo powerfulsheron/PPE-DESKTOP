@@ -114,7 +114,7 @@ namespace Maquette_Belle_Table_Final
                     unUtilisateur.passwordUtilisateur = pourMD5.MD5Hash(nouveauMotDePasse);
                     session.SaveOrUpdate(e);
                     transaction.Commit();
-                    session.Close();
+                    session.Dispose();
                     sessionFactory.Close();
                     return true;
                 }

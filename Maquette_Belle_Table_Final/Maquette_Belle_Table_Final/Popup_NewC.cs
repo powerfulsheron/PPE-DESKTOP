@@ -45,7 +45,7 @@ namespace Maquette_Belle_Table_Final
               {
                   session.Save(nouveauConge);
                   transaction.Commit();
-                  session.Close();
+                  session.Dispose();
               }
 
             CongesUtilisateur nouveauCongeUtilisateur = new CongesUtilisateur();
@@ -58,7 +58,7 @@ namespace Maquette_Belle_Table_Final
               {
                   session.Save(nouveauCongeUtilisateur);
                   transaction.Commit();
-                  session.Close();              
+                  session.Dispose();              
               }
 
             interUti.chargerCalendar();

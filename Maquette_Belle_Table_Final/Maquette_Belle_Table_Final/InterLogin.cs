@@ -18,6 +18,7 @@ namespace Maquette_Belle_Table_Final
     public partial class InterLogin : Form
     {
         private static ISessionFactory sessionFactory = new Configuration().Configure().BuildSessionFactory();
+        ISession session = sessionFactory.OpenSession();
         public InterLogin()
         {
             InitializeComponent();
@@ -36,7 +37,7 @@ namespace Maquette_Belle_Table_Final
         private void buttonConnexion_Click(object sender, EventArgs e)
         {
             // ouverture session  
-            ISession session = sessionFactory.OpenSession();
+            
             using (ITransaction transaction = session.BeginTransaction())
             {
                 Utilisateur utilisateur = session.Query<Utilisateur>().SingleOrDefault(w => w.loginUtilisateur == textBoxId.Text);
@@ -69,7 +70,7 @@ namespace Maquette_Belle_Table_Final
                         transaction.Commit();
                         InterGes interGes = new InterGes();
                         interGes.utilisateur = utilisateur;
-                        session.Close();
+                        session.Dispose();
                         interGes.Show();
                     }
 
@@ -81,7 +82,7 @@ namespace Maquette_Belle_Table_Final
                         transaction.Commit();
                         InterUti interUti = new InterUti();
                         interUti.utilisateur = utilisateur;
-                        session.Close();
+                        session.Dispose();
                         interUti.Show();
                       
   
@@ -117,7 +118,7 @@ namespace Maquette_Belle_Table_Final
 
                     session.Update(utilisateur);
                     transaction.Commit();
-                    session.Close();
+                    session.Dispose();
                 }
                 else
                 {
@@ -162,7 +163,7 @@ namespace Maquette_Belle_Table_Final
 
                         // validation de la transaction 
                         transaction.Commit();
-                        session.Close();
+                        session.Dispose();
                       
 
                         // on envoie le mail

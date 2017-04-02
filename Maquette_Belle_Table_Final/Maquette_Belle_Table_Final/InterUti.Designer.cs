@@ -111,7 +111,6 @@
             this.panelTitre.Name = "panelTitre";
             this.panelTitre.Size = new System.Drawing.Size(994, 31);
             this.panelTitre.TabIndex = 2;
-            this.panelTitre.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTitre_Paint);
             // 
             // labelFermeture
             // 
@@ -329,7 +328,6 @@
             this.panelPortefeuille.Name = "panelPortefeuille";
             this.panelPortefeuille.Size = new System.Drawing.Size(984, 460);
             this.panelPortefeuille.TabIndex = 4;
-            this.panelPortefeuille.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPortefeuille_Paint);
             // 
             // dataGridViewPortefeuille
             // 
@@ -339,8 +337,6 @@
             this.dataGridViewPortefeuille.RowTemplate.Height = 28;
             this.dataGridViewPortefeuille.Size = new System.Drawing.Size(913, 340);
             this.dataGridViewPortefeuille.TabIndex = 4;
-            this.dataGridViewPortefeuille.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPortefeuille_CellContentClick);
-            this.dataGridViewPortefeuille.Enter += new System.EventHandler(this.dataGridViewPortefeuille_Enter);
             // 
             // buttonEnvoiMail
             // 
@@ -428,7 +424,6 @@
             this.dataGridViewMail.RowTemplate.Height = 28;
             this.dataGridViewMail.Size = new System.Drawing.Size(735, 387);
             this.dataGridViewMail.TabIndex = 0;
-            this.dataGridViewMail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMail_CellContentClick);
             // 
             // tabPageCDMDP
             // 

@@ -35,7 +35,7 @@ namespace Maquette_Belle_Table_Final
 
                     // on récupère la liste des typeStructure 
                     IList<TypeStructure> typeStructure = session.CreateQuery(@"select e from TypeStructure e ").List<TypeStructure>();
-                    session.Close();
+                    session.Dispose();
                     return typeStructure;
                 }
             }

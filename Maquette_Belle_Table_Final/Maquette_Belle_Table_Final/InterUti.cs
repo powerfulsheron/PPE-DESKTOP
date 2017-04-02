@@ -16,8 +16,11 @@ namespace Maquette_Belle_Table_Final
 {
     public partial class InterUti : Form
     {
-        public Utilisateur utilisateur { get; set; }
         private static ISessionFactory sessionFactory = new Configuration().Configure().BuildSessionFactory();
+        ISession session = sessionFactory.OpenSession();
+        public Utilisateur utilisateur { get; set; }
+        
+    
 
         public InterUti()
         {
@@ -27,8 +30,7 @@ namespace Maquette_Belle_Table_Final
         private void InterUti_Load(object sender, System.EventArgs e)
         {
             chargerCalendar();
-            //dataGridViewPortefeuille.DataSource = utilisateur.porteFeuille.lesInterlocuteurs;
-
+            //dataGridViewPortefeuille.DataSource = utilisateur.porteFeuille.lesInterlocuteurs.ToList<Interlocuteur>();                   
         }
 
         private void labelFermeture_Click(object sender, EventArgs e)
@@ -77,10 +79,6 @@ namespace Maquette_Belle_Table_Final
             
         }
 
-        private void dataGridViewPortefeuille_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            dataGridViewPortefeuille.DataSource = utilisateur.porteFeuille.lesInterlocuteurs;
-        }
 
         //---------------------> * Fin Rubrique Portefeuille * <---------------------
 
@@ -96,10 +94,6 @@ namespace Maquette_Belle_Table_Final
             new Maquette_Belle_Table.Popup_Mail().Show();
         }
 
-        private void dataGridViewMail_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //Partie code destiné au Database sur la rubrique Mails
-        }
 
         //---------------------> * Fin Rubrique Mails * <---------------------
 
@@ -116,29 +110,18 @@ namespace Maquette_Belle_Table_Final
             else MessageBox.Show("Les nouveaux de passe ne correspondent pas.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void monthCalendarPlanC_DateChanged(object sender, DateRangeEventArgs e)
-        {
-
-        }
-     
-        private void panelTitre_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-          
-        }
+    
         //---------------------> * Fin Rubrique Changer de mot de passe * <---------------------
         public void chargerCalendar() 
         {
 
             List<DateTime> lesDates = new List<DateTime>();
-            ISession session = sessionFactory.OpenSession();
+           
+            
             using (ITransaction transaction = session.BeginTransaction())
             {
                 session.Refresh(utilisateur);
+               
                 transaction.Commit();
             
 
@@ -162,19 +145,9 @@ namespace Maquette_Belle_Table_Final
                     sourceDate[i] = lesDates[i];
                 }
                 monthCalendarPlanC.BoldedDates = sourceDate;
-                session.Close();
+                session.Dispose();
 
             }
-        }
-
-        private void panelPortefeuille_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
-        private void dataGridViewPortefeuille_Enter(object sender, EventArgs e)
-        {
-            dataGridViewPortefeuille.DataSource = utilisateur.porteFeuille.lesInterlocuteurs.ToList<Interlocuteur>();
-        }
+        }  
     }
 }

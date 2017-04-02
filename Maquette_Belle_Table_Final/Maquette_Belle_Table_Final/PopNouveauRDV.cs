@@ -97,7 +97,7 @@ namespace Maquette_Belle_Table
                 if (uneVilleDerogatoire != null) unRendezVous.villeDerogatoire = uneVilleDerogatoire;
                 session.Save(unRendezVous);
                 transaction.Commit();
-                session.Close();
+                session.Dispose();
                 return "Rendez-vous ajouté.";
             }
         }
