@@ -4,7 +4,6 @@
 UTILISATEUR :
 
 - Planning jquerry widget en iFrame(Vallade)
-- Affichage du portefeuille client d'un utilisateur
 - Modifier un client 
 - Supprimer un client (attention à la base, normalement j'ai configuré nhibernate pour que les deletes soient automatiques, à tester)
 - Affichage de la liste des mails envoyés par l'utilisateur
@@ -45,6 +44,7 @@ ADMINISTRATEUR :
 - Ajouter un client (seb)
 - Ajout d'une période de congé (Lorenzo)
 - Planning ou liste des congés (Lorenzo)
+- Affichage du portefeuille client d'un utilisateur (lorenzo)
 
 
 
