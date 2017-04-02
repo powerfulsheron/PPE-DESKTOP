@@ -8,7 +8,7 @@ UTILISATEUR :
 - Modifier un client 
 - Supprimer un client (attention à la base, normalement j'ai configuré nhibernate pour que les deletes soient automatiques, à tester)
 - Affichage de la liste des mails envoyés par l'utilisateur
-- Consulter un mal envoyé par l'utilisateur
+- Consulter un mail envoyé par l'utilisateur
 - Envoi automatique de mail après évenement (rdv ou +)
 
 GESTIONNAIRE :
