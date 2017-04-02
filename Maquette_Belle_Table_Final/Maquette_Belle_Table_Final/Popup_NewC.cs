@@ -60,13 +60,6 @@ namespace Maquette_Belle_Table_Final
                   transaction.Commit();
                   session.Close();              
               }
-               session = sessionFactory.OpenSession();
-               using (ITransaction transaction = session.BeginTransaction())
-               {                                       
-                       session.Update(utilisateur);
-                       transaction.Commit();
-                       session.Close();                        
-               }
 
             interUti.chargerCalendar();
             Popup_NewC.ActiveForm.Close();

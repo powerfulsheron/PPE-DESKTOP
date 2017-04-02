@@ -51,6 +51,7 @@ namespace Maquette_Belle_Table_Final
                     {
              
                         utilisateur.nbTentatives = 0;
+                        utilisateur.dateDernierLogin = DateTime.Now;
                         session.Update(utilisateur);
                         transaction.Commit();
                         InterAd interAd = new InterAd();
@@ -63,6 +64,7 @@ namespace Maquette_Belle_Table_Final
                     {
                  
                         utilisateur.nbTentatives = 0;
+                        utilisateur.dateDernierLogin = DateTime.Now;
                         session.Update(utilisateur);
                         transaction.Commit();
                         InterGes interGes = new InterGes();
@@ -74,6 +76,7 @@ namespace Maquette_Belle_Table_Final
                     else if (utilisateur.typeUtilisateur.codeTypeUtilisateur == 3)
                     {
                         utilisateur.nbTentatives = 0;
+                        utilisateur.dateDernierLogin = DateTime.Now;
                         session.Update(utilisateur);
                         transaction.Commit();
                         InterUti interUti = new InterUti();
