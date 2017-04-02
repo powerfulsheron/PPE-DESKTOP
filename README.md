@@ -4,7 +4,7 @@
 UTILISATEUR :
 
 - Planning jquerry widget en iFrame(Vallade)
-- Modifier un client 
+- Modifier un client ( en cours lorenzo )
 - Supprimer un client (attention à la base, normalement j'ai configuré nhibernate pour que les deletes soient automatiques, à tester)
 - Affichage de la liste des mails envoyés par l'utilisateur
 - Consulter un mail envoyé par l'utilisateur
