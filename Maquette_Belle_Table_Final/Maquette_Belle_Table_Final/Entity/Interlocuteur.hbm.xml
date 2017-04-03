@@ -12,7 +12,9 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
     <property name="mailInterlocuteur" column="mailInterlocuteur"/>
     
     <one-to-one name="individu" constrained="true" foreign-key="none" class="Individu" lazy="false"/>
+    
     <one-to-one name="structure" constrained="true" foreign-key="none" class="Structure" lazy="false"/>
+    
     <one-to-one name="portefeuille" constrained="true" foreign-key="none" class="PorteFeuille" lazy="false"/>
 
     <set name="lesRendezVous">
