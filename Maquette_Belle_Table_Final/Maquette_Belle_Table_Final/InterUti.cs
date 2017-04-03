@@ -32,7 +32,16 @@ namespace Maquette_Belle_Table_Final
             chargerCalendar();
             dataGridViewPortefeuille.DataSource = utilisateur.porteFeuille.lesInterlocuteurs.ToList<Interlocuteur>();
             dataGridViewMail.DataSource = utilisateur.lesMails.ToList<Mail>();
-
+            //IList<Mail> test = utilisateur.lesMails.ToList<Mail>();
+            /*
+            foreach (Mail mail in test)
+            {
+                dataGridViewMail.Columns.Add("Expediteur", "Expediteur");
+                dataGridViewMail.Rows.Add(mail.interlocuteur.mailInterlocuteur);
+                dataGridViewMail.Columns.Add("Object", "Object");
+                dataGridViewMail.Rows.Add(mail.objetMail);
+            }
+            */
         }
 
         private void labelFermeture_Click(object sender, EventArgs e)
