@@ -33,7 +33,7 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
       </many-to-many>
     </set>
 
-    <set name="lesMails">
+    <set name="lesMails" lazy="false">
       <key column="numUtilisateur" />
       <one-to-many class="Mail"/>
     </set>

@@ -31,7 +31,8 @@ namespace Maquette_Belle_Table_Final
         {
             chargerCalendar();
             dataGridViewPortefeuille.DataSource = utilisateur.porteFeuille.lesInterlocuteurs.ToList<Interlocuteur>();
-            
+            dataGridViewMail.DataSource = utilisateur.lesMails.ToList<Mail>();
+
         }
 
         private void labelFermeture_Click(object sender, EventArgs e)
@@ -149,6 +150,15 @@ namespace Maquette_Belle_Table_Final
 
             }
         }
-    
+
+        private void panelMail_Paint(object sender, PaintEventArgs e)
+        {
+           
+        }
+
+        private void panelPortefeuille_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
