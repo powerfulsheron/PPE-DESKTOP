@@ -59,6 +59,7 @@ namespace Maquette_Belle_Table_Final
                         interAd.utilisateur = utilisateur;
                         session.Close();
                         interAd.Show();
+                        this.Visible = false;
                     }
 
                     else if (utilisateur.typeUtilisateur.codeTypeUtilisateur == 2)
@@ -72,6 +73,7 @@ namespace Maquette_Belle_Table_Final
                         interGes.utilisateur = utilisateur;
                         session.Dispose();
                         interGes.Show();
+                        this.Visible = false;
                     }
 
                     else if (utilisateur.typeUtilisateur.codeTypeUtilisateur == 3)
@@ -84,6 +86,7 @@ namespace Maquette_Belle_Table_Final
                         interUti.utilisateur = utilisateur;
                         session.Dispose();
                         interUti.Show();
+                        this.Visible = false;
                       
   
                     }
