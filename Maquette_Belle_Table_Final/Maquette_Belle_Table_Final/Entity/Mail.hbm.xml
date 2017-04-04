@@ -7,7 +7,7 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
  </id>
     <property name="contenuMail" column="contenuMail"/>
     <property name="objetMail" column="objetMail"/>  
-    <many-to-one name="utilisateur" column="numUtilisateur" />
-    <many-to-one name="interlocuteur"  column="idInterlocuteur" />
+    <many-to-one name="utilisateur" column="numUtilisateur" lazy="false"/>
+    <many-to-one name="interlocuteur"  column="idInterlocuteur" lazy="false"/>
   </class>
 </hibernate-mapping>

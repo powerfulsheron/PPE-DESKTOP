@@ -15,9 +15,11 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
       <key>
         <column name="idConge" not-null="true"/>
       </key>
+      
       <many-to-many class="Utilisateur">
         <column name="numUtilisateur" not-null="true"/>
       </many-to-many>
+      
     </set>
     
   </class>

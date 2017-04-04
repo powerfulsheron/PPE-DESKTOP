@@ -60,6 +60,7 @@
     <Compile Include="Entity\CongesUtilisateur.cs" />
     <Compile Include="Entity\Individu.cs" />
     <Compile Include="Entity\Interlocuteur.cs" />
+    <Compile Include="Entity\InterlocuteurStructure.cs" />
     <Compile Include="Entity\Mail.cs" />
     <Compile Include="Entity\Planning.cs" />
     <Compile Include="Entity\PorteFeuille.cs" />
@@ -247,7 +248,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Entity\Conge.hbm.xml" />
     <EmbeddedResource Include="Entity\CongesUtilisateur.hbm.xml" />
-    <EmbeddedResource Include="Entity\Individu.hbm.xml" />
     <EmbeddedResource Include="Entity\Interlocuteur.hbm.xml" />
     <EmbeddedResource Include="Entity\Mail.hbm.xml" />
     <EmbeddedResource Include="Entity\Planning.hbm.xml" />
@@ -258,6 +258,9 @@
     <EmbeddedResource Include="Entity\TypeStructure.hbm.xml" />
     <EmbeddedResource Include="Entity\TypeUtilisateur.hbm.xml" />
     <EmbeddedResource Include="Entity\Utilisateur.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Entity\InterlocuteurStructure.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

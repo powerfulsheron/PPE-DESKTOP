@@ -11,10 +11,6 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
     <property name="telInterlocuteur" column="telInterlocuteur"/>
     <property name="mailInterlocuteur" column="mailInterlocuteur"/>
     
-    <one-to-one name="individu" constrained="true" foreign-key="none" class="Individu" lazy="false"/>
-    
-    <one-to-one name="structure" constrained="true" foreign-key="none" class="Structure" lazy="false"/>
-    
     <one-to-one name="portefeuille" constrained="true" foreign-key="none" class="PorteFeuille" lazy="false"/>
 
     <set name="lesRendezVous">
@@ -26,6 +22,16 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
       <key column="idInterlocuteur" />
       <one-to-many class="Mail"/>
     </set>
+    
+    <joined-subclass table="individu" name="Individu">
+		<key column="idInterlocuteur"/>
+    <property name="distanceSiege" column="distanceSiege"/>
+    <property name="adresseIndividu" column="adresseIndividu"/>
+    <property name="cpIndividu" column="cpIndividu"/>
+    <property name="villeIndividu" column="villeIndividu"/>
+    <property name="planAcces" column="planAcces"/>
+    <property name="infosSupplementaire" column="infosSupplementaire"/>
+	  </joined-subclass>
     
   </class>
 </hibernate-mapping>

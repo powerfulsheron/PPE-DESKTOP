@@ -2,9 +2,8 @@
 
 namespace Maquette_Belle_Table_Final
 {
-    public class Individu
+    public class Individu : Interlocuteur
     {
-        public virtual int numIndividu { get; set; }
         public virtual float distanceSiege { get; set; }
         public virtual string adresseIndividu { get; set; }
         public virtual string cpIndividu { get; set; }

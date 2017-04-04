@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Maquette_Belle_Table_Final
 {
@@ -13,7 +14,10 @@ public class Structure
     public virtual string villeStructure { get; set; }
     public virtual string planAcces { get; set; }
     public virtual string infoSupplementaire { get; set; }
+
     public virtual TypeStructure typeStructure { get; set; }
+
+    public virtual ISet<Interlocuteur> lesInterlocuteurs { get; set; }
 
     public Structure()
 	{
