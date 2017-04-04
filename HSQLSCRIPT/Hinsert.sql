@@ -79,16 +79,16 @@ SELECT * FROM STRUCTURE;
 #------------------------------------------------------------
 # Table: INTERLOCUTEUR
 #------------------------------------------------------------
-insert into INTERLOCUTEUR (idInterlocuteur, nomInterlocuteur, prenomInterlocuteur, telInterlocuteur, mailInterlocuteur, numIndividu, idPorteFeuille, version, numStructure) values 
-(1,'Bouze', 'Camélia', '33-(390)653-6256', 'jjackson0@sciencedaily.com', 1, null, 0, 0);
-insert into INTERLOCUTEUR (idInterlocuteur, nomInterlocuteur, prenomInterlocuteur, telInterlocuteur, mailInterlocuteur, numIndividu, idPorteFeuille, version, numStructure) values 
-(2,'Alaki', 'Crééz', '30-(294)242-7802', 'ppowell1@ameblo.jp', 2, null, 0, 0);
-insert into INTERLOCUTEUR (idInterlocuteur, nomInterlocuteur, prenomInterlocuteur, telInterlocuteur, mailInterlocuteur, numIndividu, idPorteFeuille, version, numStructure) values 
-(3,'Kogu', 'Mégane', '972-(623)893-2322', 'dhudson2@joomla.org', 3, null, 0, 0);
-insert into INTERLOCUTEUR (idInterlocuteur, nomInterlocuteur, prenomInterlocuteur, telInterlocuteur, mailInterlocuteur, numIndividu, idPorteFeuille, version, numStructure) values 
-(4,'pistali', 'Ruì', '30-(938)455-3301', 'palvarez3@baidu.com', 0, null, 0, 1);
-insert into INTERLOCUTEUR (idInterlocuteur, nomInterlocuteur, prenomInterlocuteur, telInterlocuteur, mailInterlocuteur, numIndividu, idPorteFeuille, version, numStructure) values 
-(5,'Papoom', 'Cécilia', '967-(562)366-2705', 'srice4@goo.ne.jp', 0, null, 0, 2);
+insert into INTERLOCUTEUR (idInterlocuteur, nomInterlocuteur, prenomInterlocuteur, telInterlocuteur, mailInterlocuteur, idPorteFeuille, version) values 
+(1,'Bouze', 'Camélia', '33-(390)653-6256', 'jjackson0@sciencedaily.com', 1, 0);
+insert into INTERLOCUTEUR (idInterlocuteur, nomInterlocuteur, prenomInterlocuteur, telInterlocuteur, mailInterlocuteur, idPorteFeuille, version) values 
+(2,'Alaki', 'Crééz', '30-(294)242-7802', 'ppowell1@ameblo.jp', 2, 0);
+insert into INTERLOCUTEUR (idInterlocuteur, nomInterlocuteur, prenomInterlocuteur, telInterlocuteur, mailInterlocuteur, idPorteFeuille, version) values 
+(3,'Kogu', 'Mégane', '972-(623)893-2322', 'dhudson2@joomla.org', 3, 0);
+insert into INTERLOCUTEUR (idInterlocuteur, nomInterlocuteur, prenomInterlocuteur, telInterlocuteur, mailInterlocuteur, idPorteFeuille, version) values 
+(4,'pistali', 'Ruì', '30-(938)455-3301', 'palvarez3@baidu.com', 4, 0);
+insert into INTERLOCUTEUR (idInterlocuteur, nomInterlocuteur, prenomInterlocuteur, telInterlocuteur, mailInterlocuteur, idPorteFeuille, version) values 
+(5,'Papoom', 'Cécilia', '967-(562)366-2705', 'srice4@goo.ne.jp', 5, 0);
 
 SELECT * FROM INTERLOCUTEUR;
 
@@ -212,6 +212,22 @@ insert into PORTEFEUILLE (idPorteFeuille  , libellePorteFeuille, numUtilisateur,
 (5, 'unportefeuille 5', 5, 0);
 
 SELECT * FROM PORTEFEUILLE;
+
+#------------------------------------------------------------
+# Table: INTERLOCUTEUR_STRUCTURE
+#------------------------------------------------------------
+insert into INTERLOCUTEUR_STRUCTURE (idInterlocuteurStructure, idInterlocuteur, numStructure, version) values 
+(1, 5, 5, 0);
+insert into INTERLOCUTEUR_STRUCTURE (idInterlocuteurStructure, idInterlocuteur, numStructure, version) values 
+(2, 4, 1, 0);
+insert into INTERLOCUTEUR_STRUCTURE (idInterlocuteurStructure, idInterlocuteur, numStructure, version) values 
+(3, 3, 2, 0);
+insert into INTERLOCUTEUR_STRUCTURE (idInterlocuteurStructure, idInterlocuteur, numStructure, version) values 
+(4, 2, 3, 0);
+insert into INTERLOCUTEUR_STRUCTURE (idInterlocuteurStructure, idInterlocuteur, numStructure, version) values 
+(5, 1, 4, 0);
+
+SELECT * FROM INTERLOCUTEUR_STRUCTURE;
 
 
 SET foreign_key_checks = 1;

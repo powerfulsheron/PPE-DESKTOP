@@ -8,78 +8,30 @@ CREATE DATABASE GEPEV;
 
 USE GEPEV;
 
+
 #------------------------------------------------------------
-# Table: UTILISATEUR
+# Table: CONGES
 #------------------------------------------------------------
 
-CREATE TABLE UTILISATEUR(
-        numUtilisateur           int (11) Auto_increment  NOT NULL ,
-        nomUtilisateur           Varchar (25) NOT NULL ,
-        prenomUtilisateur        Varchar (25) NOT NULL ,
-        adresseUtilisateur       Varchar (25) NOT NULL ,
-        cpUtilisateur            Varchar (25) NOT NULL ,
-        villeUtilisateur         Varchar (25) NOT NULL ,
-        telUtilisateur           Varchar (25) NOT NULL ,
-        mailUtilisateur          Varchar (40) NOT NULL ,
-        distanceParcourueSemaine Int ,
-        loginUtilisateur         Varchar (30) ,
-        passwordUtilisateur      Varchar (50) ,
-        dateDernierLogin         Datetime ,
-        nbTentatives             Int ,
-        codeTypeUtilisateur      Int NOT NULL ,
-        idPlanning               int ,
-        idPorteFeuille           Int ,
+CREATE TABLE CONGES(
+        numConge       int (11) Auto_increment NOT NULL ,
+        dateDebutConge Date ,
+        dateFinConge   Date ,
         version Int,
-        PRIMARY KEY (numUtilisateur )
+        PRIMARY KEY (numConge )
 )ENGINE=InnoDB;
 
 
 #------------------------------------------------------------
-# Table: TYPERDV
+# Table: CONGES_UTILISATEUR
 #------------------------------------------------------------
 
-CREATE TABLE TYPE_RDV(
-        idTypeRdv int (11) Auto_increment NOT NULL ,
-        libelleTypeRdv    Varchar (40) NOT NULL ,
+CREATE TABLE CONGES_UTILISATEUR(
+        idCongesUtilisateur int (11) Auto_increment NOT NULL ,
+        numUtilisateur int (11) NOT NULL ,
+        numConge       Int NOT NULL ,
         version Int,
-        PRIMARY KEY (idTypeRdv )
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
-# Table: STRUCTURE
-#------------------------------------------------------------
-
-CREATE TABLE STRUCTURE(
-        numStructure        int (11) Auto_increment  NOT NULL ,
-        denominationSociale Varchar (25) NOT NULL ,
-        adresseStructure    Varchar (25) NOT NULL ,
-        cpStructure         Varchar (25) NOT NULL ,
-        villeStructure      Varchar (25) NOT NULL ,
-        distanceSiege       Float NOT NULL ,
-        planAcces          Varchar (25) NOT NULL ,
-        infoSupplementaire Varchar (100) NOT NULL ,
-        codeTypeStructure    Int NOT NULL ,
-        version Int,
-        PRIMARY KEY (numStructure )
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
-# Table: INTERLOCUTEUR
-#------------------------------------------------------------
-
-CREATE TABLE INTERLOCUTEUR(
-        idInterlocuteur     int (11) Auto_increment  NOT NULL ,
-        nomInterlocuteur    Varchar (25) NOT NULL ,
-        prenomInterlocuteur Varchar (25) NOT NULL ,
-        telInterlocuteur    Varchar (25) NOT NULL ,
-        mailInterlocuteur   Varchar (40) NOT NULL ,
-        numIndividu         Int ,
-        idPorteFeuille      Int ,
-        numStructure        Int ,
-        version Int,
-        PRIMARY KEY (idInterlocuteur )
+        PRIMARY KEY (idCongesUtilisateur)
 )ENGINE=InnoDB;
 
 
@@ -102,49 +54,31 @@ CREATE TABLE INDIVIDU(
 
 
 #------------------------------------------------------------
-# Table: RDV
+# Table: INTERLOCUTEUR
 #------------------------------------------------------------
 
-CREATE TABLE RDV(
-        idRdv                int (11) Auto_increment  NOT NULL ,
-        dateRdv              Date NOT NULL ,
-        heureDebut           Date NOT NULL ,
-        heureFin             Date NOT NULL ,
-        adresseDerogatoire    Varchar (50) ,
-        villeDerogatoire      Varchar (30) ,
-        codeEntreeDerogatoire Int ,
-        infoDerogatoire       Varchar (500) ,
-        idInterlocuteur      Int NOT NULL ,
-        idTypeRdv            Int NOT NULL ,
-        idPlanning           Int NOT NULL ,
-        idRdvPrecedent       Int,
+CREATE TABLE INTERLOCUTEUR(
+        idInterlocuteur     int (11) Auto_increment  NOT NULL ,
+        nomInterlocuteur    Varchar (25) NOT NULL ,
+        prenomInterlocuteur Varchar (25) NOT NULL ,
+        telInterlocuteur    Varchar (25) NOT NULL ,
+        mailInterlocuteur   Varchar (40) NOT NULL ,
+        idPorteFeuille      Int ,
         version Int,
-        PRIMARY KEY (idRdv )
+        PRIMARY KEY (idInterlocuteur )
 )ENGINE=InnoDB;
 
 
 #------------------------------------------------------------
-# Table: CONGES
+# Table: INTERLOCUTEUR_STRUCTURE
 #------------------------------------------------------------
 
-CREATE TABLE CONGES(
-        numConge       int (11) Auto_increment NOT NULL ,
-        dateDebutConge Date ,
-        dateFinConge   Date ,
+CREATE TABLE INTERLOCUTEUR_STRUCTURE(
+		idInterlocuteurStructure int (11) Auto_increment NOT NULL ,
+        idInterlocuteur Int NOT NULL ,
+        numStructure    Int NOT NULL ,
         version Int,
-        PRIMARY KEY (numConge )
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
-# Table: TYPE_UTILISATEUR
-#------------------------------------------------------------
-
-CREATE TABLE TYPE_UTILISATEUR(
-        codeTypeUtilisateur    int (11) Auto_increment NOT NULL ,
-        libelleTypeUtilisateur Varchar (25) ,
-        version Int,
-        PRIMARY KEY (codeTypeUtilisateur )
+        PRIMARY KEY (idInterlocuteurStructure)
 )ENGINE=InnoDB;
 
 
@@ -177,18 +111,6 @@ CREATE TABLE PLANNING(
 
 
 #------------------------------------------------------------
-# Table: TYPE_STRUCTURE
-#------------------------------------------------------------
-
-CREATE TABLE TYPE_STRUCTURE(
-        codeTypeStructure    int (11) Auto_increment NOT NULL ,
-        libelleTypeStructure Varchar (30) ,
-        version Int,
-        PRIMARY KEY (codeTypeStructure )
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
 # Table: PORTEFEUILLE
 #------------------------------------------------------------
 
@@ -202,15 +124,105 @@ CREATE TABLE PORTEFEUILLE(
 
 
 #------------------------------------------------------------
-# Table: CONGES_UTILISATEUR
+# Table: RDV
 #------------------------------------------------------------
 
-CREATE TABLE CONGES_UTILISATEUR(
-        idCongesUtilisateur int (11) Auto_increment NOT NULL ,
-        numUtilisateur int (11) NOT NULL ,
-        numConge       Int NOT NULL ,
+CREATE TABLE RDV(
+        idRdv                int (11) Auto_increment  NOT NULL ,
+        dateRdv              Date NOT NULL ,
+        heureDebut           Date NOT NULL ,
+        heureFin             Date NOT NULL ,
+        adresseDerogatoire    Varchar (50) ,
+        villeDerogatoire      Varchar (30) ,
+        codeEntreeDerogatoire Int ,
+        infoDerogatoire       Varchar (500) ,
+        idInterlocuteur      Int NOT NULL ,
+        idTypeRdv            Int NOT NULL ,
+        idPlanning           Int NOT NULL ,
+        idRdvPrecedent       Int,
         version Int,
-        PRIMARY KEY (idCongesUtilisateur)
+        PRIMARY KEY (idRdv )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: STRUCTURE
+#------------------------------------------------------------
+
+CREATE TABLE STRUCTURE(
+        numStructure        int (11) Auto_increment  NOT NULL ,
+        denominationSociale Varchar (25) NOT NULL ,
+        adresseStructure    Varchar (25) NOT NULL ,
+        cpStructure         Varchar (25) NOT NULL ,
+        villeStructure      Varchar (25) NOT NULL ,
+        distanceSiege       Float NOT NULL ,
+        planAcces          Varchar (25) NOT NULL ,
+        infoSupplementaire Varchar (100) NOT NULL ,
+        codeTypeStructure    Int NOT NULL ,
+        version Int,
+        PRIMARY KEY (numStructure )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: TYPERDV
+#------------------------------------------------------------
+
+CREATE TABLE TYPE_RDV(
+        idTypeRdv int (11) Auto_increment NOT NULL ,
+        libelleTypeRdv    Varchar (40) NOT NULL ,
+        version Int,
+        PRIMARY KEY (idTypeRdv )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: TYPE_STRUCTURE
+#------------------------------------------------------------
+
+CREATE TABLE TYPE_STRUCTURE(
+        codeTypeStructure    int (11) Auto_increment NOT NULL ,
+        libelleTypeStructure Varchar (30) ,
+        version Int,
+        PRIMARY KEY (codeTypeStructure )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: TYPE_UTILISATEUR
+#------------------------------------------------------------
+
+CREATE TABLE TYPE_UTILISATEUR(
+        codeTypeUtilisateur    int (11) Auto_increment NOT NULL ,
+        libelleTypeUtilisateur Varchar (25) ,
+        version Int,
+        PRIMARY KEY (codeTypeUtilisateur )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: UTILISATEUR
+#------------------------------------------------------------
+
+CREATE TABLE UTILISATEUR(
+        numUtilisateur           int (11) Auto_increment  NOT NULL ,
+        nomUtilisateur           Varchar (25) NOT NULL ,
+        prenomUtilisateur        Varchar (25) NOT NULL ,
+        adresseUtilisateur       Varchar (25) NOT NULL ,
+        cpUtilisateur            Varchar (25) NOT NULL ,
+        villeUtilisateur         Varchar (25) NOT NULL ,
+        telUtilisateur           Varchar (25) NOT NULL ,
+        mailUtilisateur          Varchar (40) NOT NULL ,
+        distanceParcourueSemaine Int ,
+        loginUtilisateur         Varchar (30) ,
+        passwordUtilisateur      Varchar (50) ,
+        dateDernierLogin         Datetime ,
+        nbTentatives             Int ,
+        codeTypeUtilisateur      Int NOT NULL ,
+        idPlanning               int ,
+        idPorteFeuille           Int ,
+        version Int,
+        PRIMARY KEY (numUtilisateur )
 )ENGINE=InnoDB;
 
 
@@ -223,9 +235,7 @@ ALTER TABLE UTILISATEUR ADD CONSTRAINT FK_UTILISATEUR_idPorteFeuille FOREIGN KEY
 
 ALTER TABLE STRUCTURE ADD CONSTRAINT FK_STRUCTURE_codeTypeStructure FOREIGN KEY (codeTypeStructure) REFERENCES TYPE_STRUCTURE(codeTypeStructure);
 
-ALTER TABLE INTERLOCUTEUR ADD CONSTRAINT FK_INTERLOCUTEUR_numIndividu FOREIGN KEY (numIndividu) REFERENCES INDIVIDU(numIndividu);
 ALTER TABLE INTERLOCUTEUR ADD CONSTRAINT FK_INTERLOCUTEUR_idPorteFeuille FOREIGN KEY (idPorteFeuille) REFERENCES PORTEFEUILLE(idPorteFeuille);
-ALTER TABLE INTERLOCUTEUR ADD CONSTRAINT FK_INTERLOCUTEUR_numStructure FOREIGN KEY (numStructure) REFERENCES STRUCTURE(numStructure);
 
 ALTER TABLE INDIVIDU ADD CONSTRAINT FK_INDIVIDU_idInterlocuteur FOREIGN KEY (idInterlocuteur) REFERENCES INTERLOCUTEUR(idInterlocuteur);
 
@@ -241,3 +251,6 @@ ALTER TABLE PLANNING ADD CONSTRAINT FK_PLANNING_numUtilisateur FOREIGN KEY (numU
 ALTER TABLE PORTEFEUILLE ADD CONSTRAINT FK_PORTEFEUILLE_numUtilisateur FOREIGN KEY (numUtilisateur) REFERENCES UTILISATEUR(numUtilisateur);
 
 ALTER TABLE RDV ADD CONSTRAINT FK_RDV_idRdvPrecedent FOREIGN KEY (idRdvPrecedent) REFERENCES RDV(idRdv);
+
+ALTER TABLE INTERLOCUTEUR_STRUCTURE ADD CONSTRAINT FK_INTERLOCUTEUR_STRUCTURE_idInterlocuteur FOREIGN KEY (idInterlocuteur) REFERENCES INTERLOCUTEUR(idInterlocuteur);
+ALTER TABLE INTERLOCUTEUR_STRUCTURE ADD CONSTRAINT FK_INTERLOCUTEUR_STRUCTURE_numStructure FOREIGN KEY (numStructure) REFERENCES STRUCTURE(numStructure);
