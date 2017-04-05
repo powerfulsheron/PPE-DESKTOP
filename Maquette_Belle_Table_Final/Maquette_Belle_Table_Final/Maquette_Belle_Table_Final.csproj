@@ -248,8 +248,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Entity\Conge.hbm.xml" />
     <EmbeddedResource Include="Entity\CongesUtilisateur.hbm.xml" />
-    <EmbeddedResource Include="Entity\Interlocuteur.hbm.xml" />
-    <EmbeddedResource Include="Entity\Mail.hbm.xml" />
+    <EmbeddedResource Include="Entity\Interlocuteur.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entity\Mail.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Entity\Planning.hbm.xml" />
     <EmbeddedResource Include="Entity\PorteFeuille.hbm.xml" />
     <EmbeddedResource Include="Entity\RendezVous.hbm.xml" />
@@ -257,10 +261,17 @@
     <EmbeddedResource Include="Entity\TypeRdv.hbm.xml" />
     <EmbeddedResource Include="Entity\TypeStructure.hbm.xml" />
     <EmbeddedResource Include="Entity\TypeUtilisateur.hbm.xml" />
-    <EmbeddedResource Include="Entity\Utilisateur.hbm.xml" />
+    <EmbeddedResource Include="Entity\Utilisateur.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Entity\InterlocuteurStructure.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Entity\Individu.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

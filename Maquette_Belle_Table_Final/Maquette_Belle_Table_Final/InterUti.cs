@@ -30,7 +30,10 @@ namespace Maquette_Belle_Table_Final
         private void InterUti_Load(object sender, System.EventArgs e)
         {
             chargerCalendar();
+            Console.WriteLine(utilisateur.porteFeuille.lesInterlocuteurs);
             dataGridViewPortefeuille.DataSource = utilisateur.porteFeuille.lesInterlocuteurs.ToList<Interlocuteur>();
+
+            //dataGridViewPortefeuille.DataSource = session.CreateQuery(@"select e from Individu where e.interlocuteur.portefeuille.idPortefeuille=:num").SetInt32("num",utilisateur.porteFeuille.idPortefeuille).List<Individu>();
             dataGridViewMail.DataSource = utilisateur.lesMails.ToList<Mail>();
             //IList<Mail> test = utilisateur.lesMails.ToList<Mail>();
             /*
@@ -166,6 +169,11 @@ namespace Maquette_Belle_Table_Final
         }
 
         private void panelPortefeuille_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridViewPortefeuille_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

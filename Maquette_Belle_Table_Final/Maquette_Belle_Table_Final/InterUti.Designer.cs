@@ -50,7 +50,6 @@
             this.tabPagePF = new System.Windows.Forms.TabPage();
             this.panelPortefeuille = new System.Windows.Forms.Panel();
             this.dataGridViewPortefeuille = new System.Windows.Forms.DataGridView();
-            this.buttonEnvoiMail = new System.Windows.Forms.Button();
             this.buttonModCli = new System.Windows.Forms.Button();
             this.buttonAddCli = new System.Windows.Forms.Button();
             this.tabPageMails = new System.Windows.Forms.TabPage();
@@ -66,6 +65,9 @@
             this.labeltextBoxNewMDP2 = new System.Windows.Forms.Label();
             this.labelOldPswd = new System.Windows.Forms.Label();
             this.textBoxOldPswd = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.labelParticulier = new System.Windows.Forms.Label();
+            this.labelStracture = new System.Windows.Forms.Label();
             this.tableLayoutEntete.SuspendLayout();
             this.panelTitre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBT)).BeginInit();
@@ -83,6 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMail)).BeginInit();
             this.tabPageCDMDP.SuspendLayout();
             this.panelChangerMDP.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutEntete
@@ -318,8 +321,10 @@
             // panelPortefeuille
             // 
             this.panelPortefeuille.BackgroundImage = global::Maquette_Belle_Table_Final.Properties.Resources.fond;
+            this.panelPortefeuille.Controls.Add(this.labelStracture);
+            this.panelPortefeuille.Controls.Add(this.labelParticulier);
+            this.panelPortefeuille.Controls.Add(this.dataGridView1);
             this.panelPortefeuille.Controls.Add(this.dataGridViewPortefeuille);
-            this.panelPortefeuille.Controls.Add(this.buttonEnvoiMail);
             this.panelPortefeuille.Controls.Add(this.buttonModCli);
             this.panelPortefeuille.Controls.Add(this.buttonAddCli);
             this.panelPortefeuille.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -332,27 +337,17 @@
             // dataGridViewPortefeuille
             // 
             this.dataGridViewPortefeuille.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPortefeuille.Location = new System.Drawing.Point(35, 90);
+            this.dataGridViewPortefeuille.Location = new System.Drawing.Point(34, 81);
             this.dataGridViewPortefeuille.Name = "dataGridViewPortefeuille";
             this.dataGridViewPortefeuille.RowTemplate.Height = 28;
-            this.dataGridViewPortefeuille.Size = new System.Drawing.Size(913, 340);
+            this.dataGridViewPortefeuille.Size = new System.Drawing.Size(913, 178);
             this.dataGridViewPortefeuille.TabIndex = 4;
-            // 
-            // buttonEnvoiMail
-            // 
-            this.buttonEnvoiMail.BackColor = System.Drawing.Color.Gold;
-            this.buttonEnvoiMail.Location = new System.Drawing.Point(718, 37);
-            this.buttonEnvoiMail.Name = "buttonEnvoiMail";
-            this.buttonEnvoiMail.Size = new System.Drawing.Size(230, 34);
-            this.buttonEnvoiMail.TabIndex = 3;
-            this.buttonEnvoiMail.Text = "Envoyer un mail";
-            this.buttonEnvoiMail.UseVisualStyleBackColor = false;
-            this.buttonEnvoiMail.Click += new System.EventHandler(this.buttonEnvoiMail_Click);
+            this.dataGridViewPortefeuille.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPortefeuille_CellContentClick);
             // 
             // buttonModCli
             // 
             this.buttonModCli.BackColor = System.Drawing.Color.Gold;
-            this.buttonModCli.Location = new System.Drawing.Point(317, 37);
+            this.buttonModCli.Location = new System.Drawing.Point(567, 20);
             this.buttonModCli.Name = "buttonModCli";
             this.buttonModCli.Size = new System.Drawing.Size(230, 34);
             this.buttonModCli.TabIndex = 2;
@@ -363,7 +358,7 @@
             // buttonAddCli
             // 
             this.buttonAddCli.BackColor = System.Drawing.Color.Gold;
-            this.buttonAddCli.Location = new System.Drawing.Point(35, 37);
+            this.buttonAddCli.Location = new System.Drawing.Point(187, 20);
             this.buttonAddCli.Name = "buttonAddCli";
             this.buttonAddCli.Size = new System.Drawing.Size(230, 34);
             this.buttonAddCli.TabIndex = 1;
@@ -510,6 +505,33 @@
             this.textBoxOldPswd.Size = new System.Drawing.Size(216, 24);
             this.textBoxOldPswd.TabIndex = 2;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(34, 278);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(913, 178);
+            this.dataGridView1.TabIndex = 5;
+            // 
+            // labelParticulier
+            // 
+            this.labelParticulier.AutoSize = true;
+            this.labelParticulier.Location = new System.Drawing.Point(450, 58);
+            this.labelParticulier.Name = "labelParticulier";
+            this.labelParticulier.Size = new System.Drawing.Size(84, 19);
+            this.labelParticulier.TabIndex = 6;
+            this.labelParticulier.Text = "Particulier :";
+            // 
+            // labelStracture
+            // 
+            this.labelStracture.AutoSize = true;
+            this.labelStracture.Location = new System.Drawing.Point(453, 259);
+            this.labelStracture.Name = "labelStracture";
+            this.labelStracture.Size = new System.Drawing.Size(78, 19);
+            this.labelStracture.TabIndex = 7;
+            this.labelStracture.Text = "Structure :";
+            // 
             // InterUti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -538,6 +560,7 @@
             this.panelPlanningC.ResumeLayout(false);
             this.tabPagePF.ResumeLayout(false);
             this.panelPortefeuille.ResumeLayout(false);
+            this.panelPortefeuille.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPortefeuille)).EndInit();
             this.tabPageMails.ResumeLayout(false);
             this.panelMail.ResumeLayout(false);
@@ -545,6 +568,7 @@
             this.tabPageCDMDP.ResumeLayout(false);
             this.panelChangerMDP.ResumeLayout(false);
             this.panelChangerMDP.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -573,7 +597,6 @@
         private System.Windows.Forms.TabPage tabPagePF;
         private System.Windows.Forms.Panel panelPortefeuille;
         private System.Windows.Forms.DataGridView dataGridViewPortefeuille;
-        private System.Windows.Forms.Button buttonEnvoiMail;
         private System.Windows.Forms.Button buttonModCli;
         private System.Windows.Forms.Button buttonAddCli;
         private System.Windows.Forms.TabPage tabPageMails;
@@ -589,5 +612,8 @@
         private System.Windows.Forms.Button buttonValCDMDP;
         private System.Windows.Forms.Label labeltextBoxNewMDP;
         private System.Windows.Forms.TextBox textBoxNewMDP;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label labelStracture;
+        private System.Windows.Forms.Label labelParticulier;
     }
 }

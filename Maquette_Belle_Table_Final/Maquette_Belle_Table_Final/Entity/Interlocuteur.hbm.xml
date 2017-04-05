@@ -22,16 +22,6 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
       <key column="idInterlocuteur" />
       <one-to-many class="Mail"/>
     </set>
-    
-    <joined-subclass table="individu" name="Individu">
-		<key column="idInterlocuteur"/>
-    <property name="distanceSiege" column="distanceSiege"/>
-    <property name="adresseIndividu" column="adresseIndividu"/>
-    <property name="cpIndividu" column="cpIndividu"/>
-    <property name="villeIndividu" column="villeIndividu"/>
-    <property name="planAcces" column="planAcces"/>
-    <property name="infosSupplementaire" column="infosSupplementaire"/>
-	  </joined-subclass>
-    
+      
   </class>
 </hibernate-mapping>
