@@ -410,6 +410,7 @@
             this.comboBoxListeClient.Name = "comboBoxListeClient";
             this.comboBoxListeClient.Size = new System.Drawing.Size(201, 24);
             this.comboBoxListeClient.TabIndex = 25;
+            this.comboBoxListeClient.SelectedIndexChanged += new System.EventHandler(this.comboBoxListeClient_SelectedIndexChanged);
             // 
             // PopNouveauRDV
             // 

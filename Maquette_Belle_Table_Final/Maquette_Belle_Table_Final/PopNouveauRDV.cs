@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +18,8 @@ namespace Maquette_Belle_Table
     {
         private static ISessionFactory sessionFactory = null;
         public Utilisateur utilisateur { get; set; }
+        private Interlocuteur interlocuteur;
+
         public PopNouveauRDV()
         {
             InitializeComponent();
@@ -45,7 +48,7 @@ namespace Maquette_Belle_Table
 
             MessageBox.Show(AjouterRendezVous(Int32.Parse(textBoxCodeEntree.Text), (Interlocuteur)comboBoxListeClient.SelectedItem, dateTimePickerNRDV.Value.Date, dateTimePickerHD.Value,
                 dateTimePickerHF.Value, textBoxRue.Text + " " + textBoxCp.Text, textBoxIC.Text, textBoxVille.Text,
-                (TypeRdv)comboBoxTRDV.SelectedItem, utilisateur.planning));
+                (TypeRdv)comboBoxTRDV.SelectedItem, utilisateur.planning, (RendezVous)comboBoxRDVprecedent.SelectedItem));
         }
 
         private void PopNouveauRDV_Load(object sender, EventArgs e)
@@ -55,6 +58,7 @@ namespace Maquette_Belle_Table
 
             ISet<Interlocuteur> mesInterlocteur = utilisateur.porteFeuille.lesInterlocuteurs;
             
+            //comboBoxRDVprecedent.DataSource = inter
             //pour qu'il n y ai pas trop de données dans la combobox
             foreach(Interlocuteur interlocuteur in mesInterlocteur)
             {
@@ -70,7 +74,7 @@ namespace Maquette_Belle_Table
         }
 
         static string AjouterRendezVous(int unCodeEntreeDerogatoire, Interlocuteur unInterlocuteur, DateTime uneDateRdv, DateTime uneHeureDebut,
-            DateTime uneHeureFin, string uneAdresseDerogatoire, string uneInfoDerogatoire, string uneVilleDerogatoire, TypeRdv unTypeRdv, Planning unPlanning)
+            DateTime uneHeureFin, string uneAdresseDerogatoire, string uneInfoDerogatoire, string uneVilleDerogatoire, TypeRdv unTypeRdv, Planning unPlanning, RendezVous unRdvPrecendent)
         {
 
             ISession session = sessionFactory.OpenSession();
@@ -95,12 +99,38 @@ namespace Maquette_Belle_Table
                 if (uneAdresseDerogatoire != null) unRendezVous.adresseDerogatoire = uneAdresseDerogatoire;
                 if (uneInfoDerogatoire != null) unRendezVous.adresseDerogatoire = uneAdresseDerogatoire;
                 if (uneVilleDerogatoire != null) unRendezVous.villeDerogatoire = uneVilleDerogatoire;
+                MessageBox.Show(unRdvPrecendent.ToString());
+                unRendezVous.rendezVousPrecedent = unRdvPrecendent;
                 session.Save(unRendezVous);
                 transaction.Commit();
                 session.Dispose();
+                
+                try
+                {
+                    MailMessage mail = new MailMessage();
+                    mail.Subject = "Nouveau rendez-vous avec " + unInterlocuteur.nomInterlocuteur;
+                    mail.Body = "Vous avez un nouveau rendez-vous avec" + unInterlocuteur.nomInterlocuteur + " " + 
+                        unInterlocuteur.prenomInterlocuteur + " le: " + uneDateRdv.ToString() + " à " + uneHeureDebut.ToString();
+                    mail.From = new MailAddress("bot@belletable.com");
+
+                    SmtpClient client = new SmtpClient();
+                    client.Host = "localhost";
+                    client.Send(mail);
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
                 return "Rendez-vous ajouté.";
             }
         }
 
+        private void comboBoxListeClient_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            interlocuteur = (Interlocuteur)comboBoxListeClient.SelectedItem;
+            comboBoxRDVprecedent.DataSource = interlocuteur.lesRendezVous.ToList<RendezVous>();
+        }
     }
 }
