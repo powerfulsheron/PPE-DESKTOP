@@ -231,3 +231,21 @@ SELECT * FROM INTERLOCUTEUR_STRUCTURE;
 
 
 SET foreign_key_checks = 1;
+
+
+#------------------------------------------------------------
+# EVENEMENT: Efface la DistanceParcourueSemaine Tous les lundis
+#------------------------------------------------------------
+DELETE FROM mysql.event WHERE db = 'gepev'
+	
+CREATE EVENT resetDistanceParcourueSemaine
+    ON SCHEDULE
+      EVERY 1 WEEK
+	  STARTS CURRENT_DATE + INTERVAL 0 - WEEKDAY(CURRENT_DATE) DAY
+    DO
+      UPDATE gepev.utilisateur SET DistanceParcourueSemaine = 0;
+	  
+	  DELETE FROM mysql.event
+    WHERE db = 'gepev';
+	
+	/* http://stackoverflow.com/questions/25548379/schedule-mysql-event-to-run-every-chosen-day-of-the-week */
