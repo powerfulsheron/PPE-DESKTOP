@@ -245,7 +245,6 @@ CREATE EVENT resetDistanceParcourueSemaine
     DO
       UPDATE gepev.utilisateur SET DistanceParcourueSemaine = 0;
 	  
-	  DELETE FROM mysql.event
-    WHERE db = 'gepev';
+	  
 	
 	/* http://stackoverflow.com/questions/25548379/schedule-mysql-event-to-run-every-chosen-day-of-the-week */
