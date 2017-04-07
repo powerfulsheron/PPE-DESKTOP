@@ -126,5 +126,16 @@ namespace Maquette_Belle_Table_Final
         {
 
         }
+
+        private void panelPlanning_Paint(object sender, PaintEventArgs e)
+        {
+            sessionFactory = new Configuration().Configure().BuildSessionFactory();
+            ISession session = sessionFactory.OpenSession();
+            IList<Utilisateur> lesCommerciaux = session.CreateQuery("select u FROM Utilisateur u  WHERE u.typeUtilisateur = 3").List<Utilisateur>();
+            dataGridViewCom.DataSource = lesCommerciaux;
+
+            session.Dispose();
+            sessionFactory.Close();
+        }
     }
 }
