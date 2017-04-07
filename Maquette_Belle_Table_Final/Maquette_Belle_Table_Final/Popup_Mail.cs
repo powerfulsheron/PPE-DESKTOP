@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Maquette_Belle_Table_Final;
 
 namespace Maquette_Belle_Table
 {
     public partial class Popup_Mail : Form
     {
+        public Mail mail { get; set; }
+
         public Popup_Mail()
         {
             InitializeComponent();
@@ -43,6 +46,13 @@ namespace Maquette_Belle_Table
         private void buttonAnnuler_Click(object sender, EventArgs e)
         {
             buttonAnnuler.DialogResult = DialogResult.Cancel;
+        }
+
+        private void Popup_Mail_Load(object sender, EventArgs e)
+        {
+            textBoxA.Text = mail.interlocuteur.ToString();
+            textBoxObjet.Text = mail.objetMail.ToString();
+            textBoxMail.Text = mail.contenuMail.ToString();
         }
     }
 }

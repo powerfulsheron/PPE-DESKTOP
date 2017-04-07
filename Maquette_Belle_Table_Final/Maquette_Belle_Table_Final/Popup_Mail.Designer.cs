@@ -38,12 +38,8 @@
             this.panelBordeLeft = new System.Windows.Forms.Panel();
             this.panelBorderBottom = new System.Windows.Forms.Panel();
             this.textBoxObjet = new System.Windows.Forms.TextBox();
-            this.labelCci = new System.Windows.Forms.Label();
             this.textBoxA = new System.Windows.Forms.TextBox();
-            this.labelCc = new System.Windows.Forms.Label();
-            this.textBoxCc = new System.Windows.Forms.TextBox();
             this.labelA = new System.Windows.Forms.Label();
-            this.textBoxCci = new System.Windows.Forms.TextBox();
             this.labelObjet = new System.Windows.Forms.Label();
             this.textBoxMail = new System.Windows.Forms.TextBox();
             this.buttonEnvoyer = new System.Windows.Forms.Button();
@@ -84,7 +80,7 @@
             this.labelFermeture.ForeColor = System.Drawing.Color.Gold;
             this.labelFermeture.Location = new System.Drawing.Point(1286, 0);
             this.labelFermeture.Name = "labelFermeture";
-            this.labelFermeture.Size = new System.Drawing.Size(22, 22);
+            this.labelFermeture.Size = new System.Drawing.Size(16, 16);
             this.labelFermeture.TabIndex = 2;
             this.labelFermeture.Text = "X";
             // 
@@ -96,7 +92,7 @@
             this.label1.ForeColor = System.Drawing.Color.Gold;
             this.label1.Location = new System.Drawing.Point(633, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(22, 22);
+            this.label1.Size = new System.Drawing.Size(16, 16);
             this.label1.TabIndex = 3;
             this.label1.Text = "X";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -108,7 +104,7 @@
             this.labelBT.ForeColor = System.Drawing.Color.Gold;
             this.labelBT.Location = new System.Drawing.Point(36, 0);
             this.labelBT.Name = "labelBT";
-            this.labelBT.Size = new System.Drawing.Size(65, 22);
+            this.labelBT.Size = new System.Drawing.Size(45, 16);
             this.labelBT.TabIndex = 1;
             this.labelBT.Text = "GEPEV";
             this.labelBT.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -129,7 +125,7 @@
             this.panelBorderRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelBorderRight.Location = new System.Drawing.Point(666, 31);
             this.panelBorderRight.Name = "panelBorderRight";
-            this.panelBorderRight.Size = new System.Drawing.Size(1, 582);
+            this.panelBorderRight.Size = new System.Drawing.Size(1, 509);
             this.panelBorderRight.TabIndex = 12;
             // 
             // panelBordeLeft
@@ -138,58 +134,33 @@
             this.panelBordeLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelBordeLeft.Location = new System.Drawing.Point(0, 31);
             this.panelBordeLeft.Name = "panelBordeLeft";
-            this.panelBordeLeft.Size = new System.Drawing.Size(1, 582);
+            this.panelBordeLeft.Size = new System.Drawing.Size(1, 509);
             this.panelBordeLeft.TabIndex = 12;
             // 
             // panelBorderBottom
             // 
             this.panelBorderBottom.BackColor = System.Drawing.Color.MidnightBlue;
             this.panelBorderBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBorderBottom.Location = new System.Drawing.Point(1, 612);
+            this.panelBorderBottom.Location = new System.Drawing.Point(1, 539);
             this.panelBorderBottom.Name = "panelBorderBottom";
             this.panelBorderBottom.Size = new System.Drawing.Size(665, 1);
             this.panelBorderBottom.TabIndex = 13;
             // 
             // textBoxObjet
             // 
-            this.textBoxObjet.Location = new System.Drawing.Point(75, 211);
+            this.textBoxObjet.Location = new System.Drawing.Point(75, 130);
             this.textBoxObjet.Name = "textBoxObjet";
-            this.textBoxObjet.Size = new System.Drawing.Size(542, 27);
+            this.textBoxObjet.ReadOnly = true;
+            this.textBoxObjet.Size = new System.Drawing.Size(542, 21);
             this.textBoxObjet.TabIndex = 42;
-            // 
-            // labelCci
-            // 
-            this.labelCci.AutoSize = true;
-            this.labelCci.BackColor = System.Drawing.Color.Transparent;
-            this.labelCci.Location = new System.Drawing.Point(10, 161);
-            this.labelCci.Name = "labelCci";
-            this.labelCci.Size = new System.Drawing.Size(44, 21);
-            this.labelCci.TabIndex = 41;
-            this.labelCci.Text = "Cci :";
             // 
             // textBoxA
             // 
             this.textBoxA.Location = new System.Drawing.Point(75, 61);
             this.textBoxA.Name = "textBoxA";
-            this.textBoxA.Size = new System.Drawing.Size(542, 27);
+            this.textBoxA.ReadOnly = true;
+            this.textBoxA.Size = new System.Drawing.Size(542, 21);
             this.textBoxA.TabIndex = 40;
-            // 
-            // labelCc
-            // 
-            this.labelCc.AutoSize = true;
-            this.labelCc.BackColor = System.Drawing.Color.Transparent;
-            this.labelCc.Location = new System.Drawing.Point(8, 112);
-            this.labelCc.Name = "labelCc";
-            this.labelCc.Size = new System.Drawing.Size(41, 21);
-            this.labelCc.TabIndex = 39;
-            this.labelCc.Text = "Cc :";
-            // 
-            // textBoxCc
-            // 
-            this.textBoxCc.Location = new System.Drawing.Point(75, 109);
-            this.textBoxCc.Name = "textBoxCc";
-            this.textBoxCc.Size = new System.Drawing.Size(542, 27);
-            this.textBoxCc.TabIndex = 38;
             // 
             // labelA
             // 
@@ -197,32 +168,26 @@
             this.labelA.BackColor = System.Drawing.Color.Transparent;
             this.labelA.Location = new System.Drawing.Point(8, 64);
             this.labelA.Name = "labelA";
-            this.labelA.Size = new System.Drawing.Size(31, 21);
+            this.labelA.Size = new System.Drawing.Size(21, 16);
             this.labelA.TabIndex = 37;
             this.labelA.Text = "A :";
-            // 
-            // textBoxCci
-            // 
-            this.textBoxCci.Location = new System.Drawing.Point(75, 158);
-            this.textBoxCci.Name = "textBoxCci";
-            this.textBoxCci.Size = new System.Drawing.Size(542, 27);
-            this.textBoxCci.TabIndex = 34;
             // 
             // labelObjet
             // 
             this.labelObjet.AutoSize = true;
             this.labelObjet.BackColor = System.Drawing.Color.Transparent;
-            this.labelObjet.Location = new System.Drawing.Point(8, 214);
+            this.labelObjet.Location = new System.Drawing.Point(8, 135);
             this.labelObjet.Name = "labelObjet";
-            this.labelObjet.Size = new System.Drawing.Size(63, 21);
+            this.labelObjet.Size = new System.Drawing.Size(45, 16);
             this.labelObjet.TabIndex = 33;
             this.labelObjet.Text = "Objet :";
             // 
             // textBoxMail
             // 
-            this.textBoxMail.Location = new System.Drawing.Point(14, 261);
+            this.textBoxMail.Location = new System.Drawing.Point(8, 178);
             this.textBoxMail.Multiline = true;
             this.textBoxMail.Name = "textBoxMail";
+            this.textBoxMail.ReadOnly = true;
             this.textBoxMail.Size = new System.Drawing.Size(641, 300);
             this.textBoxMail.TabIndex = 32;
             // 
@@ -231,7 +196,7 @@
             this.buttonEnvoyer.BackColor = System.Drawing.Color.Gold;
             this.buttonEnvoyer.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEnvoyer.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.buttonEnvoyer.Location = new System.Drawing.Point(497, 569);
+            this.buttonEnvoyer.Location = new System.Drawing.Point(487, 484);
             this.buttonEnvoyer.Name = "buttonEnvoyer";
             this.buttonEnvoyer.Size = new System.Drawing.Size(90, 32);
             this.buttonEnvoyer.TabIndex = 44;
@@ -244,7 +209,7 @@
             this.buttonAnnuler.BackColor = System.Drawing.Color.Gold;
             this.buttonAnnuler.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAnnuler.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.buttonAnnuler.Location = new System.Drawing.Point(117, 569);
+            this.buttonAnnuler.Location = new System.Drawing.Point(121, 484);
             this.buttonAnnuler.Name = "buttonAnnuler";
             this.buttonAnnuler.Size = new System.Drawing.Size(90, 32);
             this.buttonAnnuler.TabIndex = 45;
@@ -257,7 +222,7 @@
             this.buttonRetour.BackColor = System.Drawing.Color.Gold;
             this.buttonRetour.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRetour.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.buttonRetour.Location = new System.Drawing.Point(310, 569);
+            this.buttonRetour.Location = new System.Drawing.Point(295, 484);
             this.buttonRetour.Name = "buttonRetour";
             this.buttonRetour.Size = new System.Drawing.Size(90, 32);
             this.buttonRetour.TabIndex = 46;
@@ -267,20 +232,16 @@
             // 
             // Popup_Mail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(667, 613);
+            this.ClientSize = new System.Drawing.Size(667, 540);
             this.Controls.Add(this.buttonRetour);
             this.Controls.Add(this.buttonAnnuler);
             this.Controls.Add(this.buttonEnvoyer);
             this.Controls.Add(this.textBoxMail);
             this.Controls.Add(this.labelObjet);
-            this.Controls.Add(this.textBoxCci);
             this.Controls.Add(this.labelA);
-            this.Controls.Add(this.textBoxCc);
-            this.Controls.Add(this.labelCc);
             this.Controls.Add(this.textBoxA);
-            this.Controls.Add(this.labelCci);
             this.Controls.Add(this.textBoxObjet);
             this.Controls.Add(this.panelBorderBottom);
             this.Controls.Add(this.panelBordeLeft);
@@ -290,6 +251,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Popup_Mail";
             this.Text = "Popup_Mail";
+            this.Load += new System.EventHandler(this.Popup_Mail_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelTitre.ResumeLayout(false);
             this.panelTitre.PerformLayout();
@@ -311,12 +273,8 @@
         private System.Windows.Forms.Panel panelBordeLeft;
         private System.Windows.Forms.Panel panelBorderBottom;
         private System.Windows.Forms.TextBox textBoxObjet;
-        private System.Windows.Forms.Label labelCci;
         private System.Windows.Forms.TextBox textBoxA;
-        private System.Windows.Forms.Label labelCc;
-        private System.Windows.Forms.TextBox textBoxCc;
         private System.Windows.Forms.Label labelA;
-        private System.Windows.Forms.TextBox textBoxCci;
         private System.Windows.Forms.Label labelObjet;
         private System.Windows.Forms.TextBox textBoxMail;
         private System.Windows.Forms.Button buttonEnvoyer;

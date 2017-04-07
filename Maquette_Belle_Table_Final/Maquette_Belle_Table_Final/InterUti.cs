@@ -105,7 +105,9 @@ namespace Maquette_Belle_Table_Final
 
         private void buttonOuvrirEmail_Click(object sender, EventArgs e)
         {
-            new Maquette_Belle_Table.Popup_Mail().Show();
+            Popup_Mail popMail = new Popup_Mail();
+            popMail.mail = (Mail)dataGridViewMail.CurrentRow.DataBoundItem;
+            popMail.Show();
         }
 
 
