@@ -25,14 +25,6 @@ namespace Maquette_Belle_Table
             Popup_Mail.ActiveForm.Close();
         }
 
-        private void buttonEnvoyer_Click(object sender, EventArgs e)
-        {
-            buttonEnvoyer.DialogResult = DialogResult.OK;
-            if (buttonEnvoyer.DialogResult == DialogResult.OK)
-            {
-                MessageBox.Show("Votre message a été envoyer.");
-            }
-        }
 
         private void buttonRetour_Click(object sender, EventArgs e)
         {
@@ -45,12 +37,15 @@ namespace Maquette_Belle_Table
 
         private void buttonAnnuler_Click(object sender, EventArgs e)
         {
-            buttonAnnuler.DialogResult = DialogResult.Cancel;
+            buttonRetour.DialogResult = DialogResult.Cancel;
         }
 
         private void Popup_Mail_Load(object sender, EventArgs e)
         {
-            textBoxA.Text = mail.interlocuteur.ToString();
+            textBoxA.Text = mail.interlocuteur.mailInterlocuteur.ToString();
+            textBoxNomDestinataire.Text = mail.interlocuteur.nomInterlocuteur.ToString();
+            textBoxPrenomDestinataire.Text = mail.interlocuteur.prenomInterlocuteur.ToString();
+            textBoxTelDestinataire.Text = mail.interlocuteur.telInterlocuteur.ToString();
             textBoxObjet.Text = mail.objetMail.ToString();
             textBoxMail.Text = mail.contenuMail.ToString();
         }

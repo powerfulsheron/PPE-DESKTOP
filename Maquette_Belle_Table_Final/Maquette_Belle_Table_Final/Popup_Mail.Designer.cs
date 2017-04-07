@@ -42,9 +42,10 @@
             this.labelA = new System.Windows.Forms.Label();
             this.labelObjet = new System.Windows.Forms.Label();
             this.textBoxMail = new System.Windows.Forms.TextBox();
-            this.buttonEnvoyer = new System.Windows.Forms.Button();
-            this.buttonAnnuler = new System.Windows.Forms.Button();
             this.buttonRetour = new System.Windows.Forms.Button();
+            this.textBoxPrenomDestinataire = new System.Windows.Forms.TextBox();
+            this.textBoxTelDestinataire = new System.Windows.Forms.TextBox();
+            this.textBoxNomDestinataire = new System.Windows.Forms.TextBox();
             this.panelMenu.SuspendLayout();
             this.panelTitre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBT)).BeginInit();
@@ -156,7 +157,7 @@
             // 
             // textBoxA
             // 
-            this.textBoxA.Location = new System.Drawing.Point(75, 61);
+            this.textBoxA.Location = new System.Drawing.Point(75, 49);
             this.textBoxA.Name = "textBoxA";
             this.textBoxA.ReadOnly = true;
             this.textBoxA.Size = new System.Drawing.Size(542, 21);
@@ -166,7 +167,7 @@
             // 
             this.labelA.AutoSize = true;
             this.labelA.BackColor = System.Drawing.Color.Transparent;
-            this.labelA.Location = new System.Drawing.Point(8, 64);
+            this.labelA.Location = new System.Drawing.Point(8, 52);
             this.labelA.Name = "labelA";
             this.labelA.Size = new System.Drawing.Size(21, 16);
             this.labelA.TabIndex = 37;
@@ -184,45 +185,19 @@
             // 
             // textBoxMail
             // 
-            this.textBoxMail.Location = new System.Drawing.Point(8, 178);
+            this.textBoxMail.Location = new System.Drawing.Point(12, 178);
             this.textBoxMail.Multiline = true;
             this.textBoxMail.Name = "textBoxMail";
             this.textBoxMail.ReadOnly = true;
             this.textBoxMail.Size = new System.Drawing.Size(641, 300);
             this.textBoxMail.TabIndex = 32;
             // 
-            // buttonEnvoyer
-            // 
-            this.buttonEnvoyer.BackColor = System.Drawing.Color.Gold;
-            this.buttonEnvoyer.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEnvoyer.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.buttonEnvoyer.Location = new System.Drawing.Point(487, 484);
-            this.buttonEnvoyer.Name = "buttonEnvoyer";
-            this.buttonEnvoyer.Size = new System.Drawing.Size(90, 32);
-            this.buttonEnvoyer.TabIndex = 44;
-            this.buttonEnvoyer.Text = "Envoyer";
-            this.buttonEnvoyer.UseVisualStyleBackColor = false;
-            this.buttonEnvoyer.Click += new System.EventHandler(this.buttonEnvoyer_Click);
-            // 
-            // buttonAnnuler
-            // 
-            this.buttonAnnuler.BackColor = System.Drawing.Color.Gold;
-            this.buttonAnnuler.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAnnuler.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.buttonAnnuler.Location = new System.Drawing.Point(121, 484);
-            this.buttonAnnuler.Name = "buttonAnnuler";
-            this.buttonAnnuler.Size = new System.Drawing.Size(90, 32);
-            this.buttonAnnuler.TabIndex = 45;
-            this.buttonAnnuler.Text = "Annuler";
-            this.buttonAnnuler.UseVisualStyleBackColor = false;
-            this.buttonAnnuler.Click += new System.EventHandler(this.buttonAnnuler_Click);
-            // 
             // buttonRetour
             // 
             this.buttonRetour.BackColor = System.Drawing.Color.Gold;
             this.buttonRetour.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRetour.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.buttonRetour.Location = new System.Drawing.Point(295, 484);
+            this.buttonRetour.Location = new System.Drawing.Point(281, 496);
             this.buttonRetour.Name = "buttonRetour";
             this.buttonRetour.Size = new System.Drawing.Size(90, 32);
             this.buttonRetour.TabIndex = 46;
@@ -230,14 +205,39 @@
             this.buttonRetour.UseVisualStyleBackColor = false;
             this.buttonRetour.Click += new System.EventHandler(this.buttonRetour_Click);
             // 
+            // textBoxPrenomDestinataire
+            // 
+            this.textBoxPrenomDestinataire.Location = new System.Drawing.Point(268, 88);
+            this.textBoxPrenomDestinataire.Name = "textBoxPrenomDestinataire";
+            this.textBoxPrenomDestinataire.ReadOnly = true;
+            this.textBoxPrenomDestinataire.Size = new System.Drawing.Size(151, 21);
+            this.textBoxPrenomDestinataire.TabIndex = 47;
+            // 
+            // textBoxTelDestinataire
+            // 
+            this.textBoxTelDestinataire.Location = new System.Drawing.Point(466, 88);
+            this.textBoxTelDestinataire.Name = "textBoxTelDestinataire";
+            this.textBoxTelDestinataire.ReadOnly = true;
+            this.textBoxTelDestinataire.Size = new System.Drawing.Size(151, 21);
+            this.textBoxTelDestinataire.TabIndex = 48;
+            // 
+            // textBoxNomDestinataire
+            // 
+            this.textBoxNomDestinataire.Location = new System.Drawing.Point(75, 88);
+            this.textBoxNomDestinataire.Name = "textBoxNomDestinataire";
+            this.textBoxNomDestinataire.ReadOnly = true;
+            this.textBoxNomDestinataire.Size = new System.Drawing.Size(151, 21);
+            this.textBoxNomDestinataire.TabIndex = 49;
+            // 
             // Popup_Mail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(667, 540);
+            this.Controls.Add(this.textBoxNomDestinataire);
+            this.Controls.Add(this.textBoxTelDestinataire);
+            this.Controls.Add(this.textBoxPrenomDestinataire);
             this.Controls.Add(this.buttonRetour);
-            this.Controls.Add(this.buttonAnnuler);
-            this.Controls.Add(this.buttonEnvoyer);
             this.Controls.Add(this.textBoxMail);
             this.Controls.Add(this.labelObjet);
             this.Controls.Add(this.labelA);
@@ -277,8 +277,9 @@
         private System.Windows.Forms.Label labelA;
         private System.Windows.Forms.Label labelObjet;
         private System.Windows.Forms.TextBox textBoxMail;
-        private System.Windows.Forms.Button buttonEnvoyer;
-        private System.Windows.Forms.Button buttonAnnuler;
         private System.Windows.Forms.Button buttonRetour;
+        private System.Windows.Forms.TextBox textBoxPrenomDestinataire;
+        private System.Windows.Forms.TextBox textBoxTelDestinataire;
+        private System.Windows.Forms.TextBox textBoxNomDestinataire;
     }
 }
