@@ -58,6 +58,7 @@ namespace Maquette_Belle_Table
                     interlocuteur.telInterlocuteur = textBoxTel.Text;
                     interlocuteur.mailInterlocuteur = textBoxMail.Text;
                     interlocuteur.porteFeuille = utilisateur.porteFeuille;
+                    MessageBox.Show(interlocuteur.porteFeuille.ToString());
                     session.Save(interlocuteur);
                     transaction.Commit();
                     session.Close();

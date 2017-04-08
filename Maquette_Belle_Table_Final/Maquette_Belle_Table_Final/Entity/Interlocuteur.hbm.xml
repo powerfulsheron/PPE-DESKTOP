@@ -10,8 +10,10 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
     <property name="prenomInterlocuteur" column="prenomInterlocuteur"/>
     <property name="telInterlocuteur" column="telInterlocuteur"/>
     <property name="mailInterlocuteur" column="mailInterlocuteur"/>
-    
-    <one-to-one name="porteFeuille" constrained="true" foreign-key="none" class="PorteFeuille" lazy="false"/>
+
+
+    <many-to-one name="porteFeuille" unique="true" column="idPortefeuille"/>
+
 
     <set name="lesRendezVous"  lazy="false">
       <key column="idRdv" />

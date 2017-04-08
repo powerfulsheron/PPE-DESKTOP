@@ -2,13 +2,13 @@
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
 namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
   <class name="PorteFeuille" table="portefeuille">
-    <id name="idPortefeuille" column="idPortefeuille" unsaved-value="0">
+    <id name="idPorteFeuille" column="idPorteFeuille" unsaved-value="0">
       <generator class="native" />
     </id>
     <property name="libellePortefeuille" column="libellePortefeuille"/>
     
     <set name="lesInterlocuteurs" lazy="false">
-      <key column="idPortefeuille" />
+      <key column="idPorteFeuille" />
       <one-to-many class="Interlocuteur"/>
     </set>
     

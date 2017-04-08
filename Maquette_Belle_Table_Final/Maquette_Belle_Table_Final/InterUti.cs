@@ -33,7 +33,7 @@ namespace Maquette_Belle_Table_Final
             Console.WriteLine(utilisateur.porteFeuille.lesInterlocuteurs);
             dataGridViewPortefeuille.DataSource = utilisateur.porteFeuille.lesInterlocuteurs.ToList<Interlocuteur>();
 
-            //dataGridViewPortefeuille.DataSource = session.CreateQuery(@"select e from Individu where e.interlocuteur.portefeuille.idPortefeuille=:num").SetInt32("num",utilisateur.porteFeuille.idPortefeuille).List<Individu>();
+            //dataGridViewPortefeuille.DataSource = session.CreateQuery(@"select e from Individu where e.interlocuteur.portefeuille.idPorteFeuille=:num").SetInt32("num",utilisateur.porteFeuille.idPorteFeuille).List<Individu>();
             dataGridViewMail.DataSource = utilisateur.lesMails.ToList<Mail>();
             //IList<Mail> test = utilisateur.lesMails.ToList<Mail>();
             /*
