@@ -15,7 +15,10 @@ namespace Maquette_Belle_Table
 {
     public partial class Popup_NewClient : Form
     {
-        private static ISessionFactory sessionFactory = null;
+        public Utilisateur utilisateur { get; set; }
+        Interlocuteur interlocuteur = new Interlocuteur();
+        private static ISessionFactory sessionFactory = new Configuration().Configure().BuildSessionFactory();
+        ISession session = sessionFactory.OpenSession();
         public Popup_NewClient()
         {
             InitializeComponent();
@@ -28,6 +31,7 @@ namespace Maquette_Belle_Table
 
         private void radioButtonOui_CheckedChanged(object sender, EventArgs e)
         {
+
             groupBoxParticulier.Enabled = true;
             groupBoxAS.Enabled = false;
         }
@@ -44,6 +48,55 @@ namespace Maquette_Belle_Table
 
         private void buttonVal_Click(object sender, EventArgs e)
         {
+
+            using (ISession session = sessionFactory.OpenSession())
+            {
+                using (ITransaction transaction = session.BeginTransaction())
+                {
+                    interlocuteur.nomInterlocuteur = textBoxNom.Text;
+                    interlocuteur.prenomInterlocuteur = textBoxPrenom.Text;
+                    interlocuteur.telInterlocuteur = textBoxTel.Text;
+                    interlocuteur.mailInterlocuteur = textBoxMail.Text;
+                    interlocuteur.porteFeuille = utilisateur.porteFeuille;
+                    session.Save(interlocuteur);
+                    transaction.Commit();
+                    session.Close();
+                    if (radioButtonNon.Checked == true)
+                    {
+
+                    }
+                    
+                }
+
+            }
+            using (ISession session = sessionFactory.OpenSession())
+            {
+                using (ITransaction transaction = session.BeginTransaction())
+                {
+                    if (radioButtonOui.Checked == true)
+                    {
+
+                        Individu individu = new Individu();
+                        individu.adresseIndividu = textBoxAdresse.Text;
+                        individu.cpIndividu = textBoxCp.Text;
+                        individu.villeIndividu = textBoxVille.Text;
+                        individu.distanceSiege = Int32.Parse(textBoxDistance.Text);
+                        individu.planAcces = textBoxPlan.Text;
+                        individu.infosSupplementaire = textBoxIC.Text;
+                        MessageBox.Show(interlocuteur.idInterlocuteur.ToString());
+                        individu.interlocuteur = interlocuteur;
+                        MessageBox.Show(individu.adresseIndividu + individu.planAcces + individu.interlocuteur.idInterlocuteur.ToString());
+                        session.Save(individu);
+                        transaction.Commit();
+                    }
+
+                    if (radioButtonNon.Checked == true)
+                    {
+
+                    }
+                }
+                
+            }
             buttonVal.DialogResult = DialogResult.OK;
         }
 
@@ -96,11 +149,7 @@ namespace Maquette_Belle_Table
         {
 
         }
-
-        private void textBoxRue_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void labelRue_Click(object sender, EventArgs e)
         {
@@ -131,18 +180,9 @@ namespace Maquette_Belle_Table
         {
 
         }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void labelTel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -265,6 +305,36 @@ namespace Maquette_Belle_Table
                 return true;
 
             }
+        }
+
+        private void textBoxMail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxTel_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxPrenom_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxAdresse_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxDistance_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxPlan_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

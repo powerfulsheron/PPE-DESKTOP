@@ -79,7 +79,9 @@ namespace Maquette_Belle_Table_Final
 
         private void buttonAddCli_Click(object sender, EventArgs e)
         {
-            new Maquette_Belle_Table.Popup_NewClient().Show();
+            Popup_NewClient popupNewclient = new Popup_NewClient();
+            popupNewclient.utilisateur = utilisateur;
+            popupNewclient.Show();
         }
 
         private void buttonModCli_Click(object sender, EventArgs e)

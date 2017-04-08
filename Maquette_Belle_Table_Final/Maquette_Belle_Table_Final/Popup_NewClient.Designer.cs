@@ -40,25 +40,30 @@
             this.textBoxNom = new System.Windows.Forms.TextBox();
             this.labelNom = new System.Windows.Forms.Label();
             this.groupBoxParticulier = new System.Windows.Forms.GroupBox();
+            this.textBoxPlan = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxDistance = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxAdresse = new System.Windows.Forms.TextBox();
             this.textBoxIC = new System.Windows.Forms.TextBox();
             this.labelIC = new System.Windows.Forms.Label();
             this.textBoxVille = new System.Windows.Forms.TextBox();
             this.textBoxCp = new System.Windows.Forms.TextBox();
-            this.textBoxRue = new System.Windows.Forms.TextBox();
             this.labelRue = new System.Windows.Forms.Label();
             this.labelCP = new System.Windows.Forms.Label();
             this.labelVille = new System.Windows.Forms.Label();
+            this.labelPrénom = new System.Windows.Forms.Label();
+            this.labelTel = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.labelQParticulier = new System.Windows.Forms.Label();
             this.groupBoxQParticulier = new System.Windows.Forms.GroupBox();
             this.radioButtonNon = new System.Windows.Forms.RadioButton();
             this.radioButtonOui = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.labelPrénom = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.labelTel = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBoxAS = new System.Windows.Forms.GroupBox();
+            this.labelPlanAcces = new System.Windows.Forms.Label();
+            this.textBoxPlanAcces = new System.Windows.Forms.TextBox();
+            this.labelDistanceKm = new System.Windows.Forms.Label();
+            this.textBoxDistanceKm = new System.Windows.Forms.TextBox();
             this.comboBoxTS = new System.Windows.Forms.ComboBox();
             this.labelTS = new System.Windows.Forms.Label();
             this.textBoxDS = new System.Windows.Forms.TextBox();
@@ -73,10 +78,9 @@
             this.labelVAS = new System.Windows.Forms.Label();
             this.buttonAnul = new System.Windows.Forms.Button();
             this.buttonVal = new System.Windows.Forms.Button();
-            this.textBoxDistanceKm = new System.Windows.Forms.TextBox();
-            this.labelDistanceKm = new System.Windows.Forms.Label();
-            this.textBoxPlanAcces = new System.Windows.Forms.TextBox();
-            this.labelPlanAcces = new System.Windows.Forms.Label();
+            this.textBoxPrenom = new System.Windows.Forms.TextBox();
+            this.textBoxMail = new System.Windows.Forms.TextBox();
+            this.textBoxTel = new System.Windows.Forms.TextBox();
             this.panelMenu.SuspendLayout();
             this.panelTitre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBT)).BeginInit();
@@ -188,17 +192,18 @@
             // 
             // textBoxNom
             // 
-            this.textBoxNom.Location = new System.Drawing.Point(67, 46);
+            this.textBoxNom.Location = new System.Drawing.Point(121, 131);
             this.textBoxNom.Name = "textBoxNom";
             this.textBoxNom.Size = new System.Drawing.Size(189, 21);
             this.textBoxNom.TabIndex = 22;
+            this.textBoxNom.Text = "bob";
             this.textBoxNom.TextChanged += new System.EventHandler(this.textBoxNom_TextChanged);
             // 
             // labelNom
             // 
             this.labelNom.AutoSize = true;
             this.labelNom.BackColor = System.Drawing.Color.Transparent;
-            this.labelNom.Location = new System.Drawing.Point(15, 49);
+            this.labelNom.Location = new System.Drawing.Point(44, 134);
             this.labelNom.Name = "labelNom";
             this.labelNom.Size = new System.Drawing.Size(39, 16);
             this.labelNom.TabIndex = 20;
@@ -208,43 +213,85 @@
             // groupBoxParticulier
             // 
             this.groupBoxParticulier.BackColor = System.Drawing.Color.Transparent;
+            this.groupBoxParticulier.Controls.Add(this.textBoxPlan);
+            this.groupBoxParticulier.Controls.Add(this.label3);
+            this.groupBoxParticulier.Controls.Add(this.textBoxDistance);
+            this.groupBoxParticulier.Controls.Add(this.label2);
+            this.groupBoxParticulier.Controls.Add(this.textBoxAdresse);
             this.groupBoxParticulier.Controls.Add(this.textBoxIC);
             this.groupBoxParticulier.Controls.Add(this.labelIC);
             this.groupBoxParticulier.Controls.Add(this.textBoxVille);
-            this.groupBoxParticulier.Controls.Add(this.labelPrénom);
-            this.groupBoxParticulier.Controls.Add(this.textBox1);
-            this.groupBoxParticulier.Controls.Add(this.labelTel);
-            this.groupBoxParticulier.Controls.Add(this.textBox2);
-            this.groupBoxParticulier.Controls.Add(this.label4);
-            this.groupBoxParticulier.Controls.Add(this.labelNom);
-            this.groupBoxParticulier.Controls.Add(this.textBoxNom);
-            this.groupBoxParticulier.Controls.Add(this.textBox3);
             this.groupBoxParticulier.Controls.Add(this.textBoxCp);
-            this.groupBoxParticulier.Controls.Add(this.textBoxRue);
             this.groupBoxParticulier.Controls.Add(this.labelRue);
             this.groupBoxParticulier.Controls.Add(this.labelCP);
             this.groupBoxParticulier.Controls.Add(this.labelVille);
-            this.groupBoxParticulier.Location = new System.Drawing.Point(28, 129);
+            this.groupBoxParticulier.Location = new System.Drawing.Point(28, 276);
             this.groupBoxParticulier.Name = "groupBoxParticulier";
-            this.groupBoxParticulier.Size = new System.Drawing.Size(543, 461);
+            this.groupBoxParticulier.Size = new System.Drawing.Size(543, 327);
             this.groupBoxParticulier.TabIndex = 21;
             this.groupBoxParticulier.TabStop = false;
             this.groupBoxParticulier.Text = "Noueau client particulier";
             this.groupBoxParticulier.Enter += new System.EventHandler(this.groupBoxAP_Enter);
             // 
+            // textBoxPlan
+            // 
+            this.textBoxPlan.Location = new System.Drawing.Point(305, 181);
+            this.textBoxPlan.Name = "textBoxPlan";
+            this.textBoxPlan.Size = new System.Drawing.Size(155, 21);
+            this.textBoxPlan.TabIndex = 20;
+            this.textBoxPlan.Text = "ici";
+            this.textBoxPlan.TextChanged += new System.EventHandler(this.textBoxPlan_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(252, 181);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 16);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Plan :";
+            // 
+            // textBoxDistance
+            // 
+            this.textBoxDistance.Location = new System.Drawing.Point(140, 143);
+            this.textBoxDistance.Name = "textBoxDistance";
+            this.textBoxDistance.Size = new System.Drawing.Size(263, 21);
+            this.textBoxDistance.TabIndex = 18;
+            this.textBoxDistance.Text = "10";
+            this.textBoxDistance.TextChanged += new System.EventHandler(this.textBoxDistance_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 148);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 16);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "distance siège :";
+            // 
+            // textBoxAdresse
+            // 
+            this.textBoxAdresse.Location = new System.Drawing.Point(93, 29);
+            this.textBoxAdresse.Name = "textBoxAdresse";
+            this.textBoxAdresse.Size = new System.Drawing.Size(299, 21);
+            this.textBoxAdresse.TabIndex = 16;
+            this.textBoxAdresse.Text = "14 rue magique";
+            this.textBoxAdresse.TextChanged += new System.EventHandler(this.textBoxAdresse_TextChanged);
+            // 
             // textBoxIC
             // 
-            this.textBoxIC.Location = new System.Drawing.Point(15, 362);
+            this.textBoxIC.Location = new System.Drawing.Point(20, 221);
             this.textBoxIC.Multiline = true;
             this.textBoxIC.Name = "textBoxIC";
             this.textBoxIC.Size = new System.Drawing.Size(512, 93);
             this.textBoxIC.TabIndex = 15;
+            this.textBoxIC.Text = "DisInfosSupp";
             this.textBoxIC.TextChanged += new System.EventHandler(this.textBoxIC_TextChanged);
             // 
             // labelIC
             // 
             this.labelIC.AutoSize = true;
-            this.labelIC.Location = new System.Drawing.Point(12, 338);
+            this.labelIC.Location = new System.Drawing.Point(16, 191);
             this.labelIC.Name = "labelIC";
             this.labelIC.Size = new System.Drawing.Size(134, 16);
             this.labelIC.TabIndex = 14;
@@ -253,42 +300,36 @@
             // 
             // textBoxVille
             // 
-            this.textBoxVille.Location = new System.Drawing.Point(52, 299);
+            this.textBoxVille.Location = new System.Drawing.Point(93, 106);
             this.textBoxVille.Name = "textBoxVille";
             this.textBoxVille.Size = new System.Drawing.Size(310, 21);
             this.textBoxVille.TabIndex = 13;
+            this.textBoxVille.Text = "Paris";
             this.textBoxVille.TextChanged += new System.EventHandler(this.textBoxVille_TextChanged);
             // 
             // textBoxCp
             // 
-            this.textBoxCp.Location = new System.Drawing.Point(103, 257);
+            this.textBoxCp.Location = new System.Drawing.Point(124, 70);
             this.textBoxCp.Name = "textBoxCp";
-            this.textBoxCp.Size = new System.Drawing.Size(153, 21);
+            this.textBoxCp.Size = new System.Drawing.Size(88, 21);
             this.textBoxCp.TabIndex = 12;
+            this.textBoxCp.Text = "75014";
             this.textBoxCp.TextChanged += new System.EventHandler(this.textBoxCp_TextChanged);
-            // 
-            // textBoxRue
-            // 
-            this.textBoxRue.Location = new System.Drawing.Point(67, 97);
-            this.textBoxRue.Name = "textBoxRue";
-            this.textBoxRue.Size = new System.Drawing.Size(452, 21);
-            this.textBoxRue.TabIndex = 11;
-            this.textBoxRue.TextChanged += new System.EventHandler(this.textBoxRue_TextChanged);
             // 
             // labelRue
             // 
             this.labelRue.AutoSize = true;
-            this.labelRue.Location = new System.Drawing.Point(15, 102);
+            this.labelRue.Location = new System.Drawing.Point(16, 34);
             this.labelRue.Name = "labelRue";
-            this.labelRue.Size = new System.Drawing.Size(35, 16);
+            this.labelRue.Size = new System.Drawing.Size(54, 16);
             this.labelRue.TabIndex = 5;
-            this.labelRue.Text = "Rue :";
+            this.labelRue.Text = "Adresse :";
             this.labelRue.Click += new System.EventHandler(this.labelRue_Click);
             // 
             // labelCP
             // 
             this.labelCP.AutoSize = true;
-            this.labelCP.Location = new System.Drawing.Point(16, 263);
+            this.labelCP.Location = new System.Drawing.Point(16, 73);
             this.labelCP.Name = "labelCP";
             this.labelCP.Size = new System.Drawing.Size(81, 16);
             this.labelCP.TabIndex = 4;
@@ -298,12 +339,45 @@
             // labelVille
             // 
             this.labelVille.AutoSize = true;
-            this.labelVille.Location = new System.Drawing.Point(12, 299);
+            this.labelVille.Location = new System.Drawing.Point(16, 109);
             this.labelVille.Name = "labelVille";
             this.labelVille.Size = new System.Drawing.Size(34, 16);
             this.labelVille.TabIndex = 3;
             this.labelVille.Text = "Ville :";
             this.labelVille.Click += new System.EventHandler(this.labelVille_Click);
+            // 
+            // labelPrénom
+            // 
+            this.labelPrénom.AutoSize = true;
+            this.labelPrénom.BackColor = System.Drawing.Color.Transparent;
+            this.labelPrénom.Location = new System.Drawing.Point(44, 171);
+            this.labelPrénom.Name = "labelPrénom";
+            this.labelPrénom.Size = new System.Drawing.Size(55, 16);
+            this.labelPrénom.TabIndex = 26;
+            this.labelPrénom.Text = "Prénom :";
+            this.labelPrénom.Click += new System.EventHandler(this.labelPrénom_Click);
+            // 
+            // labelTel
+            // 
+            this.labelTel.AutoSize = true;
+            this.labelTel.BackColor = System.Drawing.Color.Transparent;
+            this.labelTel.Location = new System.Drawing.Point(44, 210);
+            this.labelTel.Name = "labelTel";
+            this.labelTel.Size = new System.Drawing.Size(28, 16);
+            this.labelTel.TabIndex = 28;
+            this.labelTel.Text = "Tél :";
+            this.labelTel.Click += new System.EventHandler(this.labelTel_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Location = new System.Drawing.Point(44, 251);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(42, 16);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Email :";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // labelQParticulier
             // 
@@ -352,63 +426,6 @@
             this.radioButtonOui.UseVisualStyleBackColor = true;
             this.radioButtonOui.CheckedChanged += new System.EventHandler(this.radioButtonOui_CheckedChanged);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(367, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(170, 21);
-            this.textBox1.TabIndex = 27;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // labelPrénom
-            // 
-            this.labelPrénom.AutoSize = true;
-            this.labelPrénom.BackColor = System.Drawing.Color.Transparent;
-            this.labelPrénom.Location = new System.Drawing.Point(296, 49);
-            this.labelPrénom.Name = "labelPrénom";
-            this.labelPrénom.Size = new System.Drawing.Size(55, 16);
-            this.labelPrénom.TabIndex = 26;
-            this.labelPrénom.Text = "Prénom :";
-            this.labelPrénom.Click += new System.EventHandler(this.labelPrénom_Click);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(67, 151);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(189, 21);
-            this.textBox2.TabIndex = 29;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // labelTel
-            // 
-            this.labelTel.AutoSize = true;
-            this.labelTel.BackColor = System.Drawing.Color.Transparent;
-            this.labelTel.Location = new System.Drawing.Point(15, 156);
-            this.labelTel.Name = "labelTel";
-            this.labelTel.Size = new System.Drawing.Size(28, 16);
-            this.labelTel.TabIndex = 28;
-            this.labelTel.Text = "Tél :";
-            this.labelTel.Click += new System.EventHandler(this.labelTel_Click);
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(67, 198);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(420, 21);
-            this.textBox3.TabIndex = 31;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(15, 198);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 16);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "Email :";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
             // groupBoxAS
             // 
             this.groupBoxAS.BackColor = System.Drawing.Color.Transparent;
@@ -435,6 +452,38 @@
             this.groupBoxAS.TabStop = false;
             this.groupBoxAS.Text = "Nouvelle tructure";
             this.groupBoxAS.Enter += new System.EventHandler(this.groupBoxAS_Enter);
+            // 
+            // labelPlanAcces
+            // 
+            this.labelPlanAcces.AutoSize = true;
+            this.labelPlanAcces.Location = new System.Drawing.Point(6, 304);
+            this.labelPlanAcces.Name = "labelPlanAcces";
+            this.labelPlanAcces.Size = new System.Drawing.Size(87, 16);
+            this.labelPlanAcces.TabIndex = 25;
+            this.labelPlanAcces.Text = "Plan d\'accès : ";
+            // 
+            // textBoxPlanAcces
+            // 
+            this.textBoxPlanAcces.Location = new System.Drawing.Point(114, 304);
+            this.textBoxPlanAcces.Name = "textBoxPlanAcces";
+            this.textBoxPlanAcces.Size = new System.Drawing.Size(404, 21);
+            this.textBoxPlanAcces.TabIndex = 24;
+            // 
+            // labelDistanceKm
+            // 
+            this.labelDistanceKm.AutoSize = true;
+            this.labelDistanceKm.Location = new System.Drawing.Point(352, 239);
+            this.labelDistanceKm.Name = "labelDistanceKm";
+            this.labelDistanceKm.Size = new System.Drawing.Size(87, 16);
+            this.labelDistanceKm.TabIndex = 23;
+            this.labelDistanceKm.Text = "Distance (km) :";
+            // 
+            // textBoxDistanceKm
+            // 
+            this.textBoxDistanceKm.Location = new System.Drawing.Point(355, 258);
+            this.textBoxDistanceKm.Name = "textBoxDistanceKm";
+            this.textBoxDistanceKm.Size = new System.Drawing.Size(100, 21);
+            this.textBoxDistanceKm.TabIndex = 22;
             // 
             // comboBoxTS
             // 
@@ -573,37 +622,32 @@
             this.buttonVal.UseVisualStyleBackColor = false;
             this.buttonVal.Click += new System.EventHandler(this.buttonVal_Click);
             // 
-            // textBoxDistanceKm
+            // textBoxPrenom
             // 
-            this.textBoxDistanceKm.Location = new System.Drawing.Point(355, 258);
-            this.textBoxDistanceKm.Name = "textBoxDistanceKm";
-            this.textBoxDistanceKm.Size = new System.Drawing.Size(100, 21);
-            this.textBoxDistanceKm.TabIndex = 22;
+            this.textBoxPrenom.Location = new System.Drawing.Point(121, 171);
+            this.textBoxPrenom.Name = "textBoxPrenom";
+            this.textBoxPrenom.Size = new System.Drawing.Size(189, 21);
+            this.textBoxPrenom.TabIndex = 47;
+            this.textBoxPrenom.Text = "bobi";
+            this.textBoxPrenom.TextChanged += new System.EventHandler(this.textBoxPrenom_TextChanged);
             // 
-            // labelDistanceKm
+            // textBoxMail
             // 
-            this.labelDistanceKm.AutoSize = true;
-            this.labelDistanceKm.Location = new System.Drawing.Point(352, 239);
-            this.labelDistanceKm.Name = "labelDistanceKm";
-            this.labelDistanceKm.Size = new System.Drawing.Size(87, 16);
-            this.labelDistanceKm.TabIndex = 23;
-            this.labelDistanceKm.Text = "Distance (km) :";
+            this.textBoxMail.Location = new System.Drawing.Point(121, 246);
+            this.textBoxMail.Name = "textBoxMail";
+            this.textBoxMail.Size = new System.Drawing.Size(189, 21);
+            this.textBoxMail.TabIndex = 48;
+            this.textBoxMail.Text = "bob@sfr.fr";
+            this.textBoxMail.TextChanged += new System.EventHandler(this.textBoxMail_TextChanged);
             // 
-            // textBoxPlanAcces
+            // textBoxTel
             // 
-            this.textBoxPlanAcces.Location = new System.Drawing.Point(114, 304);
-            this.textBoxPlanAcces.Name = "textBoxPlanAcces";
-            this.textBoxPlanAcces.Size = new System.Drawing.Size(404, 21);
-            this.textBoxPlanAcces.TabIndex = 24;
-            // 
-            // labelPlanAcces
-            // 
-            this.labelPlanAcces.AutoSize = true;
-            this.labelPlanAcces.Location = new System.Drawing.Point(6, 304);
-            this.labelPlanAcces.Name = "labelPlanAcces";
-            this.labelPlanAcces.Size = new System.Drawing.Size(87, 16);
-            this.labelPlanAcces.TabIndex = 25;
-            this.labelPlanAcces.Text = "Plan d\'accès : ";
+            this.textBoxTel.Location = new System.Drawing.Point(121, 207);
+            this.textBoxTel.Name = "textBoxTel";
+            this.textBoxTel.Size = new System.Drawing.Size(189, 21);
+            this.textBoxTel.TabIndex = 49;
+            this.textBoxTel.Text = "0140439654";
+            this.textBoxTel.TextChanged += new System.EventHandler(this.textBoxTel_TextChanged);
             // 
             // Popup_NewClient
             // 
@@ -611,15 +655,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Maquette_Belle_Table_Final.Properties.Resources.fond;
             this.ClientSize = new System.Drawing.Size(1140, 653);
+            this.Controls.Add(this.textBoxTel);
+            this.Controls.Add(this.textBoxMail);
+            this.Controls.Add(this.textBoxPrenom);
             this.Controls.Add(this.buttonVal);
             this.Controls.Add(this.buttonAnul);
             this.Controls.Add(this.groupBoxAS);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelTel);
+            this.Controls.Add(this.labelPrénom);
             this.Controls.Add(this.groupBoxQParticulier);
             this.Controls.Add(this.groupBoxParticulier);
             this.Controls.Add(this.panelBorderBottom);
             this.Controls.Add(this.panelBordeLeft);
             this.Controls.Add(this.panelBorderRight);
+            this.Controls.Add(this.labelNom);
             this.Controls.Add(this.panelMenu);
+            this.Controls.Add(this.textBoxNom);
             this.Font = new System.Drawing.Font("Century Gothic", 8F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Popup_NewClient";
@@ -637,6 +689,7 @@
             this.groupBoxAS.ResumeLayout(false);
             this.groupBoxAS.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -658,17 +711,13 @@
         private System.Windows.Forms.Label labelIC;
         private System.Windows.Forms.TextBox textBoxVille;
         private System.Windows.Forms.TextBox textBoxCp;
-        private System.Windows.Forms.TextBox textBoxRue;
         private System.Windows.Forms.Label labelRue;
         private System.Windows.Forms.Label labelCP;
         private System.Windows.Forms.Label labelVille;
         private System.Windows.Forms.Label labelQParticulier;
         private System.Windows.Forms.GroupBox groupBoxQParticulier;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label labelPrénom;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label labelTel;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBoxAS;
         private System.Windows.Forms.TextBox textBoxDS;
@@ -691,5 +740,13 @@
         private System.Windows.Forms.TextBox textBoxPlanAcces;
         private System.Windows.Forms.Label labelDistanceKm;
         private System.Windows.Forms.TextBox textBoxDistanceKm;
+        private System.Windows.Forms.TextBox textBoxPrenom;
+        private System.Windows.Forms.TextBox textBoxMail;
+        private System.Windows.Forms.TextBox textBoxTel;
+        private System.Windows.Forms.TextBox textBoxAdresse;
+        private System.Windows.Forms.TextBox textBoxDistance;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxPlan;
+        private System.Windows.Forms.Label label3;
     }
 }

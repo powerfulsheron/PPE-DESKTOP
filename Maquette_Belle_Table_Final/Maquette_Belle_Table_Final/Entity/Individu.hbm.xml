@@ -13,7 +13,7 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
     <property name="planAcces" column="planAcces"/>
     <property name="infosSupplementaire" column="infosSupplementaire"/>
 
-    <one-to-one name="interlocuteur" constrained="true" foreign-key="none" class="Interlocuteur" lazy="false"/>
+    <one-to-one name="interlocuteur" constrained="true" foreign-key="true" class="Interlocuteur"/>
     
   </class>
 </hibernate-mapping>
