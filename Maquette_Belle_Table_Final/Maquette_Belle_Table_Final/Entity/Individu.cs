@@ -10,7 +10,6 @@ namespace Maquette_Belle_Table_Final
         public virtual string adresseIndividu { get; set; }
         public virtual string cpIndividu { get; set; }
         public virtual string villeIndividu { get; set; }
-        public virtual string planAcces { get; set; }
         public virtual string infosSupplementaire { get; set; }
         public virtual Interlocuteur interlocuteur { get; set; }
 
@@ -22,7 +21,7 @@ namespace Maquette_Belle_Table_Final
         // ToString 
         public override string ToString()
         {
-            return string.Format("[{0}|{1}|{2}|{3}|{4}|{5}]", distanceSiege, adresseIndividu, cpIndividu, villeIndividu, planAcces, infosSupplementaire);
+            return string.Format("[{0}|{1}|{2}|{3}|{4}]", distanceSiege, adresseIndividu, cpIndividu, villeIndividu, infosSupplementaire);
         }
         
     }

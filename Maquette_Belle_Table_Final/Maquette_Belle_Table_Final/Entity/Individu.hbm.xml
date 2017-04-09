@@ -10,7 +10,6 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
     <property name="adresseIndividu" column="adresseIndividu"/>
     <property name="cpIndividu" column="cpIndividu"/>
     <property name="villeIndividu" column="villeIndividu"/>
-    <property name="planAcces" column="planAcces"/>
     <property name="infosSupplementaire" column="infosSupplementaire"/>
 
     <!--one-to-one name="interlocuteur" constrained="true" foreign-key="true" class="Interlocuteur"/-->
