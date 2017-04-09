@@ -53,26 +53,26 @@ SELECT * FROM TYPE_STRUCTURE;
 #------------------------------------------------------------
 # Table: STRUCTURE
 #------------------------------------------------------------
-insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, planAcces, infoSupplementaire, codeTypeStructure, version) values 
-(1,'structure 1', '97701 Nova Circle', '46900-000', 'Seabra', 1, '3 Prairieview Terrace', 'Ergonomic multimedia encoding', 1 , 0);
-insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, planAcces, infoSupplementaire, codeTypeStructure, version) values 
-(2,'structure 2', '0850 Kenwood Hill', '13140-000', 'Paulínia', 2, '266 Dawn Alley', 'Synchronised needs-based superstructure', 2 , 0);
-insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, planAcces, infoSupplementaire, codeTypeStructure, version) values 
-(3,'structure 3', '14272 Elka Plaza', '75000', 'Jiaoxie', 3, '04 Vernon Alley', 'Configurable multi-state concept', 3 , 0);
-insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, planAcces, infoSupplementaire, codeTypeStructure, version) values 
-(4,'structure 4', '97194 Fairfield Hill', '75000', 'Fengshan', 4, '685 Michigan Lane', 'Networked coherent contingency', 4 , 0);
-insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, planAcces, infoSupplementaire, codeTypeStructure, version) values 
-(5,'structure 5', '9366 Orin Lane', '75000', 'Baipenzhu', 5, '16066 Holmberg Pass', 'Public-key content-based knowledge base', 5, 0);
-insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, planAcces, infoSupplementaire, codeTypeStructure, version) values 
-(6,'structure 6', '400 Kingsford Pass', '75000', 'Goubétto', 6, '3 Monument Parkway', 'Future-proofed impactful projection', 1, 0);
-insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, planAcces, infoSupplementaire, codeTypeStructure, version) values 
-(7,'structure 7', '393 Steensland Point', '2110', 'Red Hill', 7, '089 Farmco Parkway', 'Multi-lateral 4th generation data-warehouse', 2, 0);
-insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, planAcces, infoSupplementaire, codeTypeStructure, version) values 
-(8,'structure 8', '6 Monica Road', '2508', 'Nanyo', 8, '04092 Kinsman Way', 'Function-based national local area network', 3, 0);
-insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, planAcces, infoSupplementaire, codeTypeStructure, version) values 
-(9,'structure 9', '4513 Fairfield Junction', '75000', 'Parungjawa', 9, '030 Pleasure Trail', 'Visionary asynchronous forecast', 4, 0);
-insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, planAcces, infoSupplementaire, codeTypeStructure, version) values 
-(10,'structure 10', '0076 Blaine Drive', '75000', 'Nanning', 10, '51 Manufacturers Drive', 'Automated asynchronous matrix', 5, 0);
+insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, infoSupplementaire, codeTypeStructure, version) values 
+(1,'structure 1', '97701 Nova Circle', '46900-000', 'Seabra', 1, 'Ergonomic multimedia encoding', 1 , 0);
+insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, infoSupplementaire, codeTypeStructure, version) values 
+(2,'structure 2', '0850 Kenwood Hill', '13140-000', 'Paulínia', 2, 'Synchronised needs-based superstructure', 2 , 0);
+insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, infoSupplementaire, codeTypeStructure, version) values 
+(3,'structure 3', '14272 Elka Plaza', '75000', 'Jiaoxie', 3, 'Configurable multi-state concept', 3 , 0);
+insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, infoSupplementaire, codeTypeStructure, version) values 
+(4,'structure 4', '97194 Fairfield Hill', '75000', 'Fengshan', 4, 'Networked coherent contingency', 4 , 0);
+insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, infoSupplementaire, codeTypeStructure, version) values 
+(5,'structure 5', '9366 Orin Lane', '75000', 'Baipenzhu', 5, 'Public-key content-based knowledge base', 5, 0);
+insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, infoSupplementaire, codeTypeStructure, version) values 
+(6,'structure 6', '400 Kingsford Pass', '75000', 'Goubétto', 6, 'Future-proofed impactful projection', 1, 0);
+insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, infoSupplementaire, codeTypeStructure, version) values 
+(7,'structure 7', '393 Steensland Point', '2110', 'Red Hill', 7, 'Multi-lateral 4th generation data-warehouse', 2, 0);
+insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, infoSupplementaire, codeTypeStructure, version) values 
+(8,'structure 8', '6 Monica Road', '2508', 'Nanyo', 8, 'Function-based national local area network', 3, 0);
+insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, infoSupplementaire, codeTypeStructure, version) values 
+(9,'structure 9', '4513 Fairfield Junction', '75000', 'Parungjawa', 9, 'Visionary asynchronous forecast', 4, 0);
+insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, infoSupplementaire, codeTypeStructure, version) values 
+(10,'structure 10', '0076 Blaine Drive', '75000', 'Nanning', 10, 'Automated asynchronous matrix', 5, 0);
 
 SELECT * FROM STRUCTURE;
 

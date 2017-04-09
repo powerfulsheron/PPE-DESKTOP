@@ -45,7 +45,6 @@ CREATE TABLE INDIVIDU(
         cpIndividu          Varchar (25) NOT NULL ,
         villeIndividu       Varchar (25) NOT NULL ,
         distanceSiege       Float NOT NULL ,
-        planAcces          	Varchar (25) NOT NULL ,
         infosSupplementaire Varchar (100) NOT NULL ,
         idInterlocuteur     Int NOT NULL ,
         version Int,
