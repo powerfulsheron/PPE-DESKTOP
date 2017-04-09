@@ -90,15 +90,39 @@ namespace Maquette_Belle_Table
                 {
                     if (radioNouvelleStructureOui.Checked == true) 
                     {
+                        using (ITransaction transaction = session.BeginTransaction())
+                        {
 
-                        Structure structure = new Structure();
-                        structure.typeStructure = (TypeStructure)comboBoxTS.SelectedItem;
-                        structure
-                    
-                    
+                            Structure structure = new Structure();
+                            structure.typeStructure = (TypeStructure)comboBoxTS.SelectedItem;
+                            structure.denominationSociale = textBoxDS.Text;
+                            structure.adresseStructure = textBoxAdresse.Text;
+                            structure.cpStructure = textBoxCp.Text;
+                            structure.villeStructure = textBoxVille.Text;
+                            structure.distanceSiege = float.Parse(textBoxDistanceKm.Text);
+                            structure.infoSupplementaire = textBoxIC.Text;
+                            session.Save(structure);
+                            InterlocuteurStructure interlocuteurStructure = new InterlocuteurStructure();
+                            interlocuteurStructure.interlocuteur = interlocuteur;
+                            interlocuteurStructure.structure = structure;
+                            session.Save(interlocuteurStructure);
+                            transaction.Commit();
+                        }
+
+                                       
+                    }
+                    else {
+                        using (ITransaction transaction = session.BeginTransaction())
+                        {
+
+                            InterlocuteurStructure interlocuteurStructure = new InterlocuteurStructure();
+                            interlocuteurStructure.interlocuteur = interlocuteur;
+                            interlocuteurStructure.structure = (Structure)comboBoxChoixStructure.SelectedItem;
+                            session.Save(interlocuteurStructure);
+                            transaction.Commit();
+                        }
                     
                     }
-                    else { }
 
 
                 }

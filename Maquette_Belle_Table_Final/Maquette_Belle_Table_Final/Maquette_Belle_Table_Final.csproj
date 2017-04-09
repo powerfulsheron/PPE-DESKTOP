@@ -266,7 +266,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Entity\InterlocuteurStructure.xml" />
+    <EmbeddedResource Include="Entity\InterlocuteurStructure.hbm.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Entity\Individu.hbm.xml">

@@ -10,7 +10,6 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
     <property name="denominationSociale" column="denominationSociale"/>
     <property name="adresseStructure" column="adresseStructure"/>
     <property name="villeStructure" column="villeStructure"/>
-    <property name="planAcces" column="planAcces"/>
     <property name="infoSupplementaire" column="infoSupplementaire"/>
     
     <many-to-one name="typeStructure" column="codeTypeStructure " cascade="all" lazy="false"/>
