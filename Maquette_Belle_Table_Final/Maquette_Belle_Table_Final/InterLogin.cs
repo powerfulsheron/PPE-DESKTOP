@@ -157,9 +157,7 @@ namespace Maquette_Belle_Table_Final
                         string laString = new string(Enumerable.Repeat(chars, 10).Select(s => s[random.Next(s.Length)]).ToArray());
 
                         // on converti la phrase random en md5
-                        var bytes = new UTF8Encoding().GetBytes(laString);
-                        var hashBytes = System.Security.Cryptography.MD5.Create().ComputeHash(bytes);
-                        string newPassword = Convert.ToBase64String(hashBytes);
+                        string newPassword = MD5Hash(laString);
 
                         // on update le nouveau password
                         utilisateur.passwordUtilisateur = newPassword;
@@ -233,6 +231,11 @@ namespace Maquette_Belle_Table_Final
         }
 
         private void textBoxId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InterLogin_Load(object sender, EventArgs e)
         {
 
         }
