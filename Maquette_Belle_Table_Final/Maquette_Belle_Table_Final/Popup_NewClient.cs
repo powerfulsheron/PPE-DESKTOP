@@ -32,16 +32,18 @@ namespace Maquette_Belle_Table
         private void radioButtonOui_CheckedChanged(object sender, EventArgs e)
         {
 
-            groupBoxParticulier.Enabled = true;
-            groupBoxAS.Enabled = false;
+            groupBoxParticulier.Visible = true;
+            groupBoxAS.Visible = false;
+            groupBoxStructureExistante.Visible = false;
         }
 
         private void radioButtonNon_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButtonNon.Checked)
             {
-                groupBoxAS.Enabled = true;
-                groupBoxParticulier.Enabled = false;
+                groupBoxStructureExistante.Visible = true; 
+                groupBoxAS.Visible = false;
+                groupBoxParticulier.Visible = false;
 
             }
         }
@@ -59,48 +61,53 @@ namespace Maquette_Belle_Table
                     interlocuteur.mailInterlocuteur = textBoxMail.Text;
                     interlocuteur.porteFeuille = utilisateur.porteFeuille;
                     MessageBox.Show(interlocuteur.porteFeuille.ToString());
-                    session.Save(interlocuteur);
+                    session.Save(interlocuteur);                
                     transaction.Commit();
-                    session.Close();
-                    if (radioButtonNon.Checked == true)
-                    {
+                }
 
-                    }
+                if (radioButtonOui.Checked == true)
+                {
+       
+                        using (ITransaction transaction = session.BeginTransaction())
+                        {
+
+                            Individu individu = new Individu();
+                            individu.adresseIndividu = textBoxAdresse.Text;
+                            individu.cpIndividu = textBoxCp.Text;
+                            individu.villeIndividu = textBoxVille.Text;
+                            individu.distanceSiege = Int32.Parse(textBoxDistance.Text);
+                            individu.planAcces = textBoxPlan.Text;
+                            individu.infosSupplementaire = textBoxIC.Text;
+                            MessageBox.Show(interlocuteur.idInterlocuteur.ToString());
+                            individu.interlocuteur = interlocuteur;
+                            MessageBox.Show(individu.adresseIndividu + individu.planAcces + individu.interlocuteur.idInterlocuteur.ToString());
+                            session.Save(individu);
+                            transaction.Commit();
+                        }
                     
                 }
-
-            }
-            using (ISession session = sessionFactory.OpenSession())
-            {
-                using (ITransaction transaction = session.BeginTransaction())
+                else
                 {
-                    if (radioButtonOui.Checked == true)
+                    if (radioNouvelleStructureOui.Checked == true) 
                     {
 
-                        Individu individu = new Individu();
-                        individu.adresseIndividu = textBoxAdresse.Text;
-                        individu.cpIndividu = textBoxCp.Text;
-                        individu.villeIndividu = textBoxVille.Text;
-                        individu.distanceSiege = Int32.Parse(textBoxDistance.Text);
-                        individu.planAcces = textBoxPlan.Text;
-                        individu.infosSupplementaire = textBoxIC.Text;
-                        MessageBox.Show(interlocuteur.idInterlocuteur.ToString());
-                        individu.interlocuteur = interlocuteur;
-                        MessageBox.Show(individu.adresseIndividu + individu.planAcces + individu.interlocuteur.idInterlocuteur.ToString());
-                        session.Save(individu);
-                        transaction.Commit();
+                        Structure structure = new Structure();
+                        structure.typeStructure = (TypeStructure)comboBoxTS.SelectedItem;
+                        structure
+                    
+                    
+                    
                     }
+                    else { }
 
-                    if (radioButtonNon.Checked == true)
-                    {
 
-                    }
                 }
-                
-            }
-            buttonVal.DialogResult = DialogResult.OK;
-        }
+                session.Dispose(); 
+                }
 
+            }
+
+                 
         private void buttonAnul_Click(object sender, EventArgs e)
         {
             buttonAnul.DialogResult = DialogResult.Cancel;
@@ -268,16 +275,13 @@ namespace Maquette_Belle_Table
 
         }
 
-        private void groupBoxQParticulier_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private void Popup_NewClient_Load(object sender, EventArgs e)
         {
             TypeStructure lesTypeStructure = new TypeStructure();
             comboBoxTS.DataSource = lesTypeStructure.GetLesTypesStructure();
-            groupBoxAS.Enabled = false;
+            groupBoxAS.Visible = false;
+            comboBoxChoixStructure.DataSource = session.CreateQuery(@"select e from Structure e order by e.denominationSociale asc").List<Structure>();
             
         }
 
@@ -336,6 +340,20 @@ namespace Maquette_Belle_Table
         private void textBoxPlan_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            labelStructure.Visible = true;
+            comboBoxChoixStructure.Visible = true;
+            groupBoxAS.Visible = false;
+        }
+
+        private void radioNouvelleStructureOui_CheckedChanged(object sender, EventArgs e)
+        {
+            labelStructure.Visible = false;
+            comboBoxChoixStructure.Visible = false;
+            groupBoxAS.Visible = true;
         }
     }
 }

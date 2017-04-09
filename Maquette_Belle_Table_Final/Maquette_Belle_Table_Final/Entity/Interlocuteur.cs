@@ -22,7 +22,7 @@ namespace Maquette_Belle_Table_Final
         // ToString 
         public override string ToString()
         {
-            return string.Format("[{0}|{1}|{2}|{3}|{4}]", nomInterlocuteur, prenomInterlocuteur, telInterlocuteur, mailInterlocuteur, porteFeuille);
+            return string.Format("[{0}|{1}|{2}|{3}]", nomInterlocuteur, prenomInterlocuteur, telInterlocuteur, mailInterlocuteur);
         }
     }
 }
