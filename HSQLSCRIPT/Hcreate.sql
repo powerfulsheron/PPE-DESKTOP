@@ -155,7 +155,6 @@ CREATE TABLE STRUCTURE(
         cpStructure         Varchar (25) NOT NULL ,
         villeStructure      Varchar (25) NOT NULL ,
         distanceSiege       Float NOT NULL ,
-        planAcces          Varchar (25) NOT NULL ,
         infoSupplementaire Varchar (100) NOT NULL ,
         codeTypeStructure    Int NOT NULL ,
         version Int,

@@ -95,16 +95,16 @@ SELECT * FROM INTERLOCUTEUR;
 #------------------------------------------------------------
 # Table: INDIVIDU
 #------------------------------------------------------------
-insert into INDIVIDU (numIndividu, adresseIndividu, cpIndividu, villeIndividu, distanceSiege, planAcces , infosSupplementaire, idInterlocuteur, version) values 
-(1, '77257 Larry Alley','75000', 'Masaki-chō', 55, '2930 Bobwhite Hill', 'Progressive dedicated application', 1, 0);
-insert into INDIVIDU (numIndividu, adresseIndividu, cpIndividu, villeIndividu, distanceSiege, planAcces , infosSupplementaire, idInterlocuteur, version) values 
-(2, '582 Lyons Street','75000', 'Srostki', 21, '2117 Jenifer Point', 'Optimized hybrid interface', 2, 0);
-insert into INDIVIDU (numIndividu, adresseIndividu, cpIndividu, villeIndividu, distanceSiege, planAcces , infosSupplementaire, idInterlocuteur, version) values 
-(3, '8897 Ridgeway Point','75000', 'Seres', 78, '2323 Superior Terrace', 'Universal bifurcated function', 3, 0);
-insert into INDIVIDU (numIndividu, adresseIndividu, cpIndividu, villeIndividu, distanceSiege, planAcces , infosSupplementaire, idInterlocuteur, version) values 
-(4, '4 Clove Terrace','75000', 'Lescar', 47, '7 Stone Corner Center', 'Expanded responsive task-force', 4, 0);
-insert into INDIVIDU (numIndividu, adresseIndividu, cpIndividu, villeIndividu, distanceSiege, planAcces , infosSupplementaire, idInterlocuteur, version) values 
-(5, '0 Pleasure Plaza','75000', 'Jinzhou', 27, '63872 David Junction', 'Devolved system-worthy application', 5, 0);
+insert into INDIVIDU (numIndividu, adresseIndividu, cpIndividu, villeIndividu, distanceSiege, infosSupplementaire, idInterlocuteur, version) values 
+(1, '77257 Larry Alley','75000', 'Masaki-chō', 55, '2930 Bobwhite Hill', 1, 0);
+insert into INDIVIDU (numIndividu, adresseIndividu, cpIndividu, villeIndividu, distanceSiege, infosSupplementaire, idInterlocuteur, version) values 
+(2, '582 Lyons Street','75000', 'Srostki', 21, '2117 Jenifer Point', 2, 0);
+insert into INDIVIDU (numIndividu, adresseIndividu, cpIndividu, villeIndividu, distanceSiege, infosSupplementaire, idInterlocuteur, version) values 
+(3, '8897 Ridgeway Point','75000', 'Seres', 78, '2323 Superior Terrace', 3, 0);
+insert into INDIVIDU (numIndividu, adresseIndividu, cpIndividu, villeIndividu, distanceSiege, infosSupplementaire, idInterlocuteur, version) values 
+(4, '4 Clove Terrace','75000', 'Lescar', 47, '7 Stone Corner Center', 4, 0);
+insert into INDIVIDU (numIndividu, adresseIndividu, cpIndividu, villeIndividu, distanceSiege, infosSupplementaire, idInterlocuteur, version) values 
+(5, '0 Pleasure Plaza','75000', 'Jinzhou', 27, '63872 David Junction', 5, 0);
 
 
 SELECT * FROM INDIVIDU;
