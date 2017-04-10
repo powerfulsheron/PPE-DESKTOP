@@ -129,9 +129,7 @@
     <Compile Include="Popup_NewClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Popup_NewClient.Designer.cs">
-      <DependentUpon>Popup_NewClient.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Popup_NewClient.Designer.cs" />
     <Compile Include="Popup_NewCom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,9 +190,7 @@
     <EmbeddedResource Include="Popup_NewC.resx">
       <DependentUpon>Popup_NewC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Popup_NewClient.resx">
-      <DependentUpon>Popup_NewClient.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Popup_NewClient.resx" />
     <EmbeddedResource Include="Popup_NewCom.resx">
       <DependentUpon>Popup_NewCom.cs</DependentUpon>
     </EmbeddedResource>
@@ -271,7 +267,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Entity\InterlocuteurStructure.hbm.xml" />
+    <EmbeddedResource Include="Entity\InterlocuteurStructure.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

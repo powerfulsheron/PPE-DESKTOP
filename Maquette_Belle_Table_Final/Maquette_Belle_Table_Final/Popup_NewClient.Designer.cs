@@ -60,8 +60,6 @@
             this.radioButtonNon = new System.Windows.Forms.RadioButton();
             this.radioButtonOui = new System.Windows.Forms.RadioButton();
             this.groupBoxAS = new System.Windows.Forms.GroupBox();
-            this.labelPlanAcces = new System.Windows.Forms.Label();
-            this.textBoxPlanAcces = new System.Windows.Forms.TextBox();
             this.labelDistanceKm = new System.Windows.Forms.Label();
             this.textBoxDistanceKm = new System.Windows.Forms.TextBox();
             this.comboBoxTS = new System.Windows.Forms.ComboBox();
@@ -436,8 +434,6 @@
             // groupBoxAS
             // 
             this.groupBoxAS.BackColor = System.Drawing.Color.Transparent;
-            this.groupBoxAS.Controls.Add(this.labelPlanAcces);
-            this.groupBoxAS.Controls.Add(this.textBoxPlanAcces);
             this.groupBoxAS.Controls.Add(this.labelDistanceKm);
             this.groupBoxAS.Controls.Add(this.textBoxDistanceKm);
             this.groupBoxAS.Controls.Add(this.comboBoxTS);
@@ -459,22 +455,6 @@
             this.groupBoxAS.TabStop = false;
             this.groupBoxAS.Text = "Nouvelle tructure";
             this.groupBoxAS.Enter += new System.EventHandler(this.groupBoxAS_Enter);
-            // 
-            // labelPlanAcces
-            // 
-            this.labelPlanAcces.AutoSize = true;
-            this.labelPlanAcces.Location = new System.Drawing.Point(6, 304);
-            this.labelPlanAcces.Name = "labelPlanAcces";
-            this.labelPlanAcces.Size = new System.Drawing.Size(110, 19);
-            this.labelPlanAcces.TabIndex = 25;
-            this.labelPlanAcces.Text = "Plan d\'accès : ";
-            // 
-            // textBoxPlanAcces
-            // 
-            this.textBoxPlanAcces.Location = new System.Drawing.Point(114, 304);
-            this.textBoxPlanAcces.Name = "textBoxPlanAcces";
-            this.textBoxPlanAcces.Size = new System.Drawing.Size(404, 24);
-            this.textBoxPlanAcces.TabIndex = 24;
             // 
             // labelDistanceKm
             // 
@@ -820,8 +800,6 @@
         private System.Windows.Forms.RadioButton radioButtonOui;
         private System.Windows.Forms.Button buttonAnul;
         private System.Windows.Forms.Button buttonVal;
-        private System.Windows.Forms.Label labelPlanAcces;
-        private System.Windows.Forms.TextBox textBoxPlanAcces;
         private System.Windows.Forms.Label labelDistanceKm;
         private System.Windows.Forms.TextBox textBoxDistanceKm;
         private System.Windows.Forms.TextBox textBoxPrenom;
