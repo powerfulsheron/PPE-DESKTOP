@@ -20,9 +20,9 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
     
     <many-to-one name="typeUtilisateur" column="codeTypeUtilisateur" cascade="all" lazy="false"/>
     
-    <one-to-one name="planning" constrained="true" foreign-key="none" class="Planning" lazy="false"/>
+    <one-to-one name="planning" constrained="false" foreign-key="none" class="Planning" lazy="false"/>
    
-    <one-to-one name="porteFeuille" constrained="true" foreign-key="none" class="PorteFeuille" lazy="false"/>
+    <one-to-one name="porteFeuille" constrained="false" foreign-key="none" class="PorteFeuille" lazy="false"/>
 
 
     <set name="lesConges" table="conges_utilisateur" lazy="true">

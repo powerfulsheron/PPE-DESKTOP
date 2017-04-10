@@ -142,7 +142,7 @@
             this.textBoxId.Name = "textBoxId";
             this.textBoxId.Size = new System.Drawing.Size(188, 21);
             this.textBoxId.TabIndex = 21;
-            this.textBoxId.Text = "jrobinson";
+            this.textBoxId.Text = "jclark";
             this.textBoxId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxId.TextChanged += new System.EventHandler(this.textBoxId_TextChanged);
             // 
@@ -166,9 +166,9 @@
             this.panelMDPO.Controls.Add(this.textBoxMDPNom);
             this.panelMDPO.Controls.Add(this.labelMDPO);
             this.panelMDPO.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelMDPO.Location = new System.Drawing.Point(1, 129);
+            this.panelMDPO.Location = new System.Drawing.Point(1, 138);
             this.panelMDPO.Name = "panelMDPO";
-            this.panelMDPO.Size = new System.Drawing.Size(380, 319);
+            this.panelMDPO.Size = new System.Drawing.Size(380, 310);
             this.panelMDPO.TabIndex = 24;
             this.panelMDPO.Visible = false;
             // 

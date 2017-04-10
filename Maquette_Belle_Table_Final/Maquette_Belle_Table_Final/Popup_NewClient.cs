@@ -41,7 +41,7 @@ namespace Maquette_Belle_Table
         {
             if (radioButtonNon.Checked)
             {
-                groupBoxStructureExistante.Visible = true; 
+                groupBoxStructureExistante.Visible = true;
                 groupBoxAS.Visible = false;
                 groupBoxParticulier.Visible = false;
 
@@ -61,53 +61,76 @@ namespace Maquette_Belle_Table
                     interlocuteur.mailInterlocuteur = textBoxMail.Text;
                     interlocuteur.porteFeuille = utilisateur.porteFeuille;
                     MessageBox.Show(interlocuteur.porteFeuille.ToString());
-                    session.Save(interlocuteur);                
+                    session.Save(interlocuteur);
                     transaction.Commit();
                 }
 
                 if (radioButtonOui.Checked == true)
                 {
-       
-                        using (ITransaction transaction = session.BeginTransaction())
-                        {
 
-                            Individu individu = new Individu();
-                            individu.adresseIndividu = textBoxAdresse.Text;
-                            individu.cpIndividu = textBoxCp.Text;
-                            individu.villeIndividu = textBoxVille.Text;
-                            individu.distanceSiege = Int32.Parse(textBoxDistance.Text);
-                            individu.planAcces = textBoxPlan.Text;
-                            individu.infosSupplementaire = textBoxIC.Text;
-                            MessageBox.Show(interlocuteur.idInterlocuteur.ToString());
-                            individu.interlocuteur = interlocuteur;
-                            MessageBox.Show(individu.adresseIndividu + individu.planAcces + individu.interlocuteur.idInterlocuteur.ToString());
-                            session.Save(individu);
-                            transaction.Commit();
-                        }
-                    
+                    using (ITransaction transaction = session.BeginTransaction())
+                    {
+
+                        Individu individu = new Individu();
+                        individu.adresseIndividu = textBoxAdresse.Text;
+                        individu.cpIndividu = textBoxCp.Text;
+                        individu.villeIndividu = textBoxVille.Text;
+                        individu.distanceSiege = Int32.Parse(textBoxDistance.Text);
+                        individu.infosSupplementaire = textBoxIC.Text;
+                        MessageBox.Show(interlocuteur.idInterlocuteur.ToString());
+                        individu.interlocuteur = interlocuteur;
+                        session.Save(individu);
+                        transaction.Commit();
+                    }
+
                 }
                 else
                 {
-                    if (radioNouvelleStructureOui.Checked == true) 
+                    if (radioNouvelleStructureOui.Checked == true)
                     {
+                        using (ITransaction transaction = session.BeginTransaction())
+                        {
 
-                        Structure structure = new Structure();
-                        structure.typeStructure = (TypeStructure)comboBoxTS.SelectedItem;
-                        structure
-                    
-                    
-                    
+                            Structure structure = new Structure();
+                            structure.typeStructure = (TypeStructure)comboBoxTS.SelectedItem;
+                            structure.denominationSociale = textBoxDS.Text;
+                            structure.adresseStructure = textBoxAdresse.Text;
+                            structure.cpStructure = textBoxCp.Text;
+                            structure.villeStructure = textBoxVille.Text;
+                            structure.distanceSiege = float.Parse(textBoxDistanceKm.Text);
+                            structure.infoSupplementaire = textBoxIC.Text;
+                            session.Save(structure);
+                            InterlocuteurStructure interlocuteurStructure = new InterlocuteurStructure();
+                            interlocuteurStructure.interlocuteur = interlocuteur;
+                            interlocuteurStructure.structure = structure;
+                            session.Save(interlocuteurStructure);
+                            transaction.Commit();
+                        }
+
+
                     }
-                    else { }
+                    else
+                    {
+                        using (ITransaction transaction = session.BeginTransaction())
+                        {
+
+                            InterlocuteurStructure interlocuteurStructure = new InterlocuteurStructure();
+                            interlocuteurStructure.interlocuteur = interlocuteur;
+                            interlocuteurStructure.structure = (Structure)comboBoxChoixStructure.SelectedItem;
+                            session.Save(interlocuteurStructure);
+                            transaction.Commit();
+                        }
+
+                    }
 
 
                 }
-                session.Dispose(); 
-                }
-
+                session.Dispose();
             }
 
-                 
+        }
+
+
         private void buttonAnul_Click(object sender, EventArgs e)
         {
             buttonAnul.DialogResult = DialogResult.Cancel;
@@ -157,7 +180,7 @@ namespace Maquette_Belle_Table
         {
 
         }
-        
+
 
         private void labelRue_Click(object sender, EventArgs e)
         {
@@ -188,7 +211,7 @@ namespace Maquette_Belle_Table
         {
 
         }
-        
+
 
         private void labelTel_Click(object sender, EventArgs e)
         {
@@ -282,7 +305,7 @@ namespace Maquette_Belle_Table
             comboBoxTS.DataSource = lesTypeStructure.GetLesTypesStructure();
             groupBoxAS.Visible = false;
             comboBoxChoixStructure.DataSource = session.CreateQuery(@"select e from Structure e order by e.denominationSociale asc").List<Structure>();
-            
+
         }
 
         static Boolean AjouterClient(Interlocuteur unInterlocuteur, string unnomclient, string unprenomclient, string untelclient,

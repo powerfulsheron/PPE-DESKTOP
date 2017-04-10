@@ -12,7 +12,7 @@ public class Structure
     public virtual string denominationSociale { get; set; }
     public virtual string adresseStructure { get; set; }
     public virtual string villeStructure { get; set; }
-    public virtual string planAcces { get; set; }
+
     public virtual string infoSupplementaire { get; set; }
 
     public virtual TypeStructure typeStructure { get; set; }
@@ -27,7 +27,7 @@ public class Structure
       // ToString 
         public override string ToString()
         {
-            return string.Format("[{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}]", distanceSiege, cpStructure, denominationSociale, adresseStructure, villeStructure, planAcces, infoSupplementaire, typeStructure);
+            return string.Format("[{0}|{1}|{2}|{3}|{4}|{5}|{6}|]", distanceSiege, cpStructure, denominationSociale, adresseStructure, villeStructure, infoSupplementaire, typeStructure);
         }
 
 
