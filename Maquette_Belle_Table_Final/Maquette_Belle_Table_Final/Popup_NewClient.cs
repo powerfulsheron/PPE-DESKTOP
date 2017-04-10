@@ -93,7 +93,7 @@ namespace Maquette_Belle_Table
 
                         Structure structure = new Structure();
                         structure.typeStructure = (TypeStructure)comboBoxTS.SelectedItem;
-                        //structure
+                        structure
                     
                     
                     

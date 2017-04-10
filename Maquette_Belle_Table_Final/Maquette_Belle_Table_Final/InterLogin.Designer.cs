@@ -142,7 +142,7 @@
             this.textBoxId.Name = "textBoxId";
             this.textBoxId.Size = new System.Drawing.Size(188, 21);
             this.textBoxId.TabIndex = 21;
-            this.textBoxId.Text = "jclark";
+            this.textBoxId.Text = "jrobinson";
             this.textBoxId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxId.TextChanged += new System.EventHandler(this.textBoxId_TextChanged);
             // 
@@ -294,7 +294,6 @@
             this.Name = "InterLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InterLogin";
-            this.Load += new System.EventHandler(this.InterLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelMDPO.ResumeLayout(false);
             this.panelMDPO.PerformLayout();

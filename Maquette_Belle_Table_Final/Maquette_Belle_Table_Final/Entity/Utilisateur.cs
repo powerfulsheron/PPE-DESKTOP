@@ -1,6 +1,4 @@
-﻿using NHibernate;
-using NHibernate.Cfg;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace Maquette_Belle_Table_Final
@@ -28,8 +26,6 @@ namespace Maquette_Belle_Table_Final
         public virtual ISet<Conge> lesConges { get; set; }
         public virtual ISet<Mail> lesMails { get; set; }
 
-        private static ISessionFactory sessionFactory = null;
-
         public Utilisateur()
         {
 
@@ -41,22 +37,6 @@ namespace Maquette_Belle_Table_Final
             return string.Format("[{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}]", nomUtilisateur, prenomUtilisateur, adresseUtilisateur, cpUtilisateur, villeUtilisateur, telUtilisateur, mailUtilisateur, loginUtilisateur, passwordUtilisateur, dateDernierLogin, nbTentatives, distanceParcourueSemaine, typeUtilisateur, planning, porteFeuille);
         }
 
-        public virtual IList<Utilisateur> GetLesUtilisateurs()
-        {
-            sessionFactory = new Configuration().Configure().BuildSessionFactory();
-            using (ISession session = sessionFactory.OpenSession())
-            {
-                // début transaction 
-                using (ITransaction transaction = session.BeginTransaction())
-                {
-
-                    // on récupère la liste des utilisateurs 
-                    IList<Utilisateur> lesUtilisateurs = session.CreateQuery(@"select u from Utilisateur u ").List<Utilisateur>();
-                    session.Dispose();
-                    return lesUtilisateurs;
-                }
-            }
-
-        }
+        
     }
 }
