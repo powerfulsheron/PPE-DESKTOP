@@ -89,23 +89,24 @@ namespace Maquette_Belle_Table
                 unNouvelUtilisateur.passwordUtilisateur = pourMD5.MD5Hash(motdepasse);
                 //-------------------- FIN BLOC GENERATION DU MOT DE PASSE DU NOUVEL UTILISATEUR--------------------------
 
-                //On sauvegarde le nouvel utilisateur
-                session.Save(unNouvelUtilisateur);
-                transaction.Commit();
-            }
 
-            //Si le nouvel utiiisateur est un type commercial on lui affecte un nouveau planning et portefeuille
-            using (ITransaction transaction = session.BeginTransaction())
-
-            {
-                Planning unNouveauPlanning = new Planning();
-                PorteFeuille unNouveauPortefeuille = new PorteFeuille();
                 if (unNouvelUtilisateur.typeUtilisateur.codeTypeUtilisateur == 3)
                 {
-                    unNouveauPlanning.utilisateur = unNouvelUtilisateur;
+                    Planning unNouveauPlanning = new Planning();
+                    PorteFeuille unNouveauPortefeuille = new PorteFeuille();
+
+                    unNouvelUtilisateur.planning = unNouveauPlanning;
+                    unNouvelUtilisateur.porteFeuille = unNouveauPortefeuille;
+                    session.Save(unNouvelUtilisateur);
                     session.Save(unNouveauPlanning);
+                    session.Save(unNouveauPortefeuille);      
                 }
-                MessageBox.Show(unNouveauPlanning.utilisateur.nomUtilisateur);
+                else
+                {
+                    //On sauvegarde le nouvel utilisateur
+                    session.Save(unNouvelUtilisateur);
+                }
+
                 transaction.Commit();
                 session.Dispose();
             }

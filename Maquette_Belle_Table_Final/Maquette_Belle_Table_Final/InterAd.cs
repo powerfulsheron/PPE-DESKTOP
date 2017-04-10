@@ -22,6 +22,11 @@ namespace Maquette_Belle_Table_Final
             Load += new EventHandler(InterAd_Load);
         }
 
+        private void InterUti_Load(object sender, System.EventArgs e)
+        {
+            ChargerDatagridUti();          
+        }
+
         private void labelFermeture_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -128,26 +133,6 @@ namespace Maquette_Belle_Table_Final
         private void InterAd_Load(object sender, EventArgs e)
         {
             MessageBox.Show("Test");
-        }
-
-        private void panelHistoriqueC_Paint(object sender, PaintEventArgs e)
-        {
-            
-            Utilisateur lesUtilisateurs = new Utilisateur();
-            dataGridViewHC.DataSource = lesUtilisateurs.GetLesUtilisateurs();
-            dataGridViewHC.Columns[1].Visible = false;
-            dataGridViewHC.Columns[2].Visible = false;
-            dataGridViewHC.Columns[3].Visible = false;
-            dataGridViewHC.Columns[4].Visible = false;
-            dataGridViewHC.Columns[5].Visible = false;
-            dataGridViewHC.Columns[9].Visible = false;
-            dataGridViewHC.Columns[12].Visible = false;
-            dataGridViewHC.Columns[13].Visible = false;
-            dataGridViewHC.Columns[14].Visible = false;
-            dataGridViewHC.Columns[15].Visible = false;
-            dataGridViewHC.Columns[16].Visible = false;
-            dataGridViewHC.Columns[17].Visible = false;
-            
         }
         
         private void ChargerDatagridUti()

@@ -273,7 +273,6 @@
             this.panelHistoriqueC.Name = "panelHistoriqueC";
             this.panelHistoriqueC.Size = new System.Drawing.Size(984, 461);
             this.panelHistoriqueC.TabIndex = 5;
-            this.panelHistoriqueC.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHistoriqueC_Paint);
             // 
             // dataGridViewHC
             // 
