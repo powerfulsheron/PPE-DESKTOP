@@ -18,7 +18,7 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
     <property name="nbTentatives" column="nbTentatives"/>
     <property name="distanceParcourueSemaine" column="distanceParcourueSemaine"/>
     
-    <many-to-one name="typeUtilisateur" column="codeTypeUtilisateur" cascade="all" lazy="false"/>
+    <many-to-one name="typeUtilisateur" column="codeTypeUtilisateur" cascade="none" lazy="false"/>
     
     <one-to-one name="planning" constrained="false" foreign-key="none" class="Planning" lazy="false"/>
    

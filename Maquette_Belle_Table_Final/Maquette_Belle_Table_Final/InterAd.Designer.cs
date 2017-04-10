@@ -38,22 +38,22 @@
             this.panelBordeLeft = new System.Windows.Forms.Panel();
             this.tabPageCMDP = new System.Windows.Forms.TabPage();
             this.panelChangerMDP = new System.Windows.Forms.Panel();
-            this.textBoxOldPswd = new System.Windows.Forms.TextBox();
-            this.labelOldPswd = new System.Windows.Forms.Label();
-            this.labelNoMDP = new System.Windows.Forms.Label();
-            this.textBoxNewMDP2 = new System.Windows.Forms.TextBox();
-            this.buttonValCDMDP = new System.Windows.Forms.Button();
-            this.textBoxNewMDP = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBoxNewMDP = new System.Windows.Forms.TextBox();
+            this.buttonValCDMDP = new System.Windows.Forms.Button();
+            this.textBoxNewMDP2 = new System.Windows.Forms.TextBox();
+            this.labelNoMDP = new System.Windows.Forms.Label();
+            this.labelOldPswd = new System.Windows.Forms.Label();
+            this.textBoxOldPswd = new System.Windows.Forms.TextBox();
             this.tabPageHC = new System.Windows.Forms.TabPage();
             this.panelHistoriqueC = new System.Windows.Forms.Panel();
             this.dataGridViewHC = new System.Windows.Forms.DataGridView();
             this.tabPageUti = new System.Windows.Forms.TabPage();
             this.panelUtilisateur = new System.Windows.Forms.Panel();
-            this.buttonAddUti = new System.Windows.Forms.Button();
-            this.buttonModUti = new System.Windows.Forms.Button();
-            this.buttonSuppUti = new System.Windows.Forms.Button();
             this.dataGridViewUti = new System.Windows.Forms.DataGridView();
+            this.buttonSuppUti = new System.Windows.Forms.Button();
+            this.buttonModUti = new System.Windows.Forms.Button();
+            this.buttonAddUti = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tableLayoutEntete.SuspendLayout();
             this.panelTitre.SuspendLayout();
@@ -186,41 +186,23 @@
             this.panelChangerMDP.Size = new System.Drawing.Size(984, 461);
             this.panelChangerMDP.TabIndex = 8;
             // 
-            // textBoxOldPswd
+            // label1
             // 
-            this.textBoxOldPswd.Location = new System.Drawing.Point(440, 94);
-            this.textBoxOldPswd.Name = "textBoxOldPswd";
-            this.textBoxOldPswd.Size = new System.Drawing.Size(216, 21);
-            this.textBoxOldPswd.TabIndex = 2;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(256, 132);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(142, 16);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Nouveau mot de passe :";
             // 
-            // labelOldPswd
+            // textBoxNewMDP
             // 
-            this.labelOldPswd.AutoSize = true;
-            this.labelOldPswd.BackColor = System.Drawing.Color.Transparent;
-            this.labelOldPswd.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOldPswd.Location = new System.Drawing.Point(256, 99);
-            this.labelOldPswd.Name = "labelOldPswd";
-            this.labelOldPswd.Size = new System.Drawing.Size(130, 16);
-            this.labelOldPswd.TabIndex = 0;
-            this.labelOldPswd.Text = "Ancien mot de passe : ";
-            // 
-            // labelNoMDP
-            // 
-            this.labelNoMDP.AutoSize = true;
-            this.labelNoMDP.BackColor = System.Drawing.Color.Transparent;
-            this.labelNoMDP.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNoMDP.Location = new System.Drawing.Point(256, 171);
-            this.labelNoMDP.Name = "labelNoMDP";
-            this.labelNoMDP.Size = new System.Drawing.Size(142, 16);
-            this.labelNoMDP.TabIndex = 1;
-            this.labelNoMDP.Text = "Nouveau mot de passe :";
-            // 
-            // textBoxNewMDP2
-            // 
-            this.textBoxNewMDP2.Location = new System.Drawing.Point(440, 166);
-            this.textBoxNewMDP2.Name = "textBoxNewMDP2";
-            this.textBoxNewMDP2.Size = new System.Drawing.Size(216, 21);
-            this.textBoxNewMDP2.TabIndex = 3;
+            this.textBoxNewMDP.Location = new System.Drawing.Point(440, 129);
+            this.textBoxNewMDP.Name = "textBoxNewMDP";
+            this.textBoxNewMDP.Size = new System.Drawing.Size(216, 21);
+            this.textBoxNewMDP.TabIndex = 20;
             // 
             // buttonValCDMDP
             // 
@@ -235,23 +217,41 @@
             this.buttonValCDMDP.UseVisualStyleBackColor = false;
             this.buttonValCDMDP.Click += new System.EventHandler(this.buttonValCDMDP_Click);
             // 
-            // textBoxNewMDP
+            // textBoxNewMDP2
             // 
-            this.textBoxNewMDP.Location = new System.Drawing.Point(440, 129);
-            this.textBoxNewMDP.Name = "textBoxNewMDP";
-            this.textBoxNewMDP.Size = new System.Drawing.Size(216, 21);
-            this.textBoxNewMDP.TabIndex = 20;
+            this.textBoxNewMDP2.Location = new System.Drawing.Point(440, 166);
+            this.textBoxNewMDP2.Name = "textBoxNewMDP2";
+            this.textBoxNewMDP2.Size = new System.Drawing.Size(216, 21);
+            this.textBoxNewMDP2.TabIndex = 3;
             // 
-            // label1
+            // labelNoMDP
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(256, 132);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 16);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Nouveau mot de passe :";
+            this.labelNoMDP.AutoSize = true;
+            this.labelNoMDP.BackColor = System.Drawing.Color.Transparent;
+            this.labelNoMDP.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoMDP.Location = new System.Drawing.Point(256, 171);
+            this.labelNoMDP.Name = "labelNoMDP";
+            this.labelNoMDP.Size = new System.Drawing.Size(142, 16);
+            this.labelNoMDP.TabIndex = 1;
+            this.labelNoMDP.Text = "Nouveau mot de passe :";
+            // 
+            // labelOldPswd
+            // 
+            this.labelOldPswd.AutoSize = true;
+            this.labelOldPswd.BackColor = System.Drawing.Color.Transparent;
+            this.labelOldPswd.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOldPswd.Location = new System.Drawing.Point(256, 99);
+            this.labelOldPswd.Name = "labelOldPswd";
+            this.labelOldPswd.Size = new System.Drawing.Size(130, 16);
+            this.labelOldPswd.TabIndex = 0;
+            this.labelOldPswd.Text = "Ancien mot de passe : ";
+            // 
+            // textBoxOldPswd
+            // 
+            this.textBoxOldPswd.Location = new System.Drawing.Point(440, 94);
+            this.textBoxOldPswd.Name = "textBoxOldPswd";
+            this.textBoxOldPswd.Size = new System.Drawing.Size(216, 21);
+            this.textBoxOldPswd.TabIndex = 2;
             // 
             // tabPageHC
             // 
@@ -310,27 +310,16 @@
             this.panelUtilisateur.TabIndex = 3;
             this.panelUtilisateur.Paint += new System.Windows.Forms.PaintEventHandler(this.panelUtilisateur_Paint);
             // 
-            // buttonAddUti
+            // dataGridViewUti
             // 
-            this.buttonAddUti.BackColor = System.Drawing.Color.Gold;
-            this.buttonAddUti.Location = new System.Drawing.Point(35, 19);
-            this.buttonAddUti.Name = "buttonAddUti";
-            this.buttonAddUti.Size = new System.Drawing.Size(203, 36);
-            this.buttonAddUti.TabIndex = 0;
-            this.buttonAddUti.Text = "Ajouter utilisateur";
-            this.buttonAddUti.UseVisualStyleBackColor = false;
-            this.buttonAddUti.Click += new System.EventHandler(this.buttonAddUti_Click);
-            // 
-            // buttonModUti
-            // 
-            this.buttonModUti.BackColor = System.Drawing.Color.Gold;
-            this.buttonModUti.Location = new System.Drawing.Point(332, 19);
-            this.buttonModUti.Name = "buttonModUti";
-            this.buttonModUti.Size = new System.Drawing.Size(203, 36);
-            this.buttonModUti.TabIndex = 1;
-            this.buttonModUti.Text = "Modifier utilisateur";
-            this.buttonModUti.UseVisualStyleBackColor = false;
-            this.buttonModUti.Click += new System.EventHandler(this.buttonModUti_Click);
+            this.dataGridViewUti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUti.Location = new System.Drawing.Point(35, 88);
+            this.dataGridViewUti.Name = "dataGridViewUti";
+            this.dataGridViewUti.RowTemplate.Height = 28;
+            this.dataGridViewUti.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewUti.Size = new System.Drawing.Size(913, 340);
+            this.dataGridViewUti.TabIndex = 3;
+            this.dataGridViewUti.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUti_CellContentClick);
             // 
             // buttonSuppUti
             // 
@@ -343,15 +332,27 @@
             this.buttonSuppUti.UseVisualStyleBackColor = false;
             this.buttonSuppUti.Click += new System.EventHandler(this.buttonSuppUti_Click);
             // 
-            // dataGridViewUti
+            // buttonModUti
             // 
-            this.dataGridViewUti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUti.Location = new System.Drawing.Point(35, 88);
-            this.dataGridViewUti.Name = "dataGridViewUti";
-            this.dataGridViewUti.RowTemplate.Height = 28;
-            this.dataGridViewUti.Size = new System.Drawing.Size(913, 340);
-            this.dataGridViewUti.TabIndex = 3;
-            this.dataGridViewUti.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUti_CellContentClick);
+            this.buttonModUti.BackColor = System.Drawing.Color.Gold;
+            this.buttonModUti.Location = new System.Drawing.Point(332, 19);
+            this.buttonModUti.Name = "buttonModUti";
+            this.buttonModUti.Size = new System.Drawing.Size(203, 36);
+            this.buttonModUti.TabIndex = 1;
+            this.buttonModUti.Text = "Modifier utilisateur";
+            this.buttonModUti.UseVisualStyleBackColor = false;
+            this.buttonModUti.Click += new System.EventHandler(this.buttonModUti_Click);
+            // 
+            // buttonAddUti
+            // 
+            this.buttonAddUti.BackColor = System.Drawing.Color.Gold;
+            this.buttonAddUti.Location = new System.Drawing.Point(35, 19);
+            this.buttonAddUti.Name = "buttonAddUti";
+            this.buttonAddUti.Size = new System.Drawing.Size(203, 36);
+            this.buttonAddUti.TabIndex = 0;
+            this.buttonAddUti.Text = "Ajouter utilisateur";
+            this.buttonAddUti.UseVisualStyleBackColor = false;
+            this.buttonAddUti.Click += new System.EventHandler(this.buttonAddUti_Click);
             // 
             // tabControl1
             // 

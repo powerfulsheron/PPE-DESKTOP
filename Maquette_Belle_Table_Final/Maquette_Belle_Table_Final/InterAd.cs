@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NHibernate;
+using NHibernate.Cfg;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +14,12 @@ namespace Maquette_Belle_Table_Final
 {
     public partial class InterAd : Form
     {
+        private static ISessionFactory sessionFactory = null;
         public Utilisateur utilisateur { get; set; }
         public InterAd()
         {
             InitializeComponent();
+            Load += new EventHandler(InterAd_Load);
         }
 
         private void labelFermeture_Click(object sender, EventArgs e)
@@ -40,7 +44,29 @@ namespace Maquette_Belle_Table_Final
         private void buttonSuppUti_Click(object sender, EventArgs e)
         {
             //Bouton Supprimer Utilisateur
-            dataGridViewUti.Rows.Remove(dataGridViewUti.CurrentRow);
+            
+            Utilisateur userToDelete = (Utilisateur)dataGridViewUti.CurrentRow.DataBoundItem;
+            DialogResult dialogResult = MessageBox.Show("Êtes vous sûr de vouloir supprimer "+ userToDelete.nomUtilisateur + "?", "Supprimer", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                sessionFactory = new Configuration().Configure().BuildSessionFactory();
+                using (ISession session = sessionFactory.OpenSession())
+                {
+                    // début transaction 
+                    using (ITransaction transaction = session.BeginTransaction())
+                    {
+                        session.Delete(userToDelete);
+                        session.Flush();
+                        transaction.Commit();
+                    }
+                }
+                ChargerDatagridUti();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                
+            }
         }
 
         private void dataGridViewUti_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -86,7 +112,7 @@ namespace Maquette_Belle_Table_Final
 
         private void panelTitre_Paint(object sender, PaintEventArgs e)
         {
-
+            ChargerDatagridUti();
         }
 
         private void tabPageUti_Click(object sender, EventArgs e)
@@ -96,24 +122,12 @@ namespace Maquette_Belle_Table_Final
         
         private void panelUtilisateur_Paint(object sender, PaintEventArgs e)
         {
-            
-            Utilisateur lesUtilisateurs = new Utilisateur();
-            dataGridViewUti.DataSource = lesUtilisateurs.GetLesUtilisateurs();
-            
-            dataGridViewUti.Columns[9].Visible = false;
-            dataGridViewUti.Columns[10].Visible = false;
-            dataGridViewUti.Columns[11].Visible = false;
-            dataGridViewUti.Columns[12].Visible = false;
-            dataGridViewUti.Columns[13].Visible = false;
-            dataGridViewUti.Columns[14].Visible = false;
-            dataGridViewUti.Columns[15].Visible = false;
-            dataGridViewUti.Columns[16].Visible = false;
-            
+            //ChargerDatagridUti();
         }
 
         private void InterAd_Load(object sender, EventArgs e)
         {
-           
+            MessageBox.Show("Test");
         }
 
         private void panelHistoriqueC_Paint(object sender, PaintEventArgs e)
@@ -136,5 +150,19 @@ namespace Maquette_Belle_Table_Final
             
         }
         
+        private void ChargerDatagridUti()
+        {
+            Utilisateur lesUtilisateurs = new Utilisateur();
+            dataGridViewUti.DataSource = lesUtilisateurs.GetLesUtilisateurs();
+
+            dataGridViewUti.Columns[9].Visible = false;
+            dataGridViewUti.Columns[10].Visible = false;
+            dataGridViewUti.Columns[11].Visible = false;
+            dataGridViewUti.Columns[12].Visible = false;
+            dataGridViewUti.Columns[13].Visible = false;
+            dataGridViewUti.Columns[14].Visible = false;
+            dataGridViewUti.Columns[15].Visible = false;
+            dataGridViewUti.Columns[16].Visible = false;
+        }
     }
 }

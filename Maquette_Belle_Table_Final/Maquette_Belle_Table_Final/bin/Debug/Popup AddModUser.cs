@@ -60,12 +60,12 @@ namespace Maquette_Belle_Table
         {
 
             sessionFactory = new Configuration().Configure().BuildSessionFactory();
-
             ISession session = sessionFactory.OpenSession();
+
             Utilisateur unNouvelUtilisateur = new Utilisateur();
             string motdepasse;
-            using (ITransaction transaction = session.BeginTransaction())
 
+            using (ITransaction transaction = session.BeginTransaction())
             {
 
                 unNouvelUtilisateur.typeUtilisateur = unTypeUtilisateur;
@@ -78,6 +78,7 @@ namespace Maquette_Belle_Table
                 if (villeUtilisateur != null) unNouvelUtilisateur.villeUtilisateur = villeUtilisateur; else return "Merci d'entrer une ville d'utilisateur";
                 if (cpUtilisateur != null) unNouvelUtilisateur.cpUtilisateur = cpUtilisateur; else return "Merci d'entrer un code postal d'utilisateur";
 
+                //-------------------- DEBUT BLOC GENERATION DU MOT DE PASSE DU NOUVEL UTILISATEUR--------------------------
                 //On génère un mot de passe aléatoire pour le nouvel Utilisateur
                 Random random = new Random();
                 const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -86,13 +87,14 @@ namespace Maquette_Belle_Table
                 InterLogin pourMD5 = new InterLogin();
                 //on associe le mot de passe
                 unNouvelUtilisateur.passwordUtilisateur = pourMD5.MD5Hash(motdepasse);
+                //-------------------- FIN BLOC GENERATION DU MOT DE PASSE DU NOUVEL UTILISATEUR--------------------------
 
-
+                //On sauvegarde le nouvel utilisateur
                 session.Save(unNouvelUtilisateur);
                 transaction.Commit();
             }
 
-            //Si l'utiiisateur est un commercial on lui affecte un nouveau planning et portefeuille
+            //Si le nouvel utiiisateur est un type commercial on lui affecte un nouveau planning et portefeuille
             using (ITransaction transaction = session.BeginTransaction())
 
             {
@@ -101,15 +103,14 @@ namespace Maquette_Belle_Table
                 if (unNouvelUtilisateur.typeUtilisateur.codeTypeUtilisateur == 3)
                 {
                     unNouveauPlanning.utilisateur = unNouvelUtilisateur;
-                    unNouveauPortefeuille.utilisateur = unNouvelUtilisateur;
                     session.Save(unNouveauPlanning);
-                    session.Save(unNouveauPortefeuille);
                 }
-
+                MessageBox.Show(unNouveauPlanning.utilisateur.nomUtilisateur);
                 transaction.Commit();
                 session.Dispose();
             }
-            // on envoie le MDP au mail du nouvel utilisateur
+
+            // Une fois que tout fonctionne on envoie le MDP au mail du nouvel utilisateur
             MailMessage mail = new MailMessage();
             mail.Subject = "Nouvel accès à GEPEV!";
             mail.Body = "Bienvenue " + unNouvelUtilisateur.nomUtilisateur + " " + unNouvelUtilisateur.prenomUtilisateur + "! Votre mot de passe est: " + motdepasse;
