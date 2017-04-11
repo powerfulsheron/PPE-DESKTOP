@@ -55,6 +55,8 @@
             this.textBoxVille = new System.Windows.Forms.TextBox();
             this.comboBoxTypeUser = new System.Windows.Forms.ComboBox();
             this.labelTu = new System.Windows.Forms.Label();
+            this.labelPortefeuille = new System.Windows.Forms.Label();
+            this.textBoxPortefeuille = new System.Windows.Forms.TextBox();
             this.panelMenu.SuspendLayout();
             this.panelTitre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBT)).BeginInit();
@@ -176,7 +178,7 @@
             // 
             this.textBoxPre.Location = new System.Drawing.Point(377, 104);
             this.textBoxPre.Name = "textBoxPre";
-            this.textBoxPre.Size = new System.Drawing.Size(211, 21);
+            this.textBoxPre.Size = new System.Drawing.Size(192, 21);
             this.textBoxPre.TabIndex = 12;
             this.textBoxPre.Text = "Jean";
             // 
@@ -299,6 +301,7 @@
             this.comboBoxTypeUser.Name = "comboBoxTypeUser";
             this.comboBoxTypeUser.Size = new System.Drawing.Size(192, 24);
             this.comboBoxTypeUser.TabIndex = 18;
+            this.comboBoxTypeUser.SelectedIndexChanged += new System.EventHandler(this.comboBoxTypeUser_SelectedIndexChanged);
             // 
             // labelTu
             // 
@@ -309,12 +312,32 @@
             this.labelTu.TabIndex = 19;
             this.labelTu.Text = "Type :";
             // 
+            // labelPortefeuille
+            // 
+            this.labelPortefeuille.AutoSize = true;
+            this.labelPortefeuille.Enabled = false;
+            this.labelPortefeuille.Location = new System.Drawing.Point(316, 175);
+            this.labelPortefeuille.Name = "labelPortefeuille";
+            this.labelPortefeuille.Size = new System.Drawing.Size(115, 16);
+            this.labelPortefeuille.TabIndex = 20;
+            this.labelPortefeuille.Text = "Nom du portfeuille : ";
+            // 
+            // textBoxPortefeuille
+            // 
+            this.textBoxPortefeuille.Enabled = false;
+            this.textBoxPortefeuille.Location = new System.Drawing.Point(377, 194);
+            this.textBoxPortefeuille.Name = "textBoxPortefeuille";
+            this.textBoxPortefeuille.Size = new System.Drawing.Size(192, 21);
+            this.textBoxPortefeuille.TabIndex = 21;
+            // 
             // Popup_AddModUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(600, 461);
+            this.Controls.Add(this.textBoxPortefeuille);
+            this.Controls.Add(this.labelPortefeuille);
             this.Controls.Add(this.buttonValCom);
             this.Controls.Add(this.labelVille);
             this.Controls.Add(this.textBoxVille);
@@ -382,5 +405,7 @@
         private System.Windows.Forms.Label labelVille;
         private System.Windows.Forms.ComboBox comboBoxTypeUser;
         private System.Windows.Forms.Label labelTu;
+        private System.Windows.Forms.Label labelPortefeuille;
+        private System.Windows.Forms.TextBox textBoxPortefeuille;
     }
 }

@@ -52,11 +52,11 @@ namespace Maquette_Belle_Table
         private void buttonValCom_Click(object sender, EventArgs e)
         {
             MessageBox.Show(AjouterUtilisateur((TypeUtilisateur)comboBoxTypeUser.SelectedItem, textBoxLog.Text, textBoxNom.Text, textBoxPre.Text, textBoxEm.Text, textBoxTel.Text, textBoxRue.Text,
-                textBoxVille.Text, textBoxCp.Text));
+                textBoxVille.Text, textBoxCp.Text, textBoxPortefeuille.Text));
         }
 
         static string AjouterUtilisateur(TypeUtilisateur unTypeUtilisateur, string loginUtilisateur, string nomUtilisateur, string prenomUtilisateur, string mailUtilisateur, string telUtilisateur, string adresseUtilisateur,
-            string villeUtilisateur, string cpUtilisateur)
+            string villeUtilisateur, string cpUtilisateur, string libellePortefeuille)
         {
 
             sessionFactory = new Configuration().Configure().BuildSessionFactory();
@@ -64,6 +64,9 @@ namespace Maquette_Belle_Table
 
             Utilisateur unNouvelUtilisateur = new Utilisateur();
             string motdepasse;
+
+            Planning unNouveauPlanning = new Planning();
+            PorteFeuille unNouveauPortefeuille = new PorteFeuille();
 
             using (ITransaction transaction = session.BeginTransaction())
             {
@@ -89,27 +92,36 @@ namespace Maquette_Belle_Table
                 unNouvelUtilisateur.passwordUtilisateur = pourMD5.MD5Hash(motdepasse);
                 //-------------------- FIN BLOC GENERATION DU MOT DE PASSE DU NOUVEL UTILISATEUR--------------------------
 
-
+                //S'il s'agit d'un commercial:
                 if (unNouvelUtilisateur.typeUtilisateur.codeTypeUtilisateur == 3)
                 {
-                    Planning unNouveauPlanning = new Planning();
-                    PorteFeuille unNouveauPortefeuille = new PorteFeuille();
+
+                    unNouveauPlanning.utilisateur = unNouvelUtilisateur;
+                    unNouveauPortefeuille.utilisateur = unNouvelUtilisateur;
+                    unNouveauPortefeuille.libellePortefeuille = libellePortefeuille;
 
                     unNouvelUtilisateur.planning = unNouveauPlanning;
                     unNouvelUtilisateur.porteFeuille = unNouveauPortefeuille;
+
                     session.Save(unNouvelUtilisateur);
                     session.Save(unNouveauPlanning);
-                    session.Save(unNouveauPortefeuille);      
+                    session.Save(unNouveauPortefeuille);
+
+
                 }
                 else
                 {
                     //On sauvegarde le nouvel utilisateur
                     session.Save(unNouvelUtilisateur);
+
                 }
 
                 transaction.Commit();
                 session.Dispose();
+
             }
+
+ 
 
             // Une fois que tout fonctionne on envoie le MDP au mail du nouvel utilisateur
             MailMessage mail = new MailMessage();
@@ -123,6 +135,7 @@ namespace Maquette_Belle_Table
             client.Send(mail);
 
             return "L'utilisateur a été crée et un mail lui a été envoyé.";
+
 
         }
 
@@ -147,6 +160,23 @@ namespace Maquette_Belle_Table
             TypeUtilisateur lesTypesUtilisateur = new TypeUtilisateur();
             comboBoxTypeUser.DataSource = lesTypesUtilisateur.GetLesTypesUtilisateur();
         }
+
+        private void comboBoxTypeUser_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TypeUtilisateur forCombobox = (TypeUtilisateur)comboBoxTypeUser.SelectedItem;
+            if (forCombobox.codeTypeUtilisateur == 3)
+            {
+                textBoxPortefeuille.Enabled = true;
+                labelPortefeuille.Enabled = true;
+            }
+            else
+            {
+                textBoxPortefeuille.Enabled = false;
+                labelPortefeuille.Enabled = false;
+            }
+        }
+
+        
     }
 
 }

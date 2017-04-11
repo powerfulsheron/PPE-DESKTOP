@@ -41,7 +41,6 @@ namespace Maquette_Belle_Table_Final
             using (ITransaction transaction = session.BeginTransaction())
             {
                 Utilisateur utilisateur = session.Query<Utilisateur>().SingleOrDefault(w => w.loginUtilisateur == textBoxId.Text);
-                Console.WriteLine(utilisateur.porteFeuille.lesInterlocuteurs);
  
                 if (utilisateur == null)
                 {

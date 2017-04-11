@@ -50,6 +50,7 @@
             this.dataGridViewHC = new System.Windows.Forms.DataGridView();
             this.tabPageUti = new System.Windows.Forms.TabPage();
             this.panelUtilisateur = new System.Windows.Forms.Panel();
+            this.buttonRefresh = new System.Windows.Forms.Button();
             this.dataGridViewUti = new System.Windows.Forms.DataGridView();
             this.buttonSuppUti = new System.Windows.Forms.Button();
             this.buttonModUti = new System.Windows.Forms.Button();
@@ -276,11 +277,15 @@
             // 
             // dataGridViewHC
             // 
+            this.dataGridViewHC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewHC.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dataGridViewHC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewHC.Location = new System.Drawing.Point(35, 38);
+            this.dataGridViewHC.Location = new System.Drawing.Point(-5, 95);
             this.dataGridViewHC.Name = "dataGridViewHC";
+            this.dataGridViewHC.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridViewHC.RowTemplate.Height = 28;
-            this.dataGridViewHC.Size = new System.Drawing.Size(913, 380);
+            this.dataGridViewHC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewHC.Size = new System.Drawing.Size(989, 366);
             this.dataGridViewHC.TabIndex = 0;
             this.dataGridViewHC.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHC_CellContentClick);
             // 
@@ -298,6 +303,7 @@
             // 
             // panelUtilisateur
             // 
+            this.panelUtilisateur.Controls.Add(this.buttonRefresh);
             this.panelUtilisateur.Controls.Add(this.dataGridViewUti);
             this.panelUtilisateur.Controls.Add(this.buttonSuppUti);
             this.panelUtilisateur.Controls.Add(this.buttonModUti);
@@ -309,14 +315,26 @@
             this.panelUtilisateur.TabIndex = 3;
             this.panelUtilisateur.Paint += new System.Windows.Forms.PaintEventHandler(this.panelUtilisateur_Paint);
             // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.Location = new System.Drawing.Point(873, 59);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(75, 23);
+            this.buttonRefresh.TabIndex = 4;
+            this.buttonRefresh.Text = "Refresh";
+            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            // 
             // dataGridViewUti
             // 
+            this.dataGridViewUti.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewUti.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dataGridViewUti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUti.Location = new System.Drawing.Point(35, 88);
+            this.dataGridViewUti.Location = new System.Drawing.Point(0, 94);
             this.dataGridViewUti.Name = "dataGridViewUti";
             this.dataGridViewUti.RowTemplate.Height = 28;
             this.dataGridViewUti.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewUti.Size = new System.Drawing.Size(913, 340);
+            this.dataGridViewUti.Size = new System.Drawing.Size(984, 367);
             this.dataGridViewUti.TabIndex = 3;
             this.dataGridViewUti.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUti_CellContentClick);
             // 
@@ -430,5 +448,6 @@
         private System.Windows.Forms.Button buttonModUti;
         private System.Windows.Forms.Button buttonAddUti;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.Button buttonRefresh;
     }
 }

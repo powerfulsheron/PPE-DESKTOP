@@ -1,4 +1,5 @@
-﻿using NHibernate;
+﻿using Maquette_Belle_Table;
+using NHibernate;
 using NHibernate.Cfg;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,8 @@ namespace Maquette_Belle_Table_Final
 {
     public partial class InterAd : Form
     {
+        public event EventHandler ButtonFirstFormClicked;
+
         private static ISessionFactory sessionFactory = null;
         public Utilisateur utilisateur { get; set; }
         public InterAd()
@@ -37,13 +40,17 @@ namespace Maquette_Belle_Table_Final
         private void buttonAddUti_Click(object sender, EventArgs e)
         {
             //Bouton Ajouter Utilisateur (Affiche le PopupAddModUser)
-            new Maquette_Belle_Table.Popup_AddModUser().Show();
+            Popup_AddModUser addUser = new Popup_AddModUser();
+            addUser.Show(this);
+
         }
 
         private void buttonModUti_Click(object sender, EventArgs e)
         {
             //Bouton Modifier Utilisateur (Affiche le PopupAddModUser)
-            new Maquette_Belle_Table.Popup_AddModUser().Show();
+            Popup_ModifUser modifUser = new Popup_ModifUser();
+            modifUser.utilisateur = (Utilisateur)dataGridViewUti.CurrentRow.DataBoundItem;
+            modifUser.Show();
         }
 
         private void buttonSuppUti_Click(object sender, EventArgs e)
@@ -117,7 +124,6 @@ namespace Maquette_Belle_Table_Final
 
         private void panelTitre_Paint(object sender, PaintEventArgs e)
         {
-            ChargerDatagridUti();
         }
 
         private void tabPageUti_Click(object sender, EventArgs e)
@@ -127,19 +133,20 @@ namespace Maquette_Belle_Table_Final
         
         private void panelUtilisateur_Paint(object sender, PaintEventArgs e)
         {
-            //ChargerDatagridUti();
+    
         }
 
         private void InterAd_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Test");
+            ChargerDatagridUti();
+            ChargerDatagridHC();
         }
         
-        private void ChargerDatagridUti()
+        public void ChargerDatagridUti()
         {
             Utilisateur lesUtilisateurs = new Utilisateur();
             dataGridViewUti.DataSource = lesUtilisateurs.GetLesUtilisateurs();
-
+            /*
             dataGridViewUti.Columns[9].Visible = false;
             dataGridViewUti.Columns[10].Visible = false;
             dataGridViewUti.Columns[11].Visible = false;
@@ -148,6 +155,31 @@ namespace Maquette_Belle_Table_Final
             dataGridViewUti.Columns[14].Visible = false;
             dataGridViewUti.Columns[15].Visible = false;
             dataGridViewUti.Columns[16].Visible = false;
+            */
+
+        }
+
+        public void ChargerDatagridHC()
+        {
+            Utilisateur lesUtilisateurs = new Utilisateur();
+            dataGridViewHC.DataSource = lesUtilisateurs.GetLesUtilisateurs();
+            
+            dataGridViewHC.Columns[2].Visible = false;
+            dataGridViewHC.Columns[3].Visible = false;
+            dataGridViewHC.Columns[4].Visible = false;
+            dataGridViewHC.Columns[5].Visible = false;
+            dataGridViewHC.Columns[9].Visible = false;
+            dataGridViewHC.Columns[12].Visible = false;
+            dataGridViewHC.Columns[14].Visible = false;
+            dataGridViewHC.Columns[15].Visible = false;
+            dataGridViewHC.Columns[16].Visible = false;
+            dataGridViewHC.Columns[17].Visible = false;
+
+        }
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            ChargerDatagridUti();
+            ChargerDatagridHC();
         }
     }
 }
