@@ -181,5 +181,10 @@ namespace Maquette_Belle_Table_Final
         {
 
         }
+
+        private void panelPlanning_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

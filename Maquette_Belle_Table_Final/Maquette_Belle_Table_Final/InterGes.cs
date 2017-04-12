@@ -14,7 +14,9 @@ namespace Maquette_Belle_Table_Final
 {
     public partial class InterGes : Form
     {
-        private static ISessionFactory sessionFactory = null;
+        private static ISessionFactory sessionFactory = new Configuration().Configure().BuildSessionFactory();
+        ISession session = sessionFactory.OpenSession();
+
         public Utilisateur utilisateur { get; set; }
         public InterGes()
         {
@@ -28,6 +30,9 @@ namespace Maquette_Belle_Table_Final
 
         private void buttonAddCom_Click(object sender, EventArgs e)
         {
+            Popup_NewCom Popup_NewCom = new Popup_NewCom();
+            Popup_NewCom.utilisateur = utilisateur;
+            Popup_NewCom.Show();
             //Bouton Ajouter Commercial
             new Popup_NewCom().Show();
         }
