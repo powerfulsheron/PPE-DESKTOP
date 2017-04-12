@@ -68,6 +68,11 @@ namespace Maquette_Belle_Table_Final
                     // début transaction 
                     using (ITransaction transaction = session.BeginTransaction())
                     {
+                        if(userToDelete.typeUtilisateur.codeTypeUtilisateur != 3)
+                        {
+                            userToDelete.planning = null;
+                            userToDelete.porteFeuille = null;
+                        }
                         session.Delete(userToDelete);
                         session.Flush();
                         transaction.Commit();
@@ -83,32 +88,14 @@ namespace Maquette_Belle_Table_Final
 
         private void dataGridViewUti_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //Partie code destiné à la DataGridView de la rubrique Utilisateur
+           
         }
 
-        //---------------------> * Fin Rubrique Utilisateur * <---------------------
-
-
-        //---------------------> * Rubrique Historique de connexions * <---------------------
+        
 
         private void dataGridViewHC_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //Partie code destiné à la DataGridView de la rubrique Histoirique de connexions
-        }
-
-        //---------------------> * Fin Rubrique Historique de connexions * <---------------------
-
-
-        //---------------------> * Rubrique Changer de mot de passe * <---------------------
-
-        private void buttonValCM_Click(object sender, EventArgs e)
-        {
-            //Partie code destiné au bouton Valider de la rubrique Changer de mot de passe
-            buttonValCDMDP.DialogResult = DialogResult.OK;
-            if (buttonValCDMDP.DialogResult == DialogResult.OK)
-            {
-                MessageBox.Show("Votre nouveau mot de passe a été valider.");
-            }
+           
         }
 
         private void buttonValCDMDP_Click(object sender, EventArgs e)
@@ -146,7 +133,7 @@ namespace Maquette_Belle_Table_Final
         {
             Utilisateur lesUtilisateurs = new Utilisateur();
             dataGridViewUti.DataSource = lesUtilisateurs.GetLesUtilisateurs();
-            /*
+            
             dataGridViewUti.Columns[9].Visible = false;
             dataGridViewUti.Columns[10].Visible = false;
             dataGridViewUti.Columns[11].Visible = false;
@@ -155,7 +142,7 @@ namespace Maquette_Belle_Table_Final
             dataGridViewUti.Columns[14].Visible = false;
             dataGridViewUti.Columns[15].Visible = false;
             dataGridViewUti.Columns[16].Visible = false;
-            */
+            
 
         }
 
@@ -174,6 +161,7 @@ namespace Maquette_Belle_Table_Final
             dataGridViewHC.Columns[15].Visible = false;
             dataGridViewHC.Columns[16].Visible = false;
             dataGridViewHC.Columns[17].Visible = false;
+            dataGridViewHC.Columns[10].DefaultCellStyle.BackColor = Color.GreenYellow;
 
         }
         private void buttonRefresh_Click(object sender, EventArgs e)

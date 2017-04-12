@@ -291,7 +291,6 @@
             this.panelPF.Controls.Add(this.buttonModPF);
             this.panelPF.Controls.Add(this.buttonCrPF);
             this.panelPF.Controls.Add(this.dataGridViewPF);
-            this.panelPF.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPF.Location = new System.Drawing.Point(2, 2);
             this.panelPF.Margin = new System.Windows.Forms.Padding(2);
             this.panelPF.Name = "panelPF";

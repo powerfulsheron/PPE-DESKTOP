@@ -47,9 +47,15 @@ namespace Maquette_Belle_Table
        
         private void buttonValCom_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Modifier((TypeUtilisateur)comboBoxTypeUser.SelectedItem, textBoxLog.Text, textBoxNom.Text, textBoxPre.Text,
+            string result = Modifier((TypeUtilisateur)comboBoxTypeUser.SelectedItem, textBoxLog.Text, textBoxNom.Text, textBoxPre.Text,
                     textBoxEm.Text, textBoxTel.Text, textBoxRue.Text, textBoxVille.Text, textBoxCp.Text, textBoxPortefeuille.Text,
-                    utilisateur, checkBoxChangeMdp.Checked));
+                    utilisateur, checkBoxChangeMdp.Checked);
+            MessageBox.Show(result);
+            //Si l'utilisateur a correctement été modifié on ferme le formulaire "ModifUser"
+            if (result == "L'utilisateur a été modifié, un email lui a été envoyé.")
+            {
+                this.Close();
+            }
         }
 
         static string Modifier(TypeUtilisateur unTypeUtilisateur, string loginUtilisateur, string nomUtilisateur, string prenomUtilisateur, 
@@ -96,6 +102,19 @@ namespace Maquette_Belle_Table
                 //Après une migration d'un commercial vers un autre type, on supprime son affectation au planning et portefeuille
                 else if (unTypeUtilisateur.codeTypeUtilisateur != 3)
                 {
+                    //On supprime l'idUtilisateur dans la table portefeuille
+                    PorteFeuille portefeuille = utilisateur.porteFeuille;
+                    portefeuille.utilisateur = null;
+
+                    session.SaveOrUpdate(portefeuille);
+
+                    //On supprime l'idUtilisateur dans la table planing
+                    Planning planing = utilisateur.planning;
+                    planing.utilisateur = null;
+
+                    session.SaveOrUpdate(planing);
+
+                    //On supprime l'idPortefeuille/idPlanning dans la table Utilsiateur
                     utilisateur.porteFeuille = null;
                     utilisateur.planning = null;
                 }
@@ -184,7 +203,10 @@ namespace Maquette_Belle_Table
             {
                 textBoxPortefeuille.Enabled = true;
                 labelPortefeuille.Enabled = true;
-                textBoxPortefeuille.Text = utilisateur.porteFeuille.libellePortefeuille;
+                if(utilisateur.porteFeuille != null)
+                {
+                    textBoxPortefeuille.Text = utilisateur.porteFeuille.libellePortefeuille;
+                }
             }
             else
             {

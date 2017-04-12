@@ -21,10 +21,10 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
     <many-to-one name="typeUtilisateur" column="codeTypeUtilisateur" cascade="none"  lazy="false"/>
 
     <!--one-to-one name="planning" constrained="false" foreign-key="none" class="Planning" lazy="false"/-->
-    <many-to-one name="planning"  class="Planning" column="idPlanning" unique="true" lazy="false" cascade="all"/>
+    <many-to-one name="planning"  class="Planning" column="idPlanning" unique="true" lazy="false" cascade="all" not-null="false"/>
 
     <!--one-to-one name="porteFeuille" constrained="false" foreign-key="none" class="PorteFeuille" lazy="false"/-->
-    <many-to-one name="porteFeuille" class="PorteFeuille" column="IdPortefeuille"  unique="true" lazy="false" cascade="all"/>
+    <many-to-one name="porteFeuille" class="PorteFeuille" column="IdPortefeuille"  unique="true" lazy="false" cascade="all" not-null="false"/>
 
     <set name="lesConges" table="conges_utilisateur" lazy="true">
       <key>

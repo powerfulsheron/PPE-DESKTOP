@@ -12,7 +12,7 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
       <one-to-many class="RendezVous"/>
     </set>
     
-    <many-to-one name="utilisateur" unique="true" column="numUtilisateur" />
+    <many-to-one name="utilisateur" unique="true" column="numUtilisateur" cascade="all"/>
     
   </class>
 </hibernate-mapping>

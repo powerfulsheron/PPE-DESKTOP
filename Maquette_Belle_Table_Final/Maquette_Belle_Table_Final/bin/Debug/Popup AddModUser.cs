@@ -42,17 +42,18 @@ namespace Maquette_Belle_Table
         {
 
         }
-        //Bouton Annuler sur Profil Admin
 
-
-        //Bouton Annuler sur Profil Commercial
-       
-
-        //Bouton Valider sur Profil Commercial
         private void buttonValCom_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(AjouterUtilisateur((TypeUtilisateur)comboBoxTypeUser.SelectedItem, textBoxLog.Text, textBoxNom.Text, textBoxPre.Text, textBoxEm.Text, textBoxTel.Text, textBoxRue.Text,
-                textBoxVille.Text, textBoxCp.Text, textBoxPortefeuille.Text));
+            string result = (AjouterUtilisateur((TypeUtilisateur)comboBoxTypeUser.SelectedItem, textBoxLog.Text, textBoxNom.Text, textBoxPre.Text, 
+                textBoxEm.Text, textBoxTel.Text, textBoxRue.Text, textBoxVille.Text, textBoxCp.Text, textBoxPortefeuille.Text));
+
+            MessageBox.Show(result);
+            //Si l'utilisateur a correctement été crée on ferme le formulaire "AddModUser"
+            if (result == "L'utilisateur a été crée et un mail lui a été envoyé.")
+            {
+                this.Close();
+            }
         }
 
         static string AjouterUtilisateur(TypeUtilisateur unTypeUtilisateur, string loginUtilisateur, string nomUtilisateur, string prenomUtilisateur, string mailUtilisateur, string telUtilisateur, string adresseUtilisateur,
