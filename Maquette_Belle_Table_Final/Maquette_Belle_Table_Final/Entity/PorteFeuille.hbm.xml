@@ -12,6 +12,6 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
       <one-to-many class="Interlocuteur"/>
     </set>
 
-    <many-to-one name="utilisateur" unique="true" column="numUtilisateur" />
+    <many-to-one name="utilisateur" unique="true" column="numUtilisateur" lazy="false"/>
   </class>
 </hibernate-mapping>

@@ -57,5 +57,24 @@ namespace Maquette_Belle_Table_Final
             }
 
         }
+
+        public virtual IList<Utilisateur> GetLesUtilisateurs(int codeTypeUtilisateur)
+        {
+            sessionFactory = new Configuration().Configure().BuildSessionFactory();
+            using (ISession session = sessionFactory.OpenSession())
+            {
+                // début transaction 
+                using (ITransaction transaction = session.BeginTransaction())
+                {
+
+                    // on récupère la liste des utilisateurs 
+                    IList<Utilisateur> lesUtilisateurs = session.CreateQuery(@"select u FROM Utilisateur u  WHERE u.typeUtilisateur = " 
+                        + codeTypeUtilisateur.ToString()).List<Utilisateur>();
+                    session.Dispose();
+                    return lesUtilisateurs;
+                }
+            }
+
+        }
     }
 }

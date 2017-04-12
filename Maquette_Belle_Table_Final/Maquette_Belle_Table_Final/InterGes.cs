@@ -129,13 +129,114 @@ namespace Maquette_Belle_Table_Final
 
         private void panelPlanning_Paint(object sender, PaintEventArgs e)
         {
-            sessionFactory = new Configuration().Configure().BuildSessionFactory();
-            ISession session = sessionFactory.OpenSession();
-            IList<Utilisateur> lesCommerciaux = session.CreateQuery("select u FROM Utilisateur u  WHERE u.typeUtilisateur = 3").List<Utilisateur>();
-            dataGridViewCom.DataSource = lesCommerciaux;
+           dataGridViewCom.DataSource = utilisateur.GetLesUtilisateurs(3);
+        }
 
-            session.Dispose();
-            sessionFactory.Close();
+        private void InterGes_Load(object sender, EventArgs e)
+        {
+            ChargerDataGridViewCommerciaux(dataGridViewCommerciaux);
+            ChargerDataGridViewCommerciaux(dataGridViewCom);
+            ChargerDataGridViewPortefeuilles();
+        }
+
+        //Pour éviter de répeter les instructions sur différentsataGrid affichant des commerciaux:
+        private void ChargerDataGridViewCommerciaux(DataGridView unDataGridViewPourCommerciaux)
+        {
+            unDataGridViewPourCommerciaux.DataSource = utilisateur.GetLesUtilisateurs(3);
+            unDataGridViewPourCommerciaux.Columns[0].Visible = false;
+            unDataGridViewPourCommerciaux.Columns[2].Visible = false;
+            unDataGridViewPourCommerciaux.Columns[3].Visible = false;
+            unDataGridViewPourCommerciaux.Columns[4].Visible = false;
+            unDataGridViewPourCommerciaux.Columns[5].Visible = false;
+            unDataGridViewPourCommerciaux.Columns[7].Visible = false;
+            unDataGridViewPourCommerciaux.Columns[9].Visible = false;
+            unDataGridViewPourCommerciaux.Columns[10].Visible = false;
+            unDataGridViewPourCommerciaux.Columns[11].Visible = false;
+            unDataGridViewPourCommerciaux.Columns[12].Visible = false;
+            unDataGridViewPourCommerciaux.Columns[14].Visible = false;
+            unDataGridViewPourCommerciaux.Columns[15].Visible = false;
+            unDataGridViewPourCommerciaux.Columns[16].Visible = false;
+        }
+
+        private void ChargerDataGridViewPortefeuilles()
+        {
+            PorteFeuille lesPorteFeuilles = new PorteFeuille();
+            dataGridViewPortefeuilles.DataSource = lesPorteFeuilles.GetLesPortefeuilles();
+            dataGridViewPortefeuilles.Columns[2].Visible = false;
+            dataGridViewPortefeuilles.Columns[3].Visible = false;
+        }
+
+        //dataGridViewCommerciaux:
+        private void dataGridViewPFC_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        //dataGridViewPortefeuilles:
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+    
+        }
+
+        //dataGridViewPortefeuilles:
+        private void dataGridViewPortefeuilles_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelPFC_Paint(object sender, PaintEventArgs e)
+        {
+            dataGridViewCommerciaux.ClearSelection();
+            dataGridViewPortefeuilles.ClearSelection();
+        }
+
+        private void dataGridViewCommerciaux_SelectionChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void dataGridViewPortefeuilles_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //la couleur de dataGridViewPortefeuilles devient bleu, la couleur de dataGridViewCommerciaux sera verte
+            dataGridViewCommerciaux.DefaultCellStyle.SelectionBackColor = Color.GreenYellow;
+            dataGridViewPortefeuilles.DefaultCellStyle.SelectionBackColor = Color.Blue;
+
+            //On charge le portefeuille selectionné dans 'lePortefeuilleSelected'
+            PorteFeuille lePortefeuilleSelected = (PorteFeuille)dataGridViewPortefeuilles.CurrentRow.DataBoundItem;
+
+            //On parcours le dataGridViewCommerciaux à la recherche du même 'lePortefeuilleSelected.idPortefeuille' que celui selectionné
+            foreach (DataGridViewRow row in dataGridViewCommerciaux.Rows)
+            {
+                Utilisateur leCommercial = (Utilisateur)row.DataBoundItem;
+                //Si on trouve on selectionne le champ correspondant
+                if (lePortefeuilleSelected.idPorteFeuille == leCommercial.porteFeuille.idPorteFeuille)
+                {
+                    row.Selected = true;
+                }
+                else if (row.Selected == true) row.Selected = false; //sinon on le désélectionne
+            }
+        }
+
+        private void dataGridViewCommerciaux_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //la couleur de dataGridViewCommerciaux devient bleu, la coleur de dataGridViewPortefeuilles sera verte
+            dataGridViewCommerciaux.DefaultCellStyle.SelectionBackColor = Color.Blue;
+            dataGridViewPortefeuilles.DefaultCellStyle.SelectionBackColor = Color.GreenYellow;
+
+            //On charge le commercial selectionné dans 'leCommercialSelected'
+            Utilisateur leCommercialSelected = (Utilisateur)dataGridViewCommerciaux.CurrentRow.DataBoundItem;
+
+            //On parcours le dataGridViewPortefeuilles à la recherche du même 'leCommercialSelected.numUtilisateur' que celui présent dans portefeuille
+            foreach (DataGridViewRow row in dataGridViewPortefeuilles.Rows)
+            {
+                PorteFeuille lePortefeuille = (PorteFeuille)row.DataBoundItem;
+                //Si on trouve on selectionne le champ correspondant
+                if (leCommercialSelected.numUtilisateur == lePortefeuille.utilisateur.numUtilisateur)
+                {
+                    row.Selected = true;
+                }
+                else if (row.Selected == true) row.Selected = false; //sinon on le désélectionne
+            }
         }
     }
 }

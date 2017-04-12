@@ -55,7 +55,8 @@
             this.buttonModAssoInter = new System.Windows.Forms.Button();
             this.tabPagePFC = new System.Windows.Forms.TabPage();
             this.panelPFC = new System.Windows.Forms.Panel();
-            this.dataGridViewPFC = new System.Windows.Forms.DataGridView();
+            this.dataGridViewPortefeuilles = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCommerciaux = new System.Windows.Forms.DataGridView();
             this.buttonModAssCom = new System.Windows.Forms.Button();
             this.tabPageCDMDP = new System.Windows.Forms.TabPage();
             this.panelChangerMDP = new System.Windows.Forms.Panel();
@@ -69,6 +70,9 @@
             this.panelBordeLeft = new System.Windows.Forms.Panel();
             this.panelBorderBottom = new System.Windows.Forms.Panel();
             this.panelBorderRight = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.labelPortefeuilel = new System.Windows.Forms.Label();
+            this.labelCommerciaux = new System.Windows.Forms.Label();
             this.tableLayoutEntete.SuspendLayout();
             this.panelTitre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBT)).BeginInit();
@@ -84,9 +88,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPFI)).BeginInit();
             this.tabPagePFC.SuspendLayout();
             this.panelPFC.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPFC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPortefeuilles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCommerciaux)).BeginInit();
             this.tabPageCDMDP.SuspendLayout();
             this.panelChangerMDP.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutEntete
@@ -101,7 +107,7 @@
             this.tableLayoutEntete.RowCount = 1;
             this.tableLayoutEntete.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.78161F));
             this.tableLayoutEntete.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutEntete.Size = new System.Drawing.Size(667, 24);
+            this.tableLayoutEntete.Size = new System.Drawing.Size(1086, 24);
             this.tableLayoutEntete.TabIndex = 3;
             // 
             // panelTitre
@@ -114,7 +120,7 @@
             this.panelTitre.Location = new System.Drawing.Point(2, 2);
             this.panelTitre.Margin = new System.Windows.Forms.Padding(2);
             this.panelTitre.Name = "panelTitre";
-            this.panelTitre.Size = new System.Drawing.Size(663, 20);
+            this.panelTitre.Size = new System.Drawing.Size(1082, 20);
             this.panelTitre.TabIndex = 2;
             // 
             // labelFermeture
@@ -169,7 +175,7 @@
             this.tabControl2.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(665, 324);
+            this.tabControl2.Size = new System.Drawing.Size(1084, 488);
             this.tabControl2.TabIndex = 18;
             // 
             // tabPageCom
@@ -179,7 +185,7 @@
             this.tabPageCom.Margin = new System.Windows.Forms.Padding(2);
             this.tabPageCom.Name = "tabPageCom";
             this.tabPageCom.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPageCom.Size = new System.Drawing.Size(657, 292);
+            this.tabPageCom.Size = new System.Drawing.Size(1076, 456);
             this.tabPageCom.TabIndex = 0;
             this.tabPageCom.Text = "Commerciaux";
             this.tabPageCom.UseVisualStyleBackColor = true;
@@ -197,7 +203,7 @@
             this.panelPlanning.Location = new System.Drawing.Point(2, 2);
             this.panelPlanning.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelPlanning.Name = "panelPlanning";
-            this.panelPlanning.Size = new System.Drawing.Size(653, 288);
+            this.panelPlanning.Size = new System.Drawing.Size(1072, 452);
             this.panelPlanning.TabIndex = 13;
             this.panelPlanning.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPlanning_Paint);
             // 
@@ -278,7 +284,7 @@
             this.tabPagePF.Margin = new System.Windows.Forms.Padding(2);
             this.tabPagePF.Name = "tabPagePF";
             this.tabPagePF.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPagePF.Size = new System.Drawing.Size(657, 292);
+            this.tabPagePF.Size = new System.Drawing.Size(1076, 456);
             this.tabPagePF.TabIndex = 1;
             this.tabPagePF.Text = "Portefeuille";
             this.tabPagePF.UseVisualStyleBackColor = true;
@@ -361,7 +367,7 @@
             this.tabPagePFI.Margin = new System.Windows.Forms.Padding(2);
             this.tabPagePFI.Name = "tabPagePFI";
             this.tabPagePFI.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPagePFI.Size = new System.Drawing.Size(657, 292);
+            this.tabPagePFI.Size = new System.Drawing.Size(1076, 456);
             this.tabPagePFI.TabIndex = 2;
             this.tabPagePFI.Text = "Portefeuille Interlocuteur";
             this.tabPagePFI.UseVisualStyleBackColor = true;
@@ -369,32 +375,33 @@
             // panelPortefeuille
             // 
             this.panelPortefeuille.BackgroundImage = global::Maquette_Belle_Table_Final.Properties.Resources.fond;
+            this.panelPortefeuille.Controls.Add(this.dataGridView1);
             this.panelPortefeuille.Controls.Add(this.dataGridViewPFI);
             this.panelPortefeuille.Controls.Add(this.buttonModAssoInter);
             this.panelPortefeuille.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPortefeuille.Location = new System.Drawing.Point(2, 2);
             this.panelPortefeuille.Margin = new System.Windows.Forms.Padding(2);
             this.panelPortefeuille.Name = "panelPortefeuille";
-            this.panelPortefeuille.Size = new System.Drawing.Size(653, 288);
+            this.panelPortefeuille.Size = new System.Drawing.Size(1072, 452);
             this.panelPortefeuille.TabIndex = 4;
             // 
             // dataGridViewPFI
             // 
             this.dataGridViewPFI.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPFI.Location = new System.Drawing.Point(23, 49);
+            this.dataGridViewPFI.Location = new System.Drawing.Point(4, 40);
             this.dataGridViewPFI.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewPFI.Name = "dataGridViewPFI";
             this.dataGridViewPFI.RowTemplate.Height = 28;
-            this.dataGridViewPFI.Size = new System.Drawing.Size(609, 231);
+            this.dataGridViewPFI.Size = new System.Drawing.Size(478, 410);
             this.dataGridViewPFI.TabIndex = 4;
             // 
             // buttonModAssoInter
             // 
             this.buttonModAssoInter.BackColor = System.Drawing.Color.Gold;
-            this.buttonModAssoInter.Location = new System.Drawing.Point(23, 14);
+            this.buttonModAssoInter.Location = new System.Drawing.Point(486, 207);
             this.buttonModAssoInter.Margin = new System.Windows.Forms.Padding(2);
             this.buttonModAssoInter.Name = "buttonModAssoInter";
-            this.buttonModAssoInter.Size = new System.Drawing.Size(163, 22);
+            this.buttonModAssoInter.Size = new System.Drawing.Size(112, 65);
             this.buttonModAssoInter.TabIndex = 2;
             this.buttonModAssoInter.Text = "Modifier une association";
             this.buttonModAssoInter.UseVisualStyleBackColor = false;
@@ -407,42 +414,64 @@
             this.tabPagePFC.Margin = new System.Windows.Forms.Padding(2);
             this.tabPagePFC.Name = "tabPagePFC";
             this.tabPagePFC.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPagePFC.Size = new System.Drawing.Size(657, 292);
+            this.tabPagePFC.Size = new System.Drawing.Size(1076, 456);
             this.tabPagePFC.TabIndex = 3;
             this.tabPagePFC.Text = "Portfeuille Commerciaux";
             this.tabPagePFC.UseVisualStyleBackColor = true;
             // 
             // panelPFC
             // 
-            this.panelPFC.BackgroundImage = global::Maquette_Belle_Table_Final.Properties.Resources.fond;
-            this.panelPFC.Controls.Add(this.dataGridViewPFC);
+            this.panelPFC.Controls.Add(this.labelCommerciaux);
+            this.panelPFC.Controls.Add(this.labelPortefeuilel);
+            this.panelPFC.Controls.Add(this.dataGridViewPortefeuilles);
+            this.panelPFC.Controls.Add(this.dataGridViewCommerciaux);
             this.panelPFC.Controls.Add(this.buttonModAssCom);
             this.panelPFC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPFC.Location = new System.Drawing.Point(2, 2);
             this.panelPFC.Margin = new System.Windows.Forms.Padding(2);
             this.panelPFC.Name = "panelPFC";
-            this.panelPFC.Size = new System.Drawing.Size(653, 288);
+            this.panelPFC.Size = new System.Drawing.Size(1072, 452);
             this.panelPFC.TabIndex = 5;
+            this.panelPFC.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPFC_Paint);
             // 
-            // dataGridViewPFC
+            // dataGridViewPortefeuilles
             // 
-            this.dataGridViewPFC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPFC.Location = new System.Drawing.Point(23, 49);
-            this.dataGridViewPFC.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridViewPFC.Name = "dataGridViewPFC";
-            this.dataGridViewPFC.RowTemplate.Height = 28;
-            this.dataGridViewPFC.Size = new System.Drawing.Size(609, 231);
-            this.dataGridViewPFC.TabIndex = 4;
+            this.dataGridViewPortefeuilles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPortefeuilles.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewPortefeuilles.Location = new System.Drawing.Point(85, 34);
+            this.dataGridViewPortefeuilles.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewPortefeuilles.Name = "dataGridViewPortefeuilles";
+            this.dataGridViewPortefeuilles.RowTemplate.Height = 28;
+            this.dataGridViewPortefeuilles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewPortefeuilles.Size = new System.Drawing.Size(236, 408);
+            this.dataGridViewPortefeuilles.TabIndex = 5;
+            this.dataGridViewPortefeuilles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPortefeuilles_CellClick);
+            this.dataGridViewPortefeuilles.SelectionChanged += new System.EventHandler(this.dataGridViewPortefeuilles_SelectionChanged);
+            // 
+            // dataGridViewCommerciaux
+            // 
+            this.dataGridViewCommerciaux.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCommerciaux.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewCommerciaux.Location = new System.Drawing.Point(432, 34);
+            this.dataGridViewCommerciaux.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewCommerciaux.Name = "dataGridViewCommerciaux";
+            this.dataGridViewCommerciaux.RowTemplate.Height = 28;
+            this.dataGridViewCommerciaux.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewCommerciaux.Size = new System.Drawing.Size(547, 408);
+            this.dataGridViewCommerciaux.TabIndex = 4;
+            this.dataGridViewCommerciaux.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCommerciaux_CellClick);
+            this.dataGridViewCommerciaux.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPFC_CellContentClick);
+            this.dataGridViewCommerciaux.SelectionChanged += new System.EventHandler(this.dataGridViewCommerciaux_SelectionChanged);
             // 
             // buttonModAssCom
             // 
             this.buttonModAssCom.BackColor = System.Drawing.Color.Gold;
-            this.buttonModAssCom.Location = new System.Drawing.Point(23, 14);
+            this.buttonModAssCom.Location = new System.Drawing.Point(332, 221);
             this.buttonModAssCom.Margin = new System.Windows.Forms.Padding(2);
             this.buttonModAssCom.Name = "buttonModAssCom";
-            this.buttonModAssCom.Size = new System.Drawing.Size(163, 22);
+            this.buttonModAssCom.Size = new System.Drawing.Size(93, 57);
             this.buttonModAssCom.TabIndex = 2;
-            this.buttonModAssCom.Text = "Modifier une association";
+            this.buttonModAssCom.Text = "Modifier l\'association";
             this.buttonModAssCom.UseVisualStyleBackColor = false;
             this.buttonModAssCom.Click += new System.EventHandler(this.buttonModAssCom_Click);
             // 
@@ -453,7 +482,7 @@
             this.tabPageCDMDP.Margin = new System.Windows.Forms.Padding(2);
             this.tabPageCDMDP.Name = "tabPageCDMDP";
             this.tabPageCDMDP.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPageCDMDP.Size = new System.Drawing.Size(657, 292);
+            this.tabPageCDMDP.Size = new System.Drawing.Size(1076, 456);
             this.tabPageCDMDP.TabIndex = 4;
             this.tabPageCDMDP.Text = "Changer de mot de passe";
             this.tabPageCDMDP.UseVisualStyleBackColor = true;
@@ -474,7 +503,7 @@
             this.panelChangerMDP.Location = new System.Drawing.Point(2, 2);
             this.panelChangerMDP.Margin = new System.Windows.Forms.Padding(2);
             this.panelChangerMDP.Name = "panelChangerMDP";
-            this.panelChangerMDP.Size = new System.Drawing.Size(653, 288);
+            this.panelChangerMDP.Size = new System.Drawing.Size(1072, 452);
             this.panelChangerMDP.TabIndex = 9;
             // 
             // textBoxNewMDP
@@ -559,45 +588,74 @@
             this.panelBordeLeft.Location = new System.Drawing.Point(0, 24);
             this.panelBordeLeft.Margin = new System.Windows.Forms.Padding(2);
             this.panelBordeLeft.Name = "panelBordeLeft";
-            this.panelBordeLeft.Size = new System.Drawing.Size(1, 325);
+            this.panelBordeLeft.Size = new System.Drawing.Size(1, 489);
             this.panelBordeLeft.TabIndex = 19;
             // 
             // panelBorderBottom
             // 
             this.panelBorderBottom.BackColor = System.Drawing.Color.MidnightBlue;
             this.panelBorderBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBorderBottom.Location = new System.Drawing.Point(1, 348);
+            this.panelBorderBottom.Location = new System.Drawing.Point(1, 512);
             this.panelBorderBottom.Margin = new System.Windows.Forms.Padding(2);
             this.panelBorderBottom.Name = "panelBorderBottom";
-            this.panelBorderBottom.Size = new System.Drawing.Size(666, 1);
+            this.panelBorderBottom.Size = new System.Drawing.Size(1085, 1);
             this.panelBorderBottom.TabIndex = 20;
             // 
             // panelBorderRight
             // 
             this.panelBorderRight.BackColor = System.Drawing.Color.MidnightBlue;
             this.panelBorderRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelBorderRight.Location = new System.Drawing.Point(666, 24);
+            this.panelBorderRight.Location = new System.Drawing.Point(1085, 24);
             this.panelBorderRight.Margin = new System.Windows.Forms.Padding(2);
             this.panelBorderRight.Name = "panelBorderRight";
-            this.panelBorderRight.Size = new System.Drawing.Size(1, 324);
+            this.panelBorderRight.Size = new System.Drawing.Size(1, 488);
             this.panelBorderRight.TabIndex = 21;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(602, 38);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(466, 410);
+            this.dataGridView1.TabIndex = 5;
+            // 
+            // labelPortefeuilel
+            // 
+            this.labelPortefeuilel.AutoSize = true;
+            this.labelPortefeuilel.Location = new System.Drawing.Point(174, 16);
+            this.labelPortefeuilel.Name = "labelPortefeuilel";
+            this.labelPortefeuilel.Size = new System.Drawing.Size(76, 16);
+            this.labelPortefeuilel.TabIndex = 6;
+            this.labelPortefeuilel.Text = "Portefeuilles :";
+            // 
+            // labelCommerciaux
+            // 
+            this.labelCommerciaux.AutoSize = true;
+            this.labelCommerciaux.Location = new System.Drawing.Point(671, 16);
+            this.labelCommerciaux.Name = "labelCommerciaux";
+            this.labelCommerciaux.Size = new System.Drawing.Size(90, 16);
+            this.labelCommerciaux.TabIndex = 7;
+            this.labelCommerciaux.Text = "Commerciaux :";
             // 
             // InterGes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Maquette_Belle_Table_Final.Properties.Resources.fond;
-            this.ClientSize = new System.Drawing.Size(667, 349);
+            this.ClientSize = new System.Drawing.Size(1086, 513);
             this.Controls.Add(this.tabControl2);
             this.Controls.Add(this.panelBorderRight);
             this.Controls.Add(this.panelBorderBottom);
             this.Controls.Add(this.panelBordeLeft);
             this.Controls.Add(this.tableLayoutEntete);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "InterGes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InterGes";
+            this.Load += new System.EventHandler(this.InterGes_Load);
             this.tableLayoutEntete.ResumeLayout(false);
             this.panelTitre.ResumeLayout(false);
             this.panelTitre.PerformLayout();
@@ -614,10 +672,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPFI)).EndInit();
             this.tabPagePFC.ResumeLayout(false);
             this.panelPFC.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPFC)).EndInit();
+            this.panelPFC.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPortefeuilles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCommerciaux)).EndInit();
             this.tabPageCDMDP.ResumeLayout(false);
             this.panelChangerMDP.ResumeLayout(false);
             this.panelChangerMDP.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -658,12 +719,16 @@
         private System.Windows.Forms.Button buttonCrPF;
         private System.Windows.Forms.DataGridView dataGridViewPF;
         private System.Windows.Forms.Panel panelPFC;
-        private System.Windows.Forms.DataGridView dataGridViewPFC;
+        private System.Windows.Forms.DataGridView dataGridViewCommerciaux;
         private System.Windows.Forms.Button buttonModAssCom;
         private System.Windows.Forms.Panel panelBordeLeft;
         private System.Windows.Forms.Panel panelBorderBottom;
         private System.Windows.Forms.Panel panelBorderRight;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxNewMDP;
+        private System.Windows.Forms.DataGridView dataGridViewPortefeuilles;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label labelCommerciaux;
+        private System.Windows.Forms.Label labelPortefeuilel;
     }
 }

@@ -8,7 +8,7 @@ insert into UTILISATEUR (numUtilisateur, nomUtilisateur, prenomUtilisateur, adre
 insert into UTILISATEUR (numUtilisateur, nomUtilisateur, prenomUtilisateur, adresseUtilisateur, cpUtilisateur, villeUtilisateur, telUtilisateur, mailUtilisateur, distanceParcourueSemaine, loginUtilisateur, passwordUtilisateur, dateDernierLogin, nbTentatives, codeTypeUtilisateur, idPlanning, idPorteFeuille, version) values 
 (2, 'Patricia', 'Griffin', '5301 Oak Parkway', 7500, 'Jiwei', '86-(792)136-2859', 'pgriffin1@kickstarter.com', 0, 'pgriffin', MD5(12345), 20160326, 0, 2, null, null,0);
 insert into UTILISATEUR (numUtilisateur, nomUtilisateur, prenomUtilisateur, adresseUtilisateur, cpUtilisateur, villeUtilisateur, telUtilisateur, mailUtilisateur, distanceParcourueSemaine, loginUtilisateur, passwordUtilisateur, dateDernierLogin, nbTentatives, codeTypeUtilisateur, idPlanning, idPorteFeuille, version) values 
-(3, 'Jack', 'Robinson', '8 Roth Parkway', 7500, 'Veselynove', '380-(969)729-3321', 'jrobinson2@twitpic.com', 0, 'jrobinson', MD5(12345), 20160326, 0, 3, null, null,0);
+(3, 'Jack', 'Robinson', '8 Roth Parkway', 7500, 'Veselynove', '380-(969)729-3321', 'jrobinson2@twitpic.com', 0, 'jrobinson', MD5(12345), 20160326, 3, 3, null, 3,0);
 insert into UTILISATEUR (numUtilisateur, nomUtilisateur, prenomUtilisateur, adresseUtilisateur, cpUtilisateur, villeUtilisateur, telUtilisateur, mailUtilisateur, distanceParcourueSemaine, loginUtilisateur, passwordUtilisateur, dateDernierLogin, nbTentatives, codeTypeUtilisateur, idPlanning, idPorteFeuille, version) values 
 (4, 'Jack', 'Lopez', '82 5th Lane', 7500, 'Lingmen', '86-(743)835-5499', 'jlopez3@independent.co.uk', 0, 'jlopez', MD5(12345), 20160326, 0, 1, null, null,0);
 insert into UTILISATEUR (numUtilisateur, nomUtilisateur, prenomUtilisateur, adresseUtilisateur, cpUtilisateur, villeUtilisateur, telUtilisateur, mailUtilisateur, distanceParcourueSemaine, loginUtilisateur, passwordUtilisateur, dateDernierLogin, nbTentatives, codeTypeUtilisateur, idPlanning, idPorteFeuille, version) values 
@@ -82,11 +82,11 @@ SELECT * FROM STRUCTURE;
 insert into INTERLOCUTEUR (idInterlocuteur, nomInterlocuteur, prenomInterlocuteur, telInterlocuteur, mailInterlocuteur, idPorteFeuille, version) values 
 (1,'Bouze', 'Camélia', '33-(390)653-6256', 'jjackson0@sciencedaily.com', 1, 0);
 insert into INTERLOCUTEUR (idInterlocuteur, nomInterlocuteur, prenomInterlocuteur, telInterlocuteur, mailInterlocuteur, idPorteFeuille, version) values 
-(2,'Alaki', 'Crééz', '30-(294)242-7802', 'ppowell1@ameblo.jp', 2, 0);
+(2,'Alaki', 'Crééz', '30-(294)242-7802', 'ppowell1@ameblo.jp', 3, 0);
 insert into INTERLOCUTEUR (idInterlocuteur, nomInterlocuteur, prenomInterlocuteur, telInterlocuteur, mailInterlocuteur, idPorteFeuille, version) values 
 (3,'Kogu', 'Mégane', '972-(623)893-2322', 'dhudson2@joomla.org', 3, 0);
 insert into INTERLOCUTEUR (idInterlocuteur, nomInterlocuteur, prenomInterlocuteur, telInterlocuteur, mailInterlocuteur, idPorteFeuille, version) values 
-(4,'pistali', 'Ruì', '30-(938)455-3301', 'palvarez3@baidu.com', 4, 0);
+(4,'pistali', 'Ruì', '30-(938)455-3301', 'palvarez3@baidu.com', 3, 0);
 insert into INTERLOCUTEUR (idInterlocuteur, nomInterlocuteur, prenomInterlocuteur, telInterlocuteur, mailInterlocuteur, idPorteFeuille, version) values 
 (5,'Papoom', 'Cécilia', '967-(562)366-2705', 'srice4@goo.ne.jp', 5, 0);
 

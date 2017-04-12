@@ -24,7 +24,7 @@ namespace Maquette_Belle_Table_Final
             return string.Format("[{0}]", libellePortefeuille);
         }
 
-        public virtual IList<PorteFeuille> GetLesUtilisateurs()
+        public virtual IList<PorteFeuille> GetLesPortefeuilles()
         {
             sessionFactory = new Configuration().Configure().BuildSessionFactory();
             using (ISession session = sessionFactory.OpenSession())
@@ -34,7 +34,7 @@ namespace Maquette_Belle_Table_Final
                 {
 
                     // on récupère la liste des utilisateurs 
-                    IList<PorteFeuille> lesPortefeuilles = session.CreateQuery(@"select u from Utilisateur u ").List<PorteFeuille>();
+                    IList<PorteFeuille> lesPortefeuilles = session.CreateQuery(@"select p FROM PorteFeuille p").List<PorteFeuille>();
                     session.Dispose();
                     return lesPortefeuilles;
                 }
