@@ -100,14 +100,6 @@
     <Compile Include="PopNouveauRDV.Designer.cs">
       <DependentUpon>PopNouveauRDV.cs</DependentUpon>
     </Compile>
-    <Compile Include="Popup ModifUser.cs">
-      <SubType>Form</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Popup ModifUser.Designer.cs">
-      <DependentUpon>Popup ModifUser.cs</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
     <Compile Include="Popup AddModUser.cs">
       <SubType>Form</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -187,10 +179,6 @@
     <EmbeddedResource Include="PopNouveauRDV.resx">
       <DependentUpon>PopNouveauRDV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Popup ModifUser.resx">
-      <DependentUpon>Popup ModifUser.cs</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
     <EmbeddedResource Include="Popup AddModUser.resx">
       <DependentUpon>Popup AddModUser.cs</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -232,6 +220,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
