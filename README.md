@@ -38,9 +38,7 @@ GESTIONNAIRE :
 - Envoi automatique de mail après évenement (rdv ou +) (raph)
 - Affichage de la liste des mails envoyés par l'utilisateur (raph + lorenzo)
 - Consulter un mail envoyé par l'utilisateur (raph)
-- Ajouter un utilisateur (commercial ou gestionnaire) (raph)
-- Modifier un utilisateur (commercial ou gestionnaire) (raph)
-- Ajouter/Modifier utilisateur dans la même form (lorenzo)
+- Ajouter/Modifier utilisateur dans la même form (raph + lorenzo)
 - Supprimer un utilisateur (commercial ou gestionnaire) (raph)
 - Liste des logs de connection (raph)
 
