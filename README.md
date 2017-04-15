@@ -24,14 +24,6 @@ GESTIONNAIRE :
 - Supprimer Portefeuille (attention à la base, normalement j'ai configuré nhibernate pour que les deletes soient automatiques, à tester)
 - Assigner un portefeuille à un commercial
 
-ADMINISTRATEUR :
-
-- Ajouter un utilisateur (commercial ou gestionnaire)
-- Modifier un utilisateur (commercial ou gestionnaire)
-- Supprimer un utilisateur (commercial ou gestionnaire) (attention à la base, normalement j'ai configuré nhibernate pour que les deletes soient automatiques, à tester)
-- Liste des logs de connection 
-
-
 #FAIT :
 
 - LOGIN (raph + lorenzo)
@@ -46,7 +38,10 @@ ADMINISTRATEUR :
 - Envoi automatique de mail après évenement (rdv ou +) (raph)
 - Affichage de la liste des mails envoyés par l'utilisateur (raph)
 - Consulter un mail envoyé par l'utilisateur (raph)
-
+- Ajouter un utilisateur (commercial ou gestionnaire) (raph)
+- Modifier un utilisateur (commercial ou gestionnaire) (raph)
+- Supprimer un utilisateur (commercial ou gestionnaire) (raph)
+- Liste des logs de connection (raph)
 
 
 
