@@ -60,6 +60,9 @@
             this.labelPlanning = new System.Windows.Forms.Label();
             this.textBoxPlanning = new System.Windows.Forms.TextBox();
             this.checkBoxChangeMdp = new System.Windows.Forms.CheckBox();
+            this.labelAjouterPlanningPortefeuille = new System.Windows.Forms.Label();
+            this.radioButtonNon = new System.Windows.Forms.RadioButton();
+            this.radioButtonOui = new System.Windows.Forms.RadioButton();
             this.panelMenu.SuspendLayout();
             this.panelTitre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBT)).BeginInit();
@@ -69,9 +72,9 @@
             // 
             this.panelBorderBottom.BackColor = System.Drawing.Color.MidnightBlue;
             this.panelBorderBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBorderBottom.Location = new System.Drawing.Point(0, 460);
+            this.panelBorderBottom.Location = new System.Drawing.Point(0, 519);
             this.panelBorderBottom.Name = "panelBorderBottom";
-            this.panelBorderBottom.Size = new System.Drawing.Size(600, 1);
+            this.panelBorderBottom.Size = new System.Drawing.Size(809, 1);
             this.panelBorderBottom.TabIndex = 6;
             // 
             // panelBordeLeft
@@ -80,16 +83,16 @@
             this.panelBordeLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelBordeLeft.Location = new System.Drawing.Point(0, 0);
             this.panelBordeLeft.Name = "panelBordeLeft";
-            this.panelBordeLeft.Size = new System.Drawing.Size(1, 460);
+            this.panelBordeLeft.Size = new System.Drawing.Size(1, 519);
             this.panelBordeLeft.TabIndex = 7;
             // 
             // panelBorderRight
             // 
             this.panelBorderRight.BackColor = System.Drawing.Color.MidnightBlue;
             this.panelBorderRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelBorderRight.Location = new System.Drawing.Point(599, 0);
+            this.panelBorderRight.Location = new System.Drawing.Point(808, 0);
             this.panelBorderRight.Name = "panelBorderRight";
-            this.panelBorderRight.Size = new System.Drawing.Size(1, 460);
+            this.panelBorderRight.Size = new System.Drawing.Size(1, 519);
             this.panelBorderRight.TabIndex = 8;
             // 
             // panelMenu
@@ -99,7 +102,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelMenu.Location = new System.Drawing.Point(1, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(598, 30);
+            this.panelMenu.Size = new System.Drawing.Size(807, 30);
             this.panelMenu.TabIndex = 9;
             // 
             // panelTitre
@@ -110,7 +113,7 @@
             this.panelTitre.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelTitre.Location = new System.Drawing.Point(0, 0);
             this.panelTitre.Name = "panelTitre";
-            this.panelTitre.Size = new System.Drawing.Size(598, 30);
+            this.panelTitre.Size = new System.Drawing.Size(807, 30);
             this.panelTitre.TabIndex = 2;
             // 
             // label1
@@ -153,7 +156,7 @@
             this.buttonValCom.BackColor = System.Drawing.Color.Gold;
             this.buttonValCom.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonValCom.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.buttonValCom.Location = new System.Drawing.Point(240, 407);
+            this.buttonValCom.Location = new System.Drawing.Point(359, 465);
             this.buttonValCom.Name = "buttonValCom";
             this.buttonValCom.Size = new System.Drawing.Size(90, 32);
             this.buttonValCom.TabIndex = 17;
@@ -163,7 +166,7 @@
             // 
             // textBoxEm
             // 
-            this.textBoxEm.Location = new System.Drawing.Point(58, 194);
+            this.textBoxEm.Location = new System.Drawing.Point(152, 220);
             this.textBoxEm.Name = "textBoxEm";
             this.textBoxEm.Size = new System.Drawing.Size(191, 24);
             this.textBoxEm.TabIndex = 11;
@@ -171,7 +174,7 @@
             // 
             // textBoxTel
             // 
-            this.textBoxTel.Location = new System.Drawing.Point(58, 147);
+            this.textBoxTel.Location = new System.Drawing.Point(152, 178);
             this.textBoxTel.Name = "textBoxTel";
             this.textBoxTel.Size = new System.Drawing.Size(192, 24);
             this.textBoxTel.TabIndex = 13;
@@ -179,7 +182,7 @@
             // 
             // textBoxPre
             // 
-            this.textBoxPre.Location = new System.Drawing.Point(377, 104);
+            this.textBoxPre.Location = new System.Drawing.Point(152, 142);
             this.textBoxPre.Name = "textBoxPre";
             this.textBoxPre.Size = new System.Drawing.Size(192, 24);
             this.textBoxPre.TabIndex = 12;
@@ -187,7 +190,7 @@
             // 
             // textBoxNom
             // 
-            this.textBoxNom.Location = new System.Drawing.Point(58, 104);
+            this.textBoxNom.Location = new System.Drawing.Point(153, 104);
             this.textBoxNom.Name = "textBoxNom";
             this.textBoxNom.Size = new System.Drawing.Size(191, 24);
             this.textBoxNom.TabIndex = 11;
@@ -195,7 +198,7 @@
             // 
             // textBoxLog
             // 
-            this.textBoxLog.Location = new System.Drawing.Point(58, 65);
+            this.textBoxLog.Location = new System.Drawing.Point(153, 63);
             this.textBoxLog.Name = "textBoxLog";
             this.textBoxLog.Size = new System.Drawing.Size(191, 24);
             this.textBoxLog.TabIndex = 10;
@@ -204,7 +207,7 @@
             // labelNom
             // 
             this.labelNom.AutoSize = true;
-            this.labelNom.Location = new System.Drawing.Point(1, 109);
+            this.labelNom.Location = new System.Drawing.Point(54, 107);
             this.labelNom.Name = "labelNom";
             this.labelNom.Size = new System.Drawing.Size(49, 19);
             this.labelNom.TabIndex = 8;
@@ -213,7 +216,7 @@
             // labelTel
             // 
             this.labelTel.AutoSize = true;
-            this.labelTel.Location = new System.Drawing.Point(1, 150);
+            this.labelTel.Location = new System.Drawing.Point(55, 180);
             this.labelTel.Name = "labelTel";
             this.labelTel.Size = new System.Drawing.Size(34, 19);
             this.labelTel.TabIndex = 7;
@@ -222,7 +225,7 @@
             // labelEm
             // 
             this.labelEm.AutoSize = true;
-            this.labelEm.Location = new System.Drawing.Point(1, 199);
+            this.labelEm.Location = new System.Drawing.Point(55, 225);
             this.labelEm.Name = "labelEm";
             this.labelEm.Size = new System.Drawing.Size(54, 19);
             this.labelEm.TabIndex = 6;
@@ -231,7 +234,7 @@
             // labelPre
             // 
             this.labelPre.AutoSize = true;
-            this.labelPre.Location = new System.Drawing.Point(316, 109);
+            this.labelPre.Location = new System.Drawing.Point(54, 142);
             this.labelPre.Name = "labelPre";
             this.labelPre.Size = new System.Drawing.Size(69, 19);
             this.labelPre.TabIndex = 2;
@@ -240,7 +243,7 @@
             // labelLogCom
             // 
             this.labelLogCom.AutoSize = true;
-            this.labelLogCom.Location = new System.Drawing.Point(1, 65);
+            this.labelLogCom.Location = new System.Drawing.Point(54, 66);
             this.labelLogCom.Name = "labelLogCom";
             this.labelLogCom.Size = new System.Drawing.Size(53, 19);
             this.labelLogCom.TabIndex = 0;
@@ -249,7 +252,7 @@
             // labelVille
             // 
             this.labelVille.AutoSize = true;
-            this.labelVille.Location = new System.Drawing.Point(276, 321);
+            this.labelVille.Location = new System.Drawing.Point(55, 352);
             this.labelVille.Name = "labelVille";
             this.labelVille.Size = new System.Drawing.Size(44, 19);
             this.labelVille.TabIndex = 3;
@@ -258,7 +261,7 @@
             // labelCP
             // 
             this.labelCP.AutoSize = true;
-            this.labelCP.Location = new System.Drawing.Point(33, 321);
+            this.labelCP.Location = new System.Drawing.Point(55, 307);
             this.labelCP.Name = "labelCP";
             this.labelCP.Size = new System.Drawing.Size(102, 19);
             this.labelCP.TabIndex = 4;
@@ -267,23 +270,23 @@
             // labelRue
             // 
             this.labelRue.AutoSize = true;
-            this.labelRue.Location = new System.Drawing.Point(33, 249);
+            this.labelRue.Location = new System.Drawing.Point(54, 268);
             this.labelRue.Name = "labelRue";
-            this.labelRue.Size = new System.Drawing.Size(44, 19);
+            this.labelRue.Size = new System.Drawing.Size(68, 19);
             this.labelRue.TabIndex = 5;
-            this.labelRue.Text = "Rue :";
+            this.labelRue.Text = "Adresse :";
             // 
             // textBoxRue
             // 
-            this.textBoxRue.Location = new System.Drawing.Point(36, 268);
+            this.textBoxRue.Location = new System.Drawing.Point(153, 268);
             this.textBoxRue.Name = "textBoxRue";
-            this.textBoxRue.Size = new System.Drawing.Size(494, 24);
+            this.textBoxRue.Size = new System.Drawing.Size(190, 24);
             this.textBoxRue.TabIndex = 11;
             this.textBoxRue.Text = "rue des mechants";
             // 
             // textBoxCp
             // 
-            this.textBoxCp.Location = new System.Drawing.Point(112, 321);
+            this.textBoxCp.Location = new System.Drawing.Point(205, 307);
             this.textBoxCp.Name = "textBoxCp";
             this.textBoxCp.Size = new System.Drawing.Size(138, 24);
             this.textBoxCp.TabIndex = 12;
@@ -291,16 +294,16 @@
             // 
             // textBoxVille
             // 
-            this.textBoxVille.Location = new System.Drawing.Point(311, 321);
+            this.textBoxVille.Location = new System.Drawing.Point(147, 352);
             this.textBoxVille.Name = "textBoxVille";
-            this.textBoxVille.Size = new System.Drawing.Size(219, 24);
+            this.textBoxVille.Size = new System.Drawing.Size(197, 24);
             this.textBoxVille.TabIndex = 13;
             this.textBoxVille.Text = "Paris";
             // 
             // comboBoxTypeUser
             // 
             this.comboBoxTypeUser.FormattingEnabled = true;
-            this.comboBoxTypeUser.Location = new System.Drawing.Point(377, 57);
+            this.comboBoxTypeUser.Location = new System.Drawing.Point(147, 405);
             this.comboBoxTypeUser.Name = "comboBoxTypeUser";
             this.comboBoxTypeUser.Size = new System.Drawing.Size(192, 25);
             this.comboBoxTypeUser.TabIndex = 18;
@@ -309,7 +312,7 @@
             // labelTu
             // 
             this.labelTu.AutoSize = true;
-            this.labelTu.Location = new System.Drawing.Point(316, 60);
+            this.labelTu.Location = new System.Drawing.Point(54, 408);
             this.labelTu.Name = "labelTu";
             this.labelTu.Size = new System.Drawing.Size(49, 19);
             this.labelTu.TabIndex = 19;
@@ -318,41 +321,43 @@
             // labelPortefeuille
             // 
             this.labelPortefeuille.AutoSize = true;
-            this.labelPortefeuille.Enabled = false;
-            this.labelPortefeuille.Location = new System.Drawing.Point(316, 150);
+            this.labelPortefeuille.Location = new System.Drawing.Point(401, 175);
             this.labelPortefeuille.Name = "labelPortefeuille";
-            this.labelPortefeuille.Size = new System.Drawing.Size(148, 19);
+            this.labelPortefeuille.Size = new System.Drawing.Size(134, 19);
             this.labelPortefeuille.TabIndex = 20;
-            this.labelPortefeuille.Text = "Nom du portfeuille : ";
+            this.labelPortefeuille.Text = "Nom portefeuille : ";
+            this.labelPortefeuille.Visible = false;
             // 
             // textBoxPortefeuille
             // 
-            this.textBoxPortefeuille.Enabled = false;
-            this.textBoxPortefeuille.Location = new System.Drawing.Point(377, 172);
+            this.textBoxPortefeuille.Location = new System.Drawing.Point(577, 172);
             this.textBoxPortefeuille.Name = "textBoxPortefeuille";
             this.textBoxPortefeuille.Size = new System.Drawing.Size(192, 24);
             this.textBoxPortefeuille.TabIndex = 21;
+            this.textBoxPortefeuille.Visible = false;
             // 
             // labelPlanning
             // 
             this.labelPlanning.AutoSize = true;
-            this.labelPlanning.Location = new System.Drawing.Point(320, 199);
+            this.labelPlanning.Location = new System.Drawing.Point(401, 228);
             this.labelPlanning.Name = "labelPlanning";
-            this.labelPlanning.Size = new System.Drawing.Size(77, 19);
+            this.labelPlanning.Size = new System.Drawing.Size(115, 19);
             this.labelPlanning.TabIndex = 22;
-            this.labelPlanning.Text = "Planning :";
+            this.labelPlanning.Text = "Nom planning :";
+            this.labelPlanning.Visible = false;
             // 
             // textBoxPlanning
             // 
-            this.textBoxPlanning.Location = new System.Drawing.Point(377, 222);
+            this.textBoxPlanning.Location = new System.Drawing.Point(577, 225);
             this.textBoxPlanning.Name = "textBoxPlanning";
             this.textBoxPlanning.Size = new System.Drawing.Size(192, 24);
             this.textBoxPlanning.TabIndex = 23;
+            this.textBoxPlanning.Visible = false;
             // 
             // checkBoxChangeMdp
             // 
             this.checkBoxChangeMdp.AutoSize = true;
-            this.checkBoxChangeMdp.Location = new System.Drawing.Point(152, 367);
+            this.checkBoxChangeMdp.Location = new System.Drawing.Point(58, 465);
             this.checkBoxChangeMdp.Name = "checkBoxChangeMdp";
             this.checkBoxChangeMdp.Size = new System.Drawing.Size(266, 23);
             this.checkBoxChangeMdp.TabIndex = 24;
@@ -360,12 +365,51 @@
             this.checkBoxChangeMdp.UseVisualStyleBackColor = true;
             this.checkBoxChangeMdp.Visible = false;
             // 
+            // labelAjouterPlanningPortefeuille
+            // 
+            this.labelAjouterPlanningPortefeuille.AutoSize = true;
+            this.labelAjouterPlanningPortefeuille.Location = new System.Drawing.Point(385, 121);
+            this.labelAjouterPlanningPortefeuille.Name = "labelAjouterPlanningPortefeuille";
+            this.labelAjouterPlanningPortefeuille.Size = new System.Drawing.Size(214, 19);
+            this.labelAjouterPlanningPortefeuille.TabIndex = 25;
+            this.labelAjouterPlanningPortefeuille.Text = "Ajouter planning/portefeuille :";
+            this.labelAjouterPlanningPortefeuille.Visible = false;
+            // 
+            // radioButtonNon
+            // 
+            this.radioButtonNon.AutoSize = true;
+            this.radioButtonNon.Location = new System.Drawing.Point(711, 121);
+            this.radioButtonNon.Name = "radioButtonNon";
+            this.radioButtonNon.Size = new System.Drawing.Size(58, 23);
+            this.radioButtonNon.TabIndex = 27;
+            this.radioButtonNon.TabStop = true;
+            this.radioButtonNon.Text = "Non";
+            this.radioButtonNon.UseVisualStyleBackColor = true;
+            this.radioButtonNon.Visible = false;
+            this.radioButtonNon.CheckedChanged += new System.EventHandler(this.radioButtonNon_CheckedChanged);
+            // 
+            // radioButtonOui
+            // 
+            this.radioButtonOui.AutoSize = true;
+            this.radioButtonOui.Location = new System.Drawing.Point(623, 121);
+            this.radioButtonOui.Name = "radioButtonOui";
+            this.radioButtonOui.Size = new System.Drawing.Size(54, 23);
+            this.radioButtonOui.TabIndex = 28;
+            this.radioButtonOui.TabStop = true;
+            this.radioButtonOui.Text = "Oui";
+            this.radioButtonOui.UseVisualStyleBackColor = true;
+            this.radioButtonOui.Visible = false;
+            this.radioButtonOui.CheckedChanged += new System.EventHandler(this.radioButtonOui_CheckedChanged);
+            // 
             // Popup_AddModUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(600, 461);
+            this.ClientSize = new System.Drawing.Size(809, 520);
+            this.Controls.Add(this.radioButtonOui);
+            this.Controls.Add(this.radioButtonNon);
+            this.Controls.Add(this.labelAjouterPlanningPortefeuille);
             this.Controls.Add(this.checkBoxChangeMdp);
             this.Controls.Add(this.textBoxPlanning);
             this.Controls.Add(this.labelPlanning);
@@ -443,5 +487,8 @@
         private System.Windows.Forms.Label labelPlanning;
         private System.Windows.Forms.TextBox textBoxPlanning;
         private System.Windows.Forms.CheckBox checkBoxChangeMdp;
+        private System.Windows.Forms.Label labelAjouterPlanningPortefeuille;
+        private System.Windows.Forms.RadioButton radioButtonNon;
+        private System.Windows.Forms.RadioButton radioButtonOui;
     }
 }

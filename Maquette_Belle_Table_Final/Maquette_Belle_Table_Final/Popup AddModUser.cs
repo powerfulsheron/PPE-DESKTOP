@@ -91,51 +91,70 @@ namespace Maquette_Belle_Table
        //     try
      //       {
                 // si il s'agit d'une modification
-                if (utilisateur.numUtilisateur != unNouvelUtilisateur.numUtilisateur)
+            if (utilisateur.numUtilisateur != unNouvelUtilisateur.numUtilisateur)
+            {
+                using (ITransaction transaction = session.BeginTransaction())
                 {
+                    unNouvelUtilisateur = utilisateur;
 
-                    //S'il s'agit d'une modifcation pour commercial
-                    if (unTypeUtilisateur.codeTypeUtilisateur == 3 && libellePortefeuille != "")
+                    //S'il s'agit d'une modification en commercial
+                    if (unTypeUtilisateur.codeTypeUtilisateur == 3)
                     {
                         //si l'utilisateur n'etait pas un commercial avant
-                        if (utilisateur.typeUtilisateur.codeTypeUtilisateur != 3)
+                        if (unNouvelUtilisateur.typeUtilisateur.codeTypeUtilisateur != 3)
                         {
                             Planning unNouveauPlanning = new Planning();
-                            PorteFeuille unNouveauPortefeuille = new PorteFeuille();
-                            unNouveauPlanning.utilisateur = utilisateur;
-                            unNouveauPortefeuille.utilisateur = utilisateur;
-                            unNouveauPortefeuille.libellePortefeuille = libellePortefeuille;
+                            unNouveauPlanning.libellePlanning = libellePlanning;
+                            unNouveauPlanning.utilisateur = unNouvelUtilisateur;
+                            session.SaveOrUpdate(unNouveauPlanning);
 
-                            utilisateur.planning = unNouveauPlanning;
-                            utilisateur.porteFeuille = unNouveauPortefeuille;
+                            PorteFeuille unNouveauPortefeuille = new PorteFeuille();
+                            unNouveauPortefeuille.libellePortefeuille = libellePortefeuille;
+                            unNouveauPortefeuille.utilisateur = unNouvelUtilisateur;
+                            session.SaveOrUpdate(unNouveauPortefeuille);
+
+                            unNouvelUtilisateur.planning = unNouveauPlanning;
+                            unNouvelUtilisateur.porteFeuille = unNouveauPortefeuille;
+                            session.SaveOrUpdate(unNouvelUtilisateur);
 
                         }
-                        else utilisateur.porteFeuille.libellePortefeuille = libellePortefeuille;
+                        // sinon si il etait commercial
+                        else
+                        {
+                            Planning unNouveauPlanning = unNouvelUtilisateur.planning;
+                            unNouveauPlanning.libellePlanning = libellePlanning;
+                            session.SaveOrUpdate(unNouveauPlanning);
+
+                            PorteFeuille unNouveauPortefeuille = unNouvelUtilisateur.porteFeuille;
+                            unNouveauPortefeuille.libellePortefeuille = libellePortefeuille;
+                            session.SaveOrUpdate(unNouveauPortefeuille);
+                        }
 
                     }
-                    else if (unTypeUtilisateur.codeTypeUtilisateur == 3 && libellePortefeuille == "") erreur+= "\nMerci de rentrer un nom de portefeuille";
+                    else if (unTypeUtilisateur.codeTypeUtilisateur == 3 && libellePortefeuille == "" || libellePlanning == "") erreur += "\nMerci de rentrer un nom de portefeuille/planning";
 
                     //Après une migration d'un commercial vers un autre type, on supprime son affectation au planning et portefeuille
                     else if (unTypeUtilisateur.codeTypeUtilisateur != 3)
                     {
-                        //On supprime l'idUtilisateur dans la table portefeuille
-                        PorteFeuille portefeuille = utilisateur.porteFeuille;
+                        //On supprime l'idUtilisateur dans la table portefeuille et planning
+                        PorteFeuille portefeuille = unNouvelUtilisateur.porteFeuille;
+                        Planning planning = utilisateur.planning;
                         portefeuille.utilisateur = null;
+                        planning.utilisateur = null;
 
                         session.SaveOrUpdate(portefeuille);
+                        session.SaveOrUpdate(planning);
 
-                        //On supprime l'idUtilisateur dans la table planing
-                        Planning planing = utilisateur.planning;
-                        planing.utilisateur = null;
-
-                        session.SaveOrUpdate(planing);
 
                         //On supprime l'idPortefeuille/idPlanning dans la table Utilsiateur
-                        utilisateur.porteFeuille = null;
-                        utilisateur.planning = null;
+                        unNouvelUtilisateur.porteFeuille = null;
+                        unNouvelUtilisateur.planning = null;
+
                     }
                     //Une fois tous les tests bons, on peut affecter le type:
-                    utilisateur.typeUtilisateur = unTypeUtilisateur;
+                    unNouvelUtilisateur.typeUtilisateur = unTypeUtilisateur;
+
+
 
                     if (changePassword == true)
                     {
@@ -147,13 +166,17 @@ namespace Maquette_Belle_Table
                         // on converti la phrase random en md5
                         InterLogin pourMD5 = new InterLogin();
                         //on associe le mot de passe
-                        utilisateur.passwordUtilisateur = pourMD5.MD5Hash(motdepasse);
+                        unNouvelUtilisateur.passwordUtilisateur = pourMD5.MD5Hash(motdepasse);
                         //-------------------- FIN BLOC GENERATION DU MOT DE PASSE DU NOUVEL UTILISATEUR--------------------------
                     }
-                   
+                    session.SaveOrUpdate(unNouvelUtilisateur);
+                    transaction.Commit();
+                    session.Dispose();
                 }
-
-                // Il s'agit d'un ajout
+            }
+            // Sinon si il s'agit d'un ajout
+            else
+            {
                 using (ITransaction transaction = session.BeginTransaction())
                 {
 
@@ -178,7 +201,7 @@ namespace Maquette_Belle_Table
                     unNouvelUtilisateur.passwordUtilisateur = pourMD5.MD5Hash(motdepasse);
                     //-------------------- FIN BLOC GENERATION DU MOT DE PASSE DU NOUVEL UTILISATEUR--------------------------
                     //S'il s'agit d'un commercial:
-                    if (unNouvelUtilisateur.typeUtilisateur.codeTypeUtilisateur == 3)
+                    if (unNouvelUtilisateur.typeUtilisateur.codeTypeUtilisateur == 3 && (libellePlanning!=null||libellePortefeuille!=null))
                     {
 
                         unNouveauPlanning.libellePlanning = libellePlanning;
@@ -207,6 +230,7 @@ namespace Maquette_Belle_Table
                     session.Dispose();
 
                 }
+            }
        //     }
      //       catch (Exception ex)
        //    {
@@ -251,27 +275,35 @@ namespace Maquette_Belle_Table
             TypeUtilisateur forCombobox = (TypeUtilisateur)comboBoxTypeUser.SelectedItem;
             if (forCombobox.codeTypeUtilisateur == 3)
             {
-                textBoxPortefeuille.Enabled = true;
-                labelPortefeuille.Enabled = true;
-                textBoxPlanning.Enabled = true;
-                labelPlanning.Enabled = true;
+      
+                labelAjouterPlanningPortefeuille.Visible = true;
+                radioButtonNon.Visible = true;
+                radioButtonOui.Visible = true;
+                
             }
             else
             {
-                textBoxPortefeuille.Enabled = false;
-                labelPortefeuille.Enabled = false;
-                textBoxPlanning.Enabled = false;
-                labelPlanning.Enabled = false;
+                labelAjouterPlanningPortefeuille.Visible = false;
+                radioButtonNon.Visible = false;
+                radioButtonNon.Visible = false;
             }
         }
 
         private void Popup_AddModUser_Load_1(object sender, EventArgs e)
         {
-            Console.WriteLine(utilisateur);
+            // si c'est une modification
             if (utilisateur.numUtilisateur != unNouvelUtilisateur.numUtilisateur)
             {
                 TypeUtilisateur lesTypesUtilisateur = new TypeUtilisateur();
                 comboBoxTypeUser.DataSource = lesTypesUtilisateur.GetLesTypesUtilisateur();
+
+                foreach (TypeUtilisateur t in comboBoxTypeUser.Items)
+                {
+                    if (t.libelleTypeUtilisateur == utilisateur.typeUtilisateur.libelleTypeUtilisateur)
+                    {
+                        comboBoxTypeUser.SelectedItem = t;
+                    }
+                }
 
                 textBoxLog.Text = utilisateur.loginUtilisateur;
                 textBoxCp.Text = utilisateur.cpUtilisateur;
@@ -281,35 +313,54 @@ namespace Maquette_Belle_Table
                 textBoxRue.Text = utilisateur.adresseUtilisateur;
                 textBoxTel.Text = utilisateur.telUtilisateur;
                 textBoxVille.Text = utilisateur.villeUtilisateur;
-
-                // si il s'agit d'une modification on charge la checkbox
-                if (utilisateur.numUtilisateur != unNouvelUtilisateur.numUtilisateur)
-                {
-                    checkBoxChangeMdp.Visible = true;
-                }
+                checkBoxChangeMdp.Visible = true;
+                
+                // si il est commercial
                 if (utilisateur.typeUtilisateur.codeTypeUtilisateur == 3)
                 {
-                    if(utilisateur.planning!=null)
-                    textBoxPlanning.Text = utilisateur.planning.libellePlanning;
-                    if(utilisateur.porteFeuille!=null)
-                    textBoxPortefeuille.Text = utilisateur.porteFeuille.libellePortefeuille;
-                }
-                foreach (TypeUtilisateur t in comboBoxTypeUser.Items)
-                {
-                    if (t.libelleTypeUtilisateur == utilisateur.typeUtilisateur.libelleTypeUtilisateur)
+                    labelAjouterPlanningPortefeuille.Visible = false;
+                    radioButtonNon.Visible = false;
+                    radioButtonOui.Visible = false;
+
+                    if (utilisateur.planning != null)
                     {
-                        comboBoxTypeUser.SelectedItem = t;
+                        textBoxPlanning.Visible = true;
+                        labelPlanning.Visible = true;
+                        textBoxPlanning.Text = utilisateur.planning.libellePlanning;
+                    }
+                    if (utilisateur.porteFeuille != null)
+                    {
+                        textBoxPortefeuille.Visible = true;
+                        labelPortefeuille.Visible = true;
+                        textBoxPortefeuille.Text = utilisateur.porteFeuille.libellePortefeuille;
                     }
                 }
-
+             
             }
             else
             {
 
                 TypeUtilisateur lesTypesUtilisateur = new TypeUtilisateur();
-                comboBoxTypeUser.DataSource = lesTypesUtilisateur.GetLesTypesUtilisateur();
+                comboBoxTypeUser.DataSource = lesTypesUtilisateur.GetLesTypesUtilisateur();              
             }
         }
+
+        private void radioButtonOui_CheckedChanged(object sender, EventArgs e)
+        {
+            textBoxPortefeuille.Visible = true;
+            labelPortefeuille.Visible = true;
+            textBoxPlanning.Visible = true;
+            labelPlanning.Visible = true;
+        }
+
+        private void radioButtonNon_CheckedChanged(object sender, EventArgs e)
+        {
+            textBoxPortefeuille.Visible = false;
+            labelPortefeuille.Visible = false;
+            textBoxPlanning.Visible = false;
+            labelPlanning.Visible = false;
+        }
+
 
         
     }
