@@ -26,7 +26,7 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
     <!--one-to-one name="porteFeuille" constrained="false" foreign-key="none" class="PorteFeuille" lazy="false"/-->
     <many-to-one name="porteFeuille" class="PorteFeuille" column="IdPortefeuille"  unique="true" lazy="false" cascade="all" not-null="false"/>
 
-    <set name="lesConges" table="conges_utilisateur" lazy="true">
+    <set name="lesConges" table="conges_utilisateur" lazy="false">
       <key>
         <column name="numUtilisateur" not-null="true"/>
       </key>

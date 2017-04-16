@@ -86,7 +86,10 @@ namespace Maquette_Belle_Table_Final
 
         private void buttonModCli_Click(object sender, EventArgs e)
         {
-            new Maquette_Belle_Table.Popup_NewClient().Show();
+            Popup_NewClient popupNewclient = new Popup_NewClient();
+            popupNewclient.utilisateur = utilisateur;
+            popupNewclient.interlocuteur = new Interlocuteur();
+            popupNewclient.Show();
         }
 
         private void buttonEnvoiMail_Click(object sender, EventArgs e)
@@ -136,11 +139,7 @@ namespace Maquette_Belle_Table_Final
             List<DateTime> lesDates = new List<DateTime>();
             ISession session = sessionFactory.OpenSession();
             using (ITransaction transaction = session.BeginTransaction())
-            {
-                session.Refresh(utilisateur);
-               
-                transaction.Commit();
-            
+            {            
 
 
                 foreach (Conge conge in utilisateur.lesConges)

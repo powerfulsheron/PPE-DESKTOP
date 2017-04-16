@@ -16,7 +16,7 @@ namespace Maquette_Belle_Table
     public partial class Popup_NewClient : Form
     {
         public Utilisateur utilisateur { get; set; }
-        Interlocuteur interlocuteur = new Interlocuteur();
+        public Interlocuteur interlocuteur { get; set; }
         private static ISessionFactory sessionFactory = new Configuration().Configure().BuildSessionFactory();
         ISession session = sessionFactory.OpenSession();
         public Popup_NewClient()
