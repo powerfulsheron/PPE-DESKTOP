@@ -108,6 +108,12 @@
       <DependentUpon>Popup AddModUser.cs</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="Popup ModifUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup ModifUser.Designer.cs">
+	<DependentUpon>Popup ModifUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Popup_AssoCom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,7 +129,9 @@
     <Compile Include="Popup_ModifierClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Popup_ModifierClient.Designer.cs" />
+    <Compile Include="Popup_ModifierClient.Designer.cs">
+		<DependentUpon>Popup_ModifierClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Popup_NewC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,13 +195,18 @@
       <DependentUpon>Popup AddModUser.cs</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Popup ModifUser.resx">
+	<DependentUpon>Popup ModifUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Popup_AssoCom.resx">
       <DependentUpon>Popup_AssoCom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Popup_Mail.resx">
       <DependentUpon>Popup_Mail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Popup_ModifierClient.resx" />
+    <EmbeddedResource Include="Popup_ModifierClient.resx">
+	<DependentUpon>Popup_ModifierClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Popup_NewC.resx">
       <DependentUpon>Popup_NewC.cs</DependentUpon>
     </EmbeddedResource>
