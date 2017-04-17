@@ -120,17 +120,23 @@
     <Compile Include="Popup_Mail.Designer.cs">
       <DependentUpon>Popup_Mail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Popup_ModifierClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup_ModifierClient.Designer.cs" />
     <Compile Include="Popup_NewC.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Popup_NewC.Designer.cs">
       <DependentUpon>Popup_NewC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Popup_NewClient.cs">
+    <Compile Include="..\..\..\..\..\..\Desktop\Popup_NewClient.cs">
       <SubType>Form</SubType>
+      <Link>Popup_NewClient.cs</Link>
     </Compile>
-    <Compile Include="Popup_NewClient.Designer.cs">
+    <Compile Include="..\..\..\..\..\..\Desktop\Popup_NewClient.Designer.cs">
       <DependentUpon>Popup_NewClient.cs</DependentUpon>
+      <Link>Popup_NewClient.Designer.cs</Link>
     </Compile>
     <Compile Include="Popup_NewCom.cs">
       <SubType>Form</SubType>
@@ -189,11 +195,13 @@
     <EmbeddedResource Include="Popup_Mail.resx">
       <DependentUpon>Popup_Mail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Popup_ModifierClient.resx" />
     <EmbeddedResource Include="Popup_NewC.resx">
       <DependentUpon>Popup_NewC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Popup_NewClient.resx">
+    <EmbeddedResource Include="..\..\..\..\..\..\Desktop\Popup_NewClient.resx">
       <DependentUpon>Popup_NewClient.cs</DependentUpon>
+      <Link>Popup_NewClient.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="Popup_NewCom.resx">
       <DependentUpon>Popup_NewCom.cs</DependentUpon>
