@@ -16,9 +16,10 @@ namespace Maquette_Belle_Table
     public partial class Popup_ModifierClient : Form
     {
         public Utilisateur utilisateur { get; set; }
-        public Interlocuteur interlocuteur = new Interlocuteur();
+        public Interlocuteur interlocuteur { get; set; }
         public Individu individu { get; set; }
         public InterlocuteurStructure interlocuteurStructure { get; set; }
+        public Boolean particulier { get; set; }
 
         private static ISessionFactory sessionFactory = new Configuration().Configure().BuildSessionFactory();
         ISession session = sessionFactory.OpenSession();
@@ -308,10 +309,7 @@ namespace Maquette_Belle_Table
             TypeStructure lesTypeStructure = new TypeStructure();
             comboBoxTS.DataSource = lesTypeStructure.GetLesTypesStructure();
             comboBoxChoixStructure.DataSource = session.CreateQuery(@"select e from Structure e order by e.denominationSociale asc").List<Structure>();
-
-
-           
-            // Si il s'agit d'une modification
+         
             if (interlocuteur != null)
             {
                 if (interlocuteur.nomInterlocuteur != null)
@@ -328,14 +326,13 @@ namespace Maquette_Belle_Table
 
                 if (interlocuteur.mailInterlocuteur != null)
                     textBoxMail.Text = interlocuteur.mailInterlocuteur;
-                session.SaveOrUpdate(interlocuteur);
-                // Si l'interlocuteur est un individu
-                bool exist = session.QueryOver<Individu>().Where(x => x.interlocuteur == interlocuteur).RowCount() > 0;
-                if (exist)
+
+               // Si l'interlocuteur est un particulier 
+                if (particulier)
                 {
    
-                    Individu individu = session.CreateQuery("select e from INDIVIDU e where e.idInterlocuteur=:num").SetParameter("num", interlocuteur.idInterlocuteur).UniqueResult<Individu>();
-
+                    Individu individu = session.CreateQuery("select e from Individu e where e.interlocuteur.idInterlocuteur=:num").SetParameter("num", interlocuteur.idInterlocuteur).UniqueResult<Individu>();
+          
                     if (individu.adresseIndividu != null)
                         textBoxAdresse.Text = individu.adresseIndividu;
 
@@ -353,12 +350,11 @@ namespace Maquette_Belle_Table
                 }
 
                 // Si l'interlocuteur est un interlocuteur_structure
-                exist = session.QueryOver<InterlocuteurStructure>().Where(x => x.interlocuteur == interlocuteur).RowCount() > 0;
-                if (exist)
+                if (!particulier)
                 {
            
                     groupBoxParticulier.Visible = false;
-                    InterlocuteurStructure interlocuteurStructure = session.CreateQuery("select e from interlocuteur_structure e where e.idInterlocuteur=:num").SetParameter("num", interlocuteur.idInterlocuteur).UniqueResult<InterlocuteurStructure>();
+                    InterlocuteurStructure interlocuteurStructure = session.CreateQuery("select e from InterlocuteurStructure e where e.interlocuteur.idInterlocuteur=:num").SetParameter("num", interlocuteur.idInterlocuteur).UniqueResult<InterlocuteurStructure>();
 
                     if (interlocuteurStructure.structure != null)
                     {

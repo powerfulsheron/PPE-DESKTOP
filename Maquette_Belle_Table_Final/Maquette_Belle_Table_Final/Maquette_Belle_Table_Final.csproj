@@ -130,12 +130,11 @@
     <Compile Include="Popup_NewC.Designer.cs">
       <DependentUpon>Popup_NewC.cs</DependentUpon>
     </Compile>
-    <Compile Include="..\..\..\..\..\..\Desktop\Popup_NewClient.cs">
-      <Link>Popup_NewClient.cs</Link>
+    <Compile Include="Popup_NewClient.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="..\..\..\..\..\..\Desktop\Popup_NewClient.Designer.cs">
+    <Compile Include="Popup_NewClient.Designer.cs">
       <DependentUpon>Popup_NewClient.cs</DependentUpon>
-      <Link>Popup_NewClient.Designer.cs</Link>
     </Compile>
     <Compile Include="Popup_NewCom.cs">
       <SubType>Form</SubType>
@@ -198,9 +197,8 @@
     <EmbeddedResource Include="Popup_NewC.resx">
       <DependentUpon>Popup_NewC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\..\..\..\..\..\Desktop\Popup_NewClient.resx">
+    <EmbeddedResource Include="Popup_NewClient.resx">
       <DependentUpon>Popup_NewClient.cs</DependentUpon>
-      <Link>Popup_NewClient.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="Popup_NewCom.resx">
       <DependentUpon>Popup_NewCom.cs</DependentUpon>
@@ -279,7 +277,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Entity\InterlocuteurStructure.hbm.xml" />
+    <EmbeddedResource Include="Entity\InterlocuteurStructure.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -17,7 +17,6 @@ namespace Maquette_Belle_Table_Final
     public partial class InterUti : Form
     {
         private static ISessionFactory sessionFactory = new Configuration().Configure().BuildSessionFactory();
-        ISession session = sessionFactory.OpenSession();
     
         public Utilisateur utilisateur { get; set; }
         
@@ -31,7 +30,10 @@ namespace Maquette_Belle_Table_Final
         {
             chargerCalendar();
             Console.WriteLine(utilisateur.porteFeuille.lesInterlocuteurs);
-            dataGridViewPortefeuille.DataSource = utilisateur.porteFeuille.lesInterlocuteurs.ToList<Interlocuteur>();
+            ISession session = sessionFactory.OpenSession();
+
+            dataGridViewPortefeuille.DataSource = session.CreateQuery(@"select e from Individu e where e.interlocuteur.porteFeuille.idPorteFeuille =:idPorteFeuille").SetInt32("idPorteFeuille", utilisateur.porteFeuille.idPorteFeuille).List<Individu>();
+            dataGridViewInterlocuteurStructure.DataSource = session.CreateQuery(@"select e from InterlocuteurStructure e where e.interlocuteur.porteFeuille.idPorteFeuille =:idPorteFeuille").SetInt32("idPorteFeuille", utilisateur.porteFeuille.idPorteFeuille).List<InterlocuteurStructure>();
 
             //dataGridViewPortefeuille.DataSource = session.CreateQuery(@"select e from Individu where e.interlocuteur.portefeuille.idPorteFeuille=:num").SetInt32("num",utilisateur.porteFeuille.idPorteFeuille).List<Individu>();
             dataGridViewMail.DataSource = utilisateur.lesMails.ToList<Mail>();
@@ -86,10 +88,24 @@ namespace Maquette_Belle_Table_Final
 
         private void buttonModCli_Click(object sender, EventArgs e)
         {
-            Popup_NewClient popupNewclient = new Popup_NewClient();
-            popupNewclient.utilisateur = utilisateur;
-            popupNewclient.interlocuteur = new Interlocuteur();
-            popupNewclient.Show();
+            Popup_ModifierClient popupModifierClient = new Popup_ModifierClient();
+            popupModifierClient.utilisateur = utilisateur;
+    
+            popupModifierClient.particulier = radioButtonIndividu.Checked;
+
+            if (radioButtonInterlocuteurStructure.Checked)
+            {
+                popupModifierClient.interlocuteur = ((InterlocuteurStructure)dataGridViewInterlocuteurStructure.CurrentRow.DataBoundItem).interlocuteur;
+                popupModifierClient.interlocuteurStructure = (InterlocuteurStructure)dataGridViewInterlocuteurStructure.CurrentRow.DataBoundItem;
+            }
+
+            if (radioButtonIndividu.Checked)
+            {
+                popupModifierClient.interlocuteur = ((Individu)dataGridViewPortefeuille.CurrentRow.DataBoundItem).interlocuteur;
+                popupModifierClient.individu = (Individu)dataGridViewPortefeuille.CurrentRow.DataBoundItem;
+            }
+
+            popupModifierClient.Show();
         }
 
         private void buttonEnvoiMail_Click(object sender, EventArgs e)
@@ -179,11 +195,58 @@ namespace Maquette_Belle_Table_Final
         private void dataGridViewPortefeuille_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+            dataGridViewInterlocuteurStructure.ClearSelection();
+
         }
 
         private void panelPlanning_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void dataGridViewInterlocuteurStructure_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridViewPortefeuille.ClearSelection();
+        }
+
+        private void dataGridViewPortefeuille_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridViewInterlocuteurStructure.ClearSelection();
+        }
+
+        private void dataGridViewPortefeuille_MouseClick(object sender, MouseEventArgs e)
+        {
+            dataGridViewInterlocuteurStructure.ClearSelection();
+        }
+
+        private void dataGridViewInterlocuteurStructure_MouseClick(object sender, MouseEventArgs e)
+        {
+            dataGridViewPortefeuille.ClearSelection();
+        }
+
+        private void radioButtonInterlocuteurStructure_CheckedChanged(object sender, EventArgs e)
+        {
+            labelParticulier.Visible = false;
+            dataGridViewPortefeuille.ClearSelection();
+            dataGridViewPortefeuille.Enabled = false;
+            dataGridViewPortefeuille.Visible = false;
+
+            labelStracture.Visible = true;
+            dataGridViewInterlocuteurStructure.Enabled = true;
+            dataGridViewInterlocuteurStructure.Visible = true;
+        }
+
+        private void radioButtonIndividu_CheckedChanged(object sender, EventArgs e)
+        {
+            labelParticulier.Visible = true;
+            dataGridViewPortefeuille.Enabled = true;
+            dataGridViewPortefeuille.Visible = true;
+
+            labelStracture.Visible = false;
+            dataGridViewInterlocuteurStructure.ClearSelection();
+            dataGridViewInterlocuteurStructure.Enabled = false;
+            dataGridViewInterlocuteurStructure.Visible = false;
+            
         }
     }
 }

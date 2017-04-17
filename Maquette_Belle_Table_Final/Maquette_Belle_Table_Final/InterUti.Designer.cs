@@ -51,7 +51,7 @@
             this.panelPortefeuille = new System.Windows.Forms.Panel();
             this.labelStracture = new System.Windows.Forms.Label();
             this.labelParticulier = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewInterlocuteurStructure = new System.Windows.Forms.DataGridView();
             this.dataGridViewPortefeuille = new System.Windows.Forms.DataGridView();
             this.buttonModCli = new System.Windows.Forms.Button();
             this.buttonAddCli = new System.Windows.Forms.Button();
@@ -68,6 +68,9 @@
             this.labeltextBoxNewMDP2 = new System.Windows.Forms.Label();
             this.labelOldPswd = new System.Windows.Forms.Label();
             this.textBoxOldPswd = new System.Windows.Forms.TextBox();
+            this.radioButtonIndividu = new System.Windows.Forms.RadioButton();
+            this.radioButtonInterlocuteurStructure = new System.Windows.Forms.RadioButton();
+            this.groupBoxTypeClient = new System.Windows.Forms.GroupBox();
             this.tableLayoutEntete.SuspendLayout();
             this.panelTitre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBT)).BeginInit();
@@ -79,13 +82,14 @@
             this.panelPlanningC.SuspendLayout();
             this.tabPagePF.SuspendLayout();
             this.panelPortefeuille.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInterlocuteurStructure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPortefeuille)).BeginInit();
             this.tabPageMails.SuspendLayout();
             this.panelMail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMail)).BeginInit();
             this.tabPageCDMDP.SuspendLayout();
             this.panelChangerMDP.SuspendLayout();
+            this.groupBoxTypeClient.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutEntete
@@ -322,12 +326,13 @@
             // panelPortefeuille
             // 
             this.panelPortefeuille.BackgroundImage = global::Maquette_Belle_Table_Final.Properties.Resources.fond;
+            this.panelPortefeuille.Controls.Add(this.groupBoxTypeClient);
             this.panelPortefeuille.Controls.Add(this.labelStracture);
             this.panelPortefeuille.Controls.Add(this.labelParticulier);
-            this.panelPortefeuille.Controls.Add(this.dataGridView1);
-            this.panelPortefeuille.Controls.Add(this.dataGridViewPortefeuille);
             this.panelPortefeuille.Controls.Add(this.buttonModCli);
             this.panelPortefeuille.Controls.Add(this.buttonAddCli);
+            this.panelPortefeuille.Controls.Add(this.dataGridViewInterlocuteurStructure);
+            this.panelPortefeuille.Controls.Add(this.dataGridViewPortefeuille);
             this.panelPortefeuille.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPortefeuille.Location = new System.Drawing.Point(3, 3);
             this.panelPortefeuille.Name = "panelPortefeuille";
@@ -338,39 +343,49 @@
             // labelStracture
             // 
             this.labelStracture.AutoSize = true;
-            this.labelStracture.Location = new System.Drawing.Point(453, 259);
+            this.labelStracture.Location = new System.Drawing.Point(450, 127);
             this.labelStracture.Name = "labelStracture";
             this.labelStracture.Size = new System.Drawing.Size(78, 19);
             this.labelStracture.TabIndex = 7;
             this.labelStracture.Text = "Structure :";
+            this.labelStracture.Visible = false;
             // 
             // labelParticulier
             // 
             this.labelParticulier.AutoSize = true;
-            this.labelParticulier.Location = new System.Drawing.Point(450, 58);
+            this.labelParticulier.Location = new System.Drawing.Point(450, 127);
             this.labelParticulier.Name = "labelParticulier";
             this.labelParticulier.Size = new System.Drawing.Size(84, 19);
             this.labelParticulier.TabIndex = 6;
             this.labelParticulier.Text = "Particulier :";
             // 
-            // dataGridView1
+            // dataGridViewInterlocuteurStructure
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(34, 278);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(913, 178);
-            this.dataGridView1.TabIndex = 5;
+            this.dataGridViewInterlocuteurStructure.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewInterlocuteurStructure.Location = new System.Drawing.Point(34, 151);
+            this.dataGridViewInterlocuteurStructure.Name = "dataGridViewInterlocuteurStructure";
+            this.dataGridViewInterlocuteurStructure.RowTemplate.Height = 28;
+            this.dataGridViewInterlocuteurStructure.RowTemplate.ReadOnly = true;
+            this.dataGridViewInterlocuteurStructure.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewInterlocuteurStructure.Size = new System.Drawing.Size(913, 288);
+            this.dataGridViewInterlocuteurStructure.TabIndex = 5;
+            this.dataGridViewInterlocuteurStructure.Visible = false;
+            this.dataGridViewInterlocuteurStructure.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewInterlocuteurStructure_CellContentClick);
+            this.dataGridViewInterlocuteurStructure.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewInterlocuteurStructure_MouseClick);
             // 
             // dataGridViewPortefeuille
             // 
             this.dataGridViewPortefeuille.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPortefeuille.Location = new System.Drawing.Point(34, 81);
+            this.dataGridViewPortefeuille.Location = new System.Drawing.Point(34, 151);
             this.dataGridViewPortefeuille.Name = "dataGridViewPortefeuille";
             this.dataGridViewPortefeuille.RowTemplate.Height = 28;
-            this.dataGridViewPortefeuille.Size = new System.Drawing.Size(913, 178);
+            this.dataGridViewPortefeuille.RowTemplate.ReadOnly = true;
+            this.dataGridViewPortefeuille.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewPortefeuille.Size = new System.Drawing.Size(913, 288);
             this.dataGridViewPortefeuille.TabIndex = 4;
+            this.dataGridViewPortefeuille.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPortefeuille_CellClick);
             this.dataGridViewPortefeuille.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPortefeuille_CellContentClick);
+            this.dataGridViewPortefeuille.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewPortefeuille_MouseClick);
             // 
             // buttonModCli
             // 
@@ -534,6 +549,40 @@
             this.textBoxOldPswd.Size = new System.Drawing.Size(216, 24);
             this.textBoxOldPswd.TabIndex = 2;
             // 
+            // radioButtonIndividu
+            // 
+            this.radioButtonIndividu.AutoSize = true;
+            this.radioButtonIndividu.Checked = true;
+            this.radioButtonIndividu.Location = new System.Drawing.Point(23, 18);
+            this.radioButtonIndividu.Name = "radioButtonIndividu";
+            this.radioButtonIndividu.Size = new System.Drawing.Size(102, 23);
+            this.radioButtonIndividu.TabIndex = 8;
+            this.radioButtonIndividu.TabStop = true;
+            this.radioButtonIndividu.Text = "Particuliers";
+            this.radioButtonIndividu.UseVisualStyleBackColor = true;
+            this.radioButtonIndividu.CheckedChanged += new System.EventHandler(this.radioButtonIndividu_CheckedChanged);
+            // 
+            // radioButtonInterlocuteurStructure
+            // 
+            this.radioButtonInterlocuteurStructure.AutoSize = true;
+            this.radioButtonInterlocuteurStructure.Location = new System.Drawing.Point(131, 18);
+            this.radioButtonInterlocuteurStructure.Name = "radioButtonInterlocuteurStructure";
+            this.radioButtonInterlocuteurStructure.Size = new System.Drawing.Size(91, 23);
+            this.radioButtonInterlocuteurStructure.TabIndex = 9;
+            this.radioButtonInterlocuteurStructure.Text = "Structure";
+            this.radioButtonInterlocuteurStructure.UseVisualStyleBackColor = true;
+            this.radioButtonInterlocuteurStructure.CheckedChanged += new System.EventHandler(this.radioButtonInterlocuteurStructure_CheckedChanged);
+            // 
+            // groupBoxTypeClient
+            // 
+            this.groupBoxTypeClient.Controls.Add(this.radioButtonIndividu);
+            this.groupBoxTypeClient.Controls.Add(this.radioButtonInterlocuteurStructure);
+            this.groupBoxTypeClient.Location = new System.Drawing.Point(375, 69);
+            this.groupBoxTypeClient.Name = "groupBoxTypeClient";
+            this.groupBoxTypeClient.Size = new System.Drawing.Size(235, 47);
+            this.groupBoxTypeClient.TabIndex = 10;
+            this.groupBoxTypeClient.TabStop = false;
+            // 
             // InterUti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -563,7 +612,7 @@
             this.tabPagePF.ResumeLayout(false);
             this.panelPortefeuille.ResumeLayout(false);
             this.panelPortefeuille.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInterlocuteurStructure)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPortefeuille)).EndInit();
             this.tabPageMails.ResumeLayout(false);
             this.panelMail.ResumeLayout(false);
@@ -571,6 +620,8 @@
             this.tabPageCDMDP.ResumeLayout(false);
             this.panelChangerMDP.ResumeLayout(false);
             this.panelChangerMDP.PerformLayout();
+            this.groupBoxTypeClient.ResumeLayout(false);
+            this.groupBoxTypeClient.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -614,8 +665,11 @@
         private System.Windows.Forms.Button buttonValCDMDP;
         private System.Windows.Forms.Label labeltextBoxNewMDP;
         private System.Windows.Forms.TextBox textBoxNewMDP;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewInterlocuteurStructure;
         private System.Windows.Forms.Label labelStracture;
         private System.Windows.Forms.Label labelParticulier;
+        private System.Windows.Forms.GroupBox groupBoxTypeClient;
+        private System.Windows.Forms.RadioButton radioButtonIndividu;
+        private System.Windows.Forms.RadioButton radioButtonInterlocuteurStructure;
     }
 }

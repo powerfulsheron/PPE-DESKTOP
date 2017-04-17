@@ -40,6 +40,8 @@
             this.textBoxNom = new System.Windows.Forms.TextBox();
             this.labelNom = new System.Windows.Forms.Label();
             this.groupBoxParticulier = new System.Windows.Forms.GroupBox();
+            this.textBoxPlan = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.textBoxDistance = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxAdresse = new System.Windows.Forms.TextBox();
@@ -58,6 +60,8 @@
             this.radioButtonNon = new System.Windows.Forms.RadioButton();
             this.radioButtonOui = new System.Windows.Forms.RadioButton();
             this.groupBoxAS = new System.Windows.Forms.GroupBox();
+            this.labelPlanAcces = new System.Windows.Forms.Label();
+            this.textBoxPlanAcces = new System.Windows.Forms.TextBox();
             this.labelDistanceKm = new System.Windows.Forms.Label();
             this.textBoxDistanceKm = new System.Windows.Forms.TextBox();
             this.comboBoxTS = new System.Windows.Forms.ComboBox();
@@ -217,6 +221,8 @@
             // groupBoxParticulier
             // 
             this.groupBoxParticulier.BackColor = System.Drawing.Color.Transparent;
+            this.groupBoxParticulier.Controls.Add(this.textBoxPlan);
+            this.groupBoxParticulier.Controls.Add(this.label3);
             this.groupBoxParticulier.Controls.Add(this.textBoxDistance);
             this.groupBoxParticulier.Controls.Add(this.label2);
             this.groupBoxParticulier.Controls.Add(this.textBoxAdresse);
@@ -234,6 +240,24 @@
             this.groupBoxParticulier.TabStop = false;
             this.groupBoxParticulier.Text = "Noueau client particulier";
             this.groupBoxParticulier.Enter += new System.EventHandler(this.groupBoxAP_Enter);
+            // 
+            // textBoxPlan
+            // 
+            this.textBoxPlan.Location = new System.Drawing.Point(305, 181);
+            this.textBoxPlan.Name = "textBoxPlan";
+            this.textBoxPlan.Size = new System.Drawing.Size(155, 24);
+            this.textBoxPlan.TabIndex = 20;
+            this.textBoxPlan.Text = "ici";
+            this.textBoxPlan.TextChanged += new System.EventHandler(this.textBoxPlan_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(252, 181);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 19);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Plan :";
             // 
             // textBoxDistance
             // 
@@ -412,6 +436,8 @@
             // groupBoxAS
             // 
             this.groupBoxAS.BackColor = System.Drawing.Color.Transparent;
+            this.groupBoxAS.Controls.Add(this.labelPlanAcces);
+            this.groupBoxAS.Controls.Add(this.textBoxPlanAcces);
             this.groupBoxAS.Controls.Add(this.labelDistanceKm);
             this.groupBoxAS.Controls.Add(this.textBoxDistanceKm);
             this.groupBoxAS.Controls.Add(this.comboBoxTS);
@@ -432,8 +458,23 @@
             this.groupBoxAS.TabIndex = 22;
             this.groupBoxAS.TabStop = false;
             this.groupBoxAS.Text = "Nouvelle tructure";
-            this.groupBoxAS.Visible = false;
             this.groupBoxAS.Enter += new System.EventHandler(this.groupBoxAS_Enter);
+            // 
+            // labelPlanAcces
+            // 
+            this.labelPlanAcces.AutoSize = true;
+            this.labelPlanAcces.Location = new System.Drawing.Point(6, 304);
+            this.labelPlanAcces.Name = "labelPlanAcces";
+            this.labelPlanAcces.Size = new System.Drawing.Size(110, 19);
+            this.labelPlanAcces.TabIndex = 25;
+            this.labelPlanAcces.Text = "Plan d\'accès : ";
+            // 
+            // textBoxPlanAcces
+            // 
+            this.textBoxPlanAcces.Location = new System.Drawing.Point(114, 304);
+            this.textBoxPlanAcces.Name = "textBoxPlanAcces";
+            this.textBoxPlanAcces.Size = new System.Drawing.Size(404, 24);
+            this.textBoxPlanAcces.TabIndex = 24;
             // 
             // labelDistanceKm
             // 
@@ -688,7 +729,7 @@
             this.groupBoxStructureExistante.Text = "groupBox1";
             this.groupBoxStructureExistante.Visible = false;
             // 
-            // Popup_ModifierClient
+            // Popup_NewClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -715,9 +756,9 @@
             this.Controls.Add(this.textBoxNom);
             this.Font = new System.Drawing.Font("Century Gothic", 8F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Popup_ModifierClient";
+            this.Name = "Popup_NewClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Popup_ModifierClient";
+            this.Text = "Popup_NewClient";
             this.Load += new System.EventHandler(this.Popup_ModifierClient_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelTitre.ResumeLayout(false);
@@ -779,6 +820,8 @@
         private System.Windows.Forms.RadioButton radioButtonOui;
         private System.Windows.Forms.Button buttonAnul;
         private System.Windows.Forms.Button buttonVal;
+        private System.Windows.Forms.Label labelPlanAcces;
+        private System.Windows.Forms.TextBox textBoxPlanAcces;
         private System.Windows.Forms.Label labelDistanceKm;
         private System.Windows.Forms.TextBox textBoxDistanceKm;
         private System.Windows.Forms.TextBox textBoxPrenom;
@@ -787,6 +830,8 @@
         private System.Windows.Forms.TextBox textBoxAdresse;
         private System.Windows.Forms.TextBox textBoxDistance;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxPlan;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelOuiNonStructure;
         private System.Windows.Forms.RadioButton radioNouvelleStructureOui;
         private System.Windows.Forms.RadioButton radioNouvelleStructureNon;
