@@ -76,7 +76,6 @@ namespace Maquette_Belle_Table_Final
         private void buttonSupPF_Click(object sender, EventArgs e)
         {
             //Bouton Supprimer Portefeuille
-           
             dataGridViewPF.Rows.Remove(dataGridViewPF.CurrentRow);
         }
 
@@ -142,10 +141,7 @@ namespace Maquette_Belle_Table_Final
         {
             ChargerDataGridViewCommerciaux(dataGridViewCommerciaux);
             ChargerDataGridViewCommerciaux(dataGridViewCom);
-            ChargerDataGridViewPortefeuilles(dataGridViewPortefeuilles);
-
-            ChargerDataGridViewPortefeuilles(dataGridViewPF);
-
+            ChargerDataGridViewPortefeuilles();
         }
 
         //Pour éviter de répeter les instructions sur différentsataGrid affichant des commerciaux:
@@ -167,13 +163,12 @@ namespace Maquette_Belle_Table_Final
             unDataGridViewPourCommerciaux.Columns[16].Visible = false;
         }
 
-        private void ChargerDataGridViewPortefeuilles(DataGridView unDataGridPourPF)
+        private void ChargerDataGridViewPortefeuilles()
         {
-            
             PorteFeuille lesPorteFeuilles = new PorteFeuille();
-            unDataGridPourPF.DataSource = lesPorteFeuilles.GetLesPortefeuilles();
-            unDataGridPourPF.Columns[2].Visible = false;
-            unDataGridPourPF.Columns[3].Visible = false;
+            dataGridViewPortefeuilles.DataSource = lesPorteFeuilles.GetLesPortefeuilles();
+            dataGridViewPortefeuilles.Columns[2].Visible = false;
+            dataGridViewPortefeuilles.Columns[3].Visible = false;
         }
 
         //dataGridViewCommerciaux:
@@ -247,21 +242,6 @@ namespace Maquette_Belle_Table_Final
                 }
                 else if (row.Selected == true) row.Selected = false; //sinon on le désélectionne
             }
-        }
-
-        private void dataGridViewCom_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridViewPF_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
-        private void dataGridViewPortefeuilles_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

@@ -378,15 +378,5 @@ namespace Maquette_Belle_Table
             comboBoxChoixStructure.Visible = false;
             groupBoxAS.Visible = true;
         }
-
-        private void comboBoxChoixStructure_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBoxStructureExistante_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }

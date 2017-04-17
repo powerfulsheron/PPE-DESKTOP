@@ -704,7 +704,6 @@
             this.comboBoxChoixStructure.Name = "comboBoxChoixStructure";
             this.comboBoxChoixStructure.Size = new System.Drawing.Size(266, 25);
             this.comboBoxChoixStructure.TabIndex = 54;
-            this.comboBoxChoixStructure.SelectedIndexChanged += new System.EventHandler(this.comboBoxChoixStructure_SelectedIndexChanged);
             // 
             // labelStructure
             // 
@@ -729,7 +728,6 @@
             this.groupBoxStructureExistante.TabStop = false;
             this.groupBoxStructureExistante.Text = "groupBox1";
             this.groupBoxStructureExistante.Visible = false;
-            this.groupBoxStructureExistante.Enter += new System.EventHandler(this.groupBoxStructureExistante_Enter);
             // 
             // Popup_NewClient
             // 
