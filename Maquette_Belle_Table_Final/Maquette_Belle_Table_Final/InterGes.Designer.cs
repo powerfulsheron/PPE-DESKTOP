@@ -51,10 +51,13 @@
             this.dataGridViewPF = new System.Windows.Forms.DataGridView();
             this.tabPagePFI = new System.Windows.Forms.TabPage();
             this.panelPortefeuille = new System.Windows.Forms.Panel();
-            this.dataGridViewPFI = new System.Windows.Forms.DataGridView();
+            this.dataGridViewPFII = new System.Windows.Forms.DataGridView();
+            this.dataGridViewPFIP = new System.Windows.Forms.DataGridView();
             this.buttonModAssoInter = new System.Windows.Forms.Button();
             this.tabPagePFC = new System.Windows.Forms.TabPage();
             this.panelPFC = new System.Windows.Forms.Panel();
+            this.labelCommerciaux = new System.Windows.Forms.Label();
+            this.labelPortefeuilel = new System.Windows.Forms.Label();
             this.dataGridViewPortefeuilles = new System.Windows.Forms.DataGridView();
             this.dataGridViewCommerciaux = new System.Windows.Forms.DataGridView();
             this.buttonModAssCom = new System.Windows.Forms.Button();
@@ -70,9 +73,11 @@
             this.panelBordeLeft = new System.Windows.Forms.Panel();
             this.panelBorderBottom = new System.Windows.Forms.Panel();
             this.panelBorderRight = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.labelPortefeuilel = new System.Windows.Forms.Label();
-            this.labelCommerciaux = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBoxTypeClient = new System.Windows.Forms.GroupBox();
+            this.radioButtonIndividu = new System.Windows.Forms.RadioButton();
+            this.radioButtonInterlocuteurStructure = new System.Windows.Forms.RadioButton();
+            this.dataGridViewPFIIS = new System.Windows.Forms.DataGridView();
             this.tableLayoutEntete.SuspendLayout();
             this.panelTitre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBT)).BeginInit();
@@ -85,14 +90,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPF)).BeginInit();
             this.tabPagePFI.SuspendLayout();
             this.panelPortefeuille.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPFI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPFII)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPFIP)).BeginInit();
             this.tabPagePFC.SuspendLayout();
             this.panelPFC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPortefeuilles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCommerciaux)).BeginInit();
             this.tabPageCDMDP.SuspendLayout();
             this.panelChangerMDP.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBoxTypeClient.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPFIIS)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutEntete
@@ -297,10 +304,11 @@
             this.panelPF.Controls.Add(this.buttonModPF);
             this.panelPF.Controls.Add(this.buttonCrPF);
             this.panelPF.Controls.Add(this.dataGridViewPF);
+            this.panelPF.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPF.Location = new System.Drawing.Point(2, 2);
             this.panelPF.Margin = new System.Windows.Forms.Padding(2);
             this.panelPF.Name = "panelPF";
-            this.panelPF.Size = new System.Drawing.Size(653, 288);
+            this.panelPF.Size = new System.Drawing.Size(1072, 452);
             this.panelPF.TabIndex = 7;
             // 
             // buttonCPF
@@ -375,8 +383,11 @@
             // panelPortefeuille
             // 
             this.panelPortefeuille.BackgroundImage = global::Maquette_Belle_Table_Final.Properties.Resources.fond;
-            this.panelPortefeuille.Controls.Add(this.dataGridView1);
-            this.panelPortefeuille.Controls.Add(this.dataGridViewPFI);
+            this.panelPortefeuille.Controls.Add(this.dataGridViewPFIIS);
+            this.panelPortefeuille.Controls.Add(this.groupBoxTypeClient);
+            this.panelPortefeuille.Controls.Add(this.label2);
+            this.panelPortefeuille.Controls.Add(this.dataGridViewPFII);
+            this.panelPortefeuille.Controls.Add(this.dataGridViewPFIP);
             this.panelPortefeuille.Controls.Add(this.buttonModAssoInter);
             this.panelPortefeuille.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPortefeuille.Location = new System.Drawing.Point(2, 2);
@@ -385,15 +396,30 @@
             this.panelPortefeuille.Size = new System.Drawing.Size(1072, 452);
             this.panelPortefeuille.TabIndex = 4;
             // 
-            // dataGridViewPFI
+            // dataGridViewPFII
             // 
-            this.dataGridViewPFI.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPFI.Location = new System.Drawing.Point(4, 40);
-            this.dataGridViewPFI.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridViewPFI.Name = "dataGridViewPFI";
-            this.dataGridViewPFI.RowTemplate.Height = 28;
-            this.dataGridViewPFI.Size = new System.Drawing.Size(478, 410);
-            this.dataGridViewPFI.TabIndex = 4;
+            this.dataGridViewPFII.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPFII.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewPFII.Location = new System.Drawing.Point(602, 55);
+            this.dataGridViewPFII.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewPFII.Name = "dataGridViewPFII";
+            this.dataGridViewPFII.RowTemplate.Height = 28;
+            this.dataGridViewPFII.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewPFII.Size = new System.Drawing.Size(466, 393);
+            this.dataGridViewPFII.TabIndex = 5;
+            // 
+            // dataGridViewPFIP
+            // 
+            this.dataGridViewPFIP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPFIP.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewPFIP.Location = new System.Drawing.Point(4, 55);
+            this.dataGridViewPFIP.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewPFIP.Name = "dataGridViewPFIP";
+            this.dataGridViewPFIP.RowTemplate.Height = 28;
+            this.dataGridViewPFIP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewPFIP.Size = new System.Drawing.Size(478, 395);
+            this.dataGridViewPFIP.TabIndex = 4;
+            this.dataGridViewPFIP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPFIP_CellClick);
             // 
             // buttonModAssoInter
             // 
@@ -434,16 +460,34 @@
             this.panelPFC.TabIndex = 5;
             this.panelPFC.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPFC_Paint);
             // 
+            // labelCommerciaux
+            // 
+            this.labelCommerciaux.AutoSize = true;
+            this.labelCommerciaux.Location = new System.Drawing.Point(671, 16);
+            this.labelCommerciaux.Name = "labelCommerciaux";
+            this.labelCommerciaux.Size = new System.Drawing.Size(90, 16);
+            this.labelCommerciaux.TabIndex = 7;
+            this.labelCommerciaux.Text = "Commerciaux :";
+            // 
+            // labelPortefeuilel
+            // 
+            this.labelPortefeuilel.AutoSize = true;
+            this.labelPortefeuilel.Location = new System.Drawing.Point(174, 16);
+            this.labelPortefeuilel.Name = "labelPortefeuilel";
+            this.labelPortefeuilel.Size = new System.Drawing.Size(76, 16);
+            this.labelPortefeuilel.TabIndex = 6;
+            this.labelPortefeuilel.Text = "Portefeuilles :";
+            // 
             // dataGridViewPortefeuilles
             // 
             this.dataGridViewPortefeuilles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPortefeuilles.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridViewPortefeuilles.Location = new System.Drawing.Point(85, 34);
+            this.dataGridViewPortefeuilles.Location = new System.Drawing.Point(62, 34);
             this.dataGridViewPortefeuilles.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewPortefeuilles.Name = "dataGridViewPortefeuilles";
             this.dataGridViewPortefeuilles.RowTemplate.Height = 28;
             this.dataGridViewPortefeuilles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewPortefeuilles.Size = new System.Drawing.Size(236, 408);
+            this.dataGridViewPortefeuilles.Size = new System.Drawing.Size(259, 408);
             this.dataGridViewPortefeuilles.TabIndex = 5;
             this.dataGridViewPortefeuilles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPortefeuilles_CellClick);
             this.dataGridViewPortefeuilles.SelectionChanged += new System.EventHandler(this.dataGridViewPortefeuilles_SelectionChanged);
@@ -611,33 +655,61 @@
             this.panelBorderRight.Size = new System.Drawing.Size(1, 488);
             this.panelBorderRight.TabIndex = 21;
             // 
-            // dataGridView1
+            // label2
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(602, 38);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(466, 410);
-            this.dataGridView1.TabIndex = 5;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(189, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 16);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Portefeuilles :";
             // 
-            // labelPortefeuilel
+            // groupBoxTypeClient
             // 
-            this.labelPortefeuilel.AutoSize = true;
-            this.labelPortefeuilel.Location = new System.Drawing.Point(174, 16);
-            this.labelPortefeuilel.Name = "labelPortefeuilel";
-            this.labelPortefeuilel.Size = new System.Drawing.Size(76, 16);
-            this.labelPortefeuilel.TabIndex = 6;
-            this.labelPortefeuilel.Text = "Portefeuilles :";
+            this.groupBoxTypeClient.Controls.Add(this.radioButtonIndividu);
+            this.groupBoxTypeClient.Controls.Add(this.radioButtonInterlocuteurStructure);
+            this.groupBoxTypeClient.Location = new System.Drawing.Point(732, 3);
+            this.groupBoxTypeClient.Name = "groupBoxTypeClient";
+            this.groupBoxTypeClient.Size = new System.Drawing.Size(235, 47);
+            this.groupBoxTypeClient.TabIndex = 11;
+            this.groupBoxTypeClient.TabStop = false;
             // 
-            // labelCommerciaux
+            // radioButtonIndividu
             // 
-            this.labelCommerciaux.AutoSize = true;
-            this.labelCommerciaux.Location = new System.Drawing.Point(671, 16);
-            this.labelCommerciaux.Name = "labelCommerciaux";
-            this.labelCommerciaux.Size = new System.Drawing.Size(90, 16);
-            this.labelCommerciaux.TabIndex = 7;
-            this.labelCommerciaux.Text = "Commerciaux :";
+            this.radioButtonIndividu.AutoSize = true;
+            this.radioButtonIndividu.Checked = true;
+            this.radioButtonIndividu.Location = new System.Drawing.Point(23, 18);
+            this.radioButtonIndividu.Name = "radioButtonIndividu";
+            this.radioButtonIndividu.Size = new System.Drawing.Size(82, 20);
+            this.radioButtonIndividu.TabIndex = 8;
+            this.radioButtonIndividu.TabStop = true;
+            this.radioButtonIndividu.Text = "Particuliers";
+            this.radioButtonIndividu.UseVisualStyleBackColor = true;
+            this.radioButtonIndividu.CheckedChanged += new System.EventHandler(this.radioButtonIndividu_CheckedChanged);
+            // 
+            // radioButtonInterlocuteurStructure
+            // 
+            this.radioButtonInterlocuteurStructure.AutoSize = true;
+            this.radioButtonInterlocuteurStructure.Location = new System.Drawing.Point(131, 18);
+            this.radioButtonInterlocuteurStructure.Name = "radioButtonInterlocuteurStructure";
+            this.radioButtonInterlocuteurStructure.Size = new System.Drawing.Size(74, 20);
+            this.radioButtonInterlocuteurStructure.TabIndex = 9;
+            this.radioButtonInterlocuteurStructure.Text = "Structure";
+            this.radioButtonInterlocuteurStructure.UseVisualStyleBackColor = true;
+            this.radioButtonInterlocuteurStructure.CheckedChanged += new System.EventHandler(this.radioButtonInterlocuteurStructure_CheckedChanged);
+            // 
+            // dataGridViewPFIIS
+            // 
+            this.dataGridViewPFIIS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPFIIS.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewPFIIS.Location = new System.Drawing.Point(602, 55);
+            this.dataGridViewPFIIS.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewPFIIS.Name = "dataGridViewPFIIS";
+            this.dataGridViewPFIIS.RowTemplate.Height = 28;
+            this.dataGridViewPFIIS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewPFIIS.Size = new System.Drawing.Size(466, 393);
+            this.dataGridViewPFIIS.TabIndex = 12;
+            this.dataGridViewPFIIS.Visible = false;
             // 
             // InterGes
             // 
@@ -669,7 +741,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPF)).EndInit();
             this.tabPagePFI.ResumeLayout(false);
             this.panelPortefeuille.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPFI)).EndInit();
+            this.panelPortefeuille.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPFII)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPFIP)).EndInit();
             this.tabPagePFC.ResumeLayout(false);
             this.panelPFC.ResumeLayout(false);
             this.panelPFC.PerformLayout();
@@ -678,7 +752,9 @@
             this.tabPageCDMDP.ResumeLayout(false);
             this.panelChangerMDP.ResumeLayout(false);
             this.panelChangerMDP.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBoxTypeClient.ResumeLayout(false);
+            this.groupBoxTypeClient.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPFIIS)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -702,7 +778,7 @@
         private System.Windows.Forms.TabPage tabPagePF;
         private System.Windows.Forms.TabPage tabPagePFI;
         private System.Windows.Forms.Panel panelPortefeuille;
-        private System.Windows.Forms.DataGridView dataGridViewPFI;
+        private System.Windows.Forms.DataGridView dataGridViewPFIP;
         private System.Windows.Forms.Button buttonModAssoInter;
         private System.Windows.Forms.TabPage tabPagePFC;
         private System.Windows.Forms.TabPage tabPageCDMDP;
@@ -727,8 +803,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxNewMDP;
         private System.Windows.Forms.DataGridView dataGridViewPortefeuilles;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewPFII;
         private System.Windows.Forms.Label labelCommerciaux;
         private System.Windows.Forms.Label labelPortefeuilel;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBoxTypeClient;
+        private System.Windows.Forms.RadioButton radioButtonIndividu;
+        private System.Windows.Forms.RadioButton radioButtonInterlocuteurStructure;
+        private System.Windows.Forms.DataGridView dataGridViewPFIIS;
     }
 }

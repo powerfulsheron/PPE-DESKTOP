@@ -65,14 +65,15 @@ namespace Maquette_Belle_Table
 
         private void buttonValCom_Click(object sender, EventArgs e)
         {
-          //  try{
+          try{
             AjouterUtilisateur((TypeUtilisateur)comboBoxTypeUser.SelectedItem, textBoxLog.Text, textBoxNom.Text, textBoxPre.Text,
                 textBoxEm.Text, textBoxTel.Text, textBoxRue.Text, textBoxVille.Text, textBoxCp.Text, textBoxPortefeuille.Text, textBoxPlanning.Text, checkBoxChangeMdp.Checked);
             MessageBox.Show("Opération Réussie");
-         //  }catch(Exception ex)
-     //       {
-      //      MessageBox.Show("Erreur"+ex.Message);
-        //    }  
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur"+ex.Message);
+            }  
                 interAd.ChargerDatagridUti();
                 this.Close();
             

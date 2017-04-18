@@ -16,7 +16,7 @@ namespace Maquette_Belle_Table_Final
     {
         private static ISessionFactory sessionFactory = new Configuration().Configure().BuildSessionFactory();
         ISession session = sessionFactory.OpenSession();
-
+        PorteFeuille lesPorteFeuilles = new PorteFeuille();
         public Utilisateur utilisateur { get; set; }
         public InterGes()
         {
@@ -142,6 +142,12 @@ namespace Maquette_Belle_Table_Final
             ChargerDataGridViewCommerciaux(dataGridViewCommerciaux);
             ChargerDataGridViewCommerciaux(dataGridViewCom);
             ChargerDataGridViewPortefeuilles();
+            ISession session = sessionFactory.OpenSession();
+
+
+            ChargerDataGridViewPFII();
+            ChargerDataGridViewPFIIS();
+            ChargerDataGridViewPFIP();
         }
 
         //Pour éviter de répeter les instructions sur différentsataGrid affichant des commerciaux:
@@ -165,12 +171,27 @@ namespace Maquette_Belle_Table_Final
 
         private void ChargerDataGridViewPortefeuilles()
         {
-            PorteFeuille lesPorteFeuilles = new PorteFeuille();
             dataGridViewPortefeuilles.DataSource = lesPorteFeuilles.GetLesPortefeuilles();
             dataGridViewPortefeuilles.Columns[2].Visible = false;
             dataGridViewPortefeuilles.Columns[3].Visible = false;
         }
 
+        private void ChargerDataGridViewPFII()
+        {
+            ISession session = sessionFactory.OpenSession();
+            dataGridViewPFII.DataSource = session.CreateQuery(@"select e from Individu e").List<Individu>();
+        }
+
+        private void ChargerDataGridViewPFIIS()
+        {
+            ISession session = sessionFactory.OpenSession();
+            dataGridViewPFIIS.DataSource = session.CreateQuery(@"select e from InterlocuteurStructure e").List<InterlocuteurStructure>();
+        }
+
+        private void ChargerDataGridViewPFIP()
+        {
+            dataGridViewPFIP.DataSource = lesPorteFeuilles.GetLesPortefeuilles();
+        }
         //dataGridViewCommerciaux:
         private void dataGridViewPFC_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -241,6 +262,72 @@ namespace Maquette_Belle_Table_Final
                     row.Selected = true;
                 }
                 else if (row.Selected == true) row.Selected = false; //sinon on le désélectionne
+            }
+        }
+
+        private void radioButtonInterlocuteurStructure_CheckedChanged(object sender, EventArgs e)
+        {
+            dataGridViewPFII.ClearSelection();
+            dataGridViewPFII.Enabled = false;
+            dataGridViewPFII.Visible = false;
+            dataGridViewPFIIS.Enabled = true;
+            dataGridViewPFIIS.Visible = true;
+        }
+
+        private void radioButtonIndividu_CheckedChanged(object sender, EventArgs e)
+        {
+            dataGridViewPFIIS.ClearSelection();
+            dataGridViewPFIIS.Enabled = false;
+            dataGridViewPFIIS.Visible = false;
+            dataGridViewPFII.Enabled = true;
+            dataGridViewPFII.Visible = true;
+        }
+
+        private void dataGridViewPFIP_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridViewPFII.Visible == true)
+            {
+                //la couleur de dataGridViewPortefeuilles devient bleu, la couleur de dataGridViewCommerciaux sera verte
+                dataGridViewPFII.DefaultCellStyle.SelectionBackColor = Color.GreenYellow;
+                dataGridViewPFIP.DefaultCellStyle.SelectionBackColor = Color.Blue;
+
+                //On charge le portefeuille selectionné dans 'lePortefeuilleSelected'
+                PorteFeuille lePortefeuilleSelected = (PorteFeuille)dataGridViewPFIP.CurrentRow.DataBoundItem;
+
+                //On parcours le dataGridViewCommerciaux à la recherche du même 'lePortefeuilleSelected.idPortefeuille' que celui selectionné
+                foreach (DataGridViewRow row in dataGridViewPFII.Rows)
+                {
+                    Individu unIndividu = (Individu)row.DataBoundItem;
+                    //Si on trouve on selectionne le champ correspondant
+                    if (lePortefeuilleSelected.idPorteFeuille == unIndividu.interlocuteur.porteFeuille.idPorteFeuille)
+                    {
+                        row.Selected = true;
+                    }
+                    else if (row.Selected == true) row.Selected = false; //sinon on le désélectionne
+                }
+
+            }
+            else if (dataGridViewPFIIS.Visible == true)
+            {
+                //la couleur de dataGridViewPortefeuilles devient bleu, la couleur de dataGridViewCommerciaux sera verte
+                dataGridViewPFIIS.DefaultCellStyle.SelectionBackColor = Color.GreenYellow;
+                dataGridViewPFIP.DefaultCellStyle.SelectionBackColor = Color.Blue;
+
+                //On charge le portefeuille selectionné dans 'lePortefeuilleSelected'
+                PorteFeuille lePortefeuilleSelected = (PorteFeuille)dataGridViewPFIP.CurrentRow.DataBoundItem;
+
+                //On parcours le dataGridViewCommerciaux à la recherche du même 'lePortefeuilleSelected.idPortefeuille' que celui selectionné
+                foreach (DataGridViewRow row in dataGridViewPFIIS.Rows)
+                {
+                    InterlocuteurStructure uneStructure = (InterlocuteurStructure)row.DataBoundItem;
+                    //Si on trouve on selectionne le champ correspondant
+                    if (lePortefeuilleSelected.idPorteFeuille == uneStructure.interlocuteur.porteFeuille.idPorteFeuille)
+                    {
+                        row.Selected = true;
+                    }
+                    else if (row.Selected == true) row.Selected = false; //sinon on le désélectionne
+                }
+
             }
         }
     }
