@@ -141,7 +141,9 @@ namespace Maquette_Belle_Table_Final
         {
             ChargerDataGridViewCommerciaux(dataGridViewCommerciaux);
             ChargerDataGridViewCommerciaux(dataGridViewCom);
-            ChargerDataGridViewPortefeuilles();
+            ChargerDataGridViewPortefeuilles(dataGridViewPortefeuilles);
+            ChargerDataGridViewPortefeuilles(dataGridViewPF);
+
             ISession session = sessionFactory.OpenSession();
 
 
@@ -169,11 +171,11 @@ namespace Maquette_Belle_Table_Final
             unDataGridViewPourCommerciaux.Columns[16].Visible = false;
         }
 
-        private void ChargerDataGridViewPortefeuilles()
+        private void ChargerDataGridViewPortefeuilles(DataGridView unDataGridViewPourPF)
         {
-            dataGridViewPortefeuilles.DataSource = lesPorteFeuilles.GetLesPortefeuilles();
-            dataGridViewPortefeuilles.Columns[2].Visible = false;
-            dataGridViewPortefeuilles.Columns[3].Visible = false;
+            unDataGridViewPourPF.DataSource = lesPorteFeuilles.GetLesPortefeuilles();
+            unDataGridViewPourPF.Columns[2].Visible = false;
+            unDataGridViewPourPF.Columns[3].Visible = false;
         }
 
         private void ChargerDataGridViewPFII()
@@ -329,6 +331,16 @@ namespace Maquette_Belle_Table_Final
                 }
 
             }
+        }
+
+        private void buttonCrPF_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewPF_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridViewPF.DefaultCellStyle.SelectionBackColor = Color.Blue;
         }
     }
 }

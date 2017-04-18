@@ -177,9 +177,6 @@ C:\Users\sebas\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_
 C:\Users\sebas\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\bin\Debug\Popup AddModUser.resx
 C:\Users\sebas\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\bin\Debug\Popup AddModUser.cs
 C:\Users\sebas\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\bin\Debug\Popup AddModUser.Designer.cs
-C:\Users\sebas\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\bin\Debug\Popup ModifUser.resx
-C:\Users\sebas\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\bin\Debug\Popup ModifUser.cs
-C:\Users\sebas\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\bin\Debug\Popup ModifUser.Designer.cs
 C:\Users\sebas\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\bin\Debug\Maquette_Belle_Table_Final.exe
 C:\Users\sebas\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\bin\Debug\Maquette_Belle_Table_Final.pdb
 C:\Users\sebas\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.csprojResolveAssemblyReference.cache
@@ -258,3 +255,4 @@ D:\Github\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\
 D:\Github\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table.Popup_ModifUser.resources
 D:\Github\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table.Popup_ModifierClient.resources
 C:\User\U483804\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table.Popup_ModifierClient.resources
+C:\Users\sebas\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table.Popup_ModifierClient.resources
