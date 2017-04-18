@@ -19,10 +19,9 @@ namespace Maquette_Belle_Table
         public Interlocuteur interlocuteur { get; set; }
         public Individu individu { get; set; }
         public InterlocuteurStructure interlocuteurStructure { get; set; }
-        public Boolean particulier { get; set; }
+        public Boolean isIndividu { get; set; }
 
-        private static ISessionFactory sessionFactory = new Configuration().Configure().BuildSessionFactory();
-        ISession session = sessionFactory.OpenSession();
+
 
         public Popup_ModifierClient()
         {
@@ -55,9 +54,9 @@ namespace Maquette_Belle_Table
 
         private void buttonVal_Click(object sender, EventArgs e)
         {
-
-            using (ISession session = sessionFactory.OpenSession())
-            {
+            ISessionFactory sessionFactory = new Configuration().Configure().BuildSessionFactory();
+            ISession session = sessionFactory.OpenSession();
+            
                 using (ITransaction transaction = session.BeginTransaction())
                 {
                     interlocuteur.nomInterlocuteur = textBoxNom.Text;
@@ -66,74 +65,157 @@ namespace Maquette_Belle_Table
                     interlocuteur.mailInterlocuteur = textBoxMail.Text;
                     interlocuteur.porteFeuille = utilisateur.porteFeuille;
                     MessageBox.Show(interlocuteur.porteFeuille.ToString());
-                    session.Save(interlocuteur);
+                    session.Update(interlocuteur);
                     transaction.Commit();
                 }
-
-                if (radioButtonOui.Checked == true)
+                //Si l'interlocuteur était individu
+                if (isIndividu)
                 {
-
-                    using (ITransaction transaction = session.BeginTransaction())
+                    // Si l'individu est modifié en individu
+                    if (radioButtonOui.Checked == true)
                     {
 
-                        Individu individu = new Individu();
-                        individu.adresseIndividu = textBoxAdresse.Text;
-                        individu.cpIndividu = textBoxCp.Text;
-                        individu.villeIndividu = textBoxVille.Text;
-                        individu.distanceSiege = Int32.Parse(textBoxDistance.Text);
-                        individu.infosSupplementaire = textBoxIC.Text;
-                        MessageBox.Show(interlocuteur.idInterlocuteur.ToString());
-                        individu.interlocuteur = interlocuteur;
-                        session.Save(individu);
-                        transaction.Commit();
-                    }
-
-                }
-                else
-                {
-                    if (radioNouvelleStructureOui.Checked == true)
-                    {
                         using (ITransaction transaction = session.BeginTransaction())
                         {
-
-                            Structure structure = new Structure();
-                            structure.typeStructure = (TypeStructure)comboBoxTS.SelectedItem;
-                            structure.denominationSociale = textBoxDS.Text;
-                            structure.adresseStructure = textBoxAdresse.Text;
-                            structure.cpStructure = textBoxCp.Text;
-                            structure.villeStructure = textBoxVille.Text;
-                            structure.distanceSiege = float.Parse(textBoxDistanceKm.Text);
-                            structure.infoSupplementaire = textBoxIC.Text;
-                            session.Save(structure);
-                            InterlocuteurStructure interlocuteurStructure = new InterlocuteurStructure();
-                            interlocuteurStructure.interlocuteur = interlocuteur;
-                            interlocuteurStructure.structure = structure;
-                            session.Save(interlocuteurStructure);
+                            individu.adresseIndividu = textBoxAdresse.Text;
+                            individu.cpIndividu = textBoxCp.Text;
+                            individu.villeIndividu = textBoxVille.Text;
+                            individu.distanceSiege = Int32.Parse(textBoxDistance.Text);
+                            individu.infosSupplementaire = textBoxIC.Text;
+                            MessageBox.Show(interlocuteur.idInterlocuteur.ToString());
+                            individu.interlocuteur = interlocuteur;
+                            session.Update(individu);
                             transaction.Commit();
                         }
 
-
                     }
+                    // Sinon si l'individu est modifié en interlocuteur Structure
                     else
+                    {   // Si il s'agit d'une nouvelle structure
+                        if (radioNouvelleStructureOui.Checked == true)
+                        {
+                            using (ITransaction transaction = session.BeginTransaction())
+                            {
+
+                                Structure structure = new Structure();
+                                structure.typeStructure = (TypeStructure)comboBoxTS.SelectedItem;
+                                structure.denominationSociale = textBoxDS.Text;
+                                structure.adresseStructure = textBoxAdresse.Text;
+                                structure.cpStructure = textBoxCp.Text;
+                                structure.villeStructure = textBoxVille.Text;
+                                structure.distanceSiege = float.Parse(textBoxDistanceKm.Text);
+                                structure.infoSupplementaire = textBoxIC.Text;
+                                session.Save(structure);
+                                InterlocuteurStructure interlocuteurStructure = new InterlocuteurStructure();
+                                interlocuteurStructure.interlocuteur = interlocuteur;
+                                interlocuteurStructure.structure = structure;
+                                session.Save(interlocuteurStructure);
+                                transaction.Commit();
+                            }
+
+
+                        }
+                        // Si il s'agit d'une structure existante
+                        else
+                        {
+                            using (ITransaction transaction = session.BeginTransaction())
+                            {
+
+                                InterlocuteurStructure interlocuteurStructure = new InterlocuteurStructure();
+                                interlocuteurStructure.interlocuteur = interlocuteur;
+                                interlocuteurStructure.structure = (Structure)comboBoxChoixStructure.SelectedItem;
+                                session.Save(interlocuteurStructure);
+                                // l'interlocuteur à été affilié à une structure, on supprime l'individu correspondant.
+                                session.Delete(individu);
+                                transaction.Commit();
+                            }
+
+                        }
+                   
+                    }
+
+                }
+                //Si l'interlocuteur était InterlocuteurStructure
+                if (!isIndividu)
+                {
+                    // Si l'interlocuteur est individu
+                    if (radioButtonOui.Checked == true)
                     {
+
                         using (ITransaction transaction = session.BeginTransaction())
                         {
 
-                            InterlocuteurStructure interlocuteurStructure = new InterlocuteurStructure();
-                            interlocuteurStructure.interlocuteur = interlocuteur;
-                            interlocuteurStructure.structure = (Structure)comboBoxChoixStructure.SelectedItem;
-                            session.Save(interlocuteurStructure);
+                            Individu individu = new Individu();
+                            individu.adresseIndividu = textBoxAdresse.Text;
+                            individu.cpIndividu = textBoxCp.Text;
+                            individu.villeIndividu = textBoxVille.Text;
+                            individu.distanceSiege = Int32.Parse(textBoxDistance.Text);
+                            individu.infosSupplementaire = textBoxIC.Text;
+                            MessageBox.Show(interlocuteur.idInterlocuteur.ToString());
+                            individu.interlocuteur = interlocuteur;
+                            session.Save(individu);
+                            // L'individu à été set, on supprime l'interlocuteurStructure
+                            session.Delete(interlocuteurStructure);
                             transaction.Commit();
                         }
+ 
 
                     }
+                        // Sinon si l'interlocuteur etait interlocuteur Structure
+                    else
+                    {   // Si il s'agit d'une nouvelle structure
+                        if (radioNouvelleStructureOui.Checked == true)
+                        {
+                            using (ITransaction transaction = session.BeginTransaction())
+                            {
+
+                                Structure structure = new Structure();
+                                structure.typeStructure = (TypeStructure)comboBoxTS.SelectedItem;
+                                structure.denominationSociale = textBoxDS.Text;
+                                structure.adresseStructure = textBoxAdresse.Text;
+                                structure.cpStructure = textBoxCp.Text;
+                                structure.villeStructure = textBoxVille.Text;
+                                structure.distanceSiege = float.Parse(textBoxDistanceKm.Text);
+                                structure.infoSupplementaire = textBoxIC.Text;
+                                session.Save(structure);
+                                InterlocuteurStructure interlocuteurStructureNew = new InterlocuteurStructure();
+                                interlocuteurStructureNew.interlocuteur = interlocuteur;
+                                interlocuteurStructureNew.structure = structure;
+                                session.Save(interlocuteurStructureNew);
+                                // L'interlocuteurStructure à été set, on supprime l'ancien interlocuteurStructure :
+                                session.Delete(interlocuteurStructure);
+                                transaction.Commit();
+                            }
 
 
+                        }
+                        // sinon si il s'agit d'une structure existante
+                        else
+                        {
+                            // Si l'interocuteur est affilié à une structure différente de la sienne on crée un nouvel Interlocuteur Structure et on supprime l'ancien
+                            if ((Structure)comboBoxChoixStructure.SelectedItem!=interlocuteurStructure.structure)
+                            {
+                            using (ITransaction transaction = session.BeginTransaction())
+                            {
+
+                                InterlocuteurStructure interlocuteurStructureNew = new InterlocuteurStructure();
+                                interlocuteurStructureNew.interlocuteur = interlocuteur;
+                                interlocuteurStructureNew.structure = (Structure)comboBoxChoixStructure.SelectedItem;
+                                session.Save(interlocuteurStructureNew);
+                                // L'interlocuteurStructure à été set, on supprime l'ancien interlocuteurStructure :
+                                session.Delete(interlocuteurStructure);
+                                transaction.Commit();
+                            }
+                            }
+                        }
+
+
+                    }
+                    session.Dispose();
                 }
-                session.Dispose();
-            }
 
-        }
+            }
+        
 
 
         private void buttonAnul_Click(object sender, EventArgs e)
@@ -306,77 +388,86 @@ namespace Maquette_Belle_Table
 
         private void Popup_ModifierClient_Load(object sender, EventArgs e)
         {
-            TypeStructure lesTypeStructure = new TypeStructure();
-            comboBoxTS.DataSource = lesTypeStructure.GetLesTypesStructure();
-            comboBoxChoixStructure.DataSource = session.CreateQuery(@"select e from Structure e order by e.denominationSociale asc").List<Structure>();
-         
-            if (interlocuteur != null)
-            {
-                if (interlocuteur.nomInterlocuteur != null)
-                    textBoxNom.Text = interlocuteur.nomInterlocuteur;
+             ISessionFactory sessionFactory = new Configuration().Configure().BuildSessionFactory();
+             ISession session = sessionFactory.OpenSession();
 
-                if (interlocuteur.prenomInterlocuteur != null)
-                    textBoxPrenom.Text = interlocuteur.prenomInterlocuteur;
+             using (ITransaction transaction = session.BeginTransaction())
+             {
+                 TypeStructure lesTypeStructure = new TypeStructure();
+                 comboBoxTS.DataSource = lesTypeStructure.GetLesTypesStructure();
+                 comboBoxChoixStructure.DataSource = session.CreateQuery(@"select e from Structure e order by e.denominationSociale asc").List<Structure>();
 
-                if (interlocuteur.telInterlocuteur != null)
-                    textBoxTel.Text = interlocuteur.telInterlocuteur;
+                 if (interlocuteur != null)
+                 {
+                     if (interlocuteur.nomInterlocuteur != null)
+                         textBoxNom.Text = interlocuteur.nomInterlocuteur;
 
-                if (interlocuteur.telInterlocuteur != null)
-                    textBoxTel.Text = interlocuteur.telInterlocuteur;
+                     if (interlocuteur.prenomInterlocuteur != null)
+                         textBoxPrenom.Text = interlocuteur.prenomInterlocuteur;
 
-                if (interlocuteur.mailInterlocuteur != null)
-                    textBoxMail.Text = interlocuteur.mailInterlocuteur;
+                     if (interlocuteur.telInterlocuteur != null)
+                         textBoxTel.Text = interlocuteur.telInterlocuteur;
 
-               // Si l'interlocuteur est un particulier 
-                if (particulier)
-                {
-   
-                    Individu individu = session.CreateQuery("select e from Individu e where e.interlocuteur.idInterlocuteur=:num").SetParameter("num", interlocuteur.idInterlocuteur).UniqueResult<Individu>();
-          
-                    if (individu.adresseIndividu != null)
-                        textBoxAdresse.Text = individu.adresseIndividu;
+                     if (interlocuteur.telInterlocuteur != null)
+                         textBoxTel.Text = interlocuteur.telInterlocuteur;
 
-                    if (individu.cpIndividu != null)
-                        textBoxCp.Text = individu.cpIndividu;
+                     if (interlocuteur.mailInterlocuteur != null)
+                         textBoxMail.Text = interlocuteur.mailInterlocuteur;
 
-                    if (individu.villeIndividu != null)
-                        textBoxVille.Text = individu.villeIndividu;
+                     // Si l'interlocuteur est un particulier 
+                     if (isIndividu)
+                     {
 
-                    if (individu.distanceSiege != null)
-                        textBoxDistance.Text = individu.distanceSiege.ToString();
+                         Individu individu = session.CreateQuery("select e from Individu e where e.interlocuteur.idInterlocuteur=:num").SetParameter("num", interlocuteur.idInterlocuteur).UniqueResult<Individu>();
 
-                    if (individu.infosSupplementaire != null)
-                        textBoxIC.Text = individu.infosSupplementaire;
-                }
+                         if (individu.adresseIndividu != null)
+                             textBoxAdresse.Text = individu.adresseIndividu;
 
-                // Si l'interlocuteur est un interlocuteur_structure
-                if (!particulier)
-                {
-           
-                    groupBoxParticulier.Visible = false;
-                    InterlocuteurStructure interlocuteurStructure = session.CreateQuery("select e from InterlocuteurStructure e where e.interlocuteur.idInterlocuteur=:num").SetParameter("num", interlocuteur.idInterlocuteur).UniqueResult<InterlocuteurStructure>();
+                         if (individu.cpIndividu != null)
+                             textBoxCp.Text = individu.cpIndividu;
 
-                    if (interlocuteurStructure.structure != null)
-                    {
-                        foreach (Structure s in comboBoxChoixStructure.Items)
-                        {
-                            if (s.numStructure == interlocuteurStructure.structure.numStructure)
-                            {
-                                comboBoxChoixStructure.SelectedItem = s;
-                            }
-                        }
-                    }
+                         if (individu.villeIndividu != null)
+                             textBoxVille.Text = individu.villeIndividu;
+
+                         if (individu.distanceSiege != null)
+                             textBoxDistance.Text = individu.distanceSiege.ToString();
+
+                         if (individu.infosSupplementaire != null)
+                             textBoxIC.Text = individu.infosSupplementaire;
+                     }
+
+                     // Si l'interlocuteur est un interlocuteur_structure
+                     if (!isIndividu)
+                     {
+
+                         groupBoxParticulier.Visible = false;
+                         groupBoxStructureExistante.Visible = true;
+
+                         InterlocuteurStructure interlocuteurStructure = session.CreateQuery("select e from InterlocuteurStructure e where e.interlocuteur.idInterlocuteur=:num").SetParameter("num", interlocuteur.idInterlocuteur).UniqueResult<InterlocuteurStructure>();
+
+                         if (interlocuteurStructure.structure != null)
+                         {
+                             foreach (Structure s in comboBoxChoixStructure.Items)
+                             {
+                                 if (s.numStructure == interlocuteurStructure.structure.numStructure)
+                                 {
+                                     comboBoxChoixStructure.SelectedItem = s;
+                                 }
+                             }
+                         }
 
 
-                }
+                     }
 
 
-            }
+                 }
+                 session.Dispose();
+             }
         }
         static Boolean AjouterClient(Interlocuteur unInterlocuteur, string unnomclient, string unprenomclient, string untelclient,
             string unmailclient, Individu unindividu, Structure unestructure, PorteFeuille unPortefeuille)
         {
-            sessionFactory = new Configuration().Configure().BuildSessionFactory();
+            ISessionFactory sessionFactory = new Configuration().Configure().BuildSessionFactory();
             ISession session = sessionFactory.OpenSession();
 
             using (ITransaction transaction = session.BeginTransaction())

@@ -26,27 +26,10 @@ namespace Maquette_Belle_Table_Final
             InitializeComponent();
             Load += new EventHandler(InterUti_Load);         
         }
-        private void InterUti_Load(object sender, System.EventArgs e)
+        public void InterUti_Load(object sender, System.EventArgs e)
         {
             chargerCalendar();
-            Console.WriteLine(utilisateur.porteFeuille.lesInterlocuteurs);
-            ISession session = sessionFactory.OpenSession();
-
-            dataGridViewPortefeuille.DataSource = session.CreateQuery(@"select e from Individu e where e.interlocuteur.porteFeuille.idPorteFeuille =:idPorteFeuille").SetInt32("idPorteFeuille", utilisateur.porteFeuille.idPorteFeuille).List<Individu>();
-            dataGridViewInterlocuteurStructure.DataSource = session.CreateQuery(@"select e from InterlocuteurStructure e where e.interlocuteur.porteFeuille.idPorteFeuille =:idPorteFeuille").SetInt32("idPorteFeuille", utilisateur.porteFeuille.idPorteFeuille).List<InterlocuteurStructure>();
-
-            //dataGridViewPortefeuille.DataSource = session.CreateQuery(@"select e from Individu where e.interlocuteur.portefeuille.idPorteFeuille=:num").SetInt32("num",utilisateur.porteFeuille.idPorteFeuille).List<Individu>();
-            dataGridViewMail.DataSource = utilisateur.lesMails.ToList<Mail>();
-            //IList<Mail> test = utilisateur.lesMails.ToList<Mail>();
-            /*
-            foreach (Mail mail in test)
-            {
-                dataGridViewMail.Columns.Add("Expediteur", "Expediteur");
-                dataGridViewMail.Rows.Add(mail.interlocuteur.mailInterlocuteur);
-                dataGridViewMail.Columns.Add("Object", "Object");
-                dataGridViewMail.Rows.Add(mail.objetMail);
-            }
-            */
+            chargerDatagridInterlocuteurs();
         }
 
         private void labelFermeture_Click(object sender, EventArgs e)
@@ -83,6 +66,7 @@ namespace Maquette_Belle_Table_Final
         {
             Popup_NewClient popupNewclient = new Popup_NewClient();
             popupNewclient.utilisateur = utilisateur;
+            popupNewclient.interUti = this;
             popupNewclient.Show();
         }
 
@@ -91,7 +75,7 @@ namespace Maquette_Belle_Table_Final
             Popup_ModifierClient popupModifierClient = new Popup_ModifierClient();
             popupModifierClient.utilisateur = utilisateur;
     
-            popupModifierClient.particulier = radioButtonIndividu.Checked;
+            popupModifierClient.isIndividu = radioButtonIndividu.Checked;
 
             if (radioButtonInterlocuteurStructure.Checked)
             {
@@ -179,6 +163,32 @@ namespace Maquette_Belle_Table_Final
                 monthCalendarPlanC.BoldedDates = sourceDate;
                 session.Dispose();
 
+            }
+        }
+
+        public void chargerDatagridInterlocuteurs()
+        {
+
+            ISession session = sessionFactory.OpenSession();
+            using (ITransaction transaction = session.BeginTransaction())
+            {
+
+                dataGridViewPortefeuille.DataSource = session.CreateQuery(@"select e from Individu e where e.interlocuteur.porteFeuille.idPorteFeuille =:idPorteFeuille").SetInt32("idPorteFeuille", utilisateur.porteFeuille.idPorteFeuille).List<Individu>();
+                dataGridViewInterlocuteurStructure.DataSource = session.CreateQuery(@"select e from InterlocuteurStructure e where e.interlocuteur.porteFeuille.idPorteFeuille =:idPorteFeuille").SetInt32("idPorteFeuille", utilisateur.porteFeuille.idPorteFeuille).List<InterlocuteurStructure>();
+
+                //dataGridViewPortefeuille.DataSource = session.CreateQuery(@"select e from Individu where e.interlocuteur.portefeuille.idPorteFeuille=:num").SetInt32("num",utilisateur.porteFeuille.idPorteFeuille).List<Individu>();
+                dataGridViewMail.DataSource = utilisateur.lesMails.ToList<Mail>();
+                //IList<Mail> test = utilisateur.lesMails.ToList<Mail>();
+                /*
+                foreach (Mail mail in test)
+                {
+                    dataGridViewMail.Columns.Add("Expediteur", "Expediteur");
+                    dataGridViewMail.Rows.Add(mail.interlocuteur.mailInterlocuteur);
+                    dataGridViewMail.Columns.Add("Object", "Object");
+                    dataGridViewMail.Rows.Add(mail.objetMail);
+                }
+                */
+             //   session.Dispose();
             }
         }
 

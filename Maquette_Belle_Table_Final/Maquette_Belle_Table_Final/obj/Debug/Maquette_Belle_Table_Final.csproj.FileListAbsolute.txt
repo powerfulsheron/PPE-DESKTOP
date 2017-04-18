@@ -256,3 +256,5 @@ D:\Github\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\
 D:\Github\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table.Popup_ModifierClient.resources
 C:\User\U483804\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table.Popup_ModifierClient.resources
 C:\Users\sebas\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table.Popup_ModifierClient.resources
+C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table.Popup_ModifUser.resources
+C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table.Popup_ModifierClient.resources

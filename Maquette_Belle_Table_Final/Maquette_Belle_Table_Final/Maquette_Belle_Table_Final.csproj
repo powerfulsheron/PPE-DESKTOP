@@ -112,7 +112,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Popup ModifUser.Designer.cs">
-	<DependentUpon>Popup ModifUser.cs</DependentUpon>
+      <DependentUpon>Popup ModifUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Popup_AssoCom.cs">
       <SubType>Form</SubType>
@@ -130,7 +130,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Popup_ModifierClient.Designer.cs">
-		<DependentUpon>Popup_ModifierClient.cs</DependentUpon>
+      <DependentUpon>Popup_ModifierClient.cs</DependentUpon>
     </Compile>
     <Compile Include="Popup_NewC.cs">
       <SubType>Form</SubType>
@@ -196,7 +196,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Popup ModifUser.resx">
-	<DependentUpon>Popup ModifUser.cs</DependentUpon>
+      <DependentUpon>Popup ModifUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Popup_AssoCom.resx">
       <DependentUpon>Popup_AssoCom.cs</DependentUpon>
@@ -205,7 +205,7 @@
       <DependentUpon>Popup_Mail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Popup_ModifierClient.resx">
-	<DependentUpon>Popup_ModifierClient.cs</DependentUpon>
+      <DependentUpon>Popup_ModifierClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Popup_NewC.resx">
       <DependentUpon>Popup_NewC.cs</DependentUpon>
@@ -239,6 +239,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

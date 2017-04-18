@@ -16,9 +16,9 @@ namespace Maquette_Belle_Table
     public partial class Popup_NewClient : Form
     {
         public Utilisateur utilisateur { get; set; }
-        public Interlocuteur interlocuteur { get; set; }
+        public Interlocuteur interlocuteur = new Interlocuteur();
+        public InterUti interUti { get; set; }
         private static ISessionFactory sessionFactory = new Configuration().Configure().BuildSessionFactory();
-        ISession session = sessionFactory.OpenSession();
         public Popup_NewClient()
         {
             InitializeComponent();
@@ -127,7 +127,8 @@ namespace Maquette_Belle_Table
                 }
                 session.Dispose();
             }
-
+            interUti.chargerDatagridInterlocuteurs();
+            this.Close();
         }
 
 
@@ -301,10 +302,15 @@ namespace Maquette_Belle_Table
 
         private void Popup_NewClient_Load(object sender, EventArgs e)
         {
-            TypeStructure lesTypeStructure = new TypeStructure();
-            comboBoxTS.DataSource = lesTypeStructure.GetLesTypesStructure();
-            groupBoxAS.Visible = false;
-            comboBoxChoixStructure.DataSource = session.CreateQuery(@"select e from Structure e order by e.denominationSociale asc").List<Structure>();
+            ISession session = sessionFactory.OpenSession();
+            using (session)
+            {
+                TypeStructure lesTypeStructure = new TypeStructure();
+                comboBoxTS.DataSource = lesTypeStructure.GetLesTypesStructure();
+                groupBoxAS.Visible = false;
+                comboBoxChoixStructure.DataSource = session.CreateQuery(@"select e from Structure e order by e.denominationSociale asc").List<Structure>();
+                session.Dispose();
+            }
 
         }
 
