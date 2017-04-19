@@ -4,9 +4,6 @@
 UTILISATEUR :
 
 - Planning jquerry widget en iFrame(Vallade)
-- Modifier un client ( en cours lorenzo )
-- Supprimer un client (attention à la base, normalement j'ai configuré nhibernate pour que les deletes soient automatiques, à tester)
-
 
 GESTIONNAIRE :
 
@@ -41,6 +38,8 @@ GESTIONNAIRE :
 - Ajouter/Modifier utilisateur (raph + lorenzo)
 - Supprimer un utilisateur (commercial ou gestionnaire) (raph)
 - Liste des logs de connection (raph)
+- Modifier un client (lorenzo)
+- Supprimer un client (lorenzo)
 
 
 
