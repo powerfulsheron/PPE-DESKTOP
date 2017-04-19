@@ -188,7 +188,8 @@ namespace Maquette_Belle_Table_Final
                     dataGridViewMail.Rows.Add(mail.objetMail);
                 }
                 */
-             //   session.Dispose();
+                session.Dispose();
+                //session.Close();
             }
         }
 

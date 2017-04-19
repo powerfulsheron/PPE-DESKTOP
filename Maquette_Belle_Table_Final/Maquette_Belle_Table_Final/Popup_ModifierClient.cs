@@ -56,8 +56,8 @@ namespace Maquette_Belle_Table
         {
             ISessionFactory sessionFactory = new Configuration().Configure().BuildSessionFactory();
             ISession session = sessionFactory.OpenSession();
-            
-                using (ITransaction transaction = session.BeginTransaction())
+           
+            using (ITransaction transaction = session.BeginTransaction())
                 {
                     interlocuteur.nomInterlocuteur = textBoxNom.Text;
                     interlocuteur.prenomInterlocuteur = textBoxPrenom.Text;
