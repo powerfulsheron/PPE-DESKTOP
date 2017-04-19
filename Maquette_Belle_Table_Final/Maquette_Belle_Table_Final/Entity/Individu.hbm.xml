@@ -13,6 +13,7 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
     <property name="infosSupplementaire" column="infosSupplementaire"/>
 
     <!--one-to-one name="interlocuteur" constrained="true" foreign-key="true" class="Interlocuteur"/-->
-    <many-to-one name="interlocuteur" unique="true" column="idInterlocuteur"/>
+    <many-to-one name="interlocuteur" unique="true" column="idInterlocuteur" lazy="false" cascade="all"/>
+    
   </class>
 </hibernate-mapping>

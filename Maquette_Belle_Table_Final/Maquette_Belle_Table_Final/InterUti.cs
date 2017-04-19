@@ -74,6 +74,7 @@ namespace Maquette_Belle_Table_Final
         {
             Popup_ModifierClient popupModifierClient = new Popup_ModifierClient();
             popupModifierClient.utilisateur = utilisateur;
+            popupModifierClient.interUti = this;
     
             popupModifierClient.isIndividu = radioButtonIndividu.Checked;
 
@@ -258,6 +259,28 @@ namespace Maquette_Belle_Table_Final
             dataGridViewInterlocuteurStructure.Enabled = false;
             dataGridViewInterlocuteurStructure.Visible = false;
             
+        }
+
+        private void buttonSupprimerClient_Click(object sender, EventArgs e)
+        {
+            Confirm confirm = new Confirm();
+            confirm.isIndividu = radioButtonIndividu.Checked;
+            confirm.interUti = this;
+            confirm.isIndividu = radioButtonIndividu.Checked;
+
+            if (radioButtonInterlocuteurStructure.Checked)
+            {
+                confirm.interlocuteur = ((InterlocuteurStructure)dataGridViewInterlocuteurStructure.CurrentRow.DataBoundItem).interlocuteur;
+                confirm.interlocuteurStructure = (InterlocuteurStructure)dataGridViewInterlocuteurStructure.CurrentRow.DataBoundItem;
+            }
+
+            if (radioButtonIndividu.Checked)
+            {
+                confirm.interlocuteur = ((Individu)dataGridViewPortefeuille.CurrentRow.DataBoundItem).interlocuteur;
+                confirm.individu = (Individu)dataGridViewPortefeuille.CurrentRow.DataBoundItem;
+            }
+
+            confirm.Show();
         }
     }
 }

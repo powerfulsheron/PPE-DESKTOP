@@ -5,7 +5,7 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
     <id name="idInterlocuteurStructure" column="idInterlocuteurStructure" unsaved-value="0">
       <generator class="native" />
     </id>
-    <many-to-one name="interlocuteur" column="idInterlocuteur" lazy="false"/>
+    <many-to-one name="interlocuteur" column="idInterlocuteur" lazy="false" cascade="all"/>
     <many-to-one name="structure"  column="numStructure" lazy="false"/>
   </class>
 </hibernate-mapping>

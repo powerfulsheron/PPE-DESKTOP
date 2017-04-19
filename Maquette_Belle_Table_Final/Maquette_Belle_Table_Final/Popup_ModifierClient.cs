@@ -20,6 +20,7 @@ namespace Maquette_Belle_Table
         public Individu individu { get; set; }
         public InterlocuteurStructure interlocuteurStructure { get; set; }
         public Boolean isIndividu { get; set; }
+        public InterUti interUti { get; set; }
 
 
 
@@ -213,6 +214,8 @@ namespace Maquette_Belle_Table
                     }
                     session.Dispose();
                 }
+                interUti.chargerDatagridInterlocuteurs();
+                this.Close();
 
             }
         
