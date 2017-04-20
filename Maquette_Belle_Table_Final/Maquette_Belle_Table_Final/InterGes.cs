@@ -289,47 +289,21 @@ namespace Maquette_Belle_Table_Final
         {
             if (dataGridViewPFII.Visible == true)
             {
-                //la couleur de dataGridViewPortefeuilles devient bleu, la couleur de dataGridViewCommerciaux sera verte
-                dataGridViewPFII.DefaultCellStyle.SelectionBackColor = Color.GreenYellow;
-                dataGridViewPFIP.DefaultCellStyle.SelectionBackColor = Color.Blue;
-
-                //On charge le portefeuille selectionné dans 'lePortefeuilleSelected'
+               //On charge le portefeuille selectionné dans 'lePortefeuilleSelected'
                 PorteFeuille lePortefeuilleSelected = (PorteFeuille)dataGridViewPFIP.CurrentRow.DataBoundItem;
 
-                //On parcours le dataGridViewCommerciaux à la recherche du même 'lePortefeuilleSelected.idPortefeuille' que celui selectionné
-                foreach (DataGridViewRow row in dataGridViewPFII.Rows)
-                {
-                    Individu unIndividu = (Individu)row.DataBoundItem;
-                    //Si on trouve on selectionne le champ correspondant
-                    if (lePortefeuilleSelected.idPorteFeuille == unIndividu.interlocuteur.porteFeuille.idPorteFeuille)
-                    {
-                        row.Selected = true;
-                    }
-                    else if (row.Selected == true) row.Selected = false; //sinon on le désélectionne
-                }
+                dataGridViewPFII.DataSource = session.CreateQuery(@"select e from Individu e where e.interlocuteur.porteFeuille.idPorteFeuille =:idPorteFeuille
+                ").SetInt32("idPorteFeuille", lePortefeuilleSelected.idPorteFeuille).List<Individu>();
 
             }
             else if (dataGridViewPFIIS.Visible == true)
             {
-                //la couleur de dataGridViewPortefeuilles devient bleu, la couleur de dataGridViewCommerciaux sera verte
-                dataGridViewPFIIS.DefaultCellStyle.SelectionBackColor = Color.GreenYellow;
-                dataGridViewPFIP.DefaultCellStyle.SelectionBackColor = Color.Blue;
-
+              
                 //On charge le portefeuille selectionné dans 'lePortefeuilleSelected'
                 PorteFeuille lePortefeuilleSelected = (PorteFeuille)dataGridViewPFIP.CurrentRow.DataBoundItem;
 
-                //On parcours le dataGridViewCommerciaux à la recherche du même 'lePortefeuilleSelected.idPortefeuille' que celui selectionné
-                foreach (DataGridViewRow row in dataGridViewPFIIS.Rows)
-                {
-                    InterlocuteurStructure uneStructure = (InterlocuteurStructure)row.DataBoundItem;
-                    //Si on trouve on selectionne le champ correspondant
-                    if (lePortefeuilleSelected.idPorteFeuille == uneStructure.interlocuteur.porteFeuille.idPorteFeuille)
-                    {
-                        row.Selected = true;
-                    }
-                    else if (row.Selected == true) row.Selected = false; //sinon on le désélectionne
-                }
-
+                dataGridViewPFIIS.DataSource = session.CreateQuery(@"select e from InterlocuteurStructure e where e.interlocuteur.porteFeuille.idPorteFeuille =:idPorteFeuille
+                ").SetInt32("idPorteFeuille", lePortefeuilleSelected.idPorteFeuille).List<InterlocuteurStructure>();
             }
         }
 
