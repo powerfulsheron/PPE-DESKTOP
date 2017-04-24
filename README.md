@@ -1,14 +1,12 @@
 #A FAIRE : 
 
-
 UTILISATEUR :
 
 - Planning jquerry widget en iFrame(Vallade)
 
 GESTIONNAIRE :
 
-- Modification d'un commercial (en cours lorenzo) 
-- Supression d'un commercial (attention à la base, normalement j'ai configuré nhibernate pour que les deletes soient automatiques, à tester)
+- Supression d'un commercial (en cours lorenzo)
 - Voir la liste des rdv d'un commercial
 - Voir la liste des mails d'un commercial
 - Prendre un rendez vous au nom d'un commercial
@@ -38,7 +36,8 @@ GESTIONNAIRE :
 - Modifier un client (lorenzo)
 - Supprimer un client (lorenzo)
 - Affichage de la liste des commerciaux (seb)
-- Ajout d'un nouveau Commercial (générations login/mdp automatiques + envoi mail) (seb à tester)
+- Ajout d'un nouveau Commercial (générations login/mdp automatiques + envoi mail) (seb + lorenzo)
+- Modification d'un commercial (lorenzo) 
 
 
 
