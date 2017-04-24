@@ -3,16 +3,19 @@ SET foreign_key_checks = 0;
 #------------------------------------------------------------
 # Table: UTILISATEUR
 #------------------------------------------------------------
+
+#Commercial
 insert into UTILISATEUR (numUtilisateur, nomUtilisateur, prenomUtilisateur, adresseUtilisateur, cpUtilisateur, villeUtilisateur, telUtilisateur, mailUtilisateur, distanceParcourueSemaine, loginUtilisateur, passwordUtilisateur, dateDernierLogin, nbTentatives, codeTypeUtilisateur, idPlanning, idPorteFeuille, version) values 
-(1, 'Jimmy', 'Clark', '32598 Melvin Point', 7500, 'Sāqayn', '967-(798)407-8439', 'jclark0@amazonaws.com', 0, 'jclark', MD5(12345), 20160326,  0, 1, null, null,0);
+(1, 'Sailly', 'Axelle', '2 allée de St Genouf', 91360, 'Villemoisson-sur-Orge', '0665564696', 'saillyaxelle@hotmail.fr', 0, 'axelles', MD5('14.08.1997'), 20170424, 0, 3, 1, 1,0);
+#Commercial
 insert into UTILISATEUR (numUtilisateur, nomUtilisateur, prenomUtilisateur, adresseUtilisateur, cpUtilisateur, villeUtilisateur, telUtilisateur, mailUtilisateur, distanceParcourueSemaine, loginUtilisateur, passwordUtilisateur, dateDernierLogin, nbTentatives, codeTypeUtilisateur, idPlanning, idPorteFeuille, version) values 
-(2, 'Patricia', 'Griffin', '5301 Oak Parkway', 7500, 'Jiwei', '86-(792)136-2859', 'pgriffin1@kickstarter.com', 0, 'pgriffin', MD5(12345), 20160326, 0, 2, null, null,0);
+(2, 'Canavaggio', 'Lorenzo', '9 rue Joliot Curie', 91160, 'Saulx-les-Chartreux', '0665564669', 'abc.xyz@hotmail.fr', 0, 'lorenzoc', MD5(12345), 20170326, 0, 3, 2, 2,0);
+#Gestionnaire
 insert into UTILISATEUR (numUtilisateur, nomUtilisateur, prenomUtilisateur, adresseUtilisateur, cpUtilisateur, villeUtilisateur, telUtilisateur, mailUtilisateur, distanceParcourueSemaine, loginUtilisateur, passwordUtilisateur, dateDernierLogin, nbTentatives, codeTypeUtilisateur, idPlanning, idPorteFeuille, version) values 
-(3, 'Jack', 'Robinson', '8 Roth Parkway', 7500, 'Veselynove', '380-(969)729-3321', 'jrobinson2@twitpic.com', 0, 'jrobinson', MD5(12345), 20160326, 3, 3, 1, 3,0);
+(3, 'Roberto', 'Benedicte', '2 rue Lacaze', 75014, 'Paris', '0656564696', 'bene75@gmail.com', 0, 'benedicter', MD5('abcdefg'), 20170416, 0, 2, null, null,0);
+#Administrateur
 insert into UTILISATEUR (numUtilisateur, nomUtilisateur, prenomUtilisateur, adresseUtilisateur, cpUtilisateur, villeUtilisateur, telUtilisateur, mailUtilisateur, distanceParcourueSemaine, loginUtilisateur, passwordUtilisateur, dateDernierLogin, nbTentatives, codeTypeUtilisateur, idPlanning, idPorteFeuille, version) values 
-(4, 'Jack', 'Lopez', '82 5th Lane', 7500, 'Lingmen', '86-(743)835-5499', 'jlopez3@independent.co.uk', 0, 'jlopez', MD5(12345), 20160326, 0, 1, null, null,0);
-insert into UTILISATEUR (numUtilisateur, nomUtilisateur, prenomUtilisateur, adresseUtilisateur, cpUtilisateur, villeUtilisateur, telUtilisateur, mailUtilisateur, distanceParcourueSemaine, loginUtilisateur, passwordUtilisateur, dateDernierLogin, nbTentatives, codeTypeUtilisateur, idPlanning, idPorteFeuille, version) values 
-(5, 'Gregory', 'Cunningham', '7897 Acker Plaza', 7500, 'Qianjin', '86-(881)556-5418', 'gcunningham4@hatena.ne.jp', 0, 'gcunningham', MD5(12345), 20160326, 0, 2, null, null,0);
+(4, 'Lhullier', 'Jesse', '16 avenue Morane Saulnier', 78140, 'Vélizy-Villacoublay', '0756564696', 'jesse.lhullier@yahoo.com', 0, 'jessel', MD5('jessebox'), 20170215, 0, 1, null, null,0);
 
 SELECT * FROM UTILISATEUR;
 
@@ -54,74 +57,74 @@ SELECT * FROM TYPE_STRUCTURE;
 # Table: STRUCTURE
 #------------------------------------------------------------
 insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, infoSupplementaire, codeTypeStructure, version) values 
-(1,'structure 1', '97701 Nova Circle', '46900-000', 'Seabra', 1, 'Ergonomic multimedia encoding', 1 , 0);
+(1,'POL plongee', '13 rue de l`Ormeteau', '91420', 'Morangis', 15,'Association de plongee', 3, 0);
+
 insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, infoSupplementaire, codeTypeStructure, version) values 
-(2,'structure 2', '0850 Kenwood Hill', '13140-000', 'Paulínia', 2, 'Synchronised needs-based superstructure', 2 , 0);
+(2,'Natixis', '4 allee de St Genouf', '91360', 'Villemoisson-sur-Orge', 25, 'Société boursière', 5, 0);
+
 insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, infoSupplementaire, codeTypeStructure, version) values 
-(3,'structure 3', '14272 Elka Plaza', '75000', 'Jiaoxie', 3, 'Configurable multi-state concept', 3 , 0);
+(3,'EDF', '3 rue de la Garenne', '91360', 'Villemoisson-sur-Orge', 25, '', 5, 0);
+
 insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, infoSupplementaire, codeTypeStructure, version) values 
-(4,'structure 4', '97194 Fairfield Hill', '75000', 'Fengshan', 4, 'Networked coherent contingency', 4 , 0);
-insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, infoSupplementaire, codeTypeStructure, version) values 
-(5,'structure 5', '9366 Orin Lane', '75000', 'Baipenzhu', 5, 'Public-key content-based knowledge base', 5, 0);
-insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, infoSupplementaire, codeTypeStructure, version) values 
-(6,'structure 6', '400 Kingsford Pass', '75000', 'Goubétto', 6, 'Future-proofed impactful projection', 1, 0);
-insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, infoSupplementaire, codeTypeStructure, version) values 
-(7,'structure 7', '393 Steensland Point', '2110', 'Red Hill', 7, 'Multi-lateral 4th generation data-warehouse', 2, 0);
-insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, infoSupplementaire, codeTypeStructure, version) values 
-(8,'structure 8', '6 Monica Road', '2508', 'Nanyo', 8, 'Function-based national local area network', 3, 0);
-insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, infoSupplementaire, codeTypeStructure, version) values 
-(9,'structure 9', '4513 Fairfield Junction', '75000', 'Parungjawa', 9, 'Visionary asynchronous forecast', 4, 0);
-insert into STRUCTURE (numStructure, denominationSociale, adresseStructure ,  cpStructure , villeStructure, distanceSiege, infoSupplementaire, codeTypeStructure, version) values 
-(10,'structure 10', '0076 Blaine Drive', '75000', 'Nanning', 10, 'Automated asynchronous matrix', 5, 0);
+(4,'30 millions de copains', '18 rue des Martyrs', '75009', 'Paris', 25, 'Association de rencontre de vieux copains', 2, 0);
 
 SELECT * FROM STRUCTURE;
 
 #------------------------------------------------------------
 # Table: INTERLOCUTEUR
 #------------------------------------------------------------
+
+#Commercial numéro 1
 insert into INTERLOCUTEUR (idInterlocuteur, nomInterlocuteur, prenomInterlocuteur, telInterlocuteur, mailInterlocuteur, idPorteFeuille, version) values 
-(1,'Bouze', 'Camélia', '33-(390)653-6256', 'jjackson0@sciencedaily.com', 1, 0);
+(1,'Coutrot', 'Sylvain', '0665654696', 'yahoo@gmail.com', 1, 0);
 insert into INTERLOCUTEUR (idInterlocuteur, nomInterlocuteur, prenomInterlocuteur, telInterlocuteur, mailInterlocuteur, idPorteFeuille, version) values 
-(2,'Alaki', 'Crééz', '30-(294)242-7802', 'ppowell1@ameblo.jp', 3, 0);
+(2,'Delbe', 'Sebastien', '0665566496', 'delbe@outlook.fr', 1, 0);
 insert into INTERLOCUTEUR (idInterlocuteur, nomInterlocuteur, prenomInterlocuteur, telInterlocuteur, mailInterlocuteur, idPorteFeuille, version) values 
-(3,'Kogu', 'Mégane', '972-(623)893-2322', 'dhudson2@joomla.org', 3, 0);
+(3,'Dulong', 'Raphael', '0665566469', 'd.raph@hotmail.com', 1, 0);
+
+#Commercial numéro 2
 insert into INTERLOCUTEUR (idInterlocuteur, nomInterlocuteur, prenomInterlocuteur, telInterlocuteur, mailInterlocuteur, idPorteFeuille, version) values 
-(4,'pistali', 'Ruì', '30-(938)455-3301', 'palvarez3@baidu.com', 3, 0);
+(4,'Duparc', 'Alexandre', '0665578469', 'alexduparc@free.fr', 2, 0);
 insert into INTERLOCUTEUR (idInterlocuteur, nomInterlocuteur, prenomInterlocuteur, telInterlocuteur, mailInterlocuteur, idPorteFeuille, version) values 
-(5,'Papoom', 'Cécilia', '967-(562)366-2705', 'srice4@goo.ne.jp', 5, 0);
+(5,'Patry', 'Lisa', '0675578469', 'lisap@wanadoo.fr', 2, 0);
+insert into INTERLOCUTEUR (idInterlocuteur, nomInterlocuteur, prenomInterlocuteur, telInterlocuteur, mailInterlocuteur, idPorteFeuille, version) values 
+(6,'Barbotin', 'Victor', '0665878469', 'victorc75@outlook.fr', 2, 0);
 
 SELECT * FROM INTERLOCUTEUR;
 
 #------------------------------------------------------------
 # Table: INDIVIDU
 #------------------------------------------------------------
-insert into INDIVIDU (numIndividu, adresseIndividu, cpIndividu, villeIndividu, distanceSiege, infosSupplementaire, idInterlocuteur, version) values 
-(1, '77257 Larry Alley','75000', 'Masaki-chō', 55, '2930 Bobwhite Hill', 1, 0);
-insert into INDIVIDU (numIndividu, adresseIndividu, cpIndividu, villeIndividu, distanceSiege, infosSupplementaire, idInterlocuteur, version) values 
-(2, '582 Lyons Street','75000', 'Srostki', 21, '2117 Jenifer Point', 2, 0);
-insert into INDIVIDU (numIndividu, adresseIndividu, cpIndividu, villeIndividu, distanceSiege, infosSupplementaire, idInterlocuteur, version) values 
-(3, '8897 Ridgeway Point','75000', 'Seres', 78, '2323 Superior Terrace', 3, 0);
-insert into INDIVIDU (numIndividu, adresseIndividu, cpIndividu, villeIndividu, distanceSiege, infosSupplementaire, idInterlocuteur, version) values 
-(4, '4 Clove Terrace','75000', 'Lescar', 47, '7 Stone Corner Center', 4, 0);
-insert into INDIVIDU (numIndividu, adresseIndividu, cpIndividu, villeIndividu, distanceSiege, infosSupplementaire, idInterlocuteur, version) values 
-(5, '0 Pleasure Plaza','75000', 'Jinzhou', 27, '63872 David Junction', 5, 0);
 
+#Interlocuteur numéro 1
+insert into INDIVIDU (numIndividu, adresseIndividu, cpIndividu, villeIndividu, distanceSiege, infosSupplementaire, idInterlocuteur, version) values 
+(1, '4 rue Lacaze','75014', 'Paris', 22, 'Digicode : 1234', 1, 0);
+
+#Interlocuteur numéro 4
+insert into INDIVIDU (numIndividu, adresseIndividu, cpIndividu, villeIndividu, distanceSiege, infosSupplementaire, idInterlocuteur, version) values 
+(2, '4 rue Lacaze','75014', 'Paris', 22, 'Digicode : 1234', 4, 0);
 
 SELECT * FROM INDIVIDU;
 
 #------------------------------------------------------------
 # Table: RDV
 #------------------------------------------------------------
+
+#Commercial numéro 1
 insert into RDV (idRdv, dateRdv, heureDebut, heureFin, adresseDerogatoire , villeDerogatoire , codeEntreeDerogatoire , infoDerogatoire, idInterlocuteur, idTypeRdv , idPlanning,idRdvPrecedent, version) values 
-(1, '20160601','2011-10-24 10:00', '2011-10-24 10:00', '73 Hoard Circle', 'San Sebastian', 94, null, 1, 1, 1, null, 0);
+(1, '20170420','2017-04-20 10:00', '2017-04-20 12:00', null,null, null, null, 2, 1, 1,null, 0);
 insert into RDV (idRdv, dateRdv, heureDebut, heureFin, adresseDerogatoire , villeDerogatoire , codeEntreeDerogatoire , infoDerogatoire, idInterlocuteur, idTypeRdv , idPlanning,idRdvPrecedent, version) values 
-(2, '20160304','2011-10-24 10:00', '2011-10-24 10:00', '14 Sullivan Street', 'Sertânia', 81, null, 2, 2, 2,null, 0);
+(2, '20170425','2017-04-25 10:00', '2017-04-25 12:00', null,null, null, null, 2, 5, 1,1, 0);
 insert into RDV (idRdv, dateRdv, heureDebut, heureFin, adresseDerogatoire , villeDerogatoire , codeEntreeDerogatoire , infoDerogatoire, idInterlocuteur, idTypeRdv , idPlanning,idRdvPrecedent, version) values 
-(3, '20160326','2011-10-24 10:00', '2011-10-24 10:00', '3 Doe Crossing Pass', 'Podebłocie', 5, null, 3, 3, 3,null, 0);
+(3, '20170512','2017-05-12 10:00', '2017-05-12 12:00', '3 rue du Fort 92130 Issy-les-Moulineaux','Issy-les-Moulineaux', '17896', null, 3, 1, 1,null, 0);
+
+#Commercial numéro 2
 insert into RDV (idRdv, dateRdv, heureDebut, heureFin, adresseDerogatoire , villeDerogatoire , codeEntreeDerogatoire , infoDerogatoire, idInterlocuteur, idTypeRdv , idPlanning,idRdvPrecedent, version) values 
-(4, '20160610','2011-10-24 10:00', '2011-10-24 10:00', '78528 Orin Street', 'Alcoy', 99, null, 4, 4, 4,null, 0);
+(4, '20170502','2017-05-02 8:30', '2017-05-02 10:00', null,null, null, null, 4, 1, 2,null, 0);
 insert into RDV (idRdv, dateRdv, heureDebut, heureFin, adresseDerogatoire , villeDerogatoire , codeEntreeDerogatoire , infoDerogatoire, idInterlocuteur, idTypeRdv , idPlanning,idRdvPrecedent, version) values 
-(5, '20160510','2011-10-24 10:00', '2011-10-24 10:00', '023 Butternut Court', 'Banī Suwayf', 56, null, 5, 5, 5,null, 0);
+(5, '20170505','2017-05-05 8:30', '2017-05-05 10:00', null,null, null, null, 4, 5, 2,4, 0);
+insert into RDV (idRdv, dateRdv, heureDebut, heureFin, adresseDerogatoire , villeDerogatoire , codeEntreeDerogatoire , infoDerogatoire, idInterlocuteur, idTypeRdv , idPlanning,idRdvPrecedent, version) values 
+(6, '20170507','2017-05-02 8:30', '2017-05-02 10:00', '24 rue de Sèvres 75007 Paris','Paris', null, 'Appeler à votre arrivée', 6, 1, 2,null, 0);
 
 SELECT * FROM RDV;
 
@@ -129,15 +132,10 @@ SELECT * FROM RDV;
 # Table: CONGES
 #------------------------------------------------------------
 insert into CONGES (numConge, dateDebutConge, dateFinConge, version) values 
-(1, '20160427', '20180125', 0);
+(1, '20170605', '20170515', 0);
+
 insert into CONGES (numConge, dateDebutConge, dateFinConge, version) values 
-(2, '20160627', '20171220', 0);
-insert into CONGES (numConge, dateDebutConge, dateFinConge, version) values 
-(3, '20161213', '20171010', 0);
-insert into CONGES (numConge, dateDebutConge, dateFinConge, version) values 
-(4, '20160519', '20170315', 0);
-insert into CONGES (numConge, dateDebutConge, dateFinConge, version) values 
-(5, '20161105', '20180107', 0);
+(2, '20170101', '20170201', 0);
 
 SELECT * FROM CONGES;
 
@@ -146,14 +144,9 @@ SELECT * FROM CONGES;
 #------------------------------------------------------------
 insert into CONGES_UTILISATEUR (idCongesUtilisateur, numUtilisateur, numConge, version) values 
 (1, 1, 1, 0);
+
 insert into CONGES_UTILISATEUR (idCongesUtilisateur, numUtilisateur, numConge, version) values 
-(2, 1, 2, 0);
-insert into CONGES_UTILISATEUR (idCongesUtilisateur, numUtilisateur, numConge, version) values 
-(3, 1, 3, 0);
-insert into CONGES_UTILISATEUR (idCongesUtilisateur, numUtilisateur, numConge, version) values 
-(4, 1, 4, 0);
-insert into CONGES_UTILISATEUR (idCongesUtilisateur, numUtilisateur, numConge, version) values 
-(5, 1, 5, 0);
+(2, 2, 2, 0);
 
 SELECT * FROM CONGES_UTILISATEUR;
 
@@ -172,12 +165,26 @@ SELECT * FROM TYPE_UTILISATEUR;
 #------------------------------------------------------------
 # Table: MAIL
 #------------------------------------------------------------
+
+#Commercial numéro 1
 insert into MAIL (numMail , contenuMail, objetMail, numUtilisateur ,  idInterlocuteur, version   ) values 
-(1, 'Vous êtes virés', 'sale con', 1, 1, 0);
+(1, 'Rappel de votre rendez-vous du 20/04/2017 à 10h00', 'Votre Rendez-vous', 1, 2, 0);
 insert into MAIL (numMail , contenuMail, objetMail, numUtilisateur ,  idInterlocuteur, version   ) values 
-(2, 'Je veux ta thune', 'Coucou toi', 2, 2, 0);
+(2, 'Compte rendu de la réunion de ce jour, tout à été vu et clarifié.', 'Compte Rendu', 1, 2, 0);
 insert into MAIL (numMail , contenuMail, objetMail, numUtilisateur ,  idInterlocuteur, version   ) values 
-(3, 'Deux employes sont gays', 'probleme', 3, 3, 0);
+(3, 'Rappel de votre rendez-vous du 25/04/2017 à 10h00', 'Votre Rendez-vous', 1, 2, 0);
+insert into MAIL (numMail , contenuMail, objetMail, numUtilisateur ,  idInterlocuteur, version   ) values 
+(4, 'Rappel de votre rendez-vous du 12/05/2017 à 10h00', 'Votre Rendez-vous', 1, 3, 0);
+
+#Commercial numéro 2
+insert into MAIL (numMail , contenuMail, objetMail, numUtilisateur ,  idInterlocuteur, version   ) values 
+(5, 'Rappel de votre rendez-vous du 02/05/2017 à 8h30', 'Votre Rendez-vous', 2, 4, 0);
+insert into MAIL (numMail , contenuMail, objetMail, numUtilisateur ,  idInterlocuteur, version   ) values 
+(6, 'Compte rendu de la réunion de ce jour, tout à été vu et clarifié.', 'Compte Rendu', 2, 4, 0);
+insert into MAIL (numMail , contenuMail, objetMail, numUtilisateur ,  idInterlocuteur, version   ) values 
+(7, 'Rappel de votre rendez-vous du 05/05/2017 à 8h30', 'Votre Rendez-vous', 2, 4, 0);
+insert into MAIL (numMail , contenuMail, objetMail, numUtilisateur ,  idInterlocuteur, version   ) values 
+(8, 'Rappel de votre rendez-vous du 07/05/2017 à 8h30', 'Votre Rendez-vous', 2, 6, 0);
 
 SELECT * FROM MAIL;
 
@@ -186,14 +193,9 @@ SELECT * FROM MAIL;
 #------------------------------------------------------------
 insert into PLANNING (idPlanning  , numUtilisateur,libellePlanning, version) values 
 (1, 1,'secteur 1', 0);
+
 insert into PLANNING (idPlanning  , numUtilisateur,libellePlanning, version) values 
 (2, 2,'secteur 2', 0);
-insert into PLANNING (idPlanning  , numUtilisateur,libellePlanning, version) values 
-(3, 3,'secteur 3', 0);
-insert into PLANNING (idPlanning  , numUtilisateur,libellePlanning, version) values 
-(4, 4,'secteur 4', 0);
-insert into PLANNING (idPlanning  , numUtilisateur,libellePlanning, version) values 
-(5, 5,'secteur 5', 0);
 
 SELECT * FROM PLANNING;
 
@@ -202,14 +204,9 @@ SELECT * FROM PLANNING;
 #------------------------------------------------------------
 insert into PORTEFEUILLE (idPorteFeuille  , libellePorteFeuille, numUtilisateur, version) values 
 (1, 'unportefeuille 1', 1, 0);
+
 insert into PORTEFEUILLE (idPorteFeuille  , libellePorteFeuille, numUtilisateur, version) values 
 (2, 'unportefeuille 2', 2, 0);
-insert into PORTEFEUILLE (idPorteFeuille  , libellePorteFeuille, numUtilisateur, version) values 
-(3, 'unportefeuille 3', 3, 0);
-insert into PORTEFEUILLE (idPorteFeuille  , libellePorteFeuille, numUtilisateur, version) values 
-(4, 'unportefeuille 4', 4, 0);
-insert into PORTEFEUILLE (idPorteFeuille  , libellePorteFeuille, numUtilisateur, version) values 
-(5, 'unportefeuille 5', 5, 0);
 
 SELECT * FROM PORTEFEUILLE;
 
@@ -217,15 +214,16 @@ SELECT * FROM PORTEFEUILLE;
 # Table: INTERLOCUTEUR_STRUCTURE
 #------------------------------------------------------------
 insert into INTERLOCUTEUR_STRUCTURE (idInterlocuteurStructure, idInterlocuteur, numStructure, version) values 
-(1, 5, 5, 0);
+(1, 2, 1, 0);
+
 insert into INTERLOCUTEUR_STRUCTURE (idInterlocuteurStructure, idInterlocuteur, numStructure, version) values 
-(2, 4, 1, 0);
+(2, 3, 2, 0);
+
 insert into INTERLOCUTEUR_STRUCTURE (idInterlocuteurStructure, idInterlocuteur, numStructure, version) values 
-(3, 3, 2, 0);
+(3, 5, 3, 0);
+
 insert into INTERLOCUTEUR_STRUCTURE (idInterlocuteurStructure, idInterlocuteur, numStructure, version) values 
-(4, 2, 3, 0);
-insert into INTERLOCUTEUR_STRUCTURE (idInterlocuteurStructure, idInterlocuteur, numStructure, version) values 
-(5, 1, 4, 0);
+(4, 6, 4, 0);
 
 SELECT * FROM INTERLOCUTEUR_STRUCTURE;
 
