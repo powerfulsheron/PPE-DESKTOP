@@ -532,7 +532,14 @@ namespace Maquette_Belle_Table_Final
             Utilisateur leCommercialSelected = (Utilisateur)dataGridViewCom.CurrentRow.DataBoundItem;
             dataGridViewMail.DataSource = leCommercialSelected.lesMails.ToList<Mail>();
             dataGridViewRDV.DataSource = leCommercialSelected.planning.lesRendezVous.ToList<RendezVous>();
-            
+        }
+
+        private void buttonAddRDV_Click(object sender, EventArgs e)
+        {
+            Utilisateur leCommercialSelected = (Utilisateur)dataGridViewCom.CurrentRow.DataBoundItem;
+            PopNouveauRDV newRdv = new PopNouveauRDV();
+            newRdv.utilisateur = leCommercialSelected;
+            newRdv.Show();
         }
     }
 }

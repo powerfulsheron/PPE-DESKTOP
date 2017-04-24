@@ -87,6 +87,9 @@
             this.panelBorderRight = new System.Windows.Forms.Panel();
             this.dataGridViewMail = new System.Windows.Forms.DataGridView();
             this.dataGridViewRDV = new System.Windows.Forms.DataGridView();
+            this.buttonAddRDV = new System.Windows.Forms.Button();
+            this.buttonSuppRDV = new System.Windows.Forms.Button();
+            this.buttonModifRDV = new System.Windows.Forms.Button();
             this.tableLayoutEntete.SuspendLayout();
             this.panelTitre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBT)).BeginInit();
@@ -211,6 +214,9 @@
             // panelPlanning
             // 
             this.panelPlanning.BackgroundImage = global::Maquette_Belle_Table_Final.Properties.Resources.fond;
+            this.panelPlanning.Controls.Add(this.buttonModifRDV);
+            this.panelPlanning.Controls.Add(this.buttonSuppRDV);
+            this.panelPlanning.Controls.Add(this.buttonAddRDV);
             this.panelPlanning.Controls.Add(this.dataGridViewRDV);
             this.panelPlanning.Controls.Add(this.dataGridViewMail);
             this.panelPlanning.Controls.Add(this.dataGridViewCom);
@@ -291,7 +297,7 @@
             // buttonVRDV
             // 
             this.buttonVRDV.BackColor = System.Drawing.Color.Gold;
-            this.buttonVRDV.Location = new System.Drawing.Point(805, 505);
+            this.buttonVRDV.Location = new System.Drawing.Point(759, 506);
             this.buttonVRDV.Margin = new System.Windows.Forms.Padding(2);
             this.buttonVRDV.Name = "buttonVRDV";
             this.buttonVRDV.Size = new System.Drawing.Size(63, 22);
@@ -307,7 +313,7 @@
             this.tabPagePF.Margin = new System.Windows.Forms.Padding(2);
             this.tabPagePF.Name = "tabPagePF";
             this.tabPagePF.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPagePF.Size = new System.Drawing.Size(1012, 525);
+            this.tabPagePF.Size = new System.Drawing.Size(1012, 532);
             this.tabPagePF.TabIndex = 1;
             this.tabPagePF.Text = "Portefeuille";
             this.tabPagePF.UseVisualStyleBackColor = true;
@@ -323,7 +329,7 @@
             this.panelPF.Location = new System.Drawing.Point(2, 2);
             this.panelPF.Margin = new System.Windows.Forms.Padding(2);
             this.panelPF.Name = "panelPF";
-            this.panelPF.Size = new System.Drawing.Size(1008, 521);
+            this.panelPF.Size = new System.Drawing.Size(1008, 528);
             this.panelPF.TabIndex = 7;
             // 
             // buttonCPF
@@ -381,7 +387,7 @@
             this.tabPagePFI.Margin = new System.Windows.Forms.Padding(2);
             this.tabPagePFI.Name = "tabPagePFI";
             this.tabPagePFI.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPagePFI.Size = new System.Drawing.Size(1012, 525);
+            this.tabPagePFI.Size = new System.Drawing.Size(1012, 532);
             this.tabPagePFI.TabIndex = 2;
             this.tabPagePFI.Text = "Portefeuille Interlocuteur";
             this.tabPagePFI.UseVisualStyleBackColor = true;
@@ -402,7 +408,7 @@
             this.panelPortefeuille.Location = new System.Drawing.Point(2, 2);
             this.panelPortefeuille.Margin = new System.Windows.Forms.Padding(2);
             this.panelPortefeuille.Name = "panelPortefeuille";
-            this.panelPortefeuille.Size = new System.Drawing.Size(1008, 521);
+            this.panelPortefeuille.Size = new System.Drawing.Size(1008, 528);
             this.panelPortefeuille.TabIndex = 4;
             // 
             // buttonLoadAll
@@ -849,6 +855,40 @@
             this.dataGridViewRDV.Size = new System.Drawing.Size(349, 210);
             this.dataGridViewRDV.TabIndex = 10;
             // 
+            // buttonAddRDV
+            // 
+            this.buttonAddRDV.BackColor = System.Drawing.Color.Gold;
+            this.buttonAddRDV.Location = new System.Drawing.Point(655, 506);
+            this.buttonAddRDV.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAddRDV.Name = "buttonAddRDV";
+            this.buttonAddRDV.Size = new System.Drawing.Size(78, 22);
+            this.buttonAddRDV.TabIndex = 11;
+            this.buttonAddRDV.Text = "Ajouter RDV";
+            this.buttonAddRDV.UseVisualStyleBackColor = false;
+            this.buttonAddRDV.Click += new System.EventHandler(this.buttonAddRDV_Click);
+            // 
+            // buttonSuppRDV
+            // 
+            this.buttonSuppRDV.BackColor = System.Drawing.Color.Gold;
+            this.buttonSuppRDV.Location = new System.Drawing.Point(926, 506);
+            this.buttonSuppRDV.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSuppRDV.Name = "buttonSuppRDV";
+            this.buttonSuppRDV.Size = new System.Drawing.Size(78, 22);
+            this.buttonSuppRDV.TabIndex = 12;
+            this.buttonSuppRDV.Text = "Supp RDV";
+            this.buttonSuppRDV.UseVisualStyleBackColor = false;
+            // 
+            // buttonModifRDV
+            // 
+            this.buttonModifRDV.BackColor = System.Drawing.Color.Gold;
+            this.buttonModifRDV.Location = new System.Drawing.Point(840, 506);
+            this.buttonModifRDV.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonModifRDV.Name = "buttonModifRDV";
+            this.buttonModifRDV.Size = new System.Drawing.Size(78, 22);
+            this.buttonModifRDV.TabIndex = 13;
+            this.buttonModifRDV.Text = "Modif RDV";
+            this.buttonModifRDV.UseVisualStyleBackColor = false;
+            // 
             // InterGes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -960,5 +1000,8 @@
         private System.Windows.Forms.Button buttonValidAssoPortefeuille;
         private System.Windows.Forms.DataGridView dataGridViewRDV;
         private System.Windows.Forms.DataGridView dataGridViewMail;
+        private System.Windows.Forms.Button buttonModifRDV;
+        private System.Windows.Forms.Button buttonSuppRDV;
+        private System.Windows.Forms.Button buttonAddRDV;
     }
 }
