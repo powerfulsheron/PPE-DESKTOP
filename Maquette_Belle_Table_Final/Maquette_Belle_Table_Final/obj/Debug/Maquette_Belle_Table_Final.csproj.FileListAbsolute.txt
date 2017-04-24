@@ -120,12 +120,6 @@ C:\Users\Work\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_B
 C:\Users\Work\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\bin\Debug\Maquette_Belle_Table_Final.exe
 C:\Users\Work\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\bin\Debug\Maquette_Belle_Table_Final.pdb
 C:\Users\Work\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\bin\Debug\MySql.Data.dll
-C:\Users\Work\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\bin\Debug\Iesi.Collections.dll
-C:\Users\Work\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\bin\Debug\log4net.xml
-C:\Users\Work\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\bin\Debug\NHibernate.pdb
-C:\Users\Work\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\bin\Debug\NHibernate.xml
-C:\Users\Work\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\bin\Debug\Iesi.Collections.pdb
-C:\Users\Work\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\bin\Debug\Iesi.Collections.xml
 C:\Users\Work\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.csprojResolveAssemblyReference.cache
 C:\Users\Work\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.InterGes.resources
 C:\Users\Work\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.InterUti.resources
@@ -258,3 +252,6 @@ C:\Users\sebas\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_
 C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table.Popup_ModifUser.resources
 C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table.Popup_ModifierClient.resources
 C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.Confirm.resources
+C:\Users\Work\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.Confirm.resources
+C:\Users\Work\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table.Popup_ModifUser.resources
+C:\Users\Work\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table.Popup_ModifierClient.resources

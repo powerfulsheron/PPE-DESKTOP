@@ -15,9 +15,11 @@ namespace Maquette_Belle_Table_Final
     public partial class InterGes : Form
     {
         private static ISessionFactory sessionFactory = new Configuration().Configure().BuildSessionFactory();
-        ISession session = sessionFactory.OpenSession();
+       
         PorteFeuille lesPorteFeuilles = new PorteFeuille();
+        DataGridView leDataGrid = new DataGridView();
         public Utilisateur utilisateur { get; set; }
+
         public InterGes()
         {
             InitializeComponent();
@@ -81,10 +83,96 @@ namespace Maquette_Belle_Table_Final
 
         private void buttonModAssoInter_Click(object sender, EventArgs e)
         {
-            //Bouton Modifier Association Interlocuteur
-            new Popup_NewInter().Show();
+            if(dataGridViewPFIIS.Visible == true)
+            {
+                leDataGrid = dataGridViewPFIIS;
+            }
+            if (dataGridViewPFII.Visible == true)
+            {
+                leDataGrid = dataGridViewPFII;
+            }
+
+            if (leDataGrid.SelectedRows.Count == 1)
+            {
+                MessageBox.Show("Selectionnez le nouveau portefeuille de l'interlocuteur et validez ou annulez l'action.");
+                dataGridViewPFIIS.Visible = false;
+                dataGridViewPFII.Visible = false;
+                buttonValidAsso.Visible = true;
+                buttonAnnuler.Visible = true;
+                buttonModAssoInter.Visible = false;
+                groupBoxTypeClient.Enabled = false;
+            }
+            else MessageBox.Show("Merci de sélectionner un interlocuteur");
         }
 
+        private void buttonValidAsso_Click(object sender, EventArgs e)
+        {
+           if (dataGridViewPFIP.SelectedRows.Count == 1)
+            {
+                if (radioButtonIndividu.Checked == true)
+                {
+                    Individu individuModif = (Individu)leDataGrid.CurrentRow.DataBoundItem;
+                    MessageBox.Show("Vous allez associer: " + individuModif + " avec " + (PorteFeuille)dataGridViewPFIP.CurrentRow.DataBoundItem);
+
+                    Interlocuteur pourList = new Interlocuteur();
+                    IList < Interlocuteur > lesInterlocuteurs = pourList.GetLesInterlocuteurs();
+
+                    foreach(Interlocuteur interlocuteur in lesInterlocuteurs)
+                    {
+                        if(interlocuteur.idInterlocuteur == individuModif.interlocuteur.idInterlocuteur)
+                        {
+                            ISession session = sessionFactory.OpenSession();
+                            using (ITransaction transaction = session.BeginTransaction())
+                            {
+                                interlocuteur.porteFeuille = (PorteFeuille)dataGridViewPFIP.CurrentRow.DataBoundItem;
+                                session.Update(interlocuteur);
+                                transaction.Commit();
+                            }
+                            MessageBox.Show("Assosiattion réussie.");
+                            ChargerDataGridViewPFII();
+                            buttonValidAsso.Visible = false;
+                            buttonAnnuler.Visible = false;
+                            buttonModAssoInter.Visible = true;
+                            groupBoxTypeClient.Enabled = true;
+                            dataGridViewPFII.Visible = true;
+                        }
+                    }
+
+                    
+                }
+                else if(radioButtonInterlocuteurStructure.Checked == true)
+                {
+                    InterlocuteurStructure interStructModif = (InterlocuteurStructure)leDataGrid.CurrentRow.DataBoundItem;
+                    MessageBox.Show("Vous allez associer: " + interStructModif + " avec " + (PorteFeuille)dataGridViewPFIP.CurrentRow.DataBoundItem);
+
+                    Interlocuteur pourList = new Interlocuteur();
+                    IList<Interlocuteur> lesInterlocuteurs = pourList.GetLesInterlocuteurs();
+
+                    foreach (Interlocuteur interlocuteur in lesInterlocuteurs)
+                    {
+                        if (interlocuteur.idInterlocuteur == interStructModif.interlocuteur.idInterlocuteur)
+                        {
+                            ISession session = sessionFactory.OpenSession();
+                            using (ITransaction transaction = session.BeginTransaction())
+                            {
+                                interlocuteur.porteFeuille = (PorteFeuille)dataGridViewPFIP.CurrentRow.DataBoundItem;
+                                session.Update(interlocuteur);
+                                transaction.Commit();
+                            }
+                            MessageBox.Show("Assosiattion réussie.");
+                            ChargerDataGridViewPFIIS();
+                            buttonValidAsso.Visible = false;
+                            buttonAnnuler.Visible = false;
+                            buttonModAssoInter.Visible = true;
+                            groupBoxTypeClient.Enabled = true;
+                            dataGridViewPFIIS.Visible = true;
+                        }
+                    }
+
+                } 
+            }
+            else MessageBox.Show("Merci de sélectionner un portefeuille");
+        }
         private void buttonModAssCom_Click(object sender, EventArgs e)
         {
             //Bouton Modifier Association Commercial
@@ -176,6 +264,7 @@ namespace Maquette_Belle_Table_Final
             unDataGridViewPourPF.DataSource = lesPorteFeuilles.GetLesPortefeuilles();
             unDataGridViewPourPF.Columns[2].Visible = false;
             unDataGridViewPourPF.Columns[3].Visible = false;
+            unDataGridViewPourPF.Visible = true;
         }
 
         private void ChargerDataGridViewPFII()
@@ -274,6 +363,7 @@ namespace Maquette_Belle_Table_Final
             dataGridViewPFII.Visible = false;
             dataGridViewPFIIS.Enabled = true;
             dataGridViewPFIIS.Visible = true;
+            ChargerDataGridViewPFIIS();
         }
 
         private void radioButtonIndividu_CheckedChanged(object sender, EventArgs e)
@@ -283,6 +373,7 @@ namespace Maquette_Belle_Table_Final
             dataGridViewPFIIS.Visible = false;
             dataGridViewPFII.Enabled = true;
             dataGridViewPFII.Visible = true;
+            ChargerDataGridViewPFII();
         }
 
         private void dataGridViewPFIP_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -291,7 +382,7 @@ namespace Maquette_Belle_Table_Final
             {
                //On charge le portefeuille selectionné dans 'lePortefeuilleSelected'
                 PorteFeuille lePortefeuilleSelected = (PorteFeuille)dataGridViewPFIP.CurrentRow.DataBoundItem;
-
+                ISession session = sessionFactory.OpenSession();
                 dataGridViewPFII.DataSource = session.CreateQuery(@"select e from Individu e where e.interlocuteur.porteFeuille.idPorteFeuille =:idPorteFeuille
                 ").SetInt32("idPorteFeuille", lePortefeuilleSelected.idPorteFeuille).List<Individu>();
 
@@ -301,7 +392,7 @@ namespace Maquette_Belle_Table_Final
               
                 //On charge le portefeuille selectionné dans 'lePortefeuilleSelected'
                 PorteFeuille lePortefeuilleSelected = (PorteFeuille)dataGridViewPFIP.CurrentRow.DataBoundItem;
-
+                ISession session = sessionFactory.OpenSession();
                 dataGridViewPFIIS.DataSource = session.CreateQuery(@"select e from InterlocuteurStructure e where e.interlocuteur.porteFeuille.idPorteFeuille =:idPorteFeuille
                 ").SetInt32("idPorteFeuille", lePortefeuilleSelected.idPorteFeuille).List<InterlocuteurStructure>();
             }
@@ -315,6 +406,21 @@ namespace Maquette_Belle_Table_Final
         private void dataGridViewPF_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             dataGridViewPF.DefaultCellStyle.SelectionBackColor = Color.Blue;
+        }
+
+        private void buttonAnnuler_Click(object sender, EventArgs e)
+        {
+            ChargerDataGridViewPFII();
+            ChargerDataGridViewPFIIS();
+            buttonValidAsso.Visible = false;
+            buttonAnnuler.Visible = false;
+            buttonModAssoInter.Visible = true;
+        }
+
+        private void buttonLoadAll_Click(object sender, EventArgs e)
+        {
+            if (radioButtonIndividu.Checked == true) ChargerDataGridViewPFII();
+            else ChargerDataGridViewPFIIS();
         }
     }
 }
