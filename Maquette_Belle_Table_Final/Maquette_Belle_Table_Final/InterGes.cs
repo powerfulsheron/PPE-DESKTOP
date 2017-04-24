@@ -94,7 +94,7 @@ namespace Maquette_Belle_Table_Final
 
             if (leDataGrid.SelectedRows.Count == 1)
             {
-                MessageBox.Show("Selectionnez le nouveau portefeuille de l'interlocuteur et validez ou annulez l'action.");
+                MessageBox.Show("Selectionnez le nouveau portefeuille de l'interlocuteur puis validez ou annulez l'action.");
                 dataGridViewPFIIS.Visible = false;
                 dataGridViewPFII.Visible = false;
                 buttonValidAsso.Visible = true;
@@ -173,12 +173,58 @@ namespace Maquette_Belle_Table_Final
             }
             else MessageBox.Show("Merci de sélectionner un portefeuille");
         }
+
         private void buttonModAssCom_Click(object sender, EventArgs e)
         {
-            //Bouton Modifier Association Commercial
-            new Popup_AssoCom().Show();
+            if (dataGridViewCommerciaux.SelectedRows.Count == 1)
+            {
+                MessageBox.Show("Merci de séléctionner le nouveau portefeuille pour le commercial.");
+                dataGridViewCommerciaux.Visible = false;
+                buttonAssoCom.Visible = false;
+                buttonAssoPortefeuille.Visible = false;
+                buttonValidAssoCom.Visible = true;
+                buttonCancelAssoCom.Visible = true;
+            }
+            else MessageBox.Show("Vous devez sélectionner un commercial.");
         }
 
+        private void buttonValidAssoCom_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewPortefeuilles.SelectedRows.Count == 1)
+            {
+                PorteFeuille leportefeuille = (PorteFeuille)dataGridViewPortefeuilles.CurrentRow.DataBoundItem;
+
+                if (leportefeuille.utilisateur == null)
+                {
+                    Utilisateur lutilisateur = (Utilisateur)dataGridViewCommerciaux.CurrentRow.DataBoundItem;
+
+                    MessageBox.Show("Vous allez associer le portefeuille: " + leportefeuille + " à " + lutilisateur);
+
+                    ISession session = sessionFactory.OpenSession();
+                    using (ITransaction transaction = session.BeginTransaction())
+                    {
+                        leportefeuille.utilisateur = null;
+                        lutilisateur.porteFeuille = leportefeuille;
+                        session.Update(leportefeuille);
+                        session.Update(lutilisateur);
+                        transaction.Commit();
+                    }
+                    MessageBox.Show("Nouveau portefeuille associé au commercial");
+                }
+                else if (leportefeuille.utilisateur != null) MessageBox.Show("Portefeuille déjà attribué à " + leportefeuille.utilisateur);
+                
+            }
+            else MessageBox.Show("Merci de séléctionner un nouveau portefeuille à associer");
+        }
+
+        private void buttonCancelAssoCom_Click(object sender, EventArgs e)
+        {
+            dataGridViewCommerciaux.Visible = true;
+            buttonAssoCom.Visible = true;
+            buttonAssoPortefeuille.Visible = true;
+            buttonValidAssoCom.Visible = false;
+            buttonCancelAssoCom.Visible = false;
+        }
         private void buttonValCDMDP_Click(object sender, EventArgs e)
         {
             
@@ -234,6 +280,8 @@ namespace Maquette_Belle_Table_Final
 
             ISession session = sessionFactory.OpenSession();
 
+            dataGridViewCommerciaux.ClearSelection();
+            dataGridViewPortefeuilles.ClearSelection();
 
             ChargerDataGridViewPFII();
             ChargerDataGridViewPFIIS();
@@ -303,8 +351,8 @@ namespace Maquette_Belle_Table_Final
 
         private void panelPFC_Paint(object sender, PaintEventArgs e)
         {
-            dataGridViewCommerciaux.ClearSelection();
-            dataGridViewPortefeuilles.ClearSelection();
+            //dataGridViewCommerciaux.ClearSelection();
+            //dataGridViewPortefeuilles.ClearSelection();
         }
 
         private void dataGridViewCommerciaux_SelectionChanged(object sender, EventArgs e)
@@ -419,8 +467,57 @@ namespace Maquette_Belle_Table_Final
 
         private void buttonLoadAll_Click(object sender, EventArgs e)
         {
+            dataGridViewPFIP.ClearSelection();
             if (radioButtonIndividu.Checked == true) ChargerDataGridViewPFII();
             else ChargerDataGridViewPFIIS();
+        }
+
+        private void buttonAssoPortefeuille_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewPortefeuilles.SelectedRows.Count == 1)
+            {
+                MessageBox.Show("Merci de séléctionner le nouveau commercial pour le portefeuille.");
+                dataGridViewPortefeuilles.Visible = false;
+                buttonAssoPortefeuille.Visible = false;
+                buttonAssoCom.Visible = false;
+                buttonValidAssoPortefeuille.Visible = true;
+                buttonCancelAssoPortefeuille.Visible = true;
+            }
+            else MessageBox.Show("Vous devez sélectionner un portefeuille.");
+        }
+
+        private void buttonValidAssoPortefeuille_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewCommerciaux.SelectedRows.Count == 1)
+            {
+                Utilisateur lutilisateur = (Utilisateur)dataGridViewCommerciaux.CurrentRow.DataBoundItem;
+
+                if (lutilisateur.porteFeuille == null)
+                {
+                    PorteFeuille lePortefeuille = (PorteFeuille)dataGridViewPortefeuilles.CurrentRow.DataBoundItem;
+
+                    MessageBox.Show("Vous allez associer le comercial: " + lutilisateur + " au portefeuille " + lePortefeuille);
+
+                    ISession session = sessionFactory.OpenSession();
+                    using (ITransaction transaction = session.BeginTransaction())
+                    {
+                        lutilisateur.porteFeuille = null;
+                        lePortefeuille.utilisateur = lutilisateur;
+                        session.Update(lutilisateur);
+                        session.Update(lePortefeuille);
+                        transaction.Commit();
+                    }
+                    MessageBox.Show("Nouveau commercial associé au portefeuille");
+                }
+                else if (lutilisateur.porteFeuille != null) MessageBox.Show("Le commercial possède déjà un portefeuille: " + lutilisateur.porteFeuille);
+
+            }
+            else MessageBox.Show("Merci de séléctionner un nouveau commercial à associer");
+        }
+
+        private void buttonCancelAssoPortefeuille_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

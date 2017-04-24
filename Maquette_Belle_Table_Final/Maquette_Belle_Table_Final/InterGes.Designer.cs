@@ -50,6 +50,7 @@
             this.dataGridViewPF = new System.Windows.Forms.DataGridView();
             this.tabPagePFI = new System.Windows.Forms.TabPage();
             this.panelPortefeuille = new System.Windows.Forms.Panel();
+            this.buttonLoadAll = new System.Windows.Forms.Button();
             this.buttonAnnuler = new System.Windows.Forms.Button();
             this.buttonValidAsso = new System.Windows.Forms.Button();
             this.groupBoxTypeClient = new System.Windows.Forms.GroupBox();
@@ -66,7 +67,7 @@
             this.labelPortefeuilel = new System.Windows.Forms.Label();
             this.dataGridViewPortefeuilles = new System.Windows.Forms.DataGridView();
             this.dataGridViewCommerciaux = new System.Windows.Forms.DataGridView();
-            this.buttonModAssCom = new System.Windows.Forms.Button();
+            this.buttonAssoCom = new System.Windows.Forms.Button();
             this.tabPageCDMDP = new System.Windows.Forms.TabPage();
             this.panelChangerMDP = new System.Windows.Forms.Panel();
             this.textBoxNewMDP = new System.Windows.Forms.TextBox();
@@ -79,7 +80,11 @@
             this.panelBordeLeft = new System.Windows.Forms.Panel();
             this.panelBorderBottom = new System.Windows.Forms.Panel();
             this.panelBorderRight = new System.Windows.Forms.Panel();
-            this.buttonLoadAll = new System.Windows.Forms.Button();
+            this.buttonAssoPortefeuille = new System.Windows.Forms.Button();
+            this.buttonValidAssoCom = new System.Windows.Forms.Button();
+            this.buttonCancelAssoCom = new System.Windows.Forms.Button();
+            this.buttonValidAssoPortefeuille = new System.Windows.Forms.Button();
+            this.buttonCancelAssoPortefeuille = new System.Windows.Forms.Button();
             this.tableLayoutEntete.SuspendLayout();
             this.panelTitre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBT)).BeginInit();
@@ -390,6 +395,18 @@
             this.panelPortefeuille.Size = new System.Drawing.Size(1008, 521);
             this.panelPortefeuille.TabIndex = 4;
             // 
+            // buttonLoadAll
+            // 
+            this.buttonLoadAll.BackColor = System.Drawing.Color.Gold;
+            this.buttonLoadAll.Location = new System.Drawing.Point(602, 13);
+            this.buttonLoadAll.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonLoadAll.Name = "buttonLoadAll";
+            this.buttonLoadAll.Size = new System.Drawing.Size(116, 36);
+            this.buttonLoadAll.TabIndex = 15;
+            this.buttonLoadAll.Text = "Tout charger";
+            this.buttonLoadAll.UseVisualStyleBackColor = false;
+            this.buttonLoadAll.Click += new System.EventHandler(this.buttonLoadAll_Click);
+            // 
             // buttonAnnuler
             // 
             this.buttonAnnuler.BackColor = System.Drawing.Color.Gold;
@@ -487,12 +504,12 @@
             // buttonModAssoInter
             // 
             this.buttonModAssoInter.BackColor = System.Drawing.Color.Gold;
-            this.buttonModAssoInter.Location = new System.Drawing.Point(705, 467);
+            this.buttonModAssoInter.Location = new System.Drawing.Point(699, 452);
             this.buttonModAssoInter.Margin = new System.Windows.Forms.Padding(2);
             this.buttonModAssoInter.Name = "buttonModAssoInter";
-            this.buttonModAssoInter.Size = new System.Drawing.Size(232, 36);
+            this.buttonModAssoInter.Size = new System.Drawing.Size(251, 36);
             this.buttonModAssoInter.TabIndex = 2;
-            this.buttonModAssoInter.Text = "Modifier l\'association du client";
+            this.buttonModAssoInter.Text = "Modifier le portefeuille associé au client";
             this.buttonModAssoInter.UseVisualStyleBackColor = false;
             this.buttonModAssoInter.Click += new System.EventHandler(this.buttonModAssoInter_Click);
             // 
@@ -523,11 +540,16 @@
             // 
             // panelPFC
             // 
+            this.panelPFC.Controls.Add(this.buttonCancelAssoPortefeuille);
+            this.panelPFC.Controls.Add(this.buttonValidAssoPortefeuille);
+            this.panelPFC.Controls.Add(this.buttonCancelAssoCom);
+            this.panelPFC.Controls.Add(this.buttonValidAssoCom);
+            this.panelPFC.Controls.Add(this.buttonAssoPortefeuille);
             this.panelPFC.Controls.Add(this.labelCommerciaux);
             this.panelPFC.Controls.Add(this.labelPortefeuilel);
             this.panelPFC.Controls.Add(this.dataGridViewPortefeuilles);
             this.panelPFC.Controls.Add(this.dataGridViewCommerciaux);
-            this.panelPFC.Controls.Add(this.buttonModAssCom);
+            this.panelPFC.Controls.Add(this.buttonAssoCom);
             this.panelPFC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPFC.Location = new System.Drawing.Point(2, 2);
             this.panelPFC.Margin = new System.Windows.Forms.Padding(2);
@@ -548,7 +570,7 @@
             // labelPortefeuilel
             // 
             this.labelPortefeuilel.AutoSize = true;
-            this.labelPortefeuilel.Location = new System.Drawing.Point(174, 16);
+            this.labelPortefeuilel.Location = new System.Drawing.Point(150, 16);
             this.labelPortefeuilel.Name = "labelPortefeuilel";
             this.labelPortefeuilel.Size = new System.Drawing.Size(76, 16);
             this.labelPortefeuilel.TabIndex = 6;
@@ -583,17 +605,17 @@
             this.dataGridViewCommerciaux.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPFC_CellContentClick);
             this.dataGridViewCommerciaux.SelectionChanged += new System.EventHandler(this.dataGridViewCommerciaux_SelectionChanged);
             // 
-            // buttonModAssCom
+            // buttonAssoCom
             // 
-            this.buttonModAssCom.BackColor = System.Drawing.Color.Gold;
-            this.buttonModAssCom.Location = new System.Drawing.Point(332, 221);
-            this.buttonModAssCom.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonModAssCom.Name = "buttonModAssCom";
-            this.buttonModAssCom.Size = new System.Drawing.Size(93, 57);
-            this.buttonModAssCom.TabIndex = 2;
-            this.buttonModAssCom.Text = "Modifier l\'association";
-            this.buttonModAssCom.UseVisualStyleBackColor = false;
-            this.buttonModAssCom.Click += new System.EventHandler(this.buttonModAssCom_Click);
+            this.buttonAssoCom.BackColor = System.Drawing.Color.Gold;
+            this.buttonAssoCom.Location = new System.Drawing.Point(588, 446);
+            this.buttonAssoCom.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAssoCom.Name = "buttonAssoCom";
+            this.buttonAssoCom.Size = new System.Drawing.Size(268, 41);
+            this.buttonAssoCom.TabIndex = 2;
+            this.buttonAssoCom.Text = "Modifier le portefeuille associé au commercial";
+            this.buttonAssoCom.UseVisualStyleBackColor = false;
+            this.buttonAssoCom.Click += new System.EventHandler(this.buttonModAssCom_Click);
             // 
             // tabPageCDMDP
             // 
@@ -731,17 +753,69 @@
             this.panelBorderRight.Size = new System.Drawing.Size(1, 557);
             this.panelBorderRight.TabIndex = 21;
             // 
-            // buttonLoadAll
+            // buttonAssoPortefeuille
             // 
-            this.buttonLoadAll.BackColor = System.Drawing.Color.Gold;
-            this.buttonLoadAll.Location = new System.Drawing.Point(602, 13);
-            this.buttonLoadAll.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonLoadAll.Name = "buttonLoadAll";
-            this.buttonLoadAll.Size = new System.Drawing.Size(116, 36);
-            this.buttonLoadAll.TabIndex = 15;
-            this.buttonLoadAll.Text = "Tout charger";
-            this.buttonLoadAll.UseVisualStyleBackColor = false;
-            this.buttonLoadAll.Click += new System.EventHandler(this.buttonLoadAll_Click);
+            this.buttonAssoPortefeuille.BackColor = System.Drawing.Color.Gold;
+            this.buttonAssoPortefeuille.Location = new System.Drawing.Point(62, 446);
+            this.buttonAssoPortefeuille.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAssoPortefeuille.Name = "buttonAssoPortefeuille";
+            this.buttonAssoPortefeuille.Size = new System.Drawing.Size(259, 40);
+            this.buttonAssoPortefeuille.TabIndex = 8;
+            this.buttonAssoPortefeuille.Text = "Modifier le commercial associé au portefeuille";
+            this.buttonAssoPortefeuille.UseVisualStyleBackColor = false;
+            this.buttonAssoPortefeuille.Click += new System.EventHandler(this.buttonAssoPortefeuille_Click);
+            // 
+            // buttonValidAssoCom
+            // 
+            this.buttonValidAssoCom.BackColor = System.Drawing.Color.Gold;
+            this.buttonValidAssoCom.Location = new System.Drawing.Point(545, 292);
+            this.buttonValidAssoCom.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonValidAssoCom.Name = "buttonValidAssoCom";
+            this.buttonValidAssoCom.Size = new System.Drawing.Size(110, 32);
+            this.buttonValidAssoCom.TabIndex = 9;
+            this.buttonValidAssoCom.Text = "Valider";
+            this.buttonValidAssoCom.UseVisualStyleBackColor = false;
+            this.buttonValidAssoCom.Visible = false;
+            this.buttonValidAssoCom.Click += new System.EventHandler(this.buttonValidAssoCom_Click);
+            // 
+            // buttonCancelAssoCom
+            // 
+            this.buttonCancelAssoCom.BackColor = System.Drawing.Color.Gold;
+            this.buttonCancelAssoCom.Location = new System.Drawing.Point(775, 292);
+            this.buttonCancelAssoCom.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonCancelAssoCom.Name = "buttonCancelAssoCom";
+            this.buttonCancelAssoCom.Size = new System.Drawing.Size(110, 32);
+            this.buttonCancelAssoCom.TabIndex = 10;
+            this.buttonCancelAssoCom.Text = "Annuler";
+            this.buttonCancelAssoCom.UseVisualStyleBackColor = false;
+            this.buttonCancelAssoCom.Visible = false;
+            this.buttonCancelAssoCom.Click += new System.EventHandler(this.buttonCancelAssoCom_Click);
+            // 
+            // buttonValidAssoPortefeuille
+            // 
+            this.buttonValidAssoPortefeuille.BackColor = System.Drawing.Color.Gold;
+            this.buttonValidAssoPortefeuille.Location = new System.Drawing.Point(62, 292);
+            this.buttonValidAssoPortefeuille.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonValidAssoPortefeuille.Name = "buttonValidAssoPortefeuille";
+            this.buttonValidAssoPortefeuille.Size = new System.Drawing.Size(110, 32);
+            this.buttonValidAssoPortefeuille.TabIndex = 11;
+            this.buttonValidAssoPortefeuille.Text = "Valider";
+            this.buttonValidAssoPortefeuille.UseVisualStyleBackColor = false;
+            this.buttonValidAssoPortefeuille.Visible = false;
+            this.buttonValidAssoPortefeuille.Click += new System.EventHandler(this.buttonValidAssoPortefeuille_Click);
+            // 
+            // buttonCancelAssoPortefeuille
+            // 
+            this.buttonCancelAssoPortefeuille.BackColor = System.Drawing.Color.Gold;
+            this.buttonCancelAssoPortefeuille.Location = new System.Drawing.Point(211, 292);
+            this.buttonCancelAssoPortefeuille.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonCancelAssoPortefeuille.Name = "buttonCancelAssoPortefeuille";
+            this.buttonCancelAssoPortefeuille.Size = new System.Drawing.Size(110, 32);
+            this.buttonCancelAssoPortefeuille.TabIndex = 12;
+            this.buttonCancelAssoPortefeuille.Text = "Annuler";
+            this.buttonCancelAssoPortefeuille.UseVisualStyleBackColor = false;
+            this.buttonCancelAssoPortefeuille.Visible = false;
+            this.buttonCancelAssoPortefeuille.Click += new System.EventHandler(this.buttonCancelAssoPortefeuille_Click);
             // 
             // InterGes
             // 
@@ -827,7 +901,7 @@
         private System.Windows.Forms.DataGridView dataGridViewPF;
         private System.Windows.Forms.Panel panelPFC;
         private System.Windows.Forms.DataGridView dataGridViewCommerciaux;
-        private System.Windows.Forms.Button buttonModAssCom;
+        private System.Windows.Forms.Button buttonAssoCom;
         private System.Windows.Forms.Panel panelBordeLeft;
         private System.Windows.Forms.Panel panelBorderBottom;
         private System.Windows.Forms.Panel panelBorderRight;
@@ -845,5 +919,10 @@
         private System.Windows.Forms.Button buttonValidAsso;
         private System.Windows.Forms.Button buttonAnnuler;
         private System.Windows.Forms.Button buttonLoadAll;
+        private System.Windows.Forms.Button buttonAssoPortefeuille;
+        private System.Windows.Forms.Button buttonValidAssoCom;
+        private System.Windows.Forms.Button buttonCancelAssoCom;
+        private System.Windows.Forms.Button buttonCancelAssoPortefeuille;
+        private System.Windows.Forms.Button buttonValidAssoPortefeuille;
     }
 }
