@@ -14,7 +14,7 @@ GESTIONNAIRE :
 - Créer Portefeuille (seb)
 - Modifier Poertfeuille (en cours seb)
 - Supprimer Portefeuille (attention à la base, normalement j'ai configuré nhibernate pour que les deletes soient automatiques, à tester)
-- Assigner un portefeuille à un commercial (en cours raph)
+
 
 #FAIT :
 
@@ -37,7 +37,10 @@ GESTIONNAIRE :
 - Supprimer un client (lorenzo)
 - Affichage de la liste des commerciaux (seb)
 - Ajout d'un nouveau Commercial (générations login/mdp automatiques + envoi mail) (seb + lorenzo)
-- Modification d'un commercial (lorenzo) 
+- Modification d'un commercial (lorenzo)
+- Assigner un portefeuille à un commercial (raph)
+- Assigner un commercial à un portefeuille (raph)
+- Assigner un interlocuteur à un portefeuille (raph)
 
 
 
