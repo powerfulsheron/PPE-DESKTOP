@@ -63,6 +63,11 @@
             this.dataGridViewPFIIS = new System.Windows.Forms.DataGridView();
             this.tabPagePFC = new System.Windows.Forms.TabPage();
             this.panelPFC = new System.Windows.Forms.Panel();
+            this.buttonCancelAssoPortefeuille = new System.Windows.Forms.Button();
+            this.buttonValidAssoPortefeuille = new System.Windows.Forms.Button();
+            this.buttonCancelAssoCom = new System.Windows.Forms.Button();
+            this.buttonValidAssoCom = new System.Windows.Forms.Button();
+            this.buttonAssoPortefeuille = new System.Windows.Forms.Button();
             this.labelCommerciaux = new System.Windows.Forms.Label();
             this.labelPortefeuilel = new System.Windows.Forms.Label();
             this.dataGridViewPortefeuilles = new System.Windows.Forms.DataGridView();
@@ -80,11 +85,8 @@
             this.panelBordeLeft = new System.Windows.Forms.Panel();
             this.panelBorderBottom = new System.Windows.Forms.Panel();
             this.panelBorderRight = new System.Windows.Forms.Panel();
-            this.buttonAssoPortefeuille = new System.Windows.Forms.Button();
-            this.buttonValidAssoCom = new System.Windows.Forms.Button();
-            this.buttonCancelAssoCom = new System.Windows.Forms.Button();
-            this.buttonValidAssoPortefeuille = new System.Windows.Forms.Button();
-            this.buttonCancelAssoPortefeuille = new System.Windows.Forms.Button();
+            this.dataGridViewMail = new System.Windows.Forms.DataGridView();
+            this.dataGridViewRDV = new System.Windows.Forms.DataGridView();
             this.tableLayoutEntete.SuspendLayout();
             this.panelTitre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBT)).BeginInit();
@@ -107,6 +109,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCommerciaux)).BeginInit();
             this.tabPageCDMDP.SuspendLayout();
             this.panelChangerMDP.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRDV)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutEntete
@@ -189,7 +193,7 @@
             this.tabControl2.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1020, 557);
+            this.tabControl2.Size = new System.Drawing.Size(1020, 564);
             this.tabControl2.TabIndex = 18;
             // 
             // tabPageCom
@@ -199,7 +203,7 @@
             this.tabPageCom.Margin = new System.Windows.Forms.Padding(2);
             this.tabPageCom.Name = "tabPageCom";
             this.tabPageCom.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPageCom.Size = new System.Drawing.Size(1012, 525);
+            this.tabPageCom.Size = new System.Drawing.Size(1012, 532);
             this.tabPageCom.TabIndex = 0;
             this.tabPageCom.Text = "Commerciaux";
             this.tabPageCom.UseVisualStyleBackColor = true;
@@ -207,6 +211,8 @@
             // panelPlanning
             // 
             this.panelPlanning.BackgroundImage = global::Maquette_Belle_Table_Final.Properties.Resources.fond;
+            this.panelPlanning.Controls.Add(this.dataGridViewRDV);
+            this.panelPlanning.Controls.Add(this.dataGridViewMail);
             this.panelPlanning.Controls.Add(this.dataGridViewCom);
             this.panelPlanning.Controls.Add(this.buttonVM);
             this.panelPlanning.Controls.Add(this.buttonSupCom);
@@ -217,29 +223,32 @@
             this.panelPlanning.Location = new System.Drawing.Point(2, 2);
             this.panelPlanning.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelPlanning.Name = "panelPlanning";
-            this.panelPlanning.Size = new System.Drawing.Size(1008, 521);
+            this.panelPlanning.Size = new System.Drawing.Size(1008, 528);
             this.panelPlanning.TabIndex = 13;
             this.panelPlanning.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPlanning_Paint);
             // 
             // dataGridViewCom
             // 
             this.dataGridViewCom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCom.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridViewCom.Location = new System.Drawing.Point(16, 60);
             this.dataGridViewCom.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewCom.Name = "dataGridViewCom";
             this.dataGridViewCom.RowTemplate.Height = 28;
-            this.dataGridViewCom.Size = new System.Drawing.Size(626, 218);
+            this.dataGridViewCom.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewCom.Size = new System.Drawing.Size(626, 444);
             this.dataGridViewCom.TabIndex = 8;
+            this.dataGridViewCom.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCom_CellClick);
             // 
             // buttonVM
             // 
             this.buttonVM.BackColor = System.Drawing.Color.Gold;
-            this.buttonVM.Location = new System.Drawing.Point(580, 22);
+            this.buttonVM.Location = new System.Drawing.Point(795, 268);
             this.buttonVM.Margin = new System.Windows.Forms.Padding(2);
             this.buttonVM.Name = "buttonVM";
             this.buttonVM.Size = new System.Drawing.Size(73, 22);
             this.buttonVM.TabIndex = 7;
-            this.buttonVM.Text = "Voir Mails";
+            this.buttonVM.Text = "Voir mail";
             this.buttonVM.UseVisualStyleBackColor = false;
             this.buttonVM.Click += new System.EventHandler(this.buttonVM_Click);
             // 
@@ -282,7 +291,7 @@
             // buttonVRDV
             // 
             this.buttonVRDV.BackColor = System.Drawing.Color.Gold;
-            this.buttonVRDV.Location = new System.Drawing.Point(513, 22);
+            this.buttonVRDV.Location = new System.Drawing.Point(805, 505);
             this.buttonVRDV.Margin = new System.Windows.Forms.Padding(2);
             this.buttonVRDV.Name = "buttonVRDV";
             this.buttonVRDV.Size = new System.Drawing.Size(63, 22);
@@ -360,6 +369,7 @@
             this.dataGridViewPF.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewPF.Name = "dataGridViewPF";
             this.dataGridViewPF.RowTemplate.Height = 28;
+            this.dataGridViewPF.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewPF.Size = new System.Drawing.Size(490, 252);
             this.dataGridViewPF.TabIndex = 0;
             this.dataGridViewPF.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPF_CellContentClick);
@@ -558,6 +568,70 @@
             this.panelPFC.TabIndex = 5;
             this.panelPFC.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPFC_Paint);
             // 
+            // buttonCancelAssoPortefeuille
+            // 
+            this.buttonCancelAssoPortefeuille.BackColor = System.Drawing.Color.Gold;
+            this.buttonCancelAssoPortefeuille.Location = new System.Drawing.Point(211, 292);
+            this.buttonCancelAssoPortefeuille.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonCancelAssoPortefeuille.Name = "buttonCancelAssoPortefeuille";
+            this.buttonCancelAssoPortefeuille.Size = new System.Drawing.Size(110, 32);
+            this.buttonCancelAssoPortefeuille.TabIndex = 12;
+            this.buttonCancelAssoPortefeuille.Text = "Annuler";
+            this.buttonCancelAssoPortefeuille.UseVisualStyleBackColor = false;
+            this.buttonCancelAssoPortefeuille.Visible = false;
+            this.buttonCancelAssoPortefeuille.Click += new System.EventHandler(this.buttonCancelAssoPortefeuille_Click);
+            // 
+            // buttonValidAssoPortefeuille
+            // 
+            this.buttonValidAssoPortefeuille.BackColor = System.Drawing.Color.Gold;
+            this.buttonValidAssoPortefeuille.Location = new System.Drawing.Point(62, 292);
+            this.buttonValidAssoPortefeuille.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonValidAssoPortefeuille.Name = "buttonValidAssoPortefeuille";
+            this.buttonValidAssoPortefeuille.Size = new System.Drawing.Size(110, 32);
+            this.buttonValidAssoPortefeuille.TabIndex = 11;
+            this.buttonValidAssoPortefeuille.Text = "Valider";
+            this.buttonValidAssoPortefeuille.UseVisualStyleBackColor = false;
+            this.buttonValidAssoPortefeuille.Visible = false;
+            this.buttonValidAssoPortefeuille.Click += new System.EventHandler(this.buttonValidAssoPortefeuille_Click);
+            // 
+            // buttonCancelAssoCom
+            // 
+            this.buttonCancelAssoCom.BackColor = System.Drawing.Color.Gold;
+            this.buttonCancelAssoCom.Location = new System.Drawing.Point(775, 292);
+            this.buttonCancelAssoCom.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonCancelAssoCom.Name = "buttonCancelAssoCom";
+            this.buttonCancelAssoCom.Size = new System.Drawing.Size(110, 32);
+            this.buttonCancelAssoCom.TabIndex = 10;
+            this.buttonCancelAssoCom.Text = "Annuler";
+            this.buttonCancelAssoCom.UseVisualStyleBackColor = false;
+            this.buttonCancelAssoCom.Visible = false;
+            this.buttonCancelAssoCom.Click += new System.EventHandler(this.buttonCancelAssoCom_Click);
+            // 
+            // buttonValidAssoCom
+            // 
+            this.buttonValidAssoCom.BackColor = System.Drawing.Color.Gold;
+            this.buttonValidAssoCom.Location = new System.Drawing.Point(545, 292);
+            this.buttonValidAssoCom.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonValidAssoCom.Name = "buttonValidAssoCom";
+            this.buttonValidAssoCom.Size = new System.Drawing.Size(110, 32);
+            this.buttonValidAssoCom.TabIndex = 9;
+            this.buttonValidAssoCom.Text = "Valider";
+            this.buttonValidAssoCom.UseVisualStyleBackColor = false;
+            this.buttonValidAssoCom.Visible = false;
+            this.buttonValidAssoCom.Click += new System.EventHandler(this.buttonValidAssoCom_Click);
+            // 
+            // buttonAssoPortefeuille
+            // 
+            this.buttonAssoPortefeuille.BackColor = System.Drawing.Color.Gold;
+            this.buttonAssoPortefeuille.Location = new System.Drawing.Point(62, 446);
+            this.buttonAssoPortefeuille.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAssoPortefeuille.Name = "buttonAssoPortefeuille";
+            this.buttonAssoPortefeuille.Size = new System.Drawing.Size(259, 40);
+            this.buttonAssoPortefeuille.TabIndex = 8;
+            this.buttonAssoPortefeuille.Text = "Modifier le commercial associé au portefeuille";
+            this.buttonAssoPortefeuille.UseVisualStyleBackColor = false;
+            this.buttonAssoPortefeuille.Click += new System.EventHandler(this.buttonAssoPortefeuille_Click);
+            // 
             // labelCommerciaux
             // 
             this.labelCommerciaux.AutoSize = true;
@@ -730,14 +804,14 @@
             this.panelBordeLeft.Location = new System.Drawing.Point(0, 24);
             this.panelBordeLeft.Margin = new System.Windows.Forms.Padding(2);
             this.panelBordeLeft.Name = "panelBordeLeft";
-            this.panelBordeLeft.Size = new System.Drawing.Size(1, 558);
+            this.panelBordeLeft.Size = new System.Drawing.Size(1, 565);
             this.panelBordeLeft.TabIndex = 19;
             // 
             // panelBorderBottom
             // 
             this.panelBorderBottom.BackColor = System.Drawing.Color.MidnightBlue;
             this.panelBorderBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBorderBottom.Location = new System.Drawing.Point(1, 581);
+            this.panelBorderBottom.Location = new System.Drawing.Point(1, 588);
             this.panelBorderBottom.Margin = new System.Windows.Forms.Padding(2);
             this.panelBorderBottom.Name = "panelBorderBottom";
             this.panelBorderBottom.Size = new System.Drawing.Size(1021, 1);
@@ -750,79 +824,37 @@
             this.panelBorderRight.Location = new System.Drawing.Point(1021, 24);
             this.panelBorderRight.Margin = new System.Windows.Forms.Padding(2);
             this.panelBorderRight.Name = "panelBorderRight";
-            this.panelBorderRight.Size = new System.Drawing.Size(1, 557);
+            this.panelBorderRight.Size = new System.Drawing.Size(1, 564);
             this.panelBorderRight.TabIndex = 21;
             // 
-            // buttonAssoPortefeuille
+            // dataGridViewMail
             // 
-            this.buttonAssoPortefeuille.BackColor = System.Drawing.Color.Gold;
-            this.buttonAssoPortefeuille.Location = new System.Drawing.Point(62, 446);
-            this.buttonAssoPortefeuille.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonAssoPortefeuille.Name = "buttonAssoPortefeuille";
-            this.buttonAssoPortefeuille.Size = new System.Drawing.Size(259, 40);
-            this.buttonAssoPortefeuille.TabIndex = 8;
-            this.buttonAssoPortefeuille.Text = "Modifier le commercial associé au portefeuille";
-            this.buttonAssoPortefeuille.UseVisualStyleBackColor = false;
-            this.buttonAssoPortefeuille.Click += new System.EventHandler(this.buttonAssoPortefeuille_Click);
+            this.dataGridViewMail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMail.Location = new System.Drawing.Point(655, 60);
+            this.dataGridViewMail.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewMail.Name = "dataGridViewMail";
+            this.dataGridViewMail.RowTemplate.Height = 28;
+            this.dataGridViewMail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewMail.Size = new System.Drawing.Size(349, 207);
+            this.dataGridViewMail.TabIndex = 9;
             // 
-            // buttonValidAssoCom
+            // dataGridViewRDV
             // 
-            this.buttonValidAssoCom.BackColor = System.Drawing.Color.Gold;
-            this.buttonValidAssoCom.Location = new System.Drawing.Point(545, 292);
-            this.buttonValidAssoCom.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonValidAssoCom.Name = "buttonValidAssoCom";
-            this.buttonValidAssoCom.Size = new System.Drawing.Size(110, 32);
-            this.buttonValidAssoCom.TabIndex = 9;
-            this.buttonValidAssoCom.Text = "Valider";
-            this.buttonValidAssoCom.UseVisualStyleBackColor = false;
-            this.buttonValidAssoCom.Visible = false;
-            this.buttonValidAssoCom.Click += new System.EventHandler(this.buttonValidAssoCom_Click);
-            // 
-            // buttonCancelAssoCom
-            // 
-            this.buttonCancelAssoCom.BackColor = System.Drawing.Color.Gold;
-            this.buttonCancelAssoCom.Location = new System.Drawing.Point(775, 292);
-            this.buttonCancelAssoCom.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonCancelAssoCom.Name = "buttonCancelAssoCom";
-            this.buttonCancelAssoCom.Size = new System.Drawing.Size(110, 32);
-            this.buttonCancelAssoCom.TabIndex = 10;
-            this.buttonCancelAssoCom.Text = "Annuler";
-            this.buttonCancelAssoCom.UseVisualStyleBackColor = false;
-            this.buttonCancelAssoCom.Visible = false;
-            this.buttonCancelAssoCom.Click += new System.EventHandler(this.buttonCancelAssoCom_Click);
-            // 
-            // buttonValidAssoPortefeuille
-            // 
-            this.buttonValidAssoPortefeuille.BackColor = System.Drawing.Color.Gold;
-            this.buttonValidAssoPortefeuille.Location = new System.Drawing.Point(62, 292);
-            this.buttonValidAssoPortefeuille.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonValidAssoPortefeuille.Name = "buttonValidAssoPortefeuille";
-            this.buttonValidAssoPortefeuille.Size = new System.Drawing.Size(110, 32);
-            this.buttonValidAssoPortefeuille.TabIndex = 11;
-            this.buttonValidAssoPortefeuille.Text = "Valider";
-            this.buttonValidAssoPortefeuille.UseVisualStyleBackColor = false;
-            this.buttonValidAssoPortefeuille.Visible = false;
-            this.buttonValidAssoPortefeuille.Click += new System.EventHandler(this.buttonValidAssoPortefeuille_Click);
-            // 
-            // buttonCancelAssoPortefeuille
-            // 
-            this.buttonCancelAssoPortefeuille.BackColor = System.Drawing.Color.Gold;
-            this.buttonCancelAssoPortefeuille.Location = new System.Drawing.Point(211, 292);
-            this.buttonCancelAssoPortefeuille.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonCancelAssoPortefeuille.Name = "buttonCancelAssoPortefeuille";
-            this.buttonCancelAssoPortefeuille.Size = new System.Drawing.Size(110, 32);
-            this.buttonCancelAssoPortefeuille.TabIndex = 12;
-            this.buttonCancelAssoPortefeuille.Text = "Annuler";
-            this.buttonCancelAssoPortefeuille.UseVisualStyleBackColor = false;
-            this.buttonCancelAssoPortefeuille.Visible = false;
-            this.buttonCancelAssoPortefeuille.Click += new System.EventHandler(this.buttonCancelAssoPortefeuille_Click);
+            this.dataGridViewRDV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewRDV.Location = new System.Drawing.Point(655, 294);
+            this.dataGridViewRDV.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewRDV.Name = "dataGridViewRDV";
+            this.dataGridViewRDV.RowTemplate.Height = 28;
+            this.dataGridViewRDV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewRDV.Size = new System.Drawing.Size(349, 210);
+            this.dataGridViewRDV.TabIndex = 10;
             // 
             // InterGes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Maquette_Belle_Table_Final.Properties.Resources.fond;
-            this.ClientSize = new System.Drawing.Size(1022, 582);
+            this.ClientSize = new System.Drawing.Size(1022, 589);
             this.Controls.Add(this.tabControl2);
             this.Controls.Add(this.panelBorderRight);
             this.Controls.Add(this.panelBorderBottom);
@@ -861,6 +893,8 @@
             this.tabPageCDMDP.ResumeLayout(false);
             this.panelChangerMDP.ResumeLayout(false);
             this.panelChangerMDP.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRDV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -924,5 +958,7 @@
         private System.Windows.Forms.Button buttonCancelAssoCom;
         private System.Windows.Forms.Button buttonCancelAssoPortefeuille;
         private System.Windows.Forms.Button buttonValidAssoPortefeuille;
+        private System.Windows.Forms.DataGridView dataGridViewRDV;
+        private System.Windows.Forms.DataGridView dataGridViewMail;
     }
 }

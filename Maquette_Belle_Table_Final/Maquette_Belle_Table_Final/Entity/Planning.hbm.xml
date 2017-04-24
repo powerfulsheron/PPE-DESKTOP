@@ -7,7 +7,7 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
     </id>
     <property name="libellePlanning" column="libellePlanning"/>
     
-    <set name="lesRendezVous">
+    <set name="lesRendezVous" lazy="false">
       <key column="idRdv" />
       <one-to-many class="RendezVous"/>
     </set>

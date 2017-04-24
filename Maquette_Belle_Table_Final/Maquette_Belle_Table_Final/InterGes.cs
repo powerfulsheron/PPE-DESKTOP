@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Maquette_Belle_Table;
 
 namespace Maquette_Belle_Table_Final
 {
@@ -59,8 +60,13 @@ namespace Maquette_Belle_Table_Final
 
         private void buttonVM_Click(object sender, EventArgs e)
         {
-            //Bouton Voir Mails Commercial
-            new Popup_VoirMails().Show();
+            if (dataGridViewMail.SelectedRows.Count == 1)
+            {
+                Popup_Mail popMail = new Popup_Mail();
+                popMail.mail = (Mail)dataGridViewMail.CurrentRow.DataBoundItem;
+                popMail.Show();
+            }
+            else MessageBox.Show("Merci de selectionner un mail");
         }
 
         private void buttonCPF_Click(object sender, EventArgs e)
@@ -518,6 +524,15 @@ namespace Maquette_Belle_Table_Final
         private void buttonCancelAssoPortefeuille_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridViewCom_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //On charge le commercial selectionné dans 'leCommercialSelected'
+            Utilisateur leCommercialSelected = (Utilisateur)dataGridViewCom.CurrentRow.DataBoundItem;
+            dataGridViewMail.DataSource = leCommercialSelected.lesMails.ToList<Mail>();
+            dataGridViewRDV.DataSource = leCommercialSelected.planning.lesRendezVous.ToList<RendezVous>();
+            
         }
     }
 }
