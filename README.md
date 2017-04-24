@@ -7,19 +7,16 @@ UTILISATEUR :
 
 GESTIONNAIRE :
 
-- Affichage de la liste des commerciaux
-- Ajout d'un nouveau Commercial (générations login/mdp automatiques + envoi mail)
-- Modification d'un commercial
+- Modification d'un commercial (en cours lorenzo) 
 - Supression d'un commercial (attention à la base, normalement j'ai configuré nhibernate pour que les deletes soient automatiques, à tester)
 - Voir la liste des rdv d'un commercial
 - Voir la liste des mails d'un commercial
 - Prendre un rendez vous au nom d'un commercial
 - Modifier un rendez vous au nom d'un commercial
-- ecrire/consulter un mail au nom d'un commercial
-- Créer Portefeuille
-- Modifier Poertfeuille
+- Créer Portefeuille (seb)
+- Modifier Poertfeuille (en cours seb)
 - Supprimer Portefeuille (attention à la base, normalement j'ai configuré nhibernate pour que les deletes soient automatiques, à tester)
-- Assigner un portefeuille à un commercial
+- Assigner un portefeuille à un commercial (en cours raph)
 
 #FAIT :
 
@@ -40,6 +37,8 @@ GESTIONNAIRE :
 - Liste des logs de connection (raph)
 - Modifier un client (lorenzo)
 - Supprimer un client (lorenzo)
+- Affichage de la liste des commerciaux (seb)
+- Ajout d'un nouveau Commercial (générations login/mdp automatiques + envoi mail) (seb à tester)
 
 
 
