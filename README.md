@@ -6,11 +6,11 @@ UTILISATEUR :
 
 GESTIONNAIRE :
 
-- Supression d'un commercial (en cours lorenzo)
-- Voir la liste des rdv d'un commercial
-- Voir la liste des mails d'un commercial
+- Voir la liste des rdv d'un commercial (Vallade)
+
 - Prendre un rendez vous au nom d'un commercial
 - Modifier un rendez vous au nom d'un commercial
+
 - Créer Portefeuille (seb)
 - Modifier Poertfeuille (en cours seb)
 - Supprimer Portefeuille (attention à la base, normalement j'ai configuré nhibernate pour que les deletes soient automatiques, à tester)
@@ -41,6 +41,9 @@ GESTIONNAIRE :
 - Assigner un portefeuille à un commercial (raph)
 - Assigner un commercial à un portefeuille (raph)
 - Assigner un interlocuteur à un portefeuille (raph)
+- Supression d'un commercial (lorenzo)
+- Voir la liste des mails d'un commercial (raph)
+- Voir le mail d'un commercial (raph)
 
 
 
