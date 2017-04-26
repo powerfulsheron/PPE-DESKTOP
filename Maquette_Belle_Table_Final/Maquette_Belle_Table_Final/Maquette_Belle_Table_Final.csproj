@@ -159,8 +159,8 @@
     <Compile Include="Popup_NewPF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Popup_NewPF.Designer.cs">
-      <DependentUpon>Popup_NewPF.cs</DependentUpon>
+    <Compile Include="Popup_NewPF.Designer.cs" >
+		<DependentUpon>Popup_NewPF.cs</DependentUpon>
     </Compile>
     <Compile Include="Popup_VoirMails.cs">
       <SubType>Form</SubType>
@@ -219,8 +219,8 @@
     <EmbeddedResource Include="Popup_NewInter.resx">
       <DependentUpon>Popup_NewInter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Popup_NewPF.resx">
-      <DependentUpon>Popup_NewPF.cs</DependentUpon>
+    <EmbeddedResource Include="Popup_NewPF.resx" >
+		<DependentUpon>Popup_NewPF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Popup_VoirMails.resx">
       <DependentUpon>Popup_VoirMails.cs</DependentUpon>

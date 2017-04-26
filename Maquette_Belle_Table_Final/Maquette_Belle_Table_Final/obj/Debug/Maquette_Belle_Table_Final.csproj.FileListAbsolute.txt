@@ -185,7 +185,6 @@ C:\Users\sebas\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_
 C:\Users\sebas\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table.Popup_Mail.resources
 C:\Users\sebas\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.Popup_NewC.resources
 C:\Users\sebas\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table.Popup_NewClient.resources
-C:\Users\sebas\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.Popup_NewCom.resources
 C:\Users\sebas\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.Popup_NewInter.resources
 C:\Users\sebas\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.Popup_NewPF.resources
 C:\Users\sebas\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.Popup_VoirMails.resources
@@ -283,3 +282,4 @@ C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\PPE-DESKTOP\Ma
 C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\bin\Debug\Popup AddModUser.cs
 C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\bin\Debug\Maquette_Belle_Table_Final.exe
 C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\bin\Debug\Maquette_Belle_Table_Final.pdb
+C:\Users\sebas\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.Confirm.resources

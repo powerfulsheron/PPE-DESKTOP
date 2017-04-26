@@ -40,11 +40,13 @@
             this.panelBordeLeft = new System.Windows.Forms.Panel();
             this.panelBorderRight = new System.Windows.Forms.Panel();
             this.textBoxPF = new System.Windows.Forms.TextBox();
-            this.checkBoxSelect = new System.Windows.Forms.CheckBox();
             this.labelComm = new System.Windows.Forms.Label();
             this.comboBoxCom = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxC = new System.Windows.Forms.ComboBox();
+            this.labelcom = new System.Windows.Forms.Label();
+            this.radioButtonAjout = new System.Windows.Forms.RadioButton();
+            this.radioButtonModif = new System.Windows.Forms.RadioButton();
+            this.checkBoxselect = new System.Windows.Forms.CheckBox();
             this.panelMenu.SuspendLayout();
             this.panelTitre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBT)).BeginInit();
@@ -82,6 +84,7 @@
             this.label2.Size = new System.Drawing.Size(18, 18);
             this.label2.TabIndex = 4;
             this.label2.Text = "X";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // labelBT
             // 
@@ -135,7 +138,7 @@
             // 
             this.labelDC.AutoSize = true;
             this.labelDC.BackColor = System.Drawing.Color.Transparent;
-            this.labelDC.Location = new System.Drawing.Point(21, 116);
+            this.labelDC.Location = new System.Drawing.Point(21, 103);
             this.labelDC.Name = "labelDC";
             this.labelDC.Size = new System.Drawing.Size(157, 19);
             this.labelDC.TabIndex = 30;
@@ -170,63 +173,86 @@
             // 
             // textBoxPF
             // 
-            this.textBoxPF.Location = new System.Drawing.Point(203, 111);
+            this.textBoxPF.Location = new System.Drawing.Point(263, 100);
             this.textBoxPF.Name = "textBoxPF";
             this.textBoxPF.Size = new System.Drawing.Size(286, 24);
             this.textBoxPF.TabIndex = 34;
             this.textBoxPF.TextChanged += new System.EventHandler(this.textBoxPF_TextChanged);
             // 
-            // checkBoxSelect
-            // 
-            this.checkBoxSelect.AutoSize = true;
-            this.checkBoxSelect.BackColor = System.Drawing.Color.Transparent;
-            this.checkBoxSelect.Location = new System.Drawing.Point(25, 53);
-            this.checkBoxSelect.Name = "checkBoxSelect";
-            this.checkBoxSelect.Size = new System.Drawing.Size(326, 23);
-            this.checkBoxSelect.TabIndex = 35;
-            this.checkBoxSelect.Text = "Rattacher un portefeuille à un commercial";
-            this.checkBoxSelect.UseVisualStyleBackColor = false;
-            this.checkBoxSelect.CheckedChanged += new System.EventHandler(this.checkBoxSelect_CheckedChanged);
-            // 
             // labelComm
             // 
             this.labelComm.AutoSize = true;
             this.labelComm.BackColor = System.Drawing.Color.Transparent;
-            this.labelComm.Location = new System.Drawing.Point(21, 203);
+            this.labelComm.Location = new System.Drawing.Point(21, 184);
             this.labelComm.Name = "labelComm";
-            this.labelComm.Size = new System.Drawing.Size(166, 19);
+            this.labelComm.Size = new System.Drawing.Size(215, 19);
             this.labelComm.TabIndex = 36;
-            this.labelComm.Text = "Commercial rattaché :";
+            this.labelComm.Text = "Commercial sans portefeuille :";
             // 
             // comboBoxCom
             // 
             this.comboBoxCom.FormattingEnabled = true;
-            this.comboBoxCom.Location = new System.Drawing.Point(203, 200);
+            this.comboBoxCom.Location = new System.Drawing.Point(263, 178);
             this.comboBoxCom.Name = "comboBoxCom";
             this.comboBoxCom.Size = new System.Drawing.Size(286, 25);
             this.comboBoxCom.TabIndex = 37;
             this.comboBoxCom.SelectedIndexChanged += new System.EventHandler(this.comboBoxCom_SelectedIndexChanged);
             // 
-            // checkBox1
+            // comboBoxC
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox1.Location = new System.Drawing.Point(476, 53);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(189, 23);
-            this.checkBox1.TabIndex = 38;
-            this.checkBox1.Text = "Modifier un portefeuille";
-            this.checkBox1.UseVisualStyleBackColor = false;
+            this.comboBoxC.FormattingEnabled = true;
+            this.comboBoxC.Location = new System.Drawing.Point(263, 209);
+            this.comboBoxC.Name = "comboBoxC";
+            this.comboBoxC.Size = new System.Drawing.Size(286, 25);
+            this.comboBoxC.TabIndex = 40;
             // 
-            // label1
+            // labelcom
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(388, 57);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 19);
-            this.label1.TabIndex = 39;
-            this.label1.Text = "OU";
+            this.labelcom.AutoSize = true;
+            this.labelcom.BackColor = System.Drawing.Color.Transparent;
+            this.labelcom.Location = new System.Drawing.Point(21, 215);
+            this.labelcom.Name = "labelcom";
+            this.labelcom.Size = new System.Drawing.Size(105, 19);
+            this.labelcom.TabIndex = 42;
+            this.labelcom.Text = "Commercial  :";
+            // 
+            // radioButtonAjout
+            // 
+            this.radioButtonAjout.AutoSize = true;
+            this.radioButtonAjout.BackColor = System.Drawing.Color.Transparent;
+            this.radioButtonAjout.Location = new System.Drawing.Point(150, 53);
+            this.radioButtonAjout.Name = "radioButtonAjout";
+            this.radioButtonAjout.Size = new System.Drawing.Size(78, 23);
+            this.radioButtonAjout.TabIndex = 44;
+            this.radioButtonAjout.TabStop = true;
+            this.radioButtonAjout.Text = "Ajouter";
+            this.radioButtonAjout.UseVisualStyleBackColor = false;
+            this.radioButtonAjout.CheckedChanged += new System.EventHandler(this.radioButtonAjout_CheckedChanged);
+            // 
+            // radioButtonModif
+            // 
+            this.radioButtonModif.AutoSize = true;
+            this.radioButtonModif.BackColor = System.Drawing.Color.Transparent;
+            this.radioButtonModif.Location = new System.Drawing.Point(370, 53);
+            this.radioButtonModif.Name = "radioButtonModif";
+            this.radioButtonModif.Size = new System.Drawing.Size(85, 23);
+            this.radioButtonModif.TabIndex = 45;
+            this.radioButtonModif.TabStop = true;
+            this.radioButtonModif.Text = "Modifier";
+            this.radioButtonModif.UseVisualStyleBackColor = false;
+            this.radioButtonModif.CheckedChanged += new System.EventHandler(this.radioButtonModif_CheckedChanged);
+            // 
+            // checkBoxselect
+            // 
+            this.checkBoxselect.AutoSize = true;
+            this.checkBoxselect.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxselect.Location = new System.Drawing.Point(263, 139);
+            this.checkBoxselect.Name = "checkBoxselect";
+            this.checkBoxselect.Size = new System.Drawing.Size(320, 23);
+            this.checkBoxselect.TabIndex = 46;
+            this.checkBoxselect.Text = "Rattacher le portefeuille à un commercial";
+            this.checkBoxselect.UseVisualStyleBackColor = false;
+            this.checkBoxselect.CheckedChanged += new System.EventHandler(this.checkBoxselect_CheckedChanged);
             // 
             // Popup_NewPF
             // 
@@ -234,11 +260,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Maquette_Belle_Table_Final.Properties.Resources.fond;
             this.ClientSize = new System.Drawing.Size(686, 333);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.checkBoxselect);
+            this.Controls.Add(this.radioButtonModif);
+            this.Controls.Add(this.radioButtonAjout);
+            this.Controls.Add(this.labelcom);
+            this.Controls.Add(this.comboBoxC);
             this.Controls.Add(this.comboBoxCom);
             this.Controls.Add(this.labelComm);
-            this.Controls.Add(this.checkBoxSelect);
             this.Controls.Add(this.textBoxPF);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.buttonAnul);
@@ -275,10 +303,12 @@
         private System.Windows.Forms.Panel panelBordeLeft;
         private System.Windows.Forms.Panel panelBorderRight;
         private System.Windows.Forms.TextBox textBoxPF;
-        private System.Windows.Forms.CheckBox checkBoxSelect;
         private System.Windows.Forms.Label labelComm;
         private System.Windows.Forms.ComboBox comboBoxCom;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBoxC;
+        private System.Windows.Forms.Label labelcom;
+        private System.Windows.Forms.RadioButton radioButtonAjout;
+        private System.Windows.Forms.RadioButton radioButtonModif;
+        private System.Windows.Forms.CheckBox checkBoxselect;
     }
 }
