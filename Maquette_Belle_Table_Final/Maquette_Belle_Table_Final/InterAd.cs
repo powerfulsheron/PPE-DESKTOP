@@ -26,7 +26,7 @@ namespace Maquette_Belle_Table_Final
 
         private void InterUti_Load(object sender, System.EventArgs e)
         {
-            ChargerDatagridUti();          
+            ChargerDatagridUti();
         }
 
         private void labelFermeture_Click(object sender, EventArgs e)
@@ -55,9 +55,9 @@ namespace Maquette_Belle_Table_Final
         private void buttonSuppUti_Click(object sender, EventArgs e)
         {
             //Bouton Supprimer Utilisateur
-            
+
             Utilisateur userToDelete = (Utilisateur)dataGridViewUti.CurrentRow.DataBoundItem;
-            DialogResult dialogResult = MessageBox.Show("Êtes vous sûr de vouloir supprimer "+ userToDelete.nomUtilisateur + "?", "Supprimer", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Êtes vous sûr de vouloir supprimer " + userToDelete.nomUtilisateur + "?", "Supprimer", MessageBoxButtons.YesNo);
 
             if (dialogResult == DialogResult.Yes)
             {
@@ -67,10 +67,15 @@ namespace Maquette_Belle_Table_Final
                     // début transaction 
                     using (ITransaction transaction = session.BeginTransaction())
                     {
-                        if(userToDelete.typeUtilisateur.codeTypeUtilisateur != 3)
+                        if (userToDelete.typeUtilisateur.codeTypeUtilisateur == 3)
                         {
+                            userToDelete.planning.utilisateur = null;
+                            userToDelete.porteFeuille.utilisateur = null;
+                            session.Update(userToDelete.planning);
+                            session.Update(userToDelete.porteFeuille);
                             userToDelete.planning = null;
                             userToDelete.porteFeuille = null;
+                            session.Update(userToDelete);
                         }
                         session.Delete(userToDelete);
                         session.Flush();
@@ -81,20 +86,20 @@ namespace Maquette_Belle_Table_Final
             }
             else if (dialogResult == DialogResult.No)
             {
-                
+
             }
         }
 
         private void dataGridViewUti_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
         }
 
-        
+
 
         private void dataGridViewHC_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
         }
 
         private void buttonValCDMDP_Click(object sender, EventArgs e)
@@ -116,10 +121,10 @@ namespace Maquette_Belle_Table_Final
         {
 
         }
-        
+
         private void panelUtilisateur_Paint(object sender, PaintEventArgs e)
         {
-    
+
         }
 
         private void InterAd_Load(object sender, EventArgs e)
@@ -127,7 +132,7 @@ namespace Maquette_Belle_Table_Final
             ChargerDatagridUti();
             ChargerDatagridHC();
         }
-        
+
         public void ChargerDatagridUti()
         {
             Utilisateur lesUtilisateurs = new Utilisateur();

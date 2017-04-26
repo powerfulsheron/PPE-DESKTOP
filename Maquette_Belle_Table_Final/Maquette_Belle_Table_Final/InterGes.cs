@@ -16,7 +16,7 @@ namespace Maquette_Belle_Table_Final
     public partial class InterGes : Form
     {
         private static ISessionFactory sessionFactory = new Configuration().Configure().BuildSessionFactory();
-       
+        ISession session = sessionFactory.OpenSession();
         PorteFeuille lesPorteFeuilles = new PorteFeuille();
         DataGridView leDataGrid = new DataGridView();
         public Utilisateur utilisateur { get; set; }
@@ -33,23 +33,59 @@ namespace Maquette_Belle_Table_Final
 
         private void buttonAddCom_Click(object sender, EventArgs e)
         {
-            Popup_NewCom Popup_NewCom = new Popup_NewCom();
-            Popup_NewCom.utilisateur = utilisateur;
-            Popup_NewCom.Show();
-            //Bouton Ajouter Commercial
-            new Popup_NewCom().Show();
+            //Bouton Ajouter Utilisateur (Affiche le PopupAddModUser)
+            Popup_AddModUser addUser = new Popup_AddModUser(this);
+            addUser.interGes = this;
+            addUser.isGestionnaire = true;
+            addUser.Show();   
         }
 
         private void buttonModCom_Click(object sender, EventArgs e)
         {
-            //Bouton Modifier Commercial
-            new Popup_NewCom().Show();
+            //Bouton Modifier Commercial (Affiche le PopupAddModUser)
+            Popup_AddModUser addUser = new Popup_AddModUser(this);
+            addUser.interGes = this;
+            addUser.isGestionnaire = true;
+            addUser.utilisateur = (Utilisateur)dataGridViewCom.CurrentRow.DataBoundItem;
+            addUser.Show(); 
         }
 
         private void buttonSupCom_Click(object sender, EventArgs e)
         {
-            //Bouton Supprimer Commercial
-            dataGridViewCom.Rows.Remove(dataGridViewCom.CurrentRow);
+            //Bouton Supprimer Utilisateur
+
+            Utilisateur userToDelete = (Utilisateur)dataGridViewCom.CurrentRow.DataBoundItem;
+            DialogResult dialogResult = MessageBox.Show("Êtes vous sûr de vouloir supprimer " + userToDelete.nomUtilisateur + "?", "Supprimer", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                sessionFactory = new Configuration().Configure().BuildSessionFactory();
+                using (ISession session = sessionFactory.OpenSession())
+                {
+                    // début transaction 
+                    using (ITransaction transaction = session.BeginTransaction())
+                    {
+
+                        userToDelete.planning.utilisateur = null;
+                        userToDelete.porteFeuille.utilisateur = null;
+                        session.Update(userToDelete.planning);
+                        session.Update(userToDelete.porteFeuille);
+                        userToDelete.planning = null;
+                        userToDelete.porteFeuille = null;
+                        session.Update(userToDelete);
+
+                        MessageBox.Show(userToDelete.numUtilisateur.ToString());
+                        session.Delete(userToDelete);
+                        session.Flush();
+                        transaction.Commit();
+                    }
+                }
+                ChargerDataGridViewCommerciaux();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+
+            }
         }
 
         private void buttonVRDV_Click(object sender, EventArgs e)
@@ -272,11 +308,6 @@ namespace Maquette_Belle_Table_Final
 
         }
 
-        private void panelPlanning_Paint(object sender, PaintEventArgs e)
-        {
-           dataGridViewCom.DataSource = utilisateur.GetLesUtilisateurs(3);
-        }
-
         private void InterGes_Load(object sender, EventArgs e)
         {
             ChargerDataGridViewCommerciaux(dataGridViewCommerciaux);
@@ -292,6 +323,25 @@ namespace Maquette_Belle_Table_Final
             ChargerDataGridViewPFII();
             ChargerDataGridViewPFIIS();
             ChargerDataGridViewPFIP();
+        }
+
+        //Reecriture de la méthode pour pouvoir reload a partir de n'importe quel form
+        public void ChargerDataGridViewCommerciaux()
+        {
+            dataGridViewCom.DataSource = utilisateur.GetLesUtilisateurs(3);
+            dataGridViewCom.Columns[0].Visible = false;
+            dataGridViewCom.Columns[2].Visible = false;
+            dataGridViewCom.Columns[3].Visible = false;
+            dataGridViewCom.Columns[4].Visible = false;
+            dataGridViewCom.Columns[5].Visible = false;
+            dataGridViewCom.Columns[7].Visible = false;
+            dataGridViewCom.Columns[9].Visible = false;
+            dataGridViewCom.Columns[10].Visible = false;
+            dataGridViewCom.Columns[11].Visible = false;
+            dataGridViewCom.Columns[12].Visible = false;
+            dataGridViewCom.Columns[14].Visible = false;
+            dataGridViewCom.Columns[15].Visible = false;
+            dataGridViewCom.Columns[16].Visible = false;
         }
 
         //Pour éviter de répeter les instructions sur différentsataGrid affichant des commerciaux:

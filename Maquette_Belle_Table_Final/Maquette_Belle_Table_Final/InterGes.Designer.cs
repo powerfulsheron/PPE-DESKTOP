@@ -231,7 +231,6 @@
             this.panelPlanning.Name = "panelPlanning";
             this.panelPlanning.Size = new System.Drawing.Size(1008, 528);
             this.panelPlanning.TabIndex = 13;
-            this.panelPlanning.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPlanning_Paint);
             // 
             // dataGridViewCom
             // 
