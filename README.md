@@ -9,7 +9,6 @@ GESTIONNAIRE :
 - Voir la liste des rdv d'un commercial (Vallade)
 - Prendre un rendez vous au nom d'un commercial (en cours en raph)
 - Modifier un rendez vous au nom d'un commercial (en cours en raph)
-- Créer Portefeuille (seb)
 - Modifier Poertfeuille (en cours seb)
 - Supprimer Portefeuille (attention à la base, normalement j'ai configuré nhibernate pour que les deletes soient automatiques, à tester)
 
@@ -42,6 +41,7 @@ GESTIONNAIRE :
 - Supression d'un commercial (lorenzo)
 - Voir la liste des mails d'un commercial (raph)
 - Voir le mail d'un commercial (raph)
+- Créer Portefeuille (seb)
 
 
 
