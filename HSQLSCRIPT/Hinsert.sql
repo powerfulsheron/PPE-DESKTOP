@@ -6,29 +6,29 @@ SET foreign_key_checks = 0;
 
 #Commercial 1
 insert into UTILISATEUR (numUtilisateur, nomUtilisateur, prenomUtilisateur, adresseUtilisateur, cpUtilisateur, villeUtilisateur, telUtilisateur, mailUtilisateur, distanceParcourueSemaine, loginUtilisateur, passwordUtilisateur, dateDernierLogin, nbTentatives, codeTypeUtilisateur, idPlanning, idPorteFeuille, version) values 
-(1, 'Sailly', 'Axelle', '2 allée de St Genouf', 91360, 'Villemoisson-sur-Orge', '0665564696', 'saillyaxelle@hotmail.fr', 0, 'axelles', MD5('14.08.1997'), 20170424, 0, 3, 1, 1,0);
+(1, 'Sailly', 'Axelle', '2 allée de St Genouf', 91360, 'Villemoisson-sur-Orge', '0665564696', 'saillyaxelle@hotmail.fr', 0, 'axelles', MD5(12345), 20170424, 0, 3, 1, 1,0);
 #Commercial 2
 insert into UTILISATEUR (numUtilisateur, nomUtilisateur, prenomUtilisateur, adresseUtilisateur, cpUtilisateur, villeUtilisateur, telUtilisateur, mailUtilisateur, distanceParcourueSemaine, loginUtilisateur, passwordUtilisateur, dateDernierLogin, nbTentatives, codeTypeUtilisateur, idPlanning, idPorteFeuille, version) values 
 (2, 'Canavaggio', 'Lorenzo', '9 rue Joliot Curie', 91160, 'Saulx-les-Chartreux', '0665564669', 'abc.xyz@hotmail.fr', 0, 'lorenzoc', MD5(12345), 20170326, 0, 3, 2, 2,0);
 #Gestionnaire
 insert into UTILISATEUR (numUtilisateur, nomUtilisateur, prenomUtilisateur, adresseUtilisateur, cpUtilisateur, villeUtilisateur, telUtilisateur, mailUtilisateur, distanceParcourueSemaine, loginUtilisateur, passwordUtilisateur, dateDernierLogin, nbTentatives, codeTypeUtilisateur, idPlanning, idPorteFeuille, version) values 
-(3, 'Roberto', 'Benedicte', '2 rue Lacaze', 75014, 'Paris', '0656564696', 'bene75@gmail.com', 0, 'benedicter', MD5('abcdefg'), 20170416, 0, 2, null, null,0);
+(3, 'Roberto', 'Benedicte', '2 rue Lacaze', 75014, 'Paris', '0656564696', 'bene75@gmail.com', 0, 'benedicter', MD5(12345), 20170416, 0, 2, null, null,0);
 #Administrateur
 insert into UTILISATEUR (numUtilisateur, nomUtilisateur, prenomUtilisateur, adresseUtilisateur, cpUtilisateur, villeUtilisateur, telUtilisateur, mailUtilisateur, distanceParcourueSemaine, loginUtilisateur, passwordUtilisateur, dateDernierLogin, nbTentatives, codeTypeUtilisateur, idPlanning, idPorteFeuille, version) values 
-(4, 'Lhullier', 'Jesse', '16 avenue Morane Saulnier', 78140, 'Vélizy-Villacoublay', '0756564696', 'jesse.lhullier@yahoo.com', 0, 'jessel', MD5('jessebox'), 20170215, 0, 1, null, null,0);
+(4, 'Lhullier', 'Jesse', '16 avenue Morane Saulnier', 78140, 'Vélizy-Villacoublay', '0756564696', 'jesse.lhullier@yahoo.com', 0, 'jessel', MD5(12345), 20170215, 0, 1, null, null,0);
 
 #Commercial 3
 insert into UTILISATEUR (numUtilisateur, nomUtilisateur, prenomUtilisateur, adresseUtilisateur, cpUtilisateur, villeUtilisateur, telUtilisateur, mailUtilisateur, distanceParcourueSemaine, loginUtilisateur, passwordUtilisateur, dateDernierLogin, nbTentatives, codeTypeUtilisateur, idPlanning, idPorteFeuille, version) values 
-(5, 'Morel', 'Hugo', '8 Place Charost', 78000, 'Versailles', '0665936694', 'xyz.abc@outlook.fr', 0, 'hugom', MD5(789456), 20170411, 0, 3, 3, 3,0);
+(5, 'Morel', 'Hugo', '8 Place Charost', 78000, 'Versailles', '0665936694', 'xyz.abc@outlook.fr', 0, 'hugom', MD5(12345), 20170411, 0, 3, 3, 3,0);
 #Commercial 4
 insert into UTILISATEUR (numUtilisateur, nomUtilisateur, prenomUtilisateur, adresseUtilisateur, cpUtilisateur, villeUtilisateur, telUtilisateur, mailUtilisateur, distanceParcourueSemaine, loginUtilisateur, passwordUtilisateur, dateDernierLogin, nbTentatives, codeTypeUtilisateur, idPlanning, idPorteFeuille, version) values 
-(6, 'Caillet', 'Quentin', '41 Rue Pasteur', 92210, 'Saint-Cloud', '0665567649', 'caillet.quentin@outlook.fr', 0, 'quentinc', MD5('quentin'), 20170425, 0, 3, 4, 4,0);
+(6, 'Caillet', 'Quentin', '41 Rue Pasteur', 92210, 'Saint-Cloud', '0665567649', 'caillet.quentin@outlook.fr', 0, 'quentinc', MD5(12345), 20170425, 0, 3, 4, 4,0);
 #Commercial 5
 insert into UTILISATEUR (numUtilisateur, nomUtilisateur, prenomUtilisateur, adresseUtilisateur, cpUtilisateur, villeUtilisateur, telUtilisateur, mailUtilisateur, distanceParcourueSemaine, loginUtilisateur, passwordUtilisateur, dateDernierLogin, nbTentatives, codeTypeUtilisateur, idPlanning, idPorteFeuille, version) values 
-(7, 'Charrier', 'Sebastien', '24 Rue du Commandant Guilbaud', 75016, 'Paris', '0765567869', 'sebcharrier@yahoo.com', 0, 'sebastienc', MD5('paris16'), 20170330, 0, 3, 5, 5,0);
+(7, 'Charrier', 'Sebastien', '24 Rue du Commandant Guilbaud', 75016, 'Paris', '0765567869', 'sebcharrier@yahoo.com', 0, 'sebastienc', MD5(12345), 20170330, 0, 3, 5, 5,0);
 #Commercial 6
 insert into UTILISATEUR (numUtilisateur, nomUtilisateur, prenomUtilisateur, adresseUtilisateur, cpUtilisateur, villeUtilisateur, telUtilisateur, mailUtilisateur, distanceParcourueSemaine, loginUtilisateur, passwordUtilisateur, dateDernierLogin, nbTentatives, codeTypeUtilisateur, idPlanning, idPorteFeuille, version) values 
-(8, 'Bihich', 'Yosra', '6 Avenue de la République', 92320, 'Châtillon', '0664631669', 'yosra92@gmail.com', 0, 'yosrab', MD5('yoyobibi'), 20170424, 0, 3, 6, 6,0);
+(8, 'Bihich', 'Yosra', '6 Avenue de la République', 92320, 'Châtillon', '0664631669', 'yosra92@gmail.com', 0, 'yosrab', MD5(12345), 20170424, 0, 3, 6, 6,0);
 
 
 SELECT * FROM UTILISATEUR;
