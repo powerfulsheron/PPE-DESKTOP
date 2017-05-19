@@ -11,6 +11,9 @@ GESTIONNAIRE :
 - Modifier un rendez vous au nom d'un commercial (en cours en raph)
 - Modifier Poertfeuille (en cours seb)
 - Supprimer Portefeuille (attention à la base, normalement j'ai configuré nhibernate pour que les deletes soient automatiques, à tester)
+- Générer un PDF Récap d'un RDV (en cours Jesse) 
+- Générer Un PDF récap de PLusieurs (Jesse) 
+- Envoi d'un Recap RDV par SMS (Jesse, Béné et Alex)
 
 
 #FAIT :
