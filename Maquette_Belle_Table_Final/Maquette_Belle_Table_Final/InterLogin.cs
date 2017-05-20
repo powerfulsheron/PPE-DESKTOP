@@ -37,99 +37,102 @@ namespace Maquette_Belle_Table_Final
         private void buttonConnexion_Click(object sender, EventArgs e)
         {
             // ouverture session  
-            
-            using (ITransaction transaction = session.BeginTransaction())
+
+            using (ISession session = sessionFactory.OpenSession())
             {
-                Utilisateur utilisateur = session.Query<Utilisateur>().SingleOrDefault(w => w.loginUtilisateur == textBoxId.Text);
- 
-                if (utilisateur == null)
+                using (ITransaction transaction = session.BeginTransaction())
                 {
-                    MessageBox.Show("Utilisateur introuvable", "Erreur");
-                }
-                else if (MD5Hash(textBoxMDP.Text) == utilisateur.passwordUtilisateur && utilisateur.nbTentatives<6)
-                {
-                    if (utilisateur.typeUtilisateur.codeTypeUtilisateur == 1)
-                    {
-             
-                        utilisateur.nbTentatives = 0;
-                        utilisateur.dateDernierLogin = DateTime.Now;
-                        session.Update(utilisateur);
-                        transaction.Commit();
-                        InterAd interAd = new InterAd();
-                        interAd.utilisateur = utilisateur;
-                        session.Close();
-                        interAd.Show();
-                        this.Visible = false;
-                    }
+                    Utilisateur utilisateur = session.Query<Utilisateur>().SingleOrDefault(w => w.loginUtilisateur == textBoxId.Text);
 
-                    else if (utilisateur.typeUtilisateur.codeTypeUtilisateur == 2)
+                    if (utilisateur == null)
                     {
-                 
-                        utilisateur.nbTentatives = 0;
-                        utilisateur.dateDernierLogin = DateTime.Now;
-                        session.Update(utilisateur);
-                        transaction.Commit();
-                        InterGes interGes = new InterGes();
-                        interGes.utilisateur = utilisateur;
-                        session.Dispose();
-                        interGes.Show();
-                        this.Visible = false;
+                        MessageBox.Show("Utilisateur introuvable", "Erreur");
                     }
-
-                    else if (utilisateur.typeUtilisateur.codeTypeUtilisateur == 3)
+                    else if (MD5Hash(textBoxMDP.Text) == utilisateur.passwordUtilisateur && utilisateur.nbTentatives < 6)
                     {
-                        utilisateur.nbTentatives = 0;
-                        utilisateur.dateDernierLogin = DateTime.Now;
-                        session.Update(utilisateur);
-                        transaction.Commit();
-                        InterUti interUti = new InterUti();
-                        interUti.utilisateur = utilisateur;
-                        session.Dispose();
-                        interUti.Show();
-                        this.Visible = false;
-                      
-  
-                    }
-  
-                }
-                else if (utilisateur.nbTentatives < 6)// erreur de mdp et tentatives <6
-                {
-                    MessageBox.Show("Il semble que le mot de passe ne soit pas correct", "Erreur");
-                    // on gère le nombre de tentatives >6
-                    utilisateur.nbTentatives = utilisateur.nbTentatives + 1;
-                    if (utilisateur.nbTentatives >= 6)
-                    {
-                        try
+                        if (utilisateur.typeUtilisateur.codeTypeUtilisateur == 1)
                         {
-                            MailMessage mail = new MailMessage();
-                            mail.Subject = "[GEPEV] Tentatives de connection excessives";
-                            mail.Body = "l'utilisateur : " + utilisateur.nomUtilisateur + " " + utilisateur.prenomUtilisateur + " à fait 6 échecs de connections à l'application GEPEV.";
-                            mail.From = new MailAddress("bot@belletable.com");
-                            mail.To.Add("admin@belletable.com");
 
-                            SmtpClient client = new SmtpClient();
-                            client.Host = "localhost";
-                            client.Send(mail);
+                            utilisateur.nbTentatives = 0;
+                            utilisateur.dateDernierLogin = DateTime.Now;
+                            session.Update(utilisateur);
+                            transaction.Commit();
+                            InterAd interAd = new InterAd();
+                            interAd.utilisateur = utilisateur;
+                            session.Close();
+                            interAd.Show();
+                            this.Visible = false;
+                        }
+
+                        else if (utilisateur.typeUtilisateur.codeTypeUtilisateur == 2)
+                        {
+
+                            utilisateur.nbTentatives = 0;
+                            utilisateur.dateDernierLogin = DateTime.Now;
+                            session.Update(utilisateur);
+                            transaction.Commit();
+                            InterGes interGes = new InterGes();
+                            interGes.utilisateur = utilisateur;
+                            session.Dispose();
+                            interGes.Show();
+                            this.Visible = false;
+                        }
+
+                        else if (utilisateur.typeUtilisateur.codeTypeUtilisateur == 3)
+                        {
+                            utilisateur.nbTentatives = 0;
+                            utilisateur.dateDernierLogin = DateTime.Now;
+                            session.Update(utilisateur);
+                            transaction.Commit();
+                            InterUti interUti = new InterUti();
+                            interUti.utilisateur = utilisateur;
+                            session.Dispose();
+                            interUti.Show();
+                            this.Visible = false;
+
 
                         }
-                        catch (Exception ex)
+
+
+                    }
+                    else if (utilisateur.nbTentatives < 6)// erreur de mdp et tentatives <6
+                    {
+                        MessageBox.Show("Il semble que le mot de passe ne soit pas correct", "Erreur");
+                        // on gère le nombre de tentatives >6
+                        utilisateur.nbTentatives = utilisateur.nbTentatives + 1;
+                        if (utilisateur.nbTentatives >= 6)
                         {
-                            Console.WriteLine(ex.Message);
+                            try
+                            {
+                                MailMessage mail = new MailMessage();
+                                mail.Subject = "[GEPEV] Tentatives de connection excessives";
+                                mail.Body = "l'utilisateur : " + utilisateur.nomUtilisateur + " " + utilisateur.prenomUtilisateur + " à fait 6 échecs de connections à l'application GEPEV.";
+                                mail.From = new MailAddress("bot@belletable.com");
+                                mail.To.Add("admin@belletable.com");
+
+                                SmtpClient client = new SmtpClient();
+                                client.Host = "localhost";
+                                client.Send(mail);
+
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine(ex.Message);
+                            }
+                            panelMDPO.Visible = true;
                         }
+
+                        session.Update(utilisateur);
+                        transaction.Commit();
+                        session.Dispose();
+                    }
+                    else
+                    {
                         panelMDPO.Visible = true;
                     }
 
-                    session.Update(utilisateur);
-                    transaction.Commit();
-                    session.Dispose();
                 }
-                else
-                {
-                    panelMDPO.Visible = true;
-                }
-
             }
-
         }
 
         private void buttonAnnu_Click(object sender, EventArgs e)
