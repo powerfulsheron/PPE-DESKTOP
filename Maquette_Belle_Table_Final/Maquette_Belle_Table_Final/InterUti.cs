@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Linq;
+using System.IO;
+using MSHTML;
 
 namespace Maquette_Belle_Table_Final
 {
@@ -30,6 +32,7 @@ namespace Maquette_Belle_Table_Final
         {
             chargerCalendar();
             chargerDatagridInterlocuteurs();
+           
         }
 
         private void labelFermeture_Click(object sender, EventArgs e)
