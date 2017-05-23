@@ -67,6 +67,9 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\..\Desktop\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>..\..\..\..\..\Desktop\PPE-DESKTOP-master\BelleTableOK\TestHibernate2\bin\Debug\log4net.dll</HintPath>
     </Reference>
@@ -79,6 +82,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -210,6 +214,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools.cs" />
+    <Compile Include="ToolsGraphDemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolsGraphDemo.Designer.cs">
+      <DependentUpon>ToolsGraphDemo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Confirm.resx">
       <DependentUpon>Confirm.cs</DependentUpon>
     </EmbeddedResource>
@@ -272,6 +283,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ToolsGraphDemo.resx">
+      <DependentUpon>ToolsGraphDemo.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
     <None Include="planning\jqwidgets\styles\images\colorpicker\Thumbs.db" />
