@@ -320,3 +320,5 @@ C:\Users\Raph\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_B
 C:\Users\Raph\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.csproj.ResolveComReference.cache
 C:\Users\Work\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Interop.MSHTML.dll
 C:\Users\Work\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.csproj.ResolveComReference.cache
+C:\Users\Raph\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.ToolsGraphDemo.resources
+C:\Users\Raph\Documents\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\bin\Debug\itextsharp.dll

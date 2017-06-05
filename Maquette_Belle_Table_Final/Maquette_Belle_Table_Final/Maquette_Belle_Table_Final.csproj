@@ -391,6 +391,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\itextsharp.dll" />
     <EmbeddedResource Include="planning\index.htm" />
     <Content Include="planning\jqwidgets\globalization\globalize.culture.cs-CZ.js" />
     <Content Include="planning\jqwidgets\globalization\globalize.culture.de-DE.js" />
