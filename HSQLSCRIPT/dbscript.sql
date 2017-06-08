@@ -253,9 +253,9 @@ INSERT INTO `portefeuille` (`idPorteFeuille`, `libellePorteFeuille`, `numUtilisa
 
 CREATE TABLE `rdv` (
   `idRdv` int(11) NOT NULL,
-  `dateRdv` date NOT NULL,
-  `heureDebut` date NOT NULL,
-  `heureFin` date NOT NULL,
+  `ObjetRdv` varchar(500) COLLATE utf8_bin,
+  `DateDebut` datetime NOT NULL,
+  `DateFin` datetime NOT NULL,
   `adresseDerogatoire` varchar(50) COLLATE utf8_bin DEFAULT NULL,
   `villeDerogatoire` varchar(30) COLLATE utf8_bin DEFAULT NULL,
   `codeEntreeDerogatoire` int(11) DEFAULT NULL,
@@ -271,19 +271,19 @@ CREATE TABLE `rdv` (
 -- Contenu de la table `rdv`
 --
 
-INSERT INTO `rdv` (`idRdv`, `dateRdv`, `heureDebut`, `heureFin`, `adresseDerogatoire`, `villeDerogatoire`, `codeEntreeDerogatoire`, `infoDerogatoire`, `idInterlocuteur`, `idTypeRdv`, `idPlanning`, `idRdvPrecedent`, `version`) VALUES
-(1, '2017-04-20', '2017-04-20', '2017-04-20', NULL, NULL, NULL, NULL, 2, 1, 1, NULL, 0),
-(2, '2017-04-25', '2017-04-25', '2017-04-25', NULL, NULL, NULL, NULL, 2, 5, 1, 1, 0),
-(3, '2017-05-12', '2017-05-12', '2017-05-12', '3 rue du Fort 92130 Issy-les-Moulineaux', 'Issy-les-Moulineaux', 17896, NULL, 3, 1, 1, NULL, 0),
-(4, '2017-05-02', '2017-05-02', '2017-05-02', NULL, NULL, NULL, NULL, 4, 1, 2, NULL, 0),
-(5, '2017-05-05', '2017-05-05', '2017-05-05', NULL, NULL, NULL, NULL, 4, 5, 2, 4, 0),
-(6, '2017-05-07', '2017-05-02', '2017-05-02', '24 rue de Sèvres 75007 Paris', 'Paris', NULL, 'Appeler à votre arrivée', 6, 1, 2, NULL, 0),
-(7, '2017-05-10', '2017-05-10', '2017-05-10', NULL, NULL, NULL, NULL, 9, 3, 4, NULL, 0),
-(8, '2017-04-30', '2017-04-30', '2017-04-30', NULL, NULL, NULL, NULL, 8, 2, 3, NULL, 0),
-(9, '2017-05-02', '2017-05-02', '2017-05-02', NULL, NULL, NULL, NULL, 11, 2, 5, NULL, 0),
-(10, '2017-05-03', '2017-05-03', '2017-05-03', NULL, NULL, NULL, NULL, 12, 3, 5, NULL, 0),
-(11, '2017-04-20', '2017-04-20', '2017-05-02', NULL, NULL, NULL, NULL, 13, 1, 6, NULL, 0),
-(12, '2017-04-25', '2017-04-25', '2017-05-02', NULL, NULL, NULL, NULL, 14, 4, 6, NULL, 0);
+INSERT INTO `rdv` (`idRdv`, `ObjetRdv`, `DateDebut`, `DateFin`, `adresseDerogatoire`, `villeDerogatoire`, `codeEntreeDerogatoire`, `infoDerogatoire`, `idInterlocuteur`, `idTypeRdv`, `idPlanning`, `idRdvPrecedent`, `version`) VALUES
+(1, 'Un RDV', '2017-06-20 10:00:00', '2017-06-20 12:00:00', '2 avenue de la Sibelle', 'Paris', NULL, NULL, 2, 1, 1, NULL, 0),
+(2, 'Un RDV', '2017-06-25 10:00:00', '2017-06-25 12:00:00', '12 avenue de la Sibelle', 'Paris', NULL, NULL, 2, 5, 1, 1, 0),
+(3, 'Un RDV', '2017-06-12 10:00:00', '2017-06-12 12:00:00', '3 rue du Fort 92130 Issy-les-Moulineaux', 'Issy-les-Moulineaux', 17896, NULL, 3, 1, 1, NULL, 0),
+(4, 'Un RDV', '2017-06-02 10:00:00', '2017-06-02 12:00:00', '14 avenue de la Sibelle', 'Paris', NULL, NULL, 4, 1, 2, NULL, 0),
+(5, 'Un RDV', '2017-06-05 10:00:00', '2017-06-05 12:00:00', '2 avenue rene coty', 'Paris', NULL, NULL, 4, 5, 2, 4, 0),
+(6, 'Un RDV', '2017-06-07 10:00:00', '2017-06-07 12:00:00', '24 rue de Sèvres 75007 Paris', 'Paris', NULL, 'Appeler à votre arrivée', 6, 1, 2, NULL, 0),
+(7, 'Un RDV', '2017-06-10 10:00:00', '2017-06-10 12:00:00', '4 rue de la glaciere', 'Paris', NULL, NULL, 9, 3, 4, NULL, 0),
+(8, 'Un RDV', '2017-06-30 10:00:00', '2017-06-30 12:00:00', '8 rue du pere corentin', 'Paris', NULL, NULL, 8, 2, 3, NULL, 0),
+(9, 'Un RDV', '2017-06-02 10:00:00', '2017-06-02 12:00:00', '2 rue lacaze', 'Paris', NULL, NULL, 11, 2, 5, NULL, 0),
+(10, 'Un RDV', '2017-06-03 10:00:00', '2017-06-03 12:00:00', '5 rue alesia', 'Paris', NULL, NULL, 12, 3, 5, NULL, 0),
+(11, 'Un RDV', '2017-06-20 10:00:00', '2017-06-20 12:00:00', '3 boulevard jourdan', 'Paris', NULL, NULL, 13, 1, 6, NULL, 0),
+(12, 'Un RDV', '2017-06-25 10:00:00', '2017-06-25 12:00:00', '6 rue des plantes', 'Paris', NULL, NULL, 14, 4, 6, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -677,6 +677,23 @@ ALTER TABLE `utilisateur`
   ADD CONSTRAINT `FK_UTILISATEUR_idPlanning` FOREIGN KEY (`idPlanning`) REFERENCES `planning` (`idPlanning`),
   ADD CONSTRAINT `FK_UTILISATEUR_idPorteFeuille` FOREIGN KEY (`idPorteFeuille`) REFERENCES `portefeuille` (`idPorteFeuille`);
 
+#------------------------------------------------------------
+# EVENEMENT: Efface la DistanceParcourueSemaine Tous les lundis
+#------------------------------------------------------------
+SET GLOBAL event_scheduler = 1 ;
+DELETE FROM mysql.event WHERE db = 'gepev';
+	
+CREATE EVENT resetDistanceParcourueSemaine
+    ON SCHEDULE
+      EVERY 1 WEEK
+	  STARTS CURRENT_DATE + INTERVAL 0 - WEEKDAY(CURRENT_DATE) DAY
+    DO
+      UPDATE gepev.utilisateur SET DistanceParcourueSemaine = 0;
+	  
+	  
+	
+	/* http://stackoverflow.com/questions/25548379/schedule-mysql-event-to-run-every-chosen-day-of-the-week */
+  
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

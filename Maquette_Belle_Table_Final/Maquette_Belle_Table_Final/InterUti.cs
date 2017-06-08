@@ -285,5 +285,10 @@ namespace Maquette_Belle_Table_Final
 
             confirm.Show();
         }
+
+        private void buttonConsultCalandar_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://104.46.44.90/bt_" + utilisateur.numUtilisateur);
+        }
     }
 }

@@ -46,7 +46,7 @@ namespace Maquette_Belle_Table
 
             ISession session = sessionFactory.OpenSession();
 
-            MessageBox.Show(AjouterRendezVous(Int32.Parse(textBoxCodeEntree.Text), (Interlocuteur)comboBoxListeClient.SelectedItem, dateTimePickerNRDV.Value.Date, dateTimePickerHD.Value,
+            MessageBox.Show(AjouterRendezVous(Int32.Parse(textBoxCodeEntree.Text), (Interlocuteur)comboBoxListeClient.SelectedItem, textBoxObjRdv.Text, dateTimePickerHD.Value,
                 dateTimePickerHF.Value, textBoxRue.Text + " " + textBoxCp.Text, textBoxIC.Text, textBoxVille.Text,
                 (TypeRdv)comboBoxTRDV.SelectedItem, utilisateur.planning, (RendezVous)comboBoxRDVprecedent.SelectedItem));
         }
@@ -73,8 +73,8 @@ namespace Maquette_Belle_Table
 
         }
 
-        static string AjouterRendezVous(int unCodeEntreeDerogatoire, Interlocuteur unInterlocuteur, DateTime uneDateRdv, DateTime uneHeureDebut,
-            DateTime uneHeureFin, string uneAdresseDerogatoire, string uneInfoDerogatoire, string uneVilleDerogatoire, TypeRdv unTypeRdv, Planning unPlanning, RendezVous unRdvPrecendent)
+        static string AjouterRendezVous(int unCodeEntreeDerogatoire, Interlocuteur unInterlocuteur, string ObjetRdv, DateTime uneDateDebut,
+            DateTime uneDateFin, string uneAdresseDerogatoire, string uneInfoDerogatoire, string uneVilleDerogatoire, TypeRdv unTypeRdv, Planning unPlanning, RendezVous unRdvPrecendent)
         {
 
             ISession session = sessionFactory.OpenSession();
@@ -89,12 +89,12 @@ namespace Maquette_Belle_Table
                 if (unTypeRdv == null) return "Merci de séléctionner un type de rendez-vous.";
                 else unRendezVous.typeRdv = unTypeRdv;
 
-                if (uneDateRdv == null) return "Merci de séléctionner une date.";
-                else unRendezVous.dateRdv = uneDateRdv;
+                if (ObjetRdv == null) return "Merci d'attribuer un bojet au rdv";
+                else unRendezVous.ObjetRdv = ObjetRdv;
 
                 unRendezVous.planning = unPlanning;
-                if (uneHeureDebut != null) unRendezVous.heureDebut = uneHeureDebut;
-                if (uneHeureDebut != null) unRendezVous.heureFin = uneHeureFin;
+                if (uneDateDebut != null) unRendezVous.DateDebut = uneDateDebut;
+                if (uneDateFin != null) unRendezVous.DateFin = uneDateFin;
                 if (unCodeEntreeDerogatoire != 0) unRendezVous.codeEntreeDerogatoire = unCodeEntreeDerogatoire;
                 if (uneAdresseDerogatoire != null) unRendezVous.adresseDerogatoire = uneAdresseDerogatoire;
                 if (uneInfoDerogatoire != null) unRendezVous.adresseDerogatoire = uneAdresseDerogatoire;
@@ -110,7 +110,7 @@ namespace Maquette_Belle_Table
                     MailMessage mail = new MailMessage();
                     mail.Subject = "Nouveau rendez-vous avec " + unInterlocuteur.nomInterlocuteur;
                     mail.Body = "Vous avez un nouveau rendez-vous avec" + unInterlocuteur.nomInterlocuteur + " " + 
-                        unInterlocuteur.prenomInterlocuteur + " le: " + uneDateRdv.ToString() + " à " + uneHeureDebut.ToString();
+                        unInterlocuteur.prenomInterlocuteur + " le: ? à " + uneDateDebut.ToString();
                     mail.From = new MailAddress("bot@belletable.com");
 
                     SmtpClient client = new SmtpClient();

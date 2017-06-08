@@ -38,8 +38,6 @@
             this.panelBordeLeft = new System.Windows.Forms.Panel();
             this.tabPagePlan = new System.Windows.Forms.TabPage();
             this.panelPlanning = new System.Windows.Forms.Panel();
-            this.webBrowser2 = new System.Windows.Forms.WebBrowser();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.groupBoxPJS = new System.Windows.Forms.GroupBox();
             this.listViewPlan = new System.Windows.Forms.ListView();
             this.buttonNRDV = new System.Windows.Forms.Button();
@@ -73,7 +71,7 @@
             this.labeltextBoxNewMDP2 = new System.Windows.Forms.Label();
             this.labelOldPswd = new System.Windows.Forms.Label();
             this.textBoxOldPswd = new System.Windows.Forms.TextBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.buttonConsultCalandar = new System.Windows.Forms.Button();
             this.tableLayoutEntete.SuspendLayout();
             this.panelTitre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBT)).BeginInit();
@@ -196,8 +194,7 @@
             // 
             // panelPlanning
             // 
-            this.panelPlanning.Controls.Add(this.webBrowser2);
-            this.panelPlanning.Controls.Add(this.webBrowser1);
+            this.panelPlanning.Controls.Add(this.buttonConsultCalandar);
             this.panelPlanning.Controls.Add(this.groupBoxPJS);
             this.panelPlanning.Controls.Add(this.buttonNRDV);
             this.panelPlanning.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -207,23 +204,6 @@
             this.panelPlanning.Size = new System.Drawing.Size(984, 461);
             this.panelPlanning.TabIndex = 13;
             this.panelPlanning.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPlanning_Paint);
-            // 
-            // webBrowser2
-            // 
-            this.webBrowser2.Location = new System.Drawing.Point(417, 219);
-            this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser2.Name = "webBrowser2";
-            this.webBrowser2.Size = new System.Drawing.Size(250, 250);
-            this.webBrowser2.TabIndex = 4;
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Location = new System.Drawing.Point(3, 3);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(632, 441);
-            this.webBrowser1.TabIndex = 3;
-            this.webBrowser1.Url = new System.Uri("", System.UriKind.Relative);
             // 
             // groupBoxPJS
             // 
@@ -605,6 +585,17 @@
             this.textBoxOldPswd.Size = new System.Drawing.Size(216, 21);
             this.textBoxOldPswd.TabIndex = 2;
             // 
+            // buttonConsultCalandar
+            // 
+            this.buttonConsultCalandar.BackColor = System.Drawing.Color.Gold;
+            this.buttonConsultCalandar.Location = new System.Drawing.Point(225, 215);
+            this.buttonConsultCalandar.Name = "buttonConsultCalandar";
+            this.buttonConsultCalandar.Size = new System.Drawing.Size(230, 34);
+            this.buttonConsultCalandar.TabIndex = 3;
+            this.buttonConsultCalandar.Text = "Consulter mon calandrier";
+            this.buttonConsultCalandar.UseVisualStyleBackColor = false;
+            this.buttonConsultCalandar.Click += new System.EventHandler(this.buttonConsultCalandar_Click);
+            // 
             // InterUti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -693,8 +684,6 @@
         private System.Windows.Forms.RadioButton radioButtonIndividu;
         private System.Windows.Forms.RadioButton radioButtonInterlocuteurStructure;
         private System.Windows.Forms.Button buttonSupprimerClient;
-        private System.Windows.Forms.WebBrowser webBrowser1;
-        private System.Windows.Forms.WebBrowser webBrowser2;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button buttonConsultCalandar;
     }
 }

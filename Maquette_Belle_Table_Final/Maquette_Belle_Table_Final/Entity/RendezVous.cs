@@ -11,9 +11,9 @@ namespace Maquette_Belle_Table_Final
     {
         public virtual int idRdv { get; set; }
         public virtual int codeEntreeDerogatoire { get; set; }
-        public virtual DateTime dateRdv { get; set; }
-        public virtual DateTime heureDebut { get; set; }
-        public virtual DateTime heureFin { get; set; }
+        public virtual string ObjetRdv { get; set; }
+        public virtual DateTime DateDebut { get; set; }
+        public virtual DateTime DateFin { get; set; }
         public virtual string adresseDerogatoire { get; set; }
         public virtual string villeDerogatoire { get; set; }
         public virtual string infoDerogatoire { get; set; }
@@ -30,7 +30,7 @@ namespace Maquette_Belle_Table_Final
         // ToString 
         public override string ToString()
         {
-            return string.Format("[{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}]", codeEntreeDerogatoire, dateRdv, heureDebut, heureFin, adresseDerogatoire, villeDerogatoire, infoDerogatoire, interlocuteur, typeRdv, planning, rendezVousPrecedent);
+            return string.Format("[{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}]", codeEntreeDerogatoire, ObjetRdv, DateDebut, DateFin, adresseDerogatoire, villeDerogatoire, infoDerogatoire, interlocuteur, typeRdv, planning, rendezVousPrecedent);
         }
 
     }

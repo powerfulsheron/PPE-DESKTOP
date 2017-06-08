@@ -52,8 +52,6 @@
             this.labelHF = new System.Windows.Forms.Label();
             this.labelHD = new System.Windows.Forms.Label();
             this.labelClient = new System.Windows.Forms.Label();
-            this.labelDate = new System.Windows.Forms.Label();
-            this.dateTimePickerNRDV = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerHD = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerHF = new System.Windows.Forms.DateTimePicker();
             this.comboBoxRDVprecedent = new System.Windows.Forms.ComboBox();
@@ -62,6 +60,8 @@
             this.buttonVal = new System.Windows.Forms.Button();
             this.buttonAnul = new System.Windows.Forms.Button();
             this.comboBoxListeClient = new System.Windows.Forms.ComboBox();
+            this.labelObjRDV = new System.Windows.Forms.Label();
+            this.textBoxObjRdv = new System.Windows.Forms.TextBox();
             this.panelMenu.SuspendLayout();
             this.panelTitre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBT)).BeginInit();
@@ -287,9 +287,9 @@
             this.labelHF.BackColor = System.Drawing.Color.Transparent;
             this.labelHF.Location = new System.Drawing.Point(357, 144);
             this.labelHF.Name = "labelHF";
-            this.labelHF.Size = new System.Drawing.Size(63, 16);
+            this.labelHF.Size = new System.Drawing.Size(58, 16);
             this.labelHF.TabIndex = 7;
-            this.labelHF.Text = "Heure Fin :";
+            this.labelHF.Text = "Date Fin :";
             // 
             // labelHD
             // 
@@ -297,9 +297,9 @@
             this.labelHD.BackColor = System.Drawing.Color.Transparent;
             this.labelHD.Location = new System.Drawing.Point(357, 107);
             this.labelHD.Name = "labelHD";
-            this.labelHD.Size = new System.Drawing.Size(83, 16);
+            this.labelHD.Size = new System.Drawing.Size(75, 16);
             this.labelHD.TabIndex = 6;
-            this.labelHD.Text = "Heure début :";
+            this.labelHD.Text = "Date début:";
             // 
             // labelClient
             // 
@@ -311,40 +311,20 @@
             this.labelClient.TabIndex = 2;
             this.labelClient.Text = "Client :";
             // 
-            // labelDate
-            // 
-            this.labelDate.AutoSize = true;
-            this.labelDate.BackColor = System.Drawing.Color.Transparent;
-            this.labelDate.Location = new System.Drawing.Point(12, 102);
-            this.labelDate.Name = "labelDate";
-            this.labelDate.Size = new System.Drawing.Size(41, 16);
-            this.labelDate.TabIndex = 0;
-            this.labelDate.Text = "Date :";
-            // 
-            // dateTimePickerNRDV
-            // 
-            this.dateTimePickerNRDV.CustomFormat = "dd-mm-yyyy";
-            this.dateTimePickerNRDV.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerNRDV.Location = new System.Drawing.Point(77, 102);
-            this.dateTimePickerNRDV.Name = "dateTimePickerNRDV";
-            this.dateTimePickerNRDV.Size = new System.Drawing.Size(200, 21);
-            this.dateTimePickerNRDV.TabIndex = 16;
-            this.dateTimePickerNRDV.Value = new System.DateTime(2017, 3, 9, 0, 0, 0, 0);
-            // 
             // dateTimePickerHD
             // 
-            this.dateTimePickerHD.CustomFormat = "dd-mm-yyyy";
-            this.dateTimePickerHD.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePickerHD.CustomFormat = "MM-dd-yyyy HH:mm:ss";
+            this.dateTimePickerHD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerHD.Location = new System.Drawing.Point(480, 102);
             this.dateTimePickerHD.Name = "dateTimePickerHD";
             this.dateTimePickerHD.Size = new System.Drawing.Size(161, 21);
             this.dateTimePickerHD.TabIndex = 17;
-            this.dateTimePickerHD.Value = new System.DateTime(2017, 3, 9, 0, 0, 0, 0);
+            this.dateTimePickerHD.Value = new System.DateTime(2017, 6, 20, 0, 0, 0, 0);
             // 
             // dateTimePickerHF
             // 
-            this.dateTimePickerHF.CustomFormat = "dd-mm-yyyy";
-            this.dateTimePickerHF.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePickerHF.CustomFormat = "MM-dd-yyyy HH:mm:ss";
+            this.dateTimePickerHF.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerHF.Location = new System.Drawing.Point(480, 144);
             this.dateTimePickerHF.Name = "dateTimePickerHF";
             this.dateTimePickerHF.Size = new System.Drawing.Size(161, 21);
@@ -412,11 +392,32 @@
             this.comboBoxListeClient.TabIndex = 25;
             this.comboBoxListeClient.SelectedIndexChanged += new System.EventHandler(this.comboBoxListeClient_SelectedIndexChanged);
             // 
+            // labelObjRDV
+            // 
+            this.labelObjRDV.AutoSize = true;
+            this.labelObjRDV.BackColor = System.Drawing.Color.Transparent;
+            this.labelObjRDV.Location = new System.Drawing.Point(284, 44);
+            this.labelObjRDV.Name = "labelObjRDV";
+            this.labelObjRDV.Size = new System.Drawing.Size(127, 16);
+            this.labelObjRDV.TabIndex = 26;
+            this.labelObjRDV.Text = "Objet du rendez-vous";
+            // 
+            // textBoxObjRdv
+            // 
+            this.textBoxObjRdv.Location = new System.Drawing.Point(202, 63);
+            this.textBoxObjRdv.Name = "textBoxObjRdv";
+            this.textBoxObjRdv.Size = new System.Drawing.Size(291, 21);
+            this.textBoxObjRdv.TabIndex = 18;
+            this.textBoxObjRdv.Text = "Un RDV";
+            this.textBoxObjRdv.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // PopNouveauRDV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(667, 613);
+            this.Controls.Add(this.textBoxObjRdv);
+            this.Controls.Add(this.labelObjRDV);
             this.Controls.Add(this.comboBoxListeClient);
             this.Controls.Add(this.buttonAnul);
             this.Controls.Add(this.buttonVal);
@@ -425,12 +426,10 @@
             this.Controls.Add(this.comboBoxRDVprecedent);
             this.Controls.Add(this.dateTimePickerHF);
             this.Controls.Add(this.dateTimePickerHD);
-            this.Controls.Add(this.dateTimePickerNRDV);
             this.Controls.Add(this.labelTRDV);
             this.Controls.Add(this.labelHF);
             this.Controls.Add(this.labelHD);
             this.Controls.Add(this.labelClient);
-            this.Controls.Add(this.labelDate);
             this.Controls.Add(this.groupBoxAP);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelBorderRight);
@@ -476,9 +475,7 @@
         private System.Windows.Forms.Label labelHF;
         private System.Windows.Forms.Label labelHD;
         private System.Windows.Forms.Label labelClient;
-        private System.Windows.Forms.Label labelDate;
         private System.Windows.Forms.TextBox textBoxIC;
-        private System.Windows.Forms.DateTimePicker dateTimePickerNRDV;
         private System.Windows.Forms.DateTimePicker dateTimePickerHD;
         private System.Windows.Forms.DateTimePicker dateTimePickerHF;
         private System.Windows.Forms.ComboBox comboBoxRDVprecedent;
@@ -489,5 +486,7 @@
         private System.Windows.Forms.ComboBox comboBoxListeClient;
         private System.Windows.Forms.Label labelCodeEntree;
         private System.Windows.Forms.TextBox textBoxCodeEntree;
+        private System.Windows.Forms.Label labelObjRDV;
+        private System.Windows.Forms.TextBox textBoxObjRdv;
     }
 }

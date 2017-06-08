@@ -6,9 +6,9 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
       <generator class="native" />
     </id>
     <property name="codeEntreeDerogatoire" column="codeEntreeDerogatoire"/>
-    <property name="dateRdv" column="dateRdv"/>
-    <property name="heureDebut" column="heureDebut"/>
-    <property name="heureFin" column="heureFin"/>
+    <property name="ObjetRdv" column="ObjetRdv"/>
+    <property name="DateDebut" column="DateDebut"/>
+    <property name="DateFin" column="DateFin"/>
     <property name="adresseDerogatoire" column="adresseDerogatoire"/>
     <property name="villeDerogatoire" column="villeDerogatoire"/>
     <property name="infoDerogatoire" column="infoDerogatoire"/>
