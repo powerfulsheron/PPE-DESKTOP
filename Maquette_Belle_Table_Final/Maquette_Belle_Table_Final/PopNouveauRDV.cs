@@ -107,11 +107,11 @@ namespace Maquette_Belle_Table
                 
                 try
                 {
-                    MailMessage mail = new MailMessage();
+                    MailMessage mail = new MailMessage("bot@belletable.com", unInterlocuteur.mailInterlocuteur);
                     mail.Subject = "Nouveau rendez-vous avec " + unInterlocuteur.nomInterlocuteur;
                     mail.Body = "Vous avez un nouveau rendez-vous avec" + unInterlocuteur.nomInterlocuteur + " " + 
                         unInterlocuteur.prenomInterlocuteur + " le: ? à " + uneDateDebut.ToString();
-                    mail.From = new MailAddress("bot@belletable.com");
+    
 
                     SmtpClient client = new SmtpClient();
                     client.Host = "localhost";

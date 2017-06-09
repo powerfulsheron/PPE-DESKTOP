@@ -32,6 +32,7 @@ namespace Maquette_Belle_Table_Final
         {
             chargerCalendar();
             chargerDatagridInterlocuteurs();
+            chargerDataGridViewRdv();
            
         }
 
@@ -195,6 +196,15 @@ namespace Maquette_Belle_Table_Final
                 session.Dispose();
                 //session.Close();
             }
+        }
+
+        public void chargerDataGridViewRdv()
+        {
+
+
+
+            dataGridViewRdv.DataSource = utilisateur.planning.lesRendezVous;
+
         }
 
         private void panelMail_Paint(object sender, PaintEventArgs e)

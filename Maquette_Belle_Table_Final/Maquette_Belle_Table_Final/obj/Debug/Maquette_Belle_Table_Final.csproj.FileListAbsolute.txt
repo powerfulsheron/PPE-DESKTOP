@@ -77,7 +77,6 @@ C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle
 C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.Popup_AssoCom.resources
 C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table.Popup_Mail.resources
 C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table.Popup_NewClient.resources
-C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.Popup_NewCom.resources
 C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.Popup_NewInter.resources
 C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.Popup_NewPF.resources
 C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.Popup_VoirMails.resources
@@ -328,3 +327,9 @@ C:\User\U483804\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Tab
 C:\User\U483804\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\bin\Debug\itextsharp.dll
 C:\User\U483804\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.Confirm.resources
 C:\User\U483804\GitHub\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.ToolsGraphDemo.resources
+C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Interop.MSHTML.dll
+C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.csproj.ResolveComReference.cache
+C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\bin\Debug\planning\scheduler-icalendar copie.htm
+C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\bin\Debug\planning\scheduler-icalendar.htm
+C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\bin\Debug\itextsharp.dll
+C:\Users\KBSONE\Documents\Visual Studio 2013\Projects\PPE-DESKTOP\Maquette_Belle_Table_Final\Maquette_Belle_Table_Final\obj\Debug\Maquette_Belle_Table_Final.ToolsGraphDemo.resources
