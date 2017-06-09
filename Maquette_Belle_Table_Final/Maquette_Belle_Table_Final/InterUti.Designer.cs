@@ -38,6 +38,8 @@
             this.panelBordeLeft = new System.Windows.Forms.Panel();
             this.tabPagePlan = new System.Windows.Forms.TabPage();
             this.panelPlanning = new System.Windows.Forms.Panel();
+            this.btnSupprimerRdv = new System.Windows.Forms.Button();
+            this.btnModifierRdv = new System.Windows.Forms.Button();
             this.dataGridViewRdv = new System.Windows.Forms.DataGridView();
             this.buttonConsultCalandar = new System.Windows.Forms.Button();
             this.buttonNRDV = new System.Windows.Forms.Button();
@@ -71,8 +73,6 @@
             this.labeltextBoxNewMDP2 = new System.Windows.Forms.Label();
             this.labelOldPswd = new System.Windows.Forms.Label();
             this.textBoxOldPswd = new System.Windows.Forms.TextBox();
-            this.btnModifierRdv = new System.Windows.Forms.Button();
-            this.btnSupprimerRdv = new System.Windows.Forms.Button();
             this.tableLayoutEntete.SuspendLayout();
             this.panelTitre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBT)).BeginInit();
@@ -207,6 +207,28 @@
             this.panelPlanning.Size = new System.Drawing.Size(984, 460);
             this.panelPlanning.TabIndex = 13;
             this.panelPlanning.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPlanning_Paint);
+            // 
+            // btnSupprimerRdv
+            // 
+            this.btnSupprimerRdv.BackColor = System.Drawing.Color.Gold;
+            this.btnSupprimerRdv.Location = new System.Drawing.Point(730, 343);
+            this.btnSupprimerRdv.Name = "btnSupprimerRdv";
+            this.btnSupprimerRdv.Size = new System.Drawing.Size(230, 34);
+            this.btnSupprimerRdv.TabIndex = 6;
+            this.btnSupprimerRdv.Text = "Supprimer Rendez-vous";
+            this.btnSupprimerRdv.UseVisualStyleBackColor = false;
+            this.btnSupprimerRdv.Click += new System.EventHandler(this.btnSupprimerRdv_Click);
+            // 
+            // btnModifierRdv
+            // 
+            this.btnModifierRdv.BackColor = System.Drawing.Color.Gold;
+            this.btnModifierRdv.Location = new System.Drawing.Point(730, 246);
+            this.btnModifierRdv.Name = "btnModifierRdv";
+            this.btnModifierRdv.Size = new System.Drawing.Size(230, 34);
+            this.btnModifierRdv.TabIndex = 5;
+            this.btnModifierRdv.Text = "Modifier Rendez-vous";
+            this.btnModifierRdv.UseVisualStyleBackColor = false;
+            this.btnModifierRdv.Click += new System.EventHandler(this.btnModifierRdv_Click);
             // 
             // dataGridViewRdv
             // 
@@ -588,27 +610,6 @@
             this.textBoxOldPswd.Name = "textBoxOldPswd";
             this.textBoxOldPswd.Size = new System.Drawing.Size(216, 24);
             this.textBoxOldPswd.TabIndex = 2;
-            // 
-            // btnModifierRdv
-            // 
-            this.btnModifierRdv.BackColor = System.Drawing.Color.Gold;
-            this.btnModifierRdv.Location = new System.Drawing.Point(730, 246);
-            this.btnModifierRdv.Name = "btnModifierRdv";
-            this.btnModifierRdv.Size = new System.Drawing.Size(230, 34);
-            this.btnModifierRdv.TabIndex = 5;
-            this.btnModifierRdv.Text = "Modifier Rendez-vous";
-            this.btnModifierRdv.UseVisualStyleBackColor = false;
-            this.btnModifierRdv.Click += new System.EventHandler(this.btnModifierRdv_Click);
-            // 
-            // btnSupprimerRdv
-            // 
-            this.btnSupprimerRdv.BackColor = System.Drawing.Color.Gold;
-            this.btnSupprimerRdv.Location = new System.Drawing.Point(730, 343);
-            this.btnSupprimerRdv.Name = "btnSupprimerRdv";
-            this.btnSupprimerRdv.Size = new System.Drawing.Size(230, 34);
-            this.btnSupprimerRdv.TabIndex = 6;
-            this.btnSupprimerRdv.Text = "Supprimer Rendez-vous";
-            this.btnSupprimerRdv.UseVisualStyleBackColor = false;
             // 
             // InterUti
             // 

@@ -183,6 +183,7 @@
             this.groupBoxAP.TabIndex = 9;
             this.groupBoxAP.TabStop = false;
             this.groupBoxAP.Text = "Adresse dérogatoire";
+            this.groupBoxAP.Visible = false;
             // 
             // labelCodeEntree
             // 
@@ -406,6 +407,7 @@
             this.radioButtonOui.TabStop = true;
             this.radioButtonOui.Text = "Oui";
             this.radioButtonOui.UseVisualStyleBackColor = true;
+            this.radioButtonOui.CheckedChanged += new System.EventHandler(this.radioButtonOui_CheckedChanged);
             // 
             // radioButtonNon
             // 
@@ -416,6 +418,7 @@
             this.radioButtonNon.TabIndex = 28;
             this.radioButtonNon.Text = "Non";
             this.radioButtonNon.UseVisualStyleBackColor = true;
+            this.radioButtonNon.CheckedChanged += new System.EventHandler(this.radioButtonNon_CheckedChanged);
             // 
             // groupBoxRadio
             // 

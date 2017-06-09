@@ -12,8 +12,8 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
     <property name="adresseDerogatoire" column="adresseDerogatoire"/>
     <property name="villeDerogatoire" column="villeDerogatoire"/>
     <property name="infoDerogatoire" column="infoDerogatoire"/>
-    <many-to-one name="interlocuteur" column="idInterlocuteur" cascade="all" lazy="false"/>
-    <many-to-one name="typeRdv" column="idTypeRdv" cascade="all" lazy="false"/>
+    <many-to-one name="interlocuteur" column="idInterlocuteur" cascade="save-update" lazy="false"/>
+    <many-to-one name="typeRdv" column="idTypeRdv" cascade="save-update" lazy="false"/>
     <many-to-one name="planning" column="idPlanning" class="Planning" lazy="false"/>
     <many-to-one class="RendezVous" name="rendezVousPrecedent">
       <column name="idRdvPrecedent" />

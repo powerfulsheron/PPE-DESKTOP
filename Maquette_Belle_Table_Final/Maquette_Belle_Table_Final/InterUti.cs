@@ -318,5 +318,32 @@ namespace Maquette_Belle_Table_Final
             popNouveauRDV.Show();
 
         }
+
+        private void btnSupprimerRdv_Click(object sender, EventArgs e)
+        {
+            RendezVous rdvASupprimer = (RendezVous)dataGridViewRdv.CurrentRow.DataBoundItem;
+            DialogResult dialogResult = MessageBox.Show("Êtes vous sûr de vouloir supprimer le rendez-vous : " + rdvASupprimer, "Supprimer", MessageBoxButtons.YesNo);
+            
+            if (dialogResult == DialogResult.Yes)
+            {
+                sessionFactory = new Configuration().Configure().BuildSessionFactory();
+                using (ISession session = sessionFactory.OpenSession())
+                {
+                    // début transaction 
+                    using (ITransaction transaction = session.BeginTransaction())
+                    {
+                        Console.WriteLine(rdvASupprimer.idRdv);
+                        session.Delete(rdvASupprimer);
+                        session.Flush();
+                        transaction.Commit();
+                    }
+                }
+                chargerDataGridViewRdv();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+
+            }
+        }
     }
 }

@@ -46,9 +46,10 @@ namespace Maquette_Belle_Table
         private void buttonVal_Click_1(object sender, EventArgs e)
         {
             sessionFactory = new Configuration().Configure().BuildSessionFactory();
-
             ISession session = sessionFactory.OpenSession();
 
+            if (radioButtonNon.Checked)
+            { }
             MessageBox.Show(AjouterRendezVous(Int32.Parse(textBoxCodeEntree.Text), (Interlocuteur)comboBoxListeClient.SelectedItem, textBoxObjRdv.Text, dateTimePickerHD.Value,
                 dateTimePickerHF.Value, textBoxRue.Text, textBoxIC.Text, textBoxVille.Text,
                 (TypeRdv)comboBoxTRDV.SelectedItem, utilisateur.planning, (RendezVous)comboBoxRDVprecedent.SelectedItem));
@@ -76,11 +77,12 @@ if(isModifier==true)
     textBoxObjRdv.Text = rdv.ObjetRdv;
     dateTimePickerHD.Value = rdv.DateDebut;
     dateTimePickerHF.Value = rdv.DateFin;
-    comboBoxListeClient.SelectedValue = rdv.interlocuteur;
-    //comboBoxTRDV.SelectedValue = rdv.typeRdv;
-    comboBoxRDVprecedent.SelectedValue = rdv.rendezVousPrecedent;
+    comboBoxListeClient.SelectedItem = rdv.interlocuteur;
+    comboBoxTRDV.SelectedItem = rdv.typeRdv;
+    comboBoxRDVprecedent.SelectedItem = rdv.rendezVousPrecedent;
     if(rdv.adresseDerogatoire!=null)
     {
+        groupBoxAP.Visible = true;
         radioButtonNon.Checked = false;
         textBoxRue.Text = rdv.adresseDerogatoire;
         textBoxVille.Text = rdv.villeDerogatoire;
@@ -108,6 +110,7 @@ if(isModifier==true)
 
             {
                 RendezVous unRendezVous = new RendezVous();
+                // Si le rendez vous est un rendez vous existant, on l'associe
                 if(isModifier==true){
                     unRendezVous = rdv;
                 }
@@ -124,10 +127,23 @@ if(isModifier==true)
                 unRendezVous.planning = unPlanning;
                 if (uneDateDebut != null) unRendezVous.DateDebut = uneDateDebut;
                 if (uneDateFin != null) unRendezVous.DateFin = uneDateFin;
-                if (unCodeEntreeDerogatoire != 0) unRendezVous.codeEntreeDerogatoire = unCodeEntreeDerogatoire;
-                if (uneAdresseDerogatoire != null) unRendezVous.adresseDerogatoire = uneAdresseDerogatoire;
-                if (uneInfoDerogatoire != null) unRendezVous.adresseDerogatoire = uneAdresseDerogatoire;
-                if (uneVilleDerogatoire != null) unRendezVous.villeDerogatoire = uneVilleDerogatoire;
+                // si le rendez vous prend lieu à une adresse dérogatoire on récupère les champs
+                // Sinon le rendez-vous à lieu à l'adresse du client
+                if (radioButtonNon.Checked)
+                {
+                    if (unCodeEntreeDerogatoire != 0) unRendezVous.codeEntreeDerogatoire = unCodeEntreeDerogatoire;
+                    if (uneAdresseDerogatoire != null) unRendezVous.adresseDerogatoire = uneAdresseDerogatoire;
+                    if (uneInfoDerogatoire != null) unRendezVous.infoDerogatoire = uneInfoDerogatoire;
+                    if (uneVilleDerogatoire != null) unRendezVous.villeDerogatoire = uneVilleDerogatoire;
+                }
+                    // on met à null dans le cas d'une modification d'un rdv dérogatoire à classique
+                else 
+                {
+                unRendezVous.codeEntreeDerogatoire=0;
+                    unRendezVous.adresseDerogatoire=null;
+                        unRendezVous.infoDerogatoire=null;
+                        unRendezVous.villeDerogatoire = null;
+                }
                 MessageBox.Show(unRdvPrecendent.ToString());
                 unRendezVous.rendezVousPrecedent = unRdvPrecendent;
                 session.SaveOrUpdate(unRendezVous);
@@ -165,6 +181,16 @@ if(isModifier==true)
         private void labelRue_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void radioButtonNon_CheckedChanged(object sender, EventArgs e)
+        {
+            groupBoxAP.Visible = true;
+        }
+
+        private void radioButtonOui_CheckedChanged(object sender, EventArgs e)
+        {
+            groupBoxAP.Visible = false;
         }
     }
 }
