@@ -6,9 +6,9 @@ namespace="Maquette_Belle_Table_Final" assembly="Maquette_Belle_Table_Final">
       <generator class="native" />
     </id>
     <property name="libellePlanning" column="libellePlanning"/>
-    
+
     <set name="lesRendezVous" lazy="false">
-      <key column="idRdv" />
+      <key column="idPlanning" />
       <one-to-many class="RendezVous"/>
     </set>
     

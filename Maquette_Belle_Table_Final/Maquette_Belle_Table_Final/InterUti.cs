@@ -200,10 +200,7 @@ namespace Maquette_Belle_Table_Final
 
         public void chargerDataGridViewRdv()
         {
-
-
-
-            dataGridViewRdv.DataSource = utilisateur.planning.lesRendezVous;
+            dataGridViewRdv.DataSource = utilisateur.planning.lesRendezVous.ToList();
 
         }
 
