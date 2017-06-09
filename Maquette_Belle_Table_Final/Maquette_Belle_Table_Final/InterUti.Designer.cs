@@ -38,6 +38,7 @@
             this.panelBordeLeft = new System.Windows.Forms.Panel();
             this.tabPagePlan = new System.Windows.Forms.TabPage();
             this.panelPlanning = new System.Windows.Forms.Panel();
+            this.dataGridViewRdv = new System.Windows.Forms.DataGridView();
             this.buttonConsultCalandar = new System.Windows.Forms.Button();
             this.buttonNRDV = new System.Windows.Forms.Button();
             this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -70,12 +71,14 @@
             this.labeltextBoxNewMDP2 = new System.Windows.Forms.Label();
             this.labelOldPswd = new System.Windows.Forms.Label();
             this.textBoxOldPswd = new System.Windows.Forms.TextBox();
-            this.dataGridViewRdv = new System.Windows.Forms.DataGridView();
+            this.btnModifierRdv = new System.Windows.Forms.Button();
+            this.btnSupprimerRdv = new System.Windows.Forms.Button();
             this.tableLayoutEntete.SuspendLayout();
             this.panelTitre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBT)).BeginInit();
             this.tabPagePlan.SuspendLayout();
             this.panelPlanning.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRdv)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPagePlanC.SuspendLayout();
             this.panelPlanningC.SuspendLayout();
@@ -89,7 +92,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMail)).BeginInit();
             this.tabPageCDMDP.SuspendLayout();
             this.panelChangerMDP.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRdv)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutEntete
@@ -193,6 +195,8 @@
             // 
             // panelPlanning
             // 
+            this.panelPlanning.Controls.Add(this.btnSupprimerRdv);
+            this.panelPlanning.Controls.Add(this.btnModifierRdv);
             this.panelPlanning.Controls.Add(this.dataGridViewRdv);
             this.panelPlanning.Controls.Add(this.buttonConsultCalandar);
             this.panelPlanning.Controls.Add(this.buttonNRDV);
@@ -203,6 +207,15 @@
             this.panelPlanning.Size = new System.Drawing.Size(984, 460);
             this.panelPlanning.TabIndex = 13;
             this.panelPlanning.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPlanning_Paint);
+            // 
+            // dataGridViewRdv
+            // 
+            this.dataGridViewRdv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewRdv.Location = new System.Drawing.Point(34, 100);
+            this.dataGridViewRdv.Name = "dataGridViewRdv";
+            this.dataGridViewRdv.RowTemplate.Height = 24;
+            this.dataGridViewRdv.Size = new System.Drawing.Size(663, 322);
+            this.dataGridViewRdv.TabIndex = 4;
             // 
             // buttonConsultCalandar
             // 
@@ -218,7 +231,7 @@
             // buttonNRDV
             // 
             this.buttonNRDV.BackColor = System.Drawing.Color.Gold;
-            this.buttonNRDV.Location = new System.Drawing.Point(730, 100);
+            this.buttonNRDV.Location = new System.Drawing.Point(730, 149);
             this.buttonNRDV.Name = "buttonNRDV";
             this.buttonNRDV.Size = new System.Drawing.Size(230, 34);
             this.buttonNRDV.TabIndex = 1;
@@ -576,14 +589,26 @@
             this.textBoxOldPswd.Size = new System.Drawing.Size(216, 24);
             this.textBoxOldPswd.TabIndex = 2;
             // 
-            // dataGridViewRdv
+            // btnModifierRdv
             // 
-            this.dataGridViewRdv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewRdv.Location = new System.Drawing.Point(34, 100);
-            this.dataGridViewRdv.Name = "dataGridViewRdv";
-            this.dataGridViewRdv.RowTemplate.Height = 24;
-            this.dataGridViewRdv.Size = new System.Drawing.Size(663, 322);
-            this.dataGridViewRdv.TabIndex = 4;
+            this.btnModifierRdv.BackColor = System.Drawing.Color.Gold;
+            this.btnModifierRdv.Location = new System.Drawing.Point(730, 246);
+            this.btnModifierRdv.Name = "btnModifierRdv";
+            this.btnModifierRdv.Size = new System.Drawing.Size(230, 34);
+            this.btnModifierRdv.TabIndex = 5;
+            this.btnModifierRdv.Text = "Modifier Rendez-vous";
+            this.btnModifierRdv.UseVisualStyleBackColor = false;
+            this.btnModifierRdv.Click += new System.EventHandler(this.btnModifierRdv_Click);
+            // 
+            // btnSupprimerRdv
+            // 
+            this.btnSupprimerRdv.BackColor = System.Drawing.Color.Gold;
+            this.btnSupprimerRdv.Location = new System.Drawing.Point(730, 343);
+            this.btnSupprimerRdv.Name = "btnSupprimerRdv";
+            this.btnSupprimerRdv.Size = new System.Drawing.Size(230, 34);
+            this.btnSupprimerRdv.TabIndex = 6;
+            this.btnSupprimerRdv.Text = "Supprimer Rendez-vous";
+            this.btnSupprimerRdv.UseVisualStyleBackColor = false;
             // 
             // InterUti
             // 
@@ -607,6 +632,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBT)).EndInit();
             this.tabPagePlan.ResumeLayout(false);
             this.panelPlanning.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRdv)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabPagePlanC.ResumeLayout(false);
             this.panelPlanningC.ResumeLayout(false);
@@ -623,7 +649,6 @@
             this.tabPageCDMDP.ResumeLayout(false);
             this.panelChangerMDP.ResumeLayout(false);
             this.panelChangerMDP.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRdv)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -673,5 +698,7 @@
         private System.Windows.Forms.Button buttonSupprimerClient;
         private System.Windows.Forms.Button buttonConsultCalandar;
         private System.Windows.Forms.DataGridView dataGridViewRdv;
+        private System.Windows.Forms.Button btnSupprimerRdv;
+        private System.Windows.Forms.Button btnModifierRdv;
     }
 }

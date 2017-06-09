@@ -48,6 +48,7 @@ namespace Maquette_Belle_Table_Final
             //Partie code destiné à ajouter un nouveau RDV
             PopNouveauRDV popNouveauRDV = new PopNouveauRDV();
             popNouveauRDV.utilisateur = utilisateur;
+            popNouveauRDV.interUti = this;
             popNouveauRDV.Show();
         }
 
@@ -200,7 +201,15 @@ namespace Maquette_Belle_Table_Final
 
         public void chargerDataGridViewRdv()
         {
-            dataGridViewRdv.DataSource = utilisateur.planning.lesRendezVous.ToList();
+            // obligé de rafraichir manuellement l'utilisateur ( session.refresh ne fonctionne pas) avant de rafraichir
+            // la liste des données car elle n'est pas synchronisée.
+            ISession session = sessionFactory.OpenSession();
+            using (ITransaction transaction = session.BeginTransaction())
+            {
+                utilisateur = session.Load<Utilisateur>(utilisateur.numUtilisateur);           
+                dataGridViewRdv.DataSource = utilisateur.planning.lesRendezVous.ToList();
+                session.Dispose();
+            }
 
         }
 
@@ -296,6 +305,18 @@ namespace Maquette_Belle_Table_Final
         private void buttonConsultCalandar_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("http://104.46.44.90/bt_" + utilisateur.numUtilisateur);
+        }
+
+        private void btnModifierRdv_Click(object sender, EventArgs e)
+        {
+
+            PopNouveauRDV popNouveauRDV = new PopNouveauRDV();
+            popNouveauRDV.utilisateur = utilisateur;
+            popNouveauRDV.interUti = this;
+            popNouveauRDV.rdv = (RendezVous) dataGridViewRdv.CurrentRow.DataBoundItem;
+            popNouveauRDV.isModifier = true;
+            popNouveauRDV.Show();
+
         }
     }
 }

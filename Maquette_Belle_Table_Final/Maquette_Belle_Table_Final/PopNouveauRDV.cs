@@ -19,6 +19,9 @@ namespace Maquette_Belle_Table
         private static ISessionFactory sessionFactory = null;
         public Utilisateur utilisateur { get; set; }
         private Interlocuteur interlocuteur;
+        public InterUti interUti { get; set; }
+        public RendezVous rdv { get; set; }
+        public Boolean isModifier = false;
 
         public PopNouveauRDV()
         {
@@ -47,25 +50,48 @@ namespace Maquette_Belle_Table
             ISession session = sessionFactory.OpenSession();
 
             MessageBox.Show(AjouterRendezVous(Int32.Parse(textBoxCodeEntree.Text), (Interlocuteur)comboBoxListeClient.SelectedItem, textBoxObjRdv.Text, dateTimePickerHD.Value,
-                dateTimePickerHF.Value, textBoxRue.Text + " " + textBoxCp.Text, textBoxIC.Text, textBoxVille.Text,
+                dateTimePickerHF.Value, textBoxRue.Text, textBoxIC.Text, textBoxVille.Text,
                 (TypeRdv)comboBoxTRDV.SelectedItem, utilisateur.planning, (RendezVous)comboBoxRDVprecedent.SelectedItem));
+            interUti.chargerDataGridViewRdv();
+            this.Close();
         }
 
         private void PopNouveauRDV_Load(object sender, EventArgs e)
         {
+
             TypeRdv lesTypesRdv = new TypeRdv();
             comboBoxTRDV.DataSource = lesTypesRdv.GetLesTypesRdv();
 
             ISet<Interlocuteur> mesInterlocteur = utilisateur.porteFeuille.lesInterlocuteurs;
-            
+
             //comboBoxRDVprecedent.DataSource = inter
             //pour qu'il n y ai pas trop de données dans la combobox
-            foreach(Interlocuteur interlocuteur in mesInterlocteur)
+            foreach (Interlocuteur interlocuteur in mesInterlocteur)
             {
                 comboBoxListeClient.Items.Add(interlocuteur);
             }
-            
-        }
+
+if(isModifier==true)
+{
+    textBoxObjRdv.Text = rdv.ObjetRdv;
+    dateTimePickerHD.Value = rdv.DateDebut;
+    dateTimePickerHF.Value = rdv.DateFin;
+    comboBoxListeClient.SelectedValue = rdv.interlocuteur;
+    //comboBoxTRDV.SelectedValue = rdv.typeRdv;
+    comboBoxRDVprecedent.SelectedValue = rdv.rendezVousPrecedent;
+    if(rdv.adresseDerogatoire!=null)
+    {
+        radioButtonNon.Checked = false;
+        textBoxRue.Text = rdv.adresseDerogatoire;
+        textBoxVille.Text = rdv.villeDerogatoire;
+        textBoxCodeEntree.Text = rdv.codeEntreeDerogatoire.ToString();
+        textBoxIC.Text = rdv.infoDerogatoire;
+    }
+}
+
+
+            }
+  
 
 
         private void comboBoxTRDV_SelectedIndexChanged(object sender, EventArgs e)
@@ -73,7 +99,7 @@ namespace Maquette_Belle_Table
 
         }
 
-        static string AjouterRendezVous(int unCodeEntreeDerogatoire, Interlocuteur unInterlocuteur, string ObjetRdv, DateTime uneDateDebut,
+        public string AjouterRendezVous(int unCodeEntreeDerogatoire, Interlocuteur unInterlocuteur, string ObjetRdv, DateTime uneDateDebut,
             DateTime uneDateFin, string uneAdresseDerogatoire, string uneInfoDerogatoire, string uneVilleDerogatoire, TypeRdv unTypeRdv, Planning unPlanning, RendezVous unRdvPrecendent)
         {
 
@@ -82,6 +108,9 @@ namespace Maquette_Belle_Table
 
             {
                 RendezVous unRendezVous = new RendezVous();
+                if(isModifier==true){
+                    unRendezVous = rdv;
+                }
 
                 if (unInterlocuteur == null) return "Merci de séléctionner un client.";
                 else unRendezVous.interlocuteur = unInterlocuteur;
@@ -101,7 +130,7 @@ namespace Maquette_Belle_Table
                 if (uneVilleDerogatoire != null) unRendezVous.villeDerogatoire = uneVilleDerogatoire;
                 MessageBox.Show(unRdvPrecendent.ToString());
                 unRendezVous.rendezVousPrecedent = unRdvPrecendent;
-                session.Save(unRendezVous);
+                session.SaveOrUpdate(unRendezVous);
                 transaction.Commit();
                 session.Dispose();
                 
@@ -131,6 +160,11 @@ namespace Maquette_Belle_Table
         {
             interlocuteur = (Interlocuteur)comboBoxListeClient.SelectedItem;
             comboBoxRDVprecedent.DataSource = interlocuteur.lesRendezVous.ToList<RendezVous>();
+        }
+
+        private void labelRue_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
