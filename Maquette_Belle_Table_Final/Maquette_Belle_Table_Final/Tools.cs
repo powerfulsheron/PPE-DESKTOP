@@ -81,6 +81,30 @@ namespace Maquette_Belle_Table_Final
             nouveauDocument.Close();
         }
 
+            public void ConnectMySQL()
+            {//SCRIPT POUR SE CONNECTER A MYSQL SUR WAMP EN LOCAL SANS NHIBERNATE
+
+            // 1. ajouter aux références "SQL.Data" 
+
+            // 2. Puis ajouter cette librairie :
+
+            //using MySql.Data.MySqlClient;
+             //3. et enfin :
+                MySqlConnection Connect = new MySqlConnection("Server = localhost; Port = 3306; Database = gepev; Uid = root; Pwd =;"); 
+                //a modifier si différent pour sois-même
+                        try
+                        {
+                            Connect.Open();
+                            //MessageBox.Show("Connecté à la base", "tu es connecté");  
+                
+                           }
+                        catch(MySqlException ex)
+                        {
+                                MessageBox.Show(ex.ToString());
+                                }
+				
+                                 //Connect.Close();
+                }
         //Graphiques: http://plasserre.developpez.com/cours/chart/ et voir le Windows Form GraphDemo
     }
 }
