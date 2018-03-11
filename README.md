@@ -1,14 +1,14 @@
-#PPE-DESKTOP - BELLETABLE
+# PPE-DESKTOP - BELLETABLE
 
 ## C# Visual Studio project in group with MySQL Database and Nhibernate
 
-A FAIRE : 
+### A FAIRE : 
 
-UTILISATEUR :
+### UTILISATEUR :
 
 - Planning jquerry widget en iFrame(Vallade)
 
-GESTIONNAIRE :
+#### GESTIONNAIRE :
 
 - Voir la liste des rdv d'un commercial (Vallade)
 - Prendre un rendez vous au nom d'un commercial (en cours en raph)
@@ -20,7 +20,7 @@ GESTIONNAIRE :
 - Envoi d'un Recap RDV par SMS (Jesse, Béné et Alex)
 
 
-FAIT :
+### FAIT :
 
 - LOGIN (raph + lorenzo)
 - Mot de passe oublié : Saisie du login, insert d'un nouveau MDP en base et envoi du mdp par mail à l'utilisateur.(lorenzo)
