@@ -4,7 +4,7 @@
 
 ### A FAIRE : 
 
-### UTILISATEUR :
+#### UTILISATEUR :
 
 - Planning jquerry widget en iFrame(Vallade)
 
