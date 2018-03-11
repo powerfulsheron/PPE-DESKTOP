@@ -1,3 +1,7 @@
+#PPE-DESKTOP - BELLETABLE
+
+## C# Visual Studio project in group with MySQL Database and Nhibernate
+
 #A FAIRE : 
 
 UTILISATEUR :
